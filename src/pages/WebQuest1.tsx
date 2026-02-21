@@ -44,13 +44,9 @@ const WebQuest1 = () => {
     <div className="min-h-screen bg-background">
       {/* Hero Banner */}
       <div className="relative h-[50vh] sm:h-[60vh] min-h-[320px] overflow-hidden">
-        <img
-          src="/images/webquest1/hero1.jpg"
-          alt="Holidays and Traditions"
-          className="absolute inset-0 w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-secondary/20" />
+        <div className="absolute inset-0 bg-gradient-to-br from-[hsl(200,60%,20%)] via-[hsl(180,40%,30%)] to-[hsl(160,50%,35%)]" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[hsl(180,40%,25%)/0.6] to-transparent" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,hsl(160,60%,40%,0.3),transparent_60%)]" />
 
         <div className="relative h-full flex flex-col justify-end p-4 sm:p-6 md:p-12 max-w-5xl mx-auto">
           <Link to="/" className="absolute top-4 left-4 sm:top-6 sm:left-6 md:top-12 md:left-12">
@@ -121,13 +117,13 @@ const WebQuest1 = () => {
             whileHover={{ scale: 1.03 }}
             src="/images/webquest1/hero1.jpg"
             alt="Traditions"
-            className="rounded-xl w-full h-40 sm:h-48 object-cover shadow-md"
+           className="rounded-xl w-full h-40 sm:h-48 object-contain sm:object-cover shadow-md bg-muted/30"
           />
           <motion.img
             whileHover={{ scale: 1.03 }}
             src="/images/webquest1/hero2.jpg"
             alt="Celebrations"
-            className="rounded-xl w-full h-40 sm:h-48 object-cover shadow-md"
+            className="rounded-xl w-full h-40 sm:h-48 object-contain sm:object-cover shadow-md bg-muted/30"
           />
         </div>
       </QuestSection>
@@ -150,8 +146,8 @@ const WebQuest1 = () => {
             { label: "Uzbekistan", image: "/images/webquest1/task1_3.jpg" },
             { label: "Ireland", image: "/images/webquest1/task1_4.jpg" },
             { label: "India", image: "/images/webquest1/task1_5.jpg" },
-            { label: "China", image: "/images/webquest1/task1_1.png" },
-            { label: "Mexico", image: "/images/webquest1/task1_1.png" },
+            { label: "China", image: "/images/webquest1/flag_china.png" },
+            { label: "Mexico", image: "/images/webquest1/flag_mexico.png" },
           ]}
           descriptions={[
             { letter: "A", text: "Spring festival, March 21, sumalak, cultural performances" },
@@ -201,9 +197,9 @@ const WebQuest1 = () => {
         onToggle={() => toggle("navruz-reading")}
       >
         <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4 mb-6">
-          <motion.img whileHover={{ scale: 1.03 }} src="/images/webquest1/navruz1.jpg" alt="Navruz" className="rounded-xl w-full h-40 sm:h-48 object-cover shadow-md" />
-          <motion.img whileHover={{ scale: 1.03 }} src="/images/webquest1/navruz2.jpg" alt="Navruz celebration" className="rounded-xl w-full h-40 sm:h-48 object-cover shadow-md" />
-          <motion.img whileHover={{ scale: 1.03 }} src="/images/webquest1/navruz3.jpg" alt="Navruz food" className="rounded-xl w-full h-40 sm:h-48 object-cover shadow-md hidden sm:block" />
+          <motion.img whileHover={{ scale: 1.03 }} src="/images/webquest1/navruz1.jpg" alt="Navruz" className="rounded-xl w-full h-40 sm:h-48 object-contain sm:object-cover shadow-md bg-muted/30" />
+          <motion.img whileHover={{ scale: 1.03 }} src="/images/webquest1/navruz2.jpg" alt="Navruz celebration" className="rounded-xl w-full h-40 sm:h-48 object-contain sm:object-cover shadow-md bg-muted/30" />
+          <motion.img whileHover={{ scale: 1.03 }} src="/images/webquest1/navruz3.jpg" alt="Navruz food" className="rounded-xl w-full h-40 sm:h-48 object-contain sm:object-cover shadow-md bg-muted/30 hidden sm:block" />
         </div>
         <ReadingSection title="A — How Navruz is celebrated">
           Each spring, Uzbekistan bursts into colour and celebration as Navruz — literally translating to 'New Day' — ushers in the Persian New Year. Marking the arrival of spring on 21 March, Navruz is one of the most significant festivals across Central Asia, deeply rooted in tradition, history, and community spirit. Streets come alive with festivities, music, and dance, while families prepare special meals and visit relatives. One of the most beloved traditions is cooking and sharing sumalak.
@@ -221,9 +217,9 @@ const WebQuest1 = () => {
           Besides sumalak, popular dishes include halim (wheat and meat porridge) and kuk samsa (pastries filled with greens). Dried fruits and nuts are shared generously.
         </ReadingSection>
         <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4 mt-6">
-          <motion.img whileHover={{ scale: 1.03 }} src="/images/webquest1/navruz_celebration1.jpg" alt="Navruz" className="rounded-xl w-full h-36 sm:h-40 object-cover shadow-md" />
-          <motion.img whileHover={{ scale: 1.03 }} src="/images/webquest1/navruz_celebration2.jpg" alt="Navruz" className="rounded-xl w-full h-36 sm:h-40 object-cover shadow-md" />
-          <motion.img whileHover={{ scale: 1.03 }} src="/images/webquest1/navruz_celebration3.jpg" alt="Kupkari" className="rounded-xl w-full h-36 sm:h-40 object-cover shadow-md hidden sm:block" />
+          <motion.img whileHover={{ scale: 1.03 }} src="/images/webquest1/navruz_celebration1.jpg" alt="Navruz" className="rounded-xl w-full h-36 sm:h-40 object-contain sm:object-cover shadow-md bg-muted/30" />
+          <motion.img whileHover={{ scale: 1.03 }} src="/images/webquest1/navruz_celebration2.jpg" alt="Navruz" className="rounded-xl w-full h-36 sm:h-40 object-contain sm:object-cover shadow-md bg-muted/30" />
+          <motion.img whileHover={{ scale: 1.03 }} src="/images/webquest1/navruz_celebration3.jpg" alt="Kupkari" className="rounded-xl w-full h-36 sm:h-40 object-contain sm:object-cover shadow-md bg-muted/30 hidden sm:block" />
         </div>
       </QuestSection>
 
@@ -277,9 +273,9 @@ const WebQuest1 = () => {
         onToggle={() => toggle("thanksgiving")}
       >
         <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4 mb-6">
-          <motion.img whileHover={{ scale: 1.03 }} src="/images/webquest1/thanksgiving1.jpg" alt="Thanksgiving" className="rounded-xl w-full h-40 sm:h-48 object-cover shadow-md" />
-          <motion.img whileHover={{ scale: 1.03 }} src="/images/webquest1/thanksgiving2.jpg" alt="Thanksgiving" className="rounded-xl w-full h-40 sm:h-48 object-cover shadow-md" />
-          <motion.img whileHover={{ scale: 1.03 }} src="/images/webquest1/thanksgiving3.jpg" alt="Thanksgiving" className="rounded-xl w-full h-40 sm:h-48 object-cover shadow-md hidden sm:block" />
+          <motion.img whileHover={{ scale: 1.03 }} src="/images/webquest1/thanksgiving1.jpg" alt="Thanksgiving" className="rounded-xl w-full h-40 sm:h-48 object-contain sm:object-cover shadow-md bg-muted/30" />
+          <motion.img whileHover={{ scale: 1.03 }} src="/images/webquest1/thanksgiving2.jpg" alt="Thanksgiving" className="rounded-xl w-full h-40 sm:h-48 object-contain sm:object-cover shadow-md bg-muted/30" />
+          <motion.img whileHover={{ scale: 1.03 }} src="/images/webquest1/thanksgiving3.jpg" alt="Thanksgiving" className="rounded-xl w-full h-40 sm:h-48 object-contain sm:object-cover shadow-md bg-muted/30 hidden sm:block" />
         </div>
         {[
           { title: "🦃 Watch the Macy's Parade", text: "The Macy's Thanksgiving Day Parade is one of the most famous holiday traditions in the US. Thousands line the streets of Manhattan to watch giant inflatable balloons float between skyscrapers." },
@@ -393,7 +389,7 @@ const WebQuest1 = () => {
         isOpen={openSections.roleplay}
         onToggle={() => toggle("roleplay")}
       >
-        <img src="/images/webquest1/role_play.jpg" alt="Role play" className="rounded-xl w-full h-40 sm:h-48 object-cover shadow-md mb-6" />
+        <img src="/images/webquest1/role_play.jpg" alt="Role play" className="rounded-xl w-full h-40 sm:h-48 object-contain sm:object-cover shadow-md mb-6 bg-muted/30" />
         <h4 className="font-display text-lg font-semibold mb-3">Task VI: Do's and Don'ts for Visitors</h4>
         <p className="font-body text-muted-foreground mb-4">
           Create a "Tourist Behaviour Guide": 3 Do's and 3 Don'ts for each holiday.
@@ -518,9 +514,12 @@ const WebQuest1 = () => {
         </Card>
       </QuestSection>
 
-      <footer className="border-t py-8 text-center mt-16">
+      <footer className="border-t py-8 text-center mt-16 space-y-1">
         <p className="font-body text-sm text-muted-foreground">
           WebQuest Explorer — WebQuest 1: Thanksgiving & Navruz
+        </p>
+        <p className="font-body text-xs text-muted-foreground/70">
+          This site developed by <span className="font-semibold text-foreground/70">Mansurbek Qazaqov</span>. Lead specialist of IT department at AL-Khwarizmi University.
         </p>
       </footer>
     </div>
