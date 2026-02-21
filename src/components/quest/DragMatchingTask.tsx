@@ -72,7 +72,7 @@ const DragMatchingTask = ({ items, descriptions, correctAnswers }: DragMatchingT
             <img
               src={item.image}
               alt={item.label}
-              className="w-24 h-16 sm:w-28 sm:h-18 object-cover pointer-events-none"
+              className="w-20 h-14 sm:w-28 sm:h-18 object-contain p-0.5 pointer-events-none"
               draggable={false}
             />
             <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-foreground/80 to-transparent px-2 py-1">
