@@ -41,7 +41,7 @@ const WebQuest1 = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background border-x-2 sm:border-x-4 border-[hsl(210,20%,88%)]">
       {/* Hero Banner */}
       <div className="relative h-[50vh] sm:h-[60vh] min-h-[320px] overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-[hsl(200,60%,20%)] via-[hsl(180,40%,30%)] to-[hsl(160,50%,35%)]" />

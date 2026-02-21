@@ -32,17 +32,17 @@ const item = {
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background overflow-hidden">
+    <div className="min-h-screen bg-background overflow-hidden border-x-2 sm:border-x-4 border-[hsl(210,20%,88%)]">
       {/* Top Header Bar */}
-      <div className="bg-primary text-primary-foreground py-3 px-6">
+      <div className="bg-[hsl(210,20%,92%)] text-foreground py-3 px-6">
         <div className="max-w-6xl mx-auto flex items-center justify-between">
           <span className="font-display text-lg font-bold tracking-wide">🌍 WebQuest Explorer</span>
-          <span className="font-body text-xs opacity-80">Interactive Learning Platform</span>
+          <span className="font-body text-xs opacity-60">Interactive Learning Platform</span>
         </div>
       </div>
 
       {/* Hero */}
-      <header className="relative py-20 md:py-32 px-6 border-x-4 border-secondary/40 mx-2 sm:mx-4 md:mx-8 rounded-b-2xl">
+      <header className="relative py-20 md:py-32 px-6">
         <div className="absolute inset-0 overflow-hidden rounded-b-2xl">
           <div className="absolute -top-40 -right-40 w-[500px] h-[500px] rounded-full bg-primary/5 blur-3xl" />
           <div className="absolute -bottom-20 -left-20 w-[400px] h-[400px] rounded-full bg-secondary/5 blur-3xl" />
