@@ -4,7 +4,9 @@ import { ArrowLeft, ChevronDown, ChevronUp, Play, CheckCircle2, XCircle, BookOpe
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import DragMatchingTask from "@/components/quest/DragMatchingTask";
 import MatchingTask from "@/components/quest/MatchingTask";
+import SelectMatchingTask from "@/components/quest/SelectMatchingTask";
 import VocabularyMatchTask from "@/components/quest/VocabularyMatchTask";
 import ComparisonTable from "@/components/quest/ComparisonTable";
 import VideoTask from "@/components/quest/VideoTask";
@@ -41,7 +43,7 @@ const WebQuest1 = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Banner */}
-      <div className="relative h-[60vh] min-h-[400px] overflow-hidden">
+      <div className="relative h-[50vh] sm:h-[60vh] min-h-[320px] overflow-hidden">
         <img
           src="/images/webquest1/hero1.jpg"
           alt="Holidays and Traditions"
@@ -50,8 +52,8 @@ const WebQuest1 = () => {
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
         <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-secondary/20" />
 
-        <div className="relative h-full flex flex-col justify-end p-6 md:p-12 max-w-5xl mx-auto">
-          <Link to="/" className="absolute top-6 left-6 md:top-12 md:left-12">
+        <div className="relative h-full flex flex-col justify-end p-4 sm:p-6 md:p-12 max-w-5xl mx-auto">
+          <Link to="/" className="absolute top-4 left-4 sm:top-6 sm:left-6 md:top-12 md:left-12">
             <Button variant="ghost" size="sm" className="text-white hover:bg-white/20 font-body">
               <ArrowLeft className="w-4 h-4 mr-2" /> Orqaga
             </Button>
@@ -61,13 +63,13 @@ const WebQuest1 = () => {
             <motion.span variants={fadeUp} className="inline-block px-3 py-1 rounded-full bg-primary/20 text-primary-foreground text-xs font-body font-medium uppercase tracking-widest mb-3">
               Module 1 — Holidays & Traditions
             </motion.span>
-            <motion.h1 variants={fadeUp} className="font-display text-4xl md:text-6xl font-bold text-white mb-3">
+            <motion.h1 variants={fadeUp} className="font-display text-3xl sm:text-4xl md:text-6xl font-bold text-white mb-3">
               🌍 WebQuest 1
             </motion.h1>
-            <motion.h2 variants={fadeUp} className="font-display text-xl md:text-2xl text-white/90 font-semibold">
+            <motion.h2 variants={fadeUp} className="font-display text-lg sm:text-xl md:text-2xl text-white/90 font-semibold">
               Thanksgiving & Navruz — Traditions of Gratitude and Renewal
             </motion.h2>
-            <motion.p variants={fadeUp} className="font-body text-white/70 mt-3 max-w-2xl text-sm md:text-base">
+            <motion.p variants={fadeUp} className="font-body text-white/70 mt-3 max-w-2xl text-xs sm:text-sm md:text-base">
               Compare national holidays, explore cultural traditions, and discover how gratitude connects people around the world.
             </motion.p>
           </motion.div>
@@ -75,12 +77,12 @@ const WebQuest1 = () => {
       </div>
 
       {/* Learning Outcomes */}
-      <section className="max-w-5xl mx-auto px-6 py-12">
+      <section className="max-w-5xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}>
-          <motion.h3 variants={fadeUp} className="font-display text-2xl font-bold mb-6 flex items-center gap-3">
+          <motion.h3 variants={fadeUp} className="font-display text-xl sm:text-2xl font-bold mb-6 flex items-center gap-3">
             🎯 Learning Outcomes
           </motion.h3>
-          <div className="grid md:grid-cols-2 gap-4">
+          <div className="grid sm:grid-cols-2 gap-3 sm:gap-4">
             {[
               "Learn the origins, traditions, and customs of Thanksgiving and Navruz.",
               "Compare these two holidays using charts and visuals.",
@@ -89,7 +91,7 @@ const WebQuest1 = () => {
             ].map((outcome, i) => (
               <motion.div key={i} variants={fadeUp}>
                 <Card className="glass-card hover:shadow-lg transition-shadow duration-300">
-                  <CardContent className="p-5 flex items-start gap-3">
+                  <CardContent className="p-4 sm:p-5 flex items-start gap-3">
                     <span className="flex-shrink-0 w-8 h-8 rounded-full bg-primary/10 text-primary flex items-center justify-center font-display font-bold text-sm">
                       {i + 1}
                     </span>
@@ -114,23 +116,23 @@ const WebQuest1 = () => {
         <p className="font-body text-muted-foreground leading-relaxed mb-6">
           Holidays are more than just days off — they reflect the history, culture, and values of people. In this WebQuest, you will explore two important holidays: <strong>Thanksgiving</strong> in the United States and <strong>Navruz</strong> in Central Asia. While they come from different cultural traditions, both emphasize gratitude, family, food, and community.
         </p>
-        <div className="grid md:grid-cols-2 gap-4">
+        <div className="grid sm:grid-cols-2 gap-4">
           <motion.img
             whileHover={{ scale: 1.03 }}
             src="/images/webquest1/hero1.jpg"
             alt="Traditions"
-            className="rounded-xl w-full h-48 object-cover shadow-md"
+            className="rounded-xl w-full h-40 sm:h-48 object-cover shadow-md"
           />
           <motion.img
             whileHover={{ scale: 1.03 }}
             src="/images/webquest1/hero2.jpg"
             alt="Celebrations"
-            className="rounded-xl w-full h-48 object-cover shadow-md"
+            className="rounded-xl w-full h-40 sm:h-48 object-cover shadow-md"
           />
         </div>
       </QuestSection>
 
-      {/* Step 2: Task - Country Matching */}
+      {/* Step 2: Task - Country Matching with Drag & Drop Flags */}
       <QuestSection
         id="task1"
         icon={stepIcons.task}
@@ -140,30 +142,27 @@ const WebQuest1 = () => {
         onToggle={() => toggle("task1")}
       >
         <p className="font-body text-muted-foreground mb-6">
-          Read the descriptions of holidays in Column B and match them with the countries in Column A. One description is extra.
+          Read the descriptions of holidays in Column B and match them with the countries in Column A. Drag the flag images and drop them next to the correct description. One description is extra.
         </p>
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 mb-6">
-          {[
-            { src: "/images/webquest1/task1_1.png", alt: "Flag 1" },
-            { src: "/images/webquest1/task1_2.jpg", alt: "Flag 2" },
-            { src: "/images/webquest1/task1_3.jpg", alt: "Flag 3" },
-            { src: "/images/webquest1/task1_4.jpg", alt: "Flag 4" },
-            { src: "/images/webquest1/task1_5.jpg", alt: "Flag 5" },
-          ].map((img, i) => (
-            <motion.img key={i} whileHover={{ scale: 1.05 }} src={img.src} alt={img.alt} className="rounded-lg w-full h-20 object-cover shadow" />
-          ))}
-        </div>
-        <MatchingTask
-          pairs={[
-            { left: "1. ___", right: "A. Spring festival, March 21, sumalak, cultural performances" },
-            { left: "2. USA", right: "B. Festival of lights, victory of good over evil, fireworks" },
-            { left: "3. Uzbekistan", right: "C. Late November, turkey, pumpkin pie, gratitude" },
-            { left: "4. Ireland", right: "D. Lunar calendar, dragon dances, red envelopes" },
-            { left: "5. India", right: "E. March 17, patron saint, wearing green, parades" },
-            { left: "6. China", right: "F. Honouring deceased relatives, sugar skulls, marigolds" },
-            { left: "7. Mexico", right: "G. July 4, fireworks, barbecues, Declaration of Independence" },
+        <DragMatchingTask
+          items={[
+            { label: "USA", image: "/images/webquest1/task1_2.jpg" },
+            { label: "Uzbekistan", image: "/images/webquest1/task1_3.jpg" },
+            { label: "Ireland", image: "/images/webquest1/task1_4.jpg" },
+            { label: "India", image: "/images/webquest1/task1_5.jpg" },
+            { label: "China", image: "/images/webquest1/task1_1.png" },
+            { label: "Mexico", image: "/images/webquest1/task1_1.png" },
           ]}
-          correctAnswers={{ 0: "A", 1: "C", 2: "A", 3: "E", 4: "B", 5: "D", 6: "F" }}
+          descriptions={[
+            { letter: "A", text: "Spring festival, March 21, sumalak, cultural performances" },
+            { letter: "B", text: "Festival of lights, victory of good over evil, fireworks" },
+            { letter: "C", text: "Late November, turkey, pumpkin pie, gratitude" },
+            { letter: "D", text: "Lunar calendar, dragon dances, red envelopes" },
+            { letter: "E", text: "March 17, patron saint, wearing green, parades" },
+            { letter: "F", text: "Honouring deceased relatives, sugar skulls, marigolds" },
+            { letter: "G", text: "July 4, fireworks, barbecues, Declaration of Independence" },
+          ]}
+          correctAnswers={{ 0: 1, 1: 3, 2: 0, 3: 4, 4: 2, 5: 5 }}
         />
       </QuestSection>
 
@@ -201,10 +200,10 @@ const WebQuest1 = () => {
         isOpen={openSections["navruz-reading"]}
         onToggle={() => toggle("navruz-reading")}
       >
-        <div className="grid md:grid-cols-3 gap-4 mb-6">
-          <motion.img whileHover={{ scale: 1.03 }} src="/images/webquest1/navruz1.jpg" alt="Navruz" className="rounded-xl w-full h-48 object-cover shadow-md" />
-          <motion.img whileHover={{ scale: 1.03 }} src="/images/webquest1/navruz2.jpg" alt="Navruz celebration" className="rounded-xl w-full h-48 object-cover shadow-md" />
-          <motion.img whileHover={{ scale: 1.03 }} src="/images/webquest1/navruz3.jpg" alt="Navruz food" className="rounded-xl w-full h-48 object-cover shadow-md" />
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4 mb-6">
+          <motion.img whileHover={{ scale: 1.03 }} src="/images/webquest1/navruz1.jpg" alt="Navruz" className="rounded-xl w-full h-40 sm:h-48 object-cover shadow-md" />
+          <motion.img whileHover={{ scale: 1.03 }} src="/images/webquest1/navruz2.jpg" alt="Navruz celebration" className="rounded-xl w-full h-40 sm:h-48 object-cover shadow-md" />
+          <motion.img whileHover={{ scale: 1.03 }} src="/images/webquest1/navruz3.jpg" alt="Navruz food" className="rounded-xl w-full h-40 sm:h-48 object-cover shadow-md hidden sm:block" />
         </div>
         <ReadingSection title="A — How Navruz is celebrated">
           Each spring, Uzbekistan bursts into colour and celebration as Navruz — literally translating to 'New Day' — ushers in the Persian New Year. Marking the arrival of spring on 21 March, Navruz is one of the most significant festivals across Central Asia, deeply rooted in tradition, history, and community spirit. Streets come alive with festivities, music, and dance, while families prepare special meals and visit relatives. One of the most beloved traditions is cooking and sharing sumalak.
@@ -221,10 +220,10 @@ const WebQuest1 = () => {
         <ReadingSection title="E — Food and Drink">
           Besides sumalak, popular dishes include halim (wheat and meat porridge) and kuk samsa (pastries filled with greens). Dried fruits and nuts are shared generously.
         </ReadingSection>
-        <div className="grid md:grid-cols-3 gap-4 mt-6">
-          <motion.img whileHover={{ scale: 1.03 }} src="/images/webquest1/navruz_celebration1.jpg" alt="Navruz" className="rounded-xl w-full h-40 object-cover shadow-md" />
-          <motion.img whileHover={{ scale: 1.03 }} src="/images/webquest1/navruz_celebration2.jpg" alt="Navruz" className="rounded-xl w-full h-40 object-cover shadow-md" />
-          <motion.img whileHover={{ scale: 1.03 }} src="/images/webquest1/navruz_celebration3.jpg" alt="Kupkari" className="rounded-xl w-full h-40 object-cover shadow-md" />
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4 mt-6">
+          <motion.img whileHover={{ scale: 1.03 }} src="/images/webquest1/navruz_celebration1.jpg" alt="Navruz" className="rounded-xl w-full h-36 sm:h-40 object-cover shadow-md" />
+          <motion.img whileHover={{ scale: 1.03 }} src="/images/webquest1/navruz_celebration2.jpg" alt="Navruz" className="rounded-xl w-full h-36 sm:h-40 object-cover shadow-md" />
+          <motion.img whileHover={{ scale: 1.03 }} src="/images/webquest1/navruz_celebration3.jpg" alt="Kupkari" className="rounded-xl w-full h-36 sm:h-40 object-cover shadow-md hidden sm:block" />
         </div>
       </QuestSection>
 
@@ -277,10 +276,10 @@ const WebQuest1 = () => {
         isOpen={openSections.thanksgiving}
         onToggle={() => toggle("thanksgiving")}
       >
-        <div className="grid md:grid-cols-3 gap-4 mb-6">
-          <motion.img whileHover={{ scale: 1.03 }} src="/images/webquest1/thanksgiving1.jpg" alt="Thanksgiving" className="rounded-xl w-full h-48 object-cover shadow-md" />
-          <motion.img whileHover={{ scale: 1.03 }} src="/images/webquest1/thanksgiving2.jpg" alt="Thanksgiving" className="rounded-xl w-full h-48 object-cover shadow-md" />
-          <motion.img whileHover={{ scale: 1.03 }} src="/images/webquest1/thanksgiving3.jpg" alt="Thanksgiving" className="rounded-xl w-full h-48 object-cover shadow-md" />
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4 mb-6">
+          <motion.img whileHover={{ scale: 1.03 }} src="/images/webquest1/thanksgiving1.jpg" alt="Thanksgiving" className="rounded-xl w-full h-40 sm:h-48 object-cover shadow-md" />
+          <motion.img whileHover={{ scale: 1.03 }} src="/images/webquest1/thanksgiving2.jpg" alt="Thanksgiving" className="rounded-xl w-full h-40 sm:h-48 object-cover shadow-md" />
+          <motion.img whileHover={{ scale: 1.03 }} src="/images/webquest1/thanksgiving3.jpg" alt="Thanksgiving" className="rounded-xl w-full h-40 sm:h-48 object-cover shadow-md hidden sm:block" />
         </div>
         {[
           { title: "🦃 Watch the Macy's Parade", text: "The Macy's Thanksgiving Day Parade is one of the most famous holiday traditions in the US. Thousands line the streets of Manhattan to watch giant inflatable balloons float between skyscrapers." },
@@ -316,16 +315,31 @@ const WebQuest1 = () => {
 
         <div className="mt-8">
           <h4 className="font-display text-lg font-semibold mb-4">Cultural Meanings</h4>
-          <MatchingTask
+          <SelectMatchingTask
             pairs={[
-              { left: "Sharing what you're thankful for", right: "Community support" },
-              { left: "Friendsgiving", right: "Gratitude and reflection" },
-              { left: "Volunteering / food drives", right: "Social inclusion beyond family" },
-              { left: "Family gathering", right: "Strengthening family bonds" },
-              { left: "Inviting international students", right: "Empathy and social responsibility" },
-              { left: "Charity dinners", right: "Cultural openness and hospitality" },
+              { left: "Sharing what you're thankful for", right: "" },
+              { left: "Friendsgiving", right: "" },
+              { left: "Volunteering / food drives", right: "" },
+              { left: "Family gathering", right: "" },
+              { left: "Inviting international students", right: "" },
+              { left: "Charity dinners", right: "" },
             ]}
-            correctAnswers={{ 0: "B", 1: "C", 2: "A", 3: "D", 4: "F", 5: "E" }}
+            options={[
+              "Gratitude and reflection",
+              "Community support",
+              "Social inclusion beyond family",
+              "Strengthening family bonds",
+              "Empathy and social responsibility",
+              "Cultural openness and hospitality",
+            ]}
+            correctAnswers={{
+              0: "Gratitude and reflection",
+              1: "Community support",
+              2: "Social inclusion beyond family",
+              3: "Strengthening family bonds",
+              4: "Empathy and social responsibility",
+              5: "Cultural openness and hospitality",
+            }}
           />
         </div>
       </QuestSection>
@@ -379,7 +393,7 @@ const WebQuest1 = () => {
         isOpen={openSections.roleplay}
         onToggle={() => toggle("roleplay")}
       >
-        <img src="/images/webquest1/role_play.jpg" alt="Role play" className="rounded-xl w-full h-48 object-cover shadow-md mb-6" />
+        <img src="/images/webquest1/role_play.jpg" alt="Role play" className="rounded-xl w-full h-40 sm:h-48 object-cover shadow-md mb-6" />
         <h4 className="font-display text-lg font-semibold mb-3">Task VI: Do's and Don'ts for Visitors</h4>
         <p className="font-body text-muted-foreground mb-4">
           Create a "Tourist Behaviour Guide": 3 Do's and 3 Don'ts for each holiday.
@@ -397,7 +411,7 @@ const WebQuest1 = () => {
         <div className="mt-8">
           <h4 className="font-display text-lg font-semibold mb-3">Task VIII: Cultural Scenario Role-Play</h4>
           <Card className="glass-card">
-            <CardContent className="p-6 font-body text-sm space-y-3">
+            <CardContent className="p-4 sm:p-6 font-body text-sm space-y-3">
               <p>You are invited to a <strong>Navruz celebration in Uzbekistan</strong> or a <strong>Thanksgiving dinner in the USA</strong>.</p>
               <ul className="list-disc pl-5 space-y-1 text-muted-foreground">
                 <li>Greet people correctly</li>
@@ -450,7 +464,7 @@ const WebQuest1 = () => {
         <div className="mt-8">
           <h4 className="font-display text-lg font-semibold mb-3">Plan Your Cultural Evening</h4>
           <Card className="glass-card">
-            <CardContent className="p-6 font-body text-sm space-y-2 text-muted-foreground">
+            <CardContent className="p-4 sm:p-6 font-body text-sm space-y-2 text-muted-foreground">
               <p>Plan a "Thanksgiving–Navruz Cultural Evening" with your group:</p>
               <ul className="list-disc pl-5 space-y-1">
                 <li>Decide the menu</li>
@@ -495,7 +509,7 @@ const WebQuest1 = () => {
         </div>
 
         <Card className="mt-8 border-primary/30 bg-primary/5">
-          <CardContent className="p-6 text-center">
+          <CardContent className="p-4 sm:p-6 text-center">
             <h3 className="font-display text-xl font-bold text-primary mb-2">🎉 Congratulations!</h3>
             <p className="font-body text-sm text-muted-foreground">
               You have compared two important traditions and discovered how people in different cultures celebrate gratitude, renewal, and family. Remember: learning about other cultures is the first step toward becoming a global citizen.
@@ -524,20 +538,20 @@ function QuestSection({ id, icon, stepNum, title, isOpen, onToggle, children }: 
       whileInView="visible"
       viewport={{ once: true, margin: "-50px" }}
       variants={fadeUp}
-      className="max-w-5xl mx-auto px-6 py-4"
+      className="max-w-5xl mx-auto px-4 sm:px-6 py-3 sm:py-4"
     >
       <button
         onClick={onToggle}
-        className="w-full flex items-center gap-3 p-4 rounded-xl bg-card border hover:border-primary/30 transition-colors group"
+        className="w-full flex items-center gap-3 p-3 sm:p-4 rounded-xl bg-card border-2 hover:border-primary/30 transition-colors group"
       >
-        <span className="flex-shrink-0 w-10 h-10 rounded-lg bg-primary/10 text-primary flex items-center justify-center">
+        <span className="flex-shrink-0 w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-primary/10 text-primary flex items-center justify-center">
           {icon}
         </span>
-        <div className="text-left flex-1">
+        <div className="text-left flex-1 min-w-0">
           <span className="text-xs font-body text-muted-foreground uppercase tracking-wider">{stepNum}</span>
-          <h3 className="font-display text-lg font-semibold">{title}</h3>
+          <h3 className="font-display text-base sm:text-lg font-semibold truncate">{title}</h3>
         </div>
-        {isOpen ? <ChevronUp className="w-5 h-5 text-muted-foreground" /> : <ChevronDown className="w-5 h-5 text-muted-foreground" />}
+        {isOpen ? <ChevronUp className="w-5 h-5 text-muted-foreground flex-shrink-0" /> : <ChevronDown className="w-5 h-5 text-muted-foreground flex-shrink-0" />}
       </button>
       <AnimatePresence>
         {isOpen && (
@@ -548,7 +562,7 @@ function QuestSection({ id, icon, stepNum, title, isOpen, onToggle, children }: 
             transition={{ duration: 0.3, ease: "easeInOut" }}
             className="overflow-hidden"
           >
-            <div className="p-6 border-x border-b rounded-b-xl bg-card/50">{children}</div>
+            <div className="p-4 sm:p-6 border-x-2 border-b-2 rounded-b-xl bg-card/50">{children}</div>
           </motion.div>
         )}
       </AnimatePresence>
@@ -558,7 +572,7 @@ function QuestSection({ id, icon, stepNum, title, isOpen, onToggle, children }: 
 
 function ReadingSection({ title, children }: { title: string; children: React.ReactNode }) {
   return (
-    <div className="mb-4 p-4 rounded-lg bg-muted/50 border-l-4 border-primary/30">
+    <div className="mb-4 p-4 rounded-xl bg-muted/50 border-l-4 border-primary/40">
       <h5 className="font-display font-semibold text-sm mb-2">{title}</h5>
       <p className="font-body text-sm text-muted-foreground leading-relaxed">{children}</p>
     </div>

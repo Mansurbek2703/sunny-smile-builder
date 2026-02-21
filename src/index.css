@@ -6,42 +6,41 @@
 
 @layer base {
   :root {
-    --background: 45 30% 97%;
-    --foreground: 20 20% 12%;
+    --background: 195 40% 97%;
+    --foreground: 210 25% 12%;
 
-    --card: 40 25% 95%;
-    --card-foreground: 20 20% 12%;
+    --card: 195 30% 95%;
+    --card-foreground: 210 25% 12%;
 
-    --popover: 45 30% 97%;
-    --popover-foreground: 20 20% 12%;
+    --popover: 195 40% 97%;
+    --popover-foreground: 210 25% 12%;
 
-    --primary: 142 50% 36%;
-    --primary-foreground: 45 30% 97%;
+    --primary: 160 65% 40%;
+    --primary-foreground: 195 40% 98%;
 
-    --secondary: 25 80% 55%;
-    --secondary-foreground: 45 30% 97%;
+    --secondary: 200 75% 50%;
+    --secondary-foreground: 195 40% 98%;
 
-    --muted: 40 15% 90%;
-    --muted-foreground: 20 10% 45%;
+    --muted: 195 20% 91%;
+    --muted-foreground: 210 15% 40%;
 
-    --accent: 200 60% 45%;
-    --accent-foreground: 45 30% 97%;
+    --accent: 175 60% 42%;
+    --accent-foreground: 195 40% 98%;
 
-    --destructive: 0 84.2% 60.2%;
+    --destructive: 0 80% 58%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 35 20% 85%;
-    --input: 35 20% 85%;
-    --ring: 142 50% 36%;
+    --border: 195 25% 85%;
+    --input: 195 25% 85%;
+    --ring: 160 65% 40%;
 
-    --radius: 0.75rem;
+    --radius: 0.85rem;
 
-    --quest-gold: 42 90% 55%;
-    --quest-emerald: 142 50% 36%;
-    --quest-terracotta: 15 70% 50%;
-    --quest-sky: 200 60% 45%;
-    --quest-plum: 280 40% 45%;
-
+    --quest-gold: 45 90% 55%;
+    --quest-emerald: 160 65% 40%;
+    --quest-terracotta: 18 75% 55%;
+    --quest-sky: 200 75% 50%;
+    --quest-plum: 265 50% 55%;
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
     --sidebar-primary: 240 5.9% 10%;
@@ -53,33 +52,33 @@
   }
 
   .dark {
-    --background: 20 15% 8%;
-    --foreground: 40 20% 92%;
+    --background: 210 20% 8%;
+    --foreground: 195 20% 92%;
 
-    --card: 20 15% 12%;
-    --card-foreground: 40 20% 92%;
+    --card: 210 18% 12%;
+    --card-foreground: 195 20% 92%;
 
-    --popover: 20 15% 8%;
-    --popover-foreground: 40 20% 92%;
+    --popover: 210 20% 8%;
+    --popover-foreground: 195 20% 92%;
 
-    --primary: 142 50% 45%;
-    --primary-foreground: 20 15% 8%;
+    --primary: 160 60% 50%;
+    --primary-foreground: 210 20% 8%;
 
-    --secondary: 25 80% 55%;
-    --secondary-foreground: 20 15% 8%;
+    --secondary: 200 70% 55%;
+    --secondary-foreground: 210 20% 8%;
 
-    --muted: 20 10% 18%;
-    --muted-foreground: 35 15% 60%;
+    --muted: 210 12% 18%;
+    --muted-foreground: 195 15% 60%;
 
-    --accent: 200 60% 50%;
-    --accent-foreground: 20 15% 8%;
+    --accent: 175 55% 48%;
+    --accent-foreground: 210 20% 8%;
 
-    --destructive: 0 62.8% 30.6%;
+    --destructive: 0 60% 35%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 20 10% 20%;
-    --input: 20 10% 20%;
-    --ring: 142 50% 45%;
+    --border: 210 12% 22%;
+    --input: 210 12% 22%;
+    --ring: 160 60% 50%;
 
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
