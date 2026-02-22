@@ -39,9 +39,33 @@ const quests = [
     image: "/images/webquest4/hero1.jpg",
     available: true,
   },
-  { number: 5, title: "Coming Soon", subtitle: "WebQuest 5", module: "Module 5", color: "from-quest-gold to-quest-emerald", available: false },
-  { number: 6, title: "Coming Soon", subtitle: "WebQuest 6", module: "Module 6", color: "from-quest-sky to-quest-terracotta", available: false },
-  { number: 7, title: "Coming Soon", subtitle: "WebQuest 7", module: "Module 7", color: "from-quest-emerald to-quest-plum", available: false },
+  {
+    number: 5,
+    title: "Culture Shock & Etiquette",
+    subtitle: "Navigate cross-cultural adaptation",
+    module: "Module 4: Cultural Adaptation",
+    color: "from-quest-plum to-quest-terracotta",
+    image: "/images/webquest5/hero1.jpg",
+    available: true,
+  },
+  {
+    number: 6,
+    title: "Food Culture",
+    subtitle: "Explore global cuisines and dining etiquette",
+    module: "Module 5: Food & Dining",
+    color: "from-quest-terracotta to-quest-emerald",
+    image: "/images/webquest6/hero1.jpg",
+    available: true,
+  },
+  {
+    number: 7,
+    title: "Cultural Heroes",
+    subtitle: "Discover outstanding cultural figures",
+    module: "Module 6: Cultural Heritage",
+    color: "from-quest-sky to-quest-emerald",
+    image: "/images/webquest7/hero1.jpg",
+    available: true,
+  },
 ];
 
 const container = {
