@@ -58,6 +58,7 @@ export default {
           sky: "hsl(var(--quest-sky))",
           plum: "hsl(var(--quest-plum))",
         },
+        frame: "hsl(var(--frame-color))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
