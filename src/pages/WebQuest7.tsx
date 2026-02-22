@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import OpenQuestionTask from "@/components/quest/OpenQuestionTask";
+import SiteHeader from "@/components/SiteHeader";
+import FloatingCulturalElements from "@/components/FloatingCulturalElements";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -30,7 +32,9 @@ const WebQuest7 = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-background border-x-2 sm:border-x-4 border-[hsl(210,20%,88%)]">
+    <div className="min-h-screen bg-background border-x-2 sm:border-x-4 border-[hsl(var(--frame-color))]">
+      <SiteHeader />
+      <FloatingCulturalElements />
       {/* Hero */}
       <div className="relative h-[50vh] sm:h-[60vh] min-h-[320px] overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-[hsl(200,60%,20%)] via-[hsl(220,50%,30%)] to-[hsl(180,40%,25%)]" />
