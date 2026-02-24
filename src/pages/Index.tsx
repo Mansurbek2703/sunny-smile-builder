@@ -93,7 +93,7 @@ const Index = () => {
           className="absolute min-w-full min-h-full w-auto h-auto top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 object-cover opacity-0 animate-[fadeIn_2s_ease-in-out_forwards]"
           src="/videos/bg-culture.mp4"
         />
-        <div className="absolute inset-0 bg-[hsl(220,22%,8%)]/50" />
+        <div className="absolute inset-0 bg-[hsl(220,22%,8%)]/40" />
       </div>
 
       <div className="relative z-10">
@@ -122,14 +122,15 @@ const Index = () => {
             <span className="text-sm font-medium font-body">Interactive Learning Platform</span>
           </motion.div>
 
-          <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-4">
+          <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-4 drop-shadow-lg">
             <span className="text-gradient">Building</span>
             <br />
-            <span className="text-foreground/80">Intercultural Behaviour</span>
+            <span className="text-white">Intercultural </span>
+            <span className="text-[hsl(var(--quest-sky))]">Behaviour</span>
           </h1>
 
-          <p className="font-body text-base md:text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Discover cultures, traditions, and languages through immersive interactive quests.
+          <p className="font-body text-base md:text-lg text-white/80 max-w-2xl mx-auto leading-relaxed drop-shadow-md">
+            Discover cultures, traditions, and languages through <strong className="text-[hsl(160,65%,70%)]">immersive interactive quests</strong>.
             Learn by exploring, comparing, and creating.
           </p>
 
@@ -137,7 +138,7 @@ const Index = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.6 }}
-            className="mt-8 flex items-center justify-center gap-6 text-sm text-muted-foreground font-body"
+            className="mt-8 flex items-center justify-center gap-6 text-sm text-white/90 font-body font-medium drop-shadow"
           >
             <span className="flex items-center gap-2">
               <BookOpen className="w-4 h-4 text-[hsl(var(--quest-gold))]" /> 7 WebQuests
@@ -161,22 +162,23 @@ const Index = () => {
           {quests.map((q) => (
             <motion.div key={q.number} variants={item}>
               <Link to={`/quest/${q.number}`} className="block group">
-                <div className="relative h-80 rounded-2xl overflow-hidden border border-border/50 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+                <div className="relative h-80 rounded-2xl overflow-hidden shadow-lg transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_0_30px_hsl(var(--quest-gold)/0.3)] border-2 border-white/10 hover:border-[hsl(var(--quest-gold))]/50">
                   <img
                     src={q.image}
                     alt={q.title}
                     className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
-                  <div className={`absolute inset-0 bg-gradient-to-t ${q.color} opacity-70 group-hover:opacity-80 transition-opacity`} />
+                  <div className={`absolute inset-0 bg-gradient-to-t ${q.color} opacity-60 group-hover:opacity-50 transition-opacity`} />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
                   <div className="absolute inset-0 flex flex-col justify-end p-6 text-white">
-                    <span className="text-xs font-body font-medium uppercase tracking-widest opacity-80 mb-1">
+                    <span className="text-xs font-body font-bold uppercase tracking-widest text-[hsl(160,65%,70%)] mb-1 drop-shadow">
                       {q.module}
                     </span>
-                    <span className="font-display text-4xl font-bold mb-1 text-[hsl(var(--quest-gold))]">
+                    <span className="font-display text-4xl font-bold mb-1 text-[hsl(var(--quest-gold))] drop-shadow-lg">
                       {String(q.number).padStart(2, "0")}
                     </span>
-                    <h3 className="font-display text-xl font-semibold">{q.title}</h3>
-                    <p className="font-body text-sm opacity-80 mt-1">{q.subtitle}</p>
+                    <h3 className="font-display text-xl font-semibold drop-shadow-md">{q.title}</h3>
+                    <p className="font-body text-sm text-white/90 mt-1 drop-shadow">{q.subtitle}</p>
                   </div>
                 </div>
               </Link>
@@ -186,12 +188,12 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-border/50 py-8 text-center space-y-1 relative z-10 bg-background/80 backdrop-blur-sm">
-        <p className="font-body text-sm text-muted-foreground">
+      <footer className="border-t border-white/10 py-8 text-center space-y-1 relative z-10 bg-[hsl(220,22%,8%)]/60 backdrop-blur-sm">
+        <p className="font-body text-sm text-white/70">
           Building Intercultural Behaviour — Interactive Learning Platform
         </p>
-        <p className="font-body text-xs text-muted-foreground/70">
-          Author: <span className="font-semibold text-foreground/70">A.Sh.Sekerova</span> | Developed by <span className="font-semibold text-foreground/70">Mansurbek Qazaqov</span>
+        <p className="font-body text-xs text-white/50">
+          Author: <span className="font-semibold text-[hsl(var(--quest-gold))]">A.Sh.Sekerova</span> | Developed by <span className="font-semibold text-[hsl(var(--quest-sky))]">Mansurbek Qazaqov</span>
         </p>
       </footer>
       </div>
