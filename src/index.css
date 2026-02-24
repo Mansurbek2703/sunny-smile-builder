@@ -138,6 +138,6 @@
 
   @keyframes fadeIn {
     from { opacity: 0; }
-    to { opacity: 0.35; }
+    to { opacity: 0.5; }
   }
 }
