@@ -84,16 +84,16 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background overflow-hidden border-x-2 sm:border-x-4 border-[hsl(var(--frame-color))] relative">
       {/* Background Video */}
-      <div className="fixed inset-0 z-0">
+      <div className="fixed inset-0 z-0 overflow-hidden">
         <video
           autoPlay
           loop
           muted
           playsInline
-          className="w-full h-full object-cover opacity-0 animate-[fadeIn_2s_ease-in-out_forwards]"
+          className="absolute min-w-full min-h-full w-auto h-auto top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 object-cover opacity-0 animate-[fadeIn_2s_ease-in-out_forwards]"
           src="/videos/bg-culture.mp4"
         />
-        <div className="absolute inset-0 bg-background/80 backdrop-blur-[1px]" />
+        <div className="absolute inset-0 bg-background/60" />
       </div>
 
       <div className="relative z-10">
