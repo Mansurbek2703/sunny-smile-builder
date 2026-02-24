@@ -10,8 +10,7 @@ const quests = [
     title: "Thanksgiving & Navruz",
     subtitle: "Traditions of Gratitude and Renewal",
     module: "Module 1: Holidays and Traditions",
-    color: "from-[hsl(220,40%,20%)] to-[hsl(45,80%,45%)]",
-    image: "/images/webquest1/hero1.jpg",
+    image: "/images/cards/module1_holidays.jpg",
     available: true,
   },
   {
@@ -19,8 +18,7 @@ const quests = [
     title: "Holidays Around the World",
     subtitle: "Explore global celebrations and traditions",
     module: "Module 1: Holidays and Traditions",
-    color: "from-[hsl(220,50%,25%)] to-[hsl(200,60%,45%)]",
-    image: "/images/webquest2/hero1.jpg",
+    image: "/images/cards/module1_holidays.jpg",
     available: true,
   },
   {
@@ -28,8 +26,7 @@ const quests = [
     title: "Cultural Stereotypes",
     subtitle: "Truth or Myth — Challenge your assumptions",
     module: "Module 2: Cultural Awareness",
-    color: "from-[hsl(265,40%,30%)] to-[hsl(220,50%,40%)]",
-    image: "/images/webquest3/hero1.jpg",
+    image: "/images/cards/module2_awareness.jpg",
     available: true,
   },
   {
@@ -37,8 +34,7 @@ const quests = [
     title: "City Through Tourist Eyes",
     subtitle: "Explore cities from a visitor's perspective",
     module: "Module 3: Travel & Tourism",
-    color: "from-[hsl(18,60%,40%)] to-[hsl(45,80%,50%)]",
-    image: "/images/webquest4/hero1.jpg",
+    image: "/images/cards/module3_travel.jpg",
     available: true,
   },
   {
@@ -46,8 +42,7 @@ const quests = [
     title: "Culture Shock & Etiquette",
     subtitle: "Navigate cross-cultural adaptation",
     module: "Module 4: Cultural Adaptation",
-    color: "from-[hsl(265,40%,25%)] to-[hsl(18,60%,45%)]",
-    image: "/images/webquest5/hero1.jpg",
+    image: "/images/cards/module4_adaptation.jpg",
     available: true,
   },
   {
@@ -55,8 +50,7 @@ const quests = [
     title: "Food Culture",
     subtitle: "Explore global cuisines and dining etiquette",
     module: "Module 5: Food & Dining",
-    color: "from-[hsl(18,50%,35%)] to-[hsl(160,50%,35%)]",
-    image: "/images/webquest6/hero1.jpg",
+    image: "/images/cards/module5_food.jpg",
     available: true,
   },
   {
@@ -64,8 +58,7 @@ const quests = [
     title: "Cultural Heroes",
     subtitle: "Discover outstanding cultural figures",
     module: "Module 6: Cultural Heritage",
-    color: "from-[hsl(220,45%,25%)] to-[hsl(160,50%,35%)]",
-    image: "/images/webquest7/hero1.jpg",
+    image: "/images/cards/module6_heroes.jpg",
     available: true,
   },
 ];
@@ -123,7 +116,7 @@ const Index = () => {
           </motion.div>
 
           <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-4 drop-shadow-lg">
-            <span className="text-gradient">Building</span>
+            <span className="text-white" style={{ textShadow: '0 0 30px rgba(255,255,255,0.5), 0 2px 10px rgba(0,0,0,0.8)' }}>Building</span>
             <br />
             <span className="text-white">Intercultural </span>
             <span className="text-[hsl(var(--quest-sky))]">Behaviour</span>
@@ -168,7 +161,7 @@ const Index = () => {
                     alt={q.title}
                     className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
-                  <div className={`absolute inset-0 bg-gradient-to-t ${q.color} opacity-60 group-hover:opacity-50 transition-opacity`} />
+                  <div className="absolute inset-0 bg-[hsl(220,22%,8%)]/40 group-hover:bg-[hsl(220,22%,8%)]/30 transition-colors" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
                   <div className="absolute inset-0 flex flex-col justify-end p-6 text-white">
                     <span className="text-xs font-body font-bold uppercase tracking-widest text-[hsl(160,65%,70%)] mb-1 drop-shadow">
