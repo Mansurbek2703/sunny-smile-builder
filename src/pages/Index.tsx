@@ -94,7 +94,7 @@ const Index = () => {
       <FloatingCulturalElements />
 
       {/* Hero */}
-      <header className="relative py-16 md:py-28 px-6 z-10">
+      <header className="relative py-16 md:py-28 px-4 sm:px-8 lg:px-12 z-10">
         <div className="absolute inset-0 overflow-hidden rounded-b-2xl">
           <div className="absolute -top-40 -right-40 w-[500px] h-[500px] rounded-full bg-[hsl(var(--quest-gold))]/5 blur-3xl" />
           <div className="absolute -bottom-20 -left-20 w-[400px] h-[400px] rounded-full bg-primary/5 blur-3xl" />
@@ -144,13 +144,13 @@ const Index = () => {
       </header>
 
       {/* Quest Grid */}
-      <section className="px-6 pb-24 relative z-10">
+      <section className="px-4 sm:px-8 lg:px-12 pb-24 relative z-10">
         <motion.div
           variants={container}
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, margin: "-50px" }}
-          className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+          className="w-full mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
         >
           {quests.map((q) => (
             <motion.div key={q.number} variants={item}>
