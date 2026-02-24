@@ -82,7 +82,21 @@ const item = {
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background overflow-hidden border-x-2 sm:border-x-4 border-[hsl(var(--frame-color))]">
+    <div className="min-h-screen bg-background overflow-hidden border-x-2 sm:border-x-4 border-[hsl(var(--frame-color))] relative">
+      {/* Background Video */}
+      <div className="fixed inset-0 z-0">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="w-full h-full object-cover opacity-0 animate-[fadeIn_2s_ease-in-out_forwards]"
+          src="/videos/bg-culture.mp4"
+        />
+        <div className="absolute inset-0 bg-background/80 backdrop-blur-[1px]" />
+      </div>
+
+      <div className="relative z-10">
       <SiteHeader />
       <FloatingCulturalElements />
 
@@ -180,6 +194,7 @@ const Index = () => {
           Author: <span className="font-semibold text-foreground/70">A.Sh.Sekerova</span> | Developed by <span className="font-semibold text-foreground/70">Mansurbek Qazaqov</span>
         </p>
       </footer>
+      </div>
     </div>
   );
 };
