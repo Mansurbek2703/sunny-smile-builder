@@ -10,7 +10,7 @@ const quests = [
     title: "Thanksgiving & Navruz",
     subtitle: "Traditions of Gratitude and Renewal",
     module: "Module 1: Holidays and Traditions",
-    image: "/images/cards/module1_holidays.jpg",
+    image: "/images/cards/quest1_thanksgiving_navruz.jpg",
     available: true,
   },
   {
@@ -18,7 +18,7 @@ const quests = [
     title: "Holidays Around the World",
     subtitle: "Explore global celebrations and traditions",
     module: "Module 1: Holidays and Traditions",
-    image: "/images/cards/module1_holidays.jpg",
+    image: "/images/cards/quest2_holidays_world.jpg",
     available: true,
   },
   {
