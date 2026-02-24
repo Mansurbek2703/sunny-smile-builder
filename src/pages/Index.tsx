@@ -93,7 +93,7 @@ const Index = () => {
           className="absolute min-w-full min-h-full w-auto h-auto top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 object-cover opacity-0 animate-[fadeIn_2s_ease-in-out_forwards]"
           src="/videos/bg-culture.mp4"
         />
-        <div className="absolute inset-0 bg-background/60" />
+        <div className="absolute inset-0 bg-[hsl(220,22%,8%)]/50" />
       </div>
 
       <div className="relative z-10">
