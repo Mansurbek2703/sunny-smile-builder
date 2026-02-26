@@ -239,8 +239,8 @@ function IntroStep() {
         Holidays are more than just days off — they reflect the history, culture, and values of people. In this WebQuest, you will explore two important holidays: <strong>Thanksgiving</strong> in the United States and <strong>Navruz</strong> in Central Asia. While they come from different cultural traditions, both emphasize gratitude, family, food, and community.
       </p>
       <div className="grid grid-cols-2 gap-2">
-        <img src="/images/webquest1/navruz1.jpg" alt="Navruz celebration" loading="lazy" className="rounded-xl w-full h-28 sm:h-36 md:h-44 object-cover shadow-md" />
-        <img src="/images/webquest1/thanksgiving1.jpg" alt="Thanksgiving celebration" loading="lazy" className="rounded-xl w-full h-28 sm:h-36 md:h-44 object-cover shadow-md" />
+        <img src="/images/webquest1/navruz_celebration1.jpg" alt="Navruz celebration" loading="lazy" className="rounded-xl w-full object-contain shadow-md" />
+        <img src="/images/webquest1/thanksgiving2.jpg" alt="Thanksgiving celebration" loading="lazy" className="rounded-xl w-full object-contain shadow-md" />
       </div>
     </>
   );
