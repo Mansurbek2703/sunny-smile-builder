@@ -48,31 +48,25 @@ const WebQuest1 = () => {
       {/* Full-screen background image */}
       <div className="fixed inset-0 z-0">
         <img src="/images/webquest1/hero_banner.jpg" alt="" className="w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-background/85 backdrop-blur-sm" />
+        <div className="absolute inset-0 bg-background/55" />
       </div>
 
       <div className="relative z-10">
         <SiteHeader />
 
-        {/* Compact title bar */}
-        <div className="relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-r from-[hsl(220,40%,15%)]/90 to-[hsl(220,40%,25%)]/80" />
-          <div className="relative px-4 sm:px-6 md:px-10 py-4 sm:py-5 max-w-7xl mx-auto flex items-center gap-4">
-            <Link to="/">
-              <Button variant="ghost" size="sm" className="text-white/90 hover:bg-white/20 font-body"><ArrowLeft className="w-4 h-4 mr-1" /> Orqaga</Button>
-            </Link>
-            <div className="min-w-0">
-              <span className="text-[10px] sm:text-xs font-body font-medium uppercase tracking-widest text-quest-gold">Module 1 — Holidays & Traditions</span>
-              <h1 className="font-display text-lg sm:text-xl md:text-2xl font-bold text-white leading-tight truncate">🌍 WebQuest 1 <span className="hidden sm:inline font-semibold text-white/80 text-base md:text-lg">— Thanksgiving & Navruz</span></h1>
-            </div>
-          </div>
-        </div>
-
         {/* Main layout: sidebar + content */}
-        <div className="max-w-7xl mx-auto flex min-h-[calc(100vh-140px)]">
+        <div className="max-w-7xl mx-auto flex min-h-[calc(100vh-100px)]">
 
           {/* Desktop sidebar */}
           <aside className="hidden md:flex flex-col w-60 shrink-0 border-r border-border/50 bg-card/70 backdrop-blur-md sticky top-0 self-start max-h-screen overflow-y-auto py-3 px-2 gap-0.5">
+            {/* Title inside sidebar */}
+            <div className="px-3 pb-3 mb-2 border-b border-border/50">
+              <Link to="/" className="flex items-center gap-1 text-muted-foreground hover:text-foreground text-xs font-body mb-1.5 transition-colors">
+                <ArrowLeft className="w-3 h-3" /> Orqaga
+              </Link>
+              <span className="text-[9px] font-body font-medium uppercase tracking-widest text-quest-gold">Module 1</span>
+              <h1 className="font-display text-sm font-bold leading-tight">🌍 WebQuest 1 — Thanksgiving & Navruz</h1>
+            </div>
           {steps.map((s, i) => {
             const Icon = s.icon;
             const active = i === currentStep;
@@ -130,10 +124,17 @@ const WebQuest1 = () => {
         {/* Content area */}
         <main className="flex-1 min-w-0">
           {/* Mobile top bar */}
-          <div className="md:hidden flex items-center gap-2 px-4 py-3 border-b border-border/50 bg-card/70 backdrop-blur-md sticky top-0 z-30">
-            <button onClick={() => setMobileMenuOpen(true)} className="p-2 rounded-lg hover:bg-muted"><Menu className="w-5 h-5" /></button>
-            <span className="font-body text-sm text-muted-foreground">{currentStep + 1}/{steps.length}</span>
-            <span className="font-display font-semibold text-sm truncate">{steps[currentStep].label}</span>
+          <div className="md:hidden sticky top-0 z-30 bg-card/70 backdrop-blur-md border-b border-border/50">
+            <div className="flex items-center gap-2 px-3 pt-2 pb-1">
+              <Link to="/" className="text-muted-foreground hover:text-foreground"><ArrowLeft className="w-4 h-4" /></Link>
+              <span className="text-[9px] font-body font-medium uppercase tracking-widest text-quest-gold">Module 1</span>
+              <span className="font-display text-xs font-bold truncate">🌍 WQ 1 — Thanksgiving & Navruz</span>
+            </div>
+            <div className="flex items-center gap-2 px-3 pb-2">
+              <button onClick={() => setMobileMenuOpen(true)} className="p-1.5 rounded-lg hover:bg-muted"><Menu className="w-5 h-5" /></button>
+              <span className="font-body text-sm text-muted-foreground">{currentStep + 1}/{steps.length}</span>
+              <span className="font-display font-semibold text-sm truncate">{steps[currentStep].label}</span>
+            </div>
           </div>
 
           {/* Step content */}
