@@ -119,20 +119,14 @@ const WebQuest1 = () => {
         <p className="font-body text-muted-foreground leading-relaxed mb-6">
           Holidays are more than just days off — they reflect the history, culture, and values of people. In this WebQuest, you will explore two important holidays: <strong>Thanksgiving</strong> in the United States and <strong>Navruz</strong> in Central Asia. While they come from different cultural traditions, both emphasize gratitude, family, food, and community.
         </p>
-        <div className="grid sm:grid-cols-2 gap-4">
-          <motion.img
-            whileHover={{ scale: 1.03 }}
-            src="/images/webquest1/hero1.jpg"
-            alt="Traditions"
-           className="rounded-xl w-full h-40 sm:h-48 object-contain sm:object-cover shadow-md bg-muted/30"
-          />
-          <motion.img
-            whileHover={{ scale: 1.03 }}
-            src="/images/webquest1/hero2.jpg"
-            alt="Celebrations"
-            className="rounded-xl w-full h-40 sm:h-48 object-contain sm:object-cover shadow-md bg-muted/30"
-          />
-        </div>
+        <motion.img
+          whileHover={{ scale: 1.02 }}
+          src="/images/webquest1/intro_traditions.jpg"
+          alt="Navruz and Thanksgiving family celebrations side by side"
+          loading="lazy"
+          decoding="async"
+          className="rounded-xl w-full h-48 sm:h-64 md:h-80 object-cover shadow-md"
+        />
       </QuestSection>
 
       {/* Step 2: Task - Country Matching with Drag & Drop Flags */}
