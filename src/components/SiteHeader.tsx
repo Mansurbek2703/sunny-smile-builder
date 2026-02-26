@@ -13,6 +13,8 @@ const SiteHeader = () => {
           <motion.img
             src="/images/aysek_logo.png"
             alt="AySek Global Study"
+            loading="eager"
+            decoding="async"
             className="h-12 sm:h-16 md:h-[72px] w-auto drop-shadow-md"
             whileHover={{ scale: 1.05 }}
             transition={{ type: "spring", stiffness: 300 }}
