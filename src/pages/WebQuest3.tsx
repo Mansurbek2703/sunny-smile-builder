@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import SiteHeader from "@/components/SiteHeader";
-import FloatingCulturalElements from "@/components/FloatingCulturalElements";
+
 import SelectMatchingTask from "@/components/quest/SelectMatchingTask";
 import VocabularyMatchTask from "@/components/quest/VocabularyMatchTask";
 import OpenQuestionTask from "@/components/quest/OpenQuestionTask";
@@ -39,7 +39,7 @@ const WebQuest3 = () => {
   return (
     <div className="min-h-screen bg-background border-x-2 sm:border-x-4 border-[hsl(var(--frame-color))]">
       <SiteHeader />
-      <FloatingCulturalElements />
+      
       {/* Hero */}
       <div className="relative h-[50vh] sm:h-[60vh] min-h-[320px] overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-[hsl(265,50%,25%)] via-[hsl(280,40%,35%)] to-[hsl(200,50%,40%)]" />
