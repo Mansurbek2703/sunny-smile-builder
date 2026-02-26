@@ -48,9 +48,12 @@ const WebQuest1 = () => {
       <FloatingCulturalElements />
       {/* Hero Banner */}
       <div className="relative h-[50vh] sm:h-[60vh] min-h-[320px] overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-[hsl(200,60%,20%)] via-[hsl(180,40%,30%)] to-[hsl(160,50%,35%)]" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[hsl(180,40%,25%)/0.6] to-transparent" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,hsl(160,60%,40%,0.3),transparent_60%)]" />
+        <img
+          src="/images/webquest1/hero_banner.jpg"
+          alt="Thanksgiving and Navruz celebration — sumalak and turkey dinner"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-[hsl(220,22%,8%)]/70 via-[hsl(220,22%,8%)]/30 to-transparent" />
 
         <div className="relative h-full flex flex-col justify-end p-4 sm:p-6 md:p-12 max-w-5xl mx-auto">
           <Link to="/" className="absolute top-4 left-4 sm:top-6 sm:left-6 md:top-12 md:left-12">
