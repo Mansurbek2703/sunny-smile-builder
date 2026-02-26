@@ -55,13 +55,15 @@ const WebQuest1 = () => {
         <SiteHeader />
 
         {/* Main layout: sidebar + content */}
-        <div className="w-full flex min-h-[calc(100vh-56px)]">
+        <div className="w-full flex flex-1">
 
           {/* Desktop sidebar */}
-          <aside className="hidden md:flex flex-col w-52 shrink-0 border-r border-border/50 bg-card/70 backdrop-blur-md sticky top-0 self-start max-h-screen overflow-y-auto py-1.5 px-1 gap-px">
+          <aside className="hidden md:flex flex-col w-52 shrink-0 border-r-2 bg-card/70 backdrop-blur-md sticky top-0 self-start min-h-[calc(100vh-56px)] overflow-y-auto py-1 px-1 gap-px"
+            style={{ borderImage: 'linear-gradient(to bottom, hsl(var(--quest-sky)), hsl(var(--quest-gold)), hsl(var(--quest-emerald))) 1' }}
+          >
             {/* Title inside sidebar */}
-            <div className="px-1.5 pb-1.5 mb-1 border-b border-border/50">
-              <Link to="/" className="flex items-center gap-1 text-muted-foreground hover:text-foreground text-xs font-body mb-1 transition-colors">
+            <div className="px-1.5 pb-1 mb-0.5 border-b border-border/50">
+              <Link to="/" className="flex items-center gap-1 text-muted-foreground hover:text-foreground text-xs font-body mb-0.5 transition-colors">
                 <ArrowLeft className="w-3 h-3" /> Orqaga
               </Link>
               <span className="text-[9px] font-body font-medium uppercase tracking-widest text-quest-gold">Module 1</span>
@@ -74,7 +76,7 @@ const WebQuest1 = () => {
               <button
                 key={s.id}
                 onClick={() => goTo(i)}
-                className={`flex items-center gap-2 px-2 py-1.5 rounded-lg text-left transition-colors text-[13px] font-body ${
+                className={`flex items-center gap-2 px-2 py-1 rounded-lg text-left transition-all text-[13px] font-body ${
                   active
                     ? "bg-primary text-primary-foreground font-semibold shadow-md"
                     : "hover:bg-muted text-muted-foreground hover:text-foreground"
@@ -145,16 +147,20 @@ const WebQuest1 = () => {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
               transition={{ duration: 0.2 }}
-              className="p-3 sm:p-4 md:p-6"
+              className="p-2 sm:p-3 md:px-8 md:py-3"
             >
-              <div className="bg-card/80 backdrop-blur-sm rounded-xl p-3 sm:p-5 md:p-6 shadow-sm border border-border/50">
-                <div className="flex items-center gap-3 mb-4">
-                  <span className="flex-shrink-0 w-9 h-9 rounded-lg bg-primary/10 text-primary flex items-center justify-center">
-                    {(() => { const Icon = steps[currentStep].icon; return <Icon className="w-5 h-5" />; })()}
+              <div className="bg-card/80 backdrop-blur-sm rounded-xl p-3 sm:p-4 md:p-5 shadow-sm border-2 border-transparent hover:shadow-lg transition-all duration-300"
+                style={{ borderImage: 'linear-gradient(135deg, hsl(var(--quest-sky)/0.4), hsl(var(--quest-gold)/0.4), hsl(var(--quest-emerald)/0.4)) 1', borderRadius: '0.75rem' }}
+                onMouseEnter={(e) => { e.currentTarget.style.borderImage = 'linear-gradient(135deg, hsl(var(--quest-sky)), hsl(var(--quest-gold)), hsl(var(--quest-emerald))) 1'; }}
+                onMouseLeave={(e) => { e.currentTarget.style.borderImage = 'linear-gradient(135deg, hsl(var(--quest-sky)/0.4), hsl(var(--quest-gold)/0.4), hsl(var(--quest-emerald)/0.4)) 1'; }}
+              >
+                <div className="flex items-center gap-2.5 mb-3">
+                  <span className="flex-shrink-0 w-8 h-8 rounded-lg bg-primary/10 text-primary flex items-center justify-center">
+                    {(() => { const Icon = steps[currentStep].icon; return <Icon className="w-4 h-4" />; })()}
                   </span>
                   <div>
-                    <span className="text-xs font-body text-muted-foreground uppercase tracking-wider">Step {currentStep + 1} / {steps.length}</span>
-                    <h3 className="font-display text-base sm:text-lg font-bold leading-tight">{steps[currentStep].label}</h3>
+                    <span className="text-[10px] font-body text-muted-foreground uppercase tracking-wider">Step {currentStep + 1} / {steps.length}</span>
+                    <h3 className="font-display text-sm sm:text-base font-bold leading-tight">{steps[currentStep].label}</h3>
                   </div>
                 </div>
 
@@ -164,7 +170,7 @@ const WebQuest1 = () => {
           </AnimatePresence>
 
           {/* Navigation buttons */}
-          <div className="flex items-center justify-between px-4 sm:px-6 md:px-8 py-4 border-t border-border/50 bg-card/70 backdrop-blur-md">
+          <div className="flex items-center justify-between px-4 sm:px-6 md:px-8 py-2.5 border-t border-border/50 bg-card/70 backdrop-blur-md">
             <Button variant="outline" size="sm" onClick={prev} disabled={currentStep === 0} className="font-body">
               <ChevronLeft className="w-4 h-4 mr-1" /> Previous
             </Button>
