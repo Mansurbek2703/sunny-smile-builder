@@ -79,9 +79,9 @@ const VocabularyMatchTask = ({ words }: VocabularyMatchTaskProps) => {
 
   return (
     <div className="space-y-4">
-      <div ref={containerRef} className="relative grid md:grid-cols-2 gap-6 md:gap-12">
+      <div ref={containerRef} className="relative grid grid-cols-2 gap-3 md:gap-8">
         {/* SVG lines overlay */}
-        <svg className="absolute inset-0 w-full h-full pointer-events-none z-10 hidden md:block">
+        <svg className="absolute inset-0 w-full h-full pointer-events-none z-10">
           {lines.map((line, i) => (
             <g key={i}>
               <line
@@ -127,7 +127,7 @@ const VocabularyMatchTask = ({ words }: VocabularyMatchTaskProps) => {
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               onClick={() => handleWordClick(i)}
-              className={`w-full text-left p-3 rounded-xl border-2 font-body text-sm transition-all ${
+              className={`w-full text-left p-2 sm:p-3 rounded-xl border-2 font-body text-xs sm:text-sm transition-all ${
                 activeWord === i
                   ? "border-accent bg-accent/15 ring-2 ring-accent/30 shadow-md"
                   : selected[i] !== undefined
@@ -140,11 +140,7 @@ const VocabularyMatchTask = ({ words }: VocabularyMatchTaskProps) => {
               }`}
             >
               <span className="font-semibold">{w.word}</span>
-              {selected[i] !== undefined && (
-                <span className="block text-xs text-muted-foreground mt-1 md:hidden">
-                  → {shuffledDefs[selected[i]]}
-                </span>
-              )}
+              
             </motion.button>
           ))}
         </div>
@@ -160,7 +156,7 @@ const VocabularyMatchTask = ({ words }: VocabularyMatchTaskProps) => {
                 whileTap={{ scale: 0.98 }}
                 onClick={() => handleDefClick(di)}
                 disabled={isUsed || activeWord === null}
-                className={`w-full text-left p-3 rounded-xl border-2 font-body text-sm transition-all ${
+                className={`w-full text-left p-2 sm:p-3 rounded-xl border-2 font-body text-xs sm:text-sm transition-all ${
                   isUsed ? "opacity-40 cursor-not-allowed border-muted" : activeWord !== null ? "border-accent/30 hover:bg-accent/10 cursor-pointer hover:shadow-sm" : "border-border bg-card"
                 }`}
               >

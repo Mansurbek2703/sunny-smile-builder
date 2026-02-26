@@ -238,7 +238,10 @@ function IntroStep() {
       <p className="font-body text-muted-foreground text-xs leading-snug mb-2">
         Holidays are more than just days off — they reflect the history, culture, and values of people. In this WebQuest, you will explore two important holidays: <strong>Thanksgiving</strong> in the United States and <strong>Navruz</strong> in Central Asia. While they come from different cultural traditions, both emphasize gratitude, family, food, and community.
       </p>
-      <img src="/images/webquest1/intro_traditions.jpg" alt="Navruz and Thanksgiving celebrations" loading="lazy" className="rounded-xl w-full h-32 sm:h-40 md:h-48 object-cover shadow-md" />
+      <div className="grid grid-cols-2 gap-2">
+        <img src="/images/webquest1/navruz1.jpg" alt="Navruz celebration" loading="lazy" className="rounded-xl w-full h-28 sm:h-36 md:h-44 object-cover shadow-md" />
+        <img src="/images/webquest1/thanksgiving1.jpg" alt="Thanksgiving celebration" loading="lazy" className="rounded-xl w-full h-28 sm:h-36 md:h-44 object-cover shadow-md" />
+      </div>
     </>
   );
 }
@@ -275,7 +278,7 @@ function Task1Step() {
 
 function VideosStep() {
   return (
-    <div className="space-y-3">
+    <div className="grid md:grid-cols-2 gap-2">
       <VideoTask title="Video Task I — Navruz in Tashkent" instruction="Watch the video and tell why Tashkent locals expect Navruz." videoUrl="https://www.youtube.com/watch?v=3k5bE-jV7sQ" thumbnail="/images/webquest1/video_task1.jpg" />
       <VideoTask title="Video Task II — Origin of Thanksgiving" instruction="Watch the video and tell about the origin of Thanksgiving Day." videoUrl="https://www.youtube.com/watch?v=oJ9B5HHYNbE" thumbnail="/images/webquest1/video_task2.jpg" />
     </div>
@@ -317,19 +320,21 @@ function NavruzReadingStep() {
 function NavruzTasksStep() {
   return (
     <>
-      <h4 className="font-display text-sm font-semibold mb-1.5">Task I: Match headings with paragraphs A–E</h4>
-      <MatchingTask
-        pairs={[
-          { left: "1. The origins of Navruz", right: "Paragraph ___" },
-          { left: "2. Modern adaptations", right: "Paragraph ___" },
-          { left: "3. What to say during Navruz", right: "Paragraph ___" },
-          { left: "4. Legends and stories", right: "Paragraph ___" },
-          { left: "5. Regional variations", right: "Paragraph ___" },
-          { left: "6. How Navruz is celebrated", right: "Paragraph ___" },
-          { left: "7. Traditional food and drink", right: "Paragraph ___" },
-        ]}
-        correctAnswers={{ 0: "B", 1: "F", 2: "F", 3: "D", 4: "C", 5: "A", 6: "E" }}
-      />
+      <h4 className="font-display text-sm font-semibold mb-1">Task I: Match headings with paragraphs A–E</h4>
+      <div className="md:columns-2 md:gap-2">
+        <MatchingTask
+          pairs={[
+            { left: "1. The origins of Navruz", right: "Paragraph ___" },
+            { left: "2. Modern adaptations", right: "Paragraph ___" },
+            { left: "3. What to say during Navruz", right: "Paragraph ___" },
+            { left: "4. Legends and stories", right: "Paragraph ___" },
+            { left: "5. Regional variations", right: "Paragraph ___" },
+            { left: "6. How Navruz is celebrated", right: "Paragraph ___" },
+            { left: "7. Traditional food and drink", right: "Paragraph ___" },
+          ]}
+          correctAnswers={{ 0: "B", 1: "F", 2: "F", 3: "D", 4: "C", 5: "A", 6: "E" }}
+        />
+      </div>
       <div className="mt-4">
         <h4 className="font-display text-sm font-semibold mb-1.5">Task II: Match Words with Meanings</h4>
         <VocabularyMatchTask
@@ -352,10 +357,9 @@ function NavruzTasksStep() {
 function ThanksgivingReadingStep() {
   return (
     <>
-      <div className="grid sm:grid-cols-3 gap-2 mb-2">
-        <img src="/images/webquest1/thanksgiving1.jpg" alt="Thanksgiving" className="rounded-lg w-full h-24 sm:h-28 object-cover shadow-sm bg-muted/30" />
+      <div className="grid sm:grid-cols-2 gap-2 mb-2">
         <img src="/images/webquest1/thanksgiving2.jpg" alt="Thanksgiving" className="rounded-lg w-full h-24 sm:h-28 object-cover shadow-sm bg-muted/30" />
-        <img src="/images/webquest1/thanksgiving3.jpg" alt="Thanksgiving" className="rounded-lg w-full h-24 sm:h-28 object-cover shadow-sm bg-muted/30 hidden sm:block" />
+        <img src="/images/webquest1/thanksgiving3.jpg" alt="Thanksgiving" className="rounded-lg w-full h-24 sm:h-28 object-cover shadow-sm bg-muted/30" />
       </div>
       {[
         { title: "🦃 Watch the Macy's Parade", text: "The Macy's Thanksgiving Day Parade is one of the most famous holiday traditions in the US. Thousands line the streets of Manhattan to watch giant inflatable balloons float between skyscrapers." },
@@ -375,15 +379,16 @@ function ThanksgivingReadingStep() {
 function ThanksgivingTasksStep() {
   return (
     <>
-      <OpenQuestionTask
-        title="Task II: Answer the Questions"
-        questions={[
-          "Which Thanksgiving traditions might seem unusual to people from your culture?",
-          "Which traditions are similar to holidays in your country?",
-        ]}
-      />
-      <div className="mt-3">
-        <h4 className="font-display text-sm font-semibold mb-1.5">Cultural Meanings</h4>
+      <div className="grid md:grid-cols-2 gap-2">
+        <OpenQuestionTask
+          title="Task II: Answer the Questions"
+          questions={[
+            "Which Thanksgiving traditions might seem unusual to people from your culture?",
+            "Which traditions are similar to holidays in your country?",
+          ]}
+        />
+        <div>
+          <h4 className="font-display text-sm font-semibold mb-1">Cultural Meanings</h4>
         <SelectMatchingTask
           pairs={[
             { left: "Sharing what you're thankful for", right: "" },
@@ -410,6 +415,7 @@ function ThanksgivingTasksStep() {
             5: "Cultural openness and hospitality",
           }}
         />
+        </div>
       </div>
     </>
   );
@@ -453,20 +459,20 @@ function IndividualStep() {
 function RolePlayStep() {
   return (
     <>
-      <img src="/images/webquest1/role_play.jpg" alt="Role play" className="rounded-lg w-full h-28 sm:h-32 object-cover shadow-sm mb-2 bg-muted/30" />
-      <h4 className="font-display text-sm font-semibold mb-1">Task VI: Do's and Don'ts for Visitors</h4>
-      <p className="font-body text-xs text-muted-foreground mb-2">Create a "Tourist Behaviour Guide": 3 Do's and 3 Don'ts for each holiday.</p>
-      <OpenQuestionTask
-        title="Task VII: Values Behind the Behaviour"
-        questions={[
-          "What cultural value does sharing sumalak represent?",
-          "What cultural value does Thanksgiving charity represent?",
-          "How do family gatherings reflect togetherness?",
-          "How does forgiveness at Navruz symbolize renewal?",
-        ]}
-      />
-      <div className="mt-3">
-        <h4 className="font-display text-sm font-semibold mb-1">Task VIII: Cultural Scenario Role-Play</h4>
+      <h4 className="font-display text-sm font-semibold mb-0.5">Task VI: Do's and Don'ts for Visitors</h4>
+      <p className="font-body text-xs text-muted-foreground mb-1">Create a "Tourist Behaviour Guide": 3 Do's and 3 Don'ts for each holiday.</p>
+      <div className="grid md:grid-cols-2 gap-2">
+        <OpenQuestionTask
+          title="Task VII: Values Behind the Behaviour"
+          questions={[
+            "What cultural value does sharing sumalak represent?",
+            "What cultural value does Thanksgiving charity represent?",
+            "How do family gatherings reflect togetherness?",
+            "How does forgiveness at Navruz symbolize renewal?",
+          ]}
+        />
+        <div>
+          <h4 className="font-display text-sm font-semibold mb-0.5">Task VIII: Cultural Scenario Role-Play</h4>
         <Card className="glass-card">
           <CardContent className="p-2 sm:p-3 font-body text-xs space-y-1">
             <p>You are invited to a <strong>Navruz celebration in Uzbekistan</strong> or a <strong>Thanksgiving dinner in the USA</strong>.</p>
@@ -478,6 +484,7 @@ function RolePlayStep() {
             <p className="text-primary font-medium">Extension: Act out one correct and one incorrect behaviour and explain why.</p>
           </CardContent>
         </Card>
+        </div>
       </div>
     </>
   );
