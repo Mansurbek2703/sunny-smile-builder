@@ -82,40 +82,37 @@ const VocabularyMatchTask = ({ words }: VocabularyMatchTaskProps) => {
       <div ref={containerRef} className="relative grid grid-cols-2 gap-3 md:gap-8">
         {/* SVG lines overlay */}
         <svg className="absolute inset-0 w-full h-full pointer-events-none z-10">
-          {lines.map((line, i) => (
-            <g key={i}>
-              <line
-                x1={line.x1}
-                y1={line.y1}
-                x2={line.x2}
-                y2={line.y2}
-                stroke={
+          <defs>
+            <filter id="line-shadow" x="-20%" y="-20%" width="140%" height="140%">
+              <feDropShadow dx="0" dy="1" stdDeviation="2" floodOpacity="0.15" />
+            </filter>
+          </defs>
+          {lines.map((line, i) => {
+            const color =
               line.correct === undefined
-                    ? "hsl(var(--accent))"
-                    : line.correct
-                    ? "hsl(160, 65%, 40%)"
-                    : "hsl(0, 70%, 55%)"
-                }
-                strokeWidth={2.5}
-                strokeDasharray={line.correct === undefined ? "6 3" : "none"}
-                opacity={0.7}
-              />
-              {/* Arrow head */}
-              <circle
-                cx={line.x2}
-                cy={line.y2}
-                r={4}
-                fill={
-                  line.correct === undefined
-                    ? "hsl(var(--accent))"
-                    : line.correct
-                    ? "hsl(160, 65%, 40%)"
-                    : "hsl(0, 70%, 55%)"
-                }
-                opacity={0.8}
-              />
-            </g>
-          ))}
+                ? "hsl(var(--accent))"
+                : line.correct
+                ? "hsl(152, 60%, 36%)"
+                : "hsl(0, 65%, 48%)";
+            // Smooth cubic bezier curve
+            const midX = (line.x1 + line.x2) / 2;
+            const path = `M ${line.x1} ${line.y1} C ${midX} ${line.y1}, ${midX} ${line.y2}, ${line.x2} ${line.y2}`;
+            return (
+              <g key={i} filter="url(#line-shadow)">
+                <path
+                  d={path}
+                  stroke={color}
+                  strokeWidth={3}
+                  fill="none"
+                  strokeLinecap="round"
+                  strokeDasharray={line.correct === undefined ? "8 4" : "none"}
+                  opacity={0.85}
+                />
+                <circle cx={line.x1} cy={line.y1} r={5} fill={color} opacity={0.9} />
+                <circle cx={line.x2} cy={line.y2} r={5} fill={color} opacity={0.9} />
+              </g>
+            );
+          })}
         </svg>
 
         <div className="space-y-2">
@@ -127,14 +124,14 @@ const VocabularyMatchTask = ({ words }: VocabularyMatchTaskProps) => {
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               onClick={() => handleWordClick(i)}
-              className={`w-full text-left p-2 sm:p-3 rounded-xl border-2 font-body text-xs sm:text-sm transition-all ${
+              className={`w-full text-left p-2 sm:p-3 rounded-xl border-[3px] font-body text-xs sm:text-sm transition-all ${
                 activeWord === i
                   ? "border-accent bg-accent/15 ring-2 ring-accent/30 shadow-md"
                   : selected[i] !== undefined
                   ? verified
                     ? isCorrect(i)
-                      ? "border-green-500 bg-green-500/10 text-green-700"
-                      : "border-red-500 bg-red-500/10 text-red-700"
+                      ? "border-emerald-500 bg-emerald-50 text-emerald-800 shadow-sm"
+                      : "border-rose-500 bg-rose-50 text-rose-800 shadow-sm"
                     : "border-accent/40 bg-accent/5"
                   : "border-border bg-card hover:border-accent/30 hover:shadow-sm"
               }`}
@@ -159,12 +156,12 @@ const VocabularyMatchTask = ({ words }: VocabularyMatchTaskProps) => {
                 whileTap={{ scale: 0.98 }}
                 onClick={() => handleDefClick(di)}
                 disabled={isUsed || activeWord === null}
-                className={`w-full text-left p-2 sm:p-3 rounded-xl border-2 font-body text-xs sm:text-sm transition-all ${
+                className={`w-full text-left p-2 sm:p-3 rounded-xl border-[3px] font-body text-xs sm:text-sm transition-all ${
                   verified && isUsed
                     ? defCorrect
-                      ? "border-green-500 bg-green-500/10 text-green-700"
-                      : "border-red-500 bg-red-500/10 text-red-700"
-                    : isUsed ? "opacity-40 cursor-not-allowed border-muted" : activeWord !== null ? "border-accent/30 hover:bg-accent/10 cursor-pointer hover:shadow-sm" : "border-border bg-card"
+                      ? "border-emerald-500 bg-emerald-50 text-emerald-800 shadow-sm"
+                      : "border-rose-500 bg-rose-50 text-rose-800 shadow-sm"
+                    : isUsed ? "border-accent/40 bg-accent/5" : activeWord !== null ? "border-border hover:border-accent/40 hover:bg-accent/10 cursor-pointer hover:shadow-sm" : "border-border bg-card"
                 }`}
               >
                 {def}
