@@ -270,7 +270,7 @@ function Task1Step() {
           { letter: "F", text: "Honouring deceased relatives, sugar skulls, marigolds" },
           { letter: "G", text: "July 4, fireworks, barbecues, Declaration of Independence" },
         ]}
-        correctAnswers={{ 0: 1, 1: 3, 2: 0, 3: 4, 4: 2, 5: 5 }}
+        correctAnswers={{ 0: 1, 1: 3, 3: 4, 4: 2, 5: 5, 6: 0 }}
       />
     </>
   );
@@ -318,29 +318,29 @@ function NavruzTasksStep() {
       <div className="md:columns-2 md:gap-2">
         <MatchingTask
           pairs={[
-            { left: "1. The origins of Navruz", right: "Paragraph ___" },
-            { left: "2. Modern adaptations", right: "Paragraph ___" },
-            { left: "3. What to say during Navruz", right: "Paragraph ___" },
-            { left: "4. Legends and stories", right: "Paragraph ___" },
-            { left: "5. Regional variations", right: "Paragraph ___" },
-            { left: "6. How Navruz is celebrated", right: "Paragraph ___" },
-            { left: "7. Traditional food and drink", right: "Paragraph ___" },
+            { left: "1. How Navruz is celebrated", right: "Paragraph ___" },
+            { left: "2. The origins of Navruz", right: "Paragraph ___" },
+            { left: "3. Regional and international variations", right: "Paragraph ___" },
+            { left: "4. Legends and stories of Navruz", right: "Paragraph ___" },
+            { left: "5. Traditional Navruz food and drink", right: "Paragraph ___" },
           ]}
-          correctAnswers={{ 0: "B", 1: "F", 2: "F", 3: "D", 4: "C", 5: "A", 6: "E" }}
+          correctAnswers={{ 0: "A", 1: "B", 2: "C", 3: "D", 4: "E" }}
         />
       </div>
       <div className="mt-4">
         <h4 className="font-display text-sm font-semibold mb-1.5">Task II: Match Words with Meanings</h4>
         <VocabularyMatchTask
           words={[
-            { word: "usher in", definition: "To introduce or mark the beginning of something" },
-            { word: "cherished", definition: "Highly valued and loved" },
-            { word: "reconciliation", definition: "The act of restoring friendly relations" },
-            { word: "equinox", definition: "A period when day and night are of equal length" },
-            { word: "folklore", definition: "Stories and traditions passed down through generations" },
-            { word: "abundance", definition: "A large quantity or plenty of something" },
-            { word: "allegory", definition: "A symbolic story with a deeper meaning" },
-            { word: "endurance", definition: "The ability to continue despite physical difficulty" },
+            { word: "A. usher in", definition: "To introduce or mark the beginning of something" },
+            { word: "B. cherished", definition: "Highly valued and loved" },
+            { word: "C. reconciliation", definition: "The act of restoring friendly relations" },
+            { word: "D. equinox", definition: "A period when day and night are of equal length" },
+            { word: "E. folklore", definition: "Stories and traditions passed down through generations" },
+            { word: "F. abundance", definition: "A large quantity or plenty of something" },
+            { word: "G. flair", definition: "A distinctive and creative style" },
+            { word: "H. allegory", definition: "A symbolic story with a deeper meaning" },
+            { word: "I. endurance", definition: "The ability to continue despite physical difficulty" },
+            { word: "J. heritage", definition: "Cultural traditions and history passed from the past" },
           ]}
         />
       </div>
@@ -402,11 +402,11 @@ function ThanksgivingTasksStep() {
           ]}
           correctAnswers={{
             0: "Gratitude and reflection",
-            1: "Community support",
-            2: "Social inclusion beyond family",
+            1: "Social inclusion beyond family",
+            2: "Empathy and social responsibility",
             3: "Strengthening family bonds",
-            4: "Empathy and social responsibility",
-            5: "Cultural openness and hospitality",
+            4: "Cultural openness and hospitality",
+            5: "Community support",
           }}
         />
         </div>
