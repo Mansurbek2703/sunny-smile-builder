@@ -116,8 +116,14 @@
   }
 
   .glass-card {
-    @apply backdrop-blur-md border;
+    @apply backdrop-blur-md border-2;
     background: hsl(var(--card) / 0.7);
+    border-image: linear-gradient(135deg, hsl(var(--quest-sky) / 0.3), hsl(var(--quest-gold) / 0.3), hsl(var(--quest-emerald) / 0.3)) 1;
+    transition: border-image 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .glass-card:hover {
+    border-image: linear-gradient(135deg, hsl(var(--quest-sky)), hsl(var(--quest-gold)), hsl(var(--quest-emerald))) 1;
   }
 
   .shimmer {
