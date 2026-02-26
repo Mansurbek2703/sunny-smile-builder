@@ -4,7 +4,7 @@ import { ArrowLeft, ChevronDown, ChevronUp, Play, CheckCircle2, XCircle, BookOpe
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import SiteHeader from "@/components/SiteHeader";
-import FloatingCulturalElements from "@/components/FloatingCulturalElements";
+
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import DragMatchingTask from "@/components/quest/DragMatchingTask";
 import MatchingTask from "@/components/quest/MatchingTask";
@@ -45,7 +45,7 @@ const WebQuest1 = () => {
   return (
     <div className="min-h-screen bg-background border-x-2 sm:border-x-4 border-[hsl(var(--frame-color))]">
       <SiteHeader />
-      <FloatingCulturalElements />
+      
       {/* Hero Banner */}
       <div className="relative h-[50vh] sm:h-[60vh] min-h-[320px] overflow-hidden">
         <img
