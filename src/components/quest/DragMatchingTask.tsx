@@ -78,7 +78,7 @@ const DragMatchingTask = ({ items, descriptions, correctAnswers }: DragMatchingT
   };
 
   return (
-    <div className="space-y-5">
+    <div className="space-y-2">
       {/* Instruction for mobile */}
       {isMobile && !showResults && (
         <p className="text-xs font-body text-muted-foreground text-center italic">
@@ -87,7 +87,7 @@ const DragMatchingTask = ({ items, descriptions, correctAnswers }: DragMatchingT
       )}
 
       {/* Flag images on top */}
-      <div className="flex flex-wrap gap-3 justify-center p-4 rounded-xl bg-muted/30 border-2 border-dashed border-border">
+      <div className="flex flex-wrap gap-2 justify-center p-2 rounded-xl bg-muted/30 border-2 border-dashed border-border">
         {items.map((item, i) => (
           <motion.div
             key={i}
@@ -133,7 +133,7 @@ const DragMatchingTask = ({ items, descriptions, correctAnswers }: DragMatchingT
       </div>
 
       {/* Description rows with drop zones */}
-      <div className="space-y-2">
+      <div className="grid md:grid-cols-2 gap-1.5">
         {descriptions.map((desc, di) => {
           const assignedItem = assignments[di] !== undefined ? items[assignments[di]] : null;
           const isCorrect = showResults && assignments[di] === correctAnswers[di];
@@ -149,7 +149,7 @@ const DragMatchingTask = ({ items, descriptions, correctAnswers }: DragMatchingT
               onDragOver={handleDragOver}
               onDrop={() => handleDrop(di)}
               onClick={() => handleDropZoneTap(di)}
-              className={`flex items-center gap-3 p-3 rounded-xl border-2 transition-all ${
+              className={`flex items-center gap-2 p-2 rounded-lg border-2 transition-all ${
                 isMobile && selected !== null ? "cursor-pointer" : ""
               } ${
                 showResults
@@ -171,7 +171,7 @@ const DragMatchingTask = ({ items, descriptions, correctAnswers }: DragMatchingT
 
               {/* Drop zone for flag */}
               <div
-                className={`flex-shrink-0 w-20 h-14 sm:w-24 sm:h-16 rounded-lg border-2 border-dashed flex items-center justify-center overflow-hidden transition-all ${
+                className={`flex-shrink-0 w-14 h-10 sm:w-16 sm:h-11 rounded-md border-2 border-dashed flex items-center justify-center overflow-hidden transition-all ${
                   assignedItem
                     ? "border-solid border-accent/50"
                     : isDropTarget
@@ -221,7 +221,7 @@ const DragMatchingTask = ({ items, descriptions, correctAnswers }: DragMatchingT
         })}
       </div>
 
-      <div className="flex gap-3 pt-2">
+      <div className="flex gap-2 pt-1">
         <Button onClick={() => setShowResults(true)} disabled={showResults || Object.keys(assignments).length === 0} size="sm" className="font-body">
           <CheckCircle2 className="w-4 h-4 mr-1" /> Check Answers
         </Button>
