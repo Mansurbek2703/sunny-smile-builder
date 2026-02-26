@@ -11,7 +11,7 @@ const OpenQuestionTask = ({ title, questions }: OpenQuestionTaskProps) => {
   const [answers, setAnswers] = useState<Record<number, string>>({});
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-2">
       <h4 className="font-display text-lg font-semibold">{title}</h4>
       {questions.map((q, i) => (
         <div key={i} className="space-y-2">
@@ -23,7 +23,7 @@ const OpenQuestionTask = ({ title, questions }: OpenQuestionTaskProps) => {
             value={answers[i] || ""}
             onChange={(e) => setAnswers((prev) => ({ ...prev, [i]: e.target.value }))}
             placeholder="Write your answer here..."
-            className="w-full p-3 rounded-lg border bg-background font-body text-sm resize-none min-h-[80px] focus:ring-2 focus:ring-primary focus:outline-none"
+            className="w-full p-2 rounded-lg border bg-background font-body text-sm resize-none min-h-[50px] focus:ring-2 focus:ring-primary focus:outline-none"
           />
         </div>
       ))}
