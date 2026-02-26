@@ -90,11 +90,11 @@ const VocabularyMatchTask = ({ words }: VocabularyMatchTaskProps) => {
                 x2={line.x2}
                 y2={line.y2}
                 stroke={
-                  line.correct === undefined
-                    ? "hsl(175, 60%, 42%)"
+              line.correct === undefined
+                    ? "hsl(var(--accent))"
                     : line.correct
                     ? "hsl(160, 65%, 40%)"
-                    : "hsl(0, 80%, 58%)"
+                    : "hsl(0, 70%, 55%)"
                 }
                 strokeWidth={2.5}
                 strokeDasharray={line.correct === undefined ? "6 3" : "none"}
@@ -107,10 +107,10 @@ const VocabularyMatchTask = ({ words }: VocabularyMatchTaskProps) => {
                 r={4}
                 fill={
                   line.correct === undefined
-                    ? "hsl(175, 60%, 42%)"
+                    ? "hsl(var(--accent))"
                     : line.correct
                     ? "hsl(160, 65%, 40%)"
-                    : "hsl(0, 80%, 58%)"
+                    : "hsl(0, 70%, 55%)"
                 }
                 opacity={0.8}
               />
@@ -133,8 +133,8 @@ const VocabularyMatchTask = ({ words }: VocabularyMatchTaskProps) => {
                   : selected[i] !== undefined
                   ? verified
                     ? isCorrect(i)
-                      ? "border-primary/50 bg-primary/10"
-                      : "border-destructive/50 bg-destructive/10"
+                      ? "border-green-500 bg-green-500/10 text-green-700"
+                      : "border-red-500 bg-red-500/10 text-red-700"
                     : "border-accent/40 bg-accent/5"
                   : "border-border bg-card hover:border-accent/30 hover:shadow-sm"
               }`}
@@ -148,6 +148,9 @@ const VocabularyMatchTask = ({ words }: VocabularyMatchTaskProps) => {
           <h5 className="font-body text-xs font-semibold uppercase tracking-wider text-accent mb-2">Definitions</h5>
           {shuffledDefs.map((def, di) => {
             const isUsed = Object.values(selected).includes(di);
+            // Find which word this definition is matched to (if any)
+            const matchedWordIdx = Object.entries(selected).find(([, v]) => v === di)?.[0];
+            const defCorrect = verified && matchedWordIdx !== undefined ? isCorrect(Number(matchedWordIdx)) : undefined;
             return (
               <motion.button
                 key={di}
@@ -157,7 +160,11 @@ const VocabularyMatchTask = ({ words }: VocabularyMatchTaskProps) => {
                 onClick={() => handleDefClick(di)}
                 disabled={isUsed || activeWord === null}
                 className={`w-full text-left p-2 sm:p-3 rounded-xl border-2 font-body text-xs sm:text-sm transition-all ${
-                  isUsed ? "opacity-40 cursor-not-allowed border-muted" : activeWord !== null ? "border-accent/30 hover:bg-accent/10 cursor-pointer hover:shadow-sm" : "border-border bg-card"
+                  verified && isUsed
+                    ? defCorrect
+                      ? "border-green-500 bg-green-500/10 text-green-700"
+                      : "border-red-500 bg-red-500/10 text-red-700"
+                    : isUsed ? "opacity-40 cursor-not-allowed border-muted" : activeWord !== null ? "border-accent/30 hover:bg-accent/10 cursor-pointer hover:shadow-sm" : "border-border bg-card"
                 }`}
               >
                 {def}
@@ -175,8 +182,11 @@ const VocabularyMatchTask = ({ words }: VocabularyMatchTaskProps) => {
         </Button>
       </div>
       {verified && (
-        <p className="font-body text-sm text-primary font-medium">
+        <p className={`font-body text-sm font-medium ${
+          Object.keys(selected).filter((k) => isCorrect(Number(k))).length === words.length ? "text-green-600" : "text-primary"
+        }`}>
           {Object.keys(selected).filter((k) => isCorrect(Number(k))).length} / {words.length} correct!
+          {Object.keys(selected).filter((k) => isCorrect(Number(k))).length === words.length && " 🎉"}
         </p>
       )}
     </div>
