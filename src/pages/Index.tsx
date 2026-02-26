@@ -2,7 +2,6 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { BookOpen, Sparkles } from "lucide-react";
 import SiteHeader from "@/components/SiteHeader";
-import FloatingCulturalElements from "@/components/FloatingCulturalElements";
 
 const quests = [
   {
@@ -76,13 +75,15 @@ const item = {
 const Index = () => {
   return (
     <div className="min-h-screen bg-background overflow-hidden border-x-2 sm:border-x-4 border-[hsl(var(--frame-color))] relative">
-      {/* Background Video */}
+      {/* Background Video — lazy loaded */}
       <div className="fixed inset-0 z-0 overflow-hidden">
         <video
           autoPlay
           loop
           muted
           playsInline
+          preload="metadata"
+          poster=""
           className="absolute min-w-full min-h-full w-auto h-auto top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 object-cover opacity-0 animate-[fadeIn_2s_ease-in-out_forwards]"
           src="/videos/bg-culture.mp4"
         />
@@ -91,7 +92,6 @@ const Index = () => {
 
       <div className="relative z-10">
       <SiteHeader />
-      <FloatingCulturalElements />
 
       {/* Hero */}
       <header className="relative py-16 md:py-28 px-4 sm:px-8 lg:px-12 z-10">
@@ -159,6 +159,8 @@ const Index = () => {
                   <img
                     src={q.image}
                     alt={q.title}
+                    loading="lazy"
+                    decoding="async"
                     className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-[hsl(220,22%,8%)]/40 group-hover:bg-[hsl(220,22%,8%)]/30 transition-colors" />
