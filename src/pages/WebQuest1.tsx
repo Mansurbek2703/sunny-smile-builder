@@ -55,13 +55,13 @@ const WebQuest1 = () => {
         <SiteHeader />
 
         {/* Main layout: sidebar + content */}
-        <div className="max-w-7xl mx-auto flex min-h-[calc(100vh-100px)]">
+        <div className="w-full flex min-h-[calc(100vh-56px)]">
 
           {/* Desktop sidebar */}
-          <aside className="hidden md:flex flex-col w-56 shrink-0 border-r border-border/50 bg-card/70 backdrop-blur-md sticky top-0 self-start max-h-screen overflow-y-auto py-2 px-1.5 gap-0.5">
+          <aside className="hidden md:flex flex-col w-52 shrink-0 border-r border-border/50 bg-card/70 backdrop-blur-md sticky top-0 self-start max-h-screen overflow-y-auto py-1.5 px-1 gap-px">
             {/* Title inside sidebar */}
-            <div className="px-2 pb-2 mb-1.5 border-b border-border/50">
-              <Link to="/" className="flex items-center gap-1 text-muted-foreground hover:text-foreground text-xs font-body mb-1.5 transition-colors">
+            <div className="px-1.5 pb-1.5 mb-1 border-b border-border/50">
+              <Link to="/" className="flex items-center gap-1 text-muted-foreground hover:text-foreground text-xs font-body mb-1 transition-colors">
                 <ArrowLeft className="w-3 h-3" /> Orqaga
               </Link>
               <span className="text-[9px] font-body font-medium uppercase tracking-widest text-quest-gold">Module 1</span>
@@ -74,7 +74,7 @@ const WebQuest1 = () => {
               <button
                 key={s.id}
                 onClick={() => goTo(i)}
-                className={`flex items-center gap-2.5 px-2.5 py-2 rounded-lg text-left transition-colors text-sm font-body ${
+                className={`flex items-center gap-2 px-2 py-1.5 rounded-lg text-left transition-colors text-[13px] font-body ${
                   active
                     ? "bg-primary text-primary-foreground font-semibold shadow-md"
                     : "hover:bg-muted text-muted-foreground hover:text-foreground"
@@ -145,16 +145,16 @@ const WebQuest1 = () => {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
               transition={{ duration: 0.2 }}
-              className="p-4 sm:p-6 md:p-8"
+              className="p-3 sm:p-4 md:p-6"
             >
-              <div className="bg-card/80 backdrop-blur-sm rounded-xl p-4 sm:p-6 md:p-8 shadow-sm border border-border/50">
-                <div className="flex items-center gap-3 mb-6">
-                  <span className="flex-shrink-0 w-10 h-10 rounded-lg bg-primary/10 text-primary flex items-center justify-center">
+              <div className="bg-card/80 backdrop-blur-sm rounded-xl p-3 sm:p-5 md:p-6 shadow-sm border border-border/50">
+                <div className="flex items-center gap-3 mb-4">
+                  <span className="flex-shrink-0 w-9 h-9 rounded-lg bg-primary/10 text-primary flex items-center justify-center">
                     {(() => { const Icon = steps[currentStep].icon; return <Icon className="w-5 h-5" />; })()}
                   </span>
                   <div>
                     <span className="text-xs font-body text-muted-foreground uppercase tracking-wider">Step {currentStep + 1} / {steps.length}</span>
-                    <h3 className="font-display text-lg sm:text-xl font-bold">{steps[currentStep].label}</h3>
+                    <h3 className="font-display text-base sm:text-lg font-bold leading-tight">{steps[currentStep].label}</h3>
                   </div>
                 </div>
 
