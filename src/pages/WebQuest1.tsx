@@ -288,10 +288,9 @@ function VideosStep() {
 function NavruzReadingStep() {
   return (
     <>
-      <div className="grid sm:grid-cols-3 gap-2 mb-2">
-        <img src="/images/webquest1/navruz1.jpg" alt="Navruz" className="rounded-lg w-full h-24 sm:h-28 object-cover shadow-sm bg-muted/30" />
-        <img src="/images/webquest1/navruz2.jpg" alt="Navruz celebration" className="rounded-lg w-full h-24 sm:h-28 object-cover shadow-sm bg-muted/30" />
-        <img src="/images/webquest1/navruz3.jpg" alt="Navruz food" className="rounded-lg w-full h-24 sm:h-28 object-cover shadow-sm bg-muted/30 hidden sm:block" />
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-3">
+        <img src="/images/webquest1/navruz_reading1.jpg" alt="Navro'z bayram dasturxoni" loading="lazy" className="rounded-xl w-full h-auto object-cover shadow-md" />
+        <img src="/images/webquest1/navruz_reading2.jpg" alt="Sumalak pishirish marosimi" loading="lazy" className="rounded-xl w-full h-auto object-cover shadow-md" />
       </div>
       <ReadingSection title="A — How Navruz is celebrated">
         Each spring, Uzbekistan bursts into colour and celebration as Navruz — literally translating to 'New Day' — ushers in the Persian New Year. Marking the arrival of spring on 21 March, Navruz is one of the most significant festivals across Central Asia, deeply rooted in tradition, history, and community spirit. Streets come alive with festivities, music, and dance, while families prepare special meals and visit relatives. One of the most beloved traditions is cooking and sharing sumalak.
@@ -308,11 +307,6 @@ function NavruzReadingStep() {
       <ReadingSection title="E — Food and Drink">
         Besides sumalak, popular dishes include halim (wheat and meat porridge) and kuk samsa (pastries filled with greens). Dried fruits and nuts are shared generously.
       </ReadingSection>
-      <div className="grid sm:grid-cols-3 gap-2 mt-2">
-        <img src="/images/webquest1/navruz_celebration1.jpg" alt="Navruz" className="rounded-lg w-full h-24 sm:h-28 object-cover shadow-sm bg-muted/30" />
-        <img src="/images/webquest1/navruz_celebration2.jpg" alt="Navruz" className="rounded-lg w-full h-24 sm:h-28 object-cover shadow-sm bg-muted/30" />
-        <img src="/images/webquest1/navruz_celebration3.jpg" alt="Kupkari" className="rounded-lg w-full h-24 sm:h-28 object-cover shadow-sm bg-muted/30 hidden sm:block" />
-      </div>
     </>
   );
 }
