@@ -58,9 +58,9 @@ const WebQuest1 = () => {
         <div className="max-w-7xl mx-auto flex min-h-[calc(100vh-100px)]">
 
           {/* Desktop sidebar */}
-          <aside className="hidden md:flex flex-col w-60 shrink-0 border-r border-border/50 bg-card/70 backdrop-blur-md sticky top-0 self-start max-h-screen overflow-y-auto py-3 px-2 gap-0.5">
+          <aside className="hidden md:flex flex-col w-56 shrink-0 border-r border-border/50 bg-card/70 backdrop-blur-md sticky top-0 self-start max-h-screen overflow-y-auto py-2 px-1.5 gap-0.5">
             {/* Title inside sidebar */}
-            <div className="px-3 pb-3 mb-2 border-b border-border/50">
+            <div className="px-2 pb-2 mb-1.5 border-b border-border/50">
               <Link to="/" className="flex items-center gap-1 text-muted-foreground hover:text-foreground text-xs font-body mb-1.5 transition-colors">
                 <ArrowLeft className="w-3 h-3" /> Orqaga
               </Link>
@@ -74,7 +74,7 @@ const WebQuest1 = () => {
               <button
                 key={s.id}
                 onClick={() => goTo(i)}
-                className={`flex items-center gap-3 px-3 py-2.5 rounded-lg text-left transition-colors text-sm font-body ${
+                className={`flex items-center gap-2.5 px-2.5 py-2 rounded-lg text-left transition-colors text-sm font-body ${
                   active
                     ? "bg-primary text-primary-foreground font-semibold shadow-md"
                     : "hover:bg-muted text-muted-foreground hover:text-foreground"

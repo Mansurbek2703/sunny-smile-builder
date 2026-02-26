@@ -1,7 +1,8 @@
-import { useState, useRef } from "react";
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { CheckCircle2, XCircle, RotateCcw, GripHorizontal } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 interface DragMatchingTaskProps {
   items: { label: string; image: string }[];
@@ -12,7 +13,9 @@ interface DragMatchingTaskProps {
 const DragMatchingTask = ({ items, descriptions, correctAnswers }: DragMatchingTaskProps) => {
   const [assignments, setAssignments] = useState<Record<number, number>>({}); // descIndex -> itemIndex
   const [dragging, setDragging] = useState<number | null>(null);
+  const [selected, setSelected] = useState<number | null>(null); // for tap-to-place on mobile
   const [showResults, setShowResults] = useState(false);
+  const isMobile = useIsMobile();
 
   const handleDragStart = (itemIndex: number) => {
     setDragging(itemIndex);
@@ -20,7 +23,6 @@ const DragMatchingTask = ({ items, descriptions, correctAnswers }: DragMatchingT
 
   const handleDrop = (descIndex: number) => {
     if (dragging === null || showResults) return;
-    // Remove this item from any other assignment
     const newAssignments = { ...assignments };
     Object.entries(newAssignments).forEach(([key, val]) => {
       if (val === dragging) delete newAssignments[Number(key)];
@@ -41,29 +43,67 @@ const DragMatchingTask = ({ items, descriptions, correctAnswers }: DragMatchingT
     setAssignments(newAssignments);
   };
 
+  // Tap-to-select on mobile: tap flag -> tap drop zone
+  const handleItemTap = (itemIndex: number) => {
+    if (showResults || !isMobile) return;
+    if (usedItems.has(itemIndex)) return;
+    setSelected(prev => prev === itemIndex ? null : itemIndex);
+  };
+
+  const handleDropZoneTap = (descIndex: number) => {
+    if (!isMobile || showResults) return;
+    if (selected === null) {
+      // If tapping a filled zone, remove it
+      if (assignments[descIndex] !== undefined) {
+        removeAssignment(descIndex);
+      }
+      return;
+    }
+    const newAssignments = { ...assignments };
+    Object.entries(newAssignments).forEach(([key, val]) => {
+      if (val === selected) delete newAssignments[Number(key)];
+    });
+    newAssignments[descIndex] = selected;
+    setAssignments(newAssignments);
+    setSelected(null);
+  };
+
   const usedItems = new Set(Object.values(assignments));
 
   const reset = () => {
     setAssignments({});
     setShowResults(false);
     setDragging(null);
+    setSelected(null);
   };
 
   return (
     <div className="space-y-5">
-      {/* Flag images on top - draggable */}
+      {/* Instruction for mobile */}
+      {isMobile && !showResults && (
+        <p className="text-xs font-body text-muted-foreground text-center italic">
+          Bayroqni bosing, keyin joylashtirish uchun qatorni bosing
+        </p>
+      )}
+
+      {/* Flag images on top */}
       <div className="flex flex-wrap gap-3 justify-center p-4 rounded-xl bg-muted/30 border-2 border-dashed border-border">
         {items.map((item, i) => (
           <motion.div
             key={i}
-            draggable={!showResults && !usedItems.has(i)}
+            draggable={!isMobile && !showResults && !usedItems.has(i)}
             onDragStart={() => handleDragStart(i)}
             onDragEnd={() => setDragging(null)}
+            onClick={() => handleItemTap(i)}
             whileHover={!usedItems.has(i) ? { scale: 1.08, y: -4 } : {}}
             whileTap={!usedItems.has(i) ? { scale: 0.95 } : {}}
-            className={`relative cursor-grab active:cursor-grabbing transition-all rounded-xl overflow-hidden shadow-md border-2 ${
+            className={`relative transition-all rounded-xl overflow-hidden shadow-md border-2 ${
+              isMobile ? "cursor-pointer" : "cursor-grab active:cursor-grabbing"
+            } ${
               usedItems.has(i)
                 ? "opacity-30 cursor-not-allowed border-muted"
+                : selected === i
+                ? "ring-4 ring-quest-gold shadow-lg border-quest-gold scale-105"
                 : dragging === i
                 ? "ring-4 ring-accent shadow-lg border-accent"
                 : "border-border hover:border-accent hover:shadow-xl"
@@ -78,9 +118,14 @@ const DragMatchingTask = ({ items, descriptions, correctAnswers }: DragMatchingT
             <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-foreground/80 to-transparent px-2 py-1">
               <span className="text-[10px] font-body font-semibold text-background">{item.label}</span>
             </div>
-            {!usedItems.has(i) && !showResults && (
+            {!usedItems.has(i) && !showResults && !isMobile && (
               <div className="absolute top-1 right-1 bg-background/70 rounded p-0.5">
                 <GripHorizontal className="w-3 h-3 text-muted-foreground" />
+              </div>
+            )}
+            {selected === i && (
+              <div className="absolute inset-0 bg-quest-gold/20 flex items-center justify-center">
+                <span className="text-xs font-body font-bold text-foreground bg-background/80 px-2 py-0.5 rounded">✓ Tanlangan</span>
               </div>
             )}
           </motion.div>
@@ -93,6 +138,7 @@ const DragMatchingTask = ({ items, descriptions, correctAnswers }: DragMatchingT
           const assignedItem = assignments[di] !== undefined ? items[assignments[di]] : null;
           const isCorrect = showResults && assignments[di] === correctAnswers[di];
           const isWrong = showResults && assignments[di] !== undefined && assignments[di] !== correctAnswers[di];
+          const isDropTarget = isMobile && selected !== null && !assignedItem;
 
           return (
             <motion.div
@@ -102,13 +148,18 @@ const DragMatchingTask = ({ items, descriptions, correctAnswers }: DragMatchingT
               transition={{ delay: di * 0.05 }}
               onDragOver={handleDragOver}
               onDrop={() => handleDrop(di)}
+              onClick={() => handleDropZoneTap(di)}
               className={`flex items-center gap-3 p-3 rounded-xl border-2 transition-all ${
+                isMobile && selected !== null ? "cursor-pointer" : ""
+              } ${
                 showResults
                   ? isCorrect
                     ? "bg-primary/10 border-primary/40"
                     : isWrong
                     ? "bg-destructive/10 border-destructive/40"
                     : "bg-muted/20 border-border"
+                  : isDropTarget
+                  ? "border-quest-gold/60 bg-quest-gold/10"
                   : dragging !== null
                   ? "border-accent/50 bg-accent/5"
                   : "bg-card border-border"
@@ -123,11 +174,18 @@ const DragMatchingTask = ({ items, descriptions, correctAnswers }: DragMatchingT
                 className={`flex-shrink-0 w-20 h-14 sm:w-24 sm:h-16 rounded-lg border-2 border-dashed flex items-center justify-center overflow-hidden transition-all ${
                   assignedItem
                     ? "border-solid border-accent/50"
+                    : isDropTarget
+                    ? "border-quest-gold bg-quest-gold/15 animate-pulse"
                     : dragging !== null
                     ? "border-accent bg-accent/10 animate-pulse"
                     : "border-muted-foreground/20"
                 }`}
-                onClick={() => assignedItem && removeAssignment(di)}
+                onClick={(e) => {
+                  if (assignedItem && !isMobile) {
+                    e.stopPropagation();
+                    removeAssignment(di);
+                  }
+                }}
                 title={assignedItem ? "Click to remove" : "Drop flag here"}
               >
                 {assignedItem ? (
@@ -139,6 +197,8 @@ const DragMatchingTask = ({ items, descriptions, correctAnswers }: DragMatchingT
                       </div>
                     )}
                   </div>
+                ) : isDropTarget ? (
+                  <span className="text-xs text-quest-gold font-body font-medium">👆</span>
                 ) : (
                   <span className="text-xs text-muted-foreground/50 font-body">🏳️</span>
                 )}
