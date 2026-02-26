@@ -44,28 +44,35 @@ const WebQuest1 = () => {
   const next = () => currentStep < steps.length - 1 && goTo(currentStep + 1);
 
   return (
-    <div className="min-h-screen bg-background">
-      <SiteHeader />
-
-      {/* Hero — compact */}
-      <div className="relative h-[35vh] sm:h-[40vh] min-h-[220px] overflow-hidden">
-        <img src="/images/webquest1/hero_banner.jpg" alt="Thanksgiving and Navruz" className="absolute inset-0 w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[hsl(220,22%,8%)]/80 via-[hsl(220,22%,8%)]/40 to-transparent" />
-        <div className="relative h-full flex flex-col justify-end p-4 sm:p-6 md:p-10 max-w-6xl mx-auto">
-          <Link to="/" className="absolute top-4 left-4 sm:top-6 sm:left-6">
-            <Button variant="ghost" size="sm" className="text-white hover:bg-white/20 font-body"><ArrowLeft className="w-4 h-4 mr-2" /> Orqaga</Button>
-          </Link>
-          <span className="inline-block px-3 py-1 rounded-full bg-primary/20 text-primary-foreground text-xs font-body font-medium uppercase tracking-widest mb-2">Module 1 — Holidays & Traditions</span>
-          <h1 className="font-display text-2xl sm:text-3xl md:text-5xl font-bold text-white mb-1">🌍 WebQuest 1</h1>
-          <h2 className="font-display text-base sm:text-lg md:text-xl text-white/90 font-semibold">Thanksgiving & Navruz — Traditions of Gratitude and Renewal</h2>
-        </div>
+    <div className="min-h-screen bg-background relative">
+      {/* Full-screen background image */}
+      <div className="fixed inset-0 z-0">
+        <img src="/images/webquest1/hero_banner.jpg" alt="" className="w-full h-full object-cover" />
+        <div className="absolute inset-0 bg-background/85 backdrop-blur-sm" />
       </div>
 
-      {/* Main layout: sidebar + content */}
-      <div className="max-w-6xl mx-auto flex min-h-[60vh]">
+      <div className="relative z-10">
+        <SiteHeader />
 
-        {/* Desktop sidebar */}
-        <aside className="hidden md:flex flex-col w-64 shrink-0 border-r bg-card/50 sticky top-0 self-start max-h-screen overflow-y-auto py-4 px-2 gap-1">
+        {/* Compact title bar */}
+        <div className="relative overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-r from-[hsl(220,40%,15%)]/90 to-[hsl(220,40%,25%)]/80" />
+          <div className="relative px-4 sm:px-6 md:px-10 py-4 sm:py-5 max-w-7xl mx-auto flex items-center gap-4">
+            <Link to="/">
+              <Button variant="ghost" size="sm" className="text-white/90 hover:bg-white/20 font-body"><ArrowLeft className="w-4 h-4 mr-1" /> Orqaga</Button>
+            </Link>
+            <div className="min-w-0">
+              <span className="text-[10px] sm:text-xs font-body font-medium uppercase tracking-widest text-quest-gold">Module 1 — Holidays & Traditions</span>
+              <h1 className="font-display text-lg sm:text-xl md:text-2xl font-bold text-white leading-tight truncate">🌍 WebQuest 1 <span className="hidden sm:inline font-semibold text-white/80 text-base md:text-lg">— Thanksgiving & Navruz</span></h1>
+            </div>
+          </div>
+        </div>
+
+        {/* Main layout: sidebar + content */}
+        <div className="max-w-7xl mx-auto flex min-h-[calc(100vh-140px)]">
+
+          {/* Desktop sidebar */}
+          <aside className="hidden md:flex flex-col w-60 shrink-0 border-r border-border/50 bg-card/70 backdrop-blur-md sticky top-0 self-start max-h-screen overflow-y-auto py-3 px-2 gap-0.5">
           {steps.map((s, i) => {
             const Icon = s.icon;
             const active = i === currentStep;
@@ -123,7 +130,7 @@ const WebQuest1 = () => {
         {/* Content area */}
         <main className="flex-1 min-w-0">
           {/* Mobile top bar */}
-          <div className="md:hidden flex items-center gap-2 px-4 py-3 border-b bg-card/80 sticky top-0 z-30">
+          <div className="md:hidden flex items-center gap-2 px-4 py-3 border-b border-border/50 bg-card/70 backdrop-blur-md sticky top-0 z-30">
             <button onClick={() => setMobileMenuOpen(true)} className="p-2 rounded-lg hover:bg-muted"><Menu className="w-5 h-5" /></button>
             <span className="font-body text-sm text-muted-foreground">{currentStep + 1}/{steps.length}</span>
             <span className="font-display font-semibold text-sm truncate">{steps[currentStep].label}</span>
@@ -133,28 +140,30 @@ const WebQuest1 = () => {
           <AnimatePresence mode="wait">
             <motion.div
               key={currentStep}
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -20 }}
-              transition={{ duration: 0.25 }}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              transition={{ duration: 0.2 }}
               className="p-4 sm:p-6 md:p-8"
             >
-              <div className="flex items-center gap-3 mb-6">
-                <span className="flex-shrink-0 w-10 h-10 rounded-lg bg-primary/10 text-primary flex items-center justify-center">
-                  {(() => { const Icon = steps[currentStep].icon; return <Icon className="w-5 h-5" />; })()}
-                </span>
-                <div>
-                  <span className="text-xs font-body text-muted-foreground uppercase tracking-wider">Step {currentStep + 1} / {steps.length}</span>
-                  <h3 className="font-display text-lg sm:text-xl font-bold">{steps[currentStep].label}</h3>
+              <div className="bg-card/80 backdrop-blur-sm rounded-xl p-4 sm:p-6 md:p-8 shadow-sm border border-border/50">
+                <div className="flex items-center gap-3 mb-6">
+                  <span className="flex-shrink-0 w-10 h-10 rounded-lg bg-primary/10 text-primary flex items-center justify-center">
+                    {(() => { const Icon = steps[currentStep].icon; return <Icon className="w-5 h-5" />; })()}
+                  </span>
+                  <div>
+                    <span className="text-xs font-body text-muted-foreground uppercase tracking-wider">Step {currentStep + 1} / {steps.length}</span>
+                    <h3 className="font-display text-lg sm:text-xl font-bold">{steps[currentStep].label}</h3>
+                  </div>
                 </div>
-              </div>
 
-              <StepContent stepId={steps[currentStep].id} />
+                <StepContent stepId={steps[currentStep].id} />
+              </div>
             </motion.div>
           </AnimatePresence>
 
           {/* Navigation buttons */}
-          <div className="flex items-center justify-between px-4 sm:px-6 md:px-8 py-4 border-t bg-card/50">
+          <div className="flex items-center justify-between px-4 sm:px-6 md:px-8 py-4 border-t border-border/50 bg-card/70 backdrop-blur-md">
             <Button variant="outline" size="sm" onClick={prev} disabled={currentStep === 0} className="font-body">
               <ChevronLeft className="w-4 h-4 mr-1" /> Previous
             </Button>
@@ -168,14 +177,15 @@ const WebQuest1 = () => {
             </Button>
           </div>
         </main>
-      </div>
+        </div>
 
-      <footer className="border-t py-6 text-center space-y-1">
-        <p className="font-body text-sm text-muted-foreground">WebQuest Explorer — WebQuest 1: Thanksgiving & Navruz</p>
-        <p className="font-body text-xs text-muted-foreground/70">
-          This site developed by <span className="font-semibold text-foreground/70">Mansurbek Qazaqov</span>. Lead specialist of IT department at AL-Khwarizmi University.
-        </p>
-      </footer>
+        <footer className="border-t border-border/50 py-6 text-center space-y-1 bg-card/70 backdrop-blur-md">
+          <p className="font-body text-sm text-muted-foreground">WebQuest Explorer — WebQuest 1: Thanksgiving & Navruz</p>
+          <p className="font-body text-xs text-muted-foreground/70">
+            This site developed by <span className="font-semibold text-foreground/70">Mansurbek Qazaqov</span>. Lead specialist of IT department at AL-Khwarizmi University.
+          </p>
+        </footer>
+      </div>
     </div>
   );
 };
