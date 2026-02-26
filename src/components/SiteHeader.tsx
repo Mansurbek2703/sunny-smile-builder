@@ -7,7 +7,7 @@ const SiteHeader = () => {
       {/* Top accent line — vivid gradient */}
       <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-[hsl(var(--quest-sky))] via-[hsl(var(--quest-gold))] to-[hsl(var(--quest-emerald))]" />
       
-      <div className="w-full px-4 sm:px-8 lg:px-12 py-3 sm:py-4 flex items-center gap-4 sm:gap-6">
+      <div className="w-full px-4 sm:px-8 lg:px-12 py-2 sm:py-2.5 flex items-center gap-3 sm:gap-5">
         {/* Logo */}
         <Link to="/" className="flex-shrink-0">
           <motion.img
@@ -15,7 +15,7 @@ const SiteHeader = () => {
             alt="AySek Global Study"
             loading="eager"
             decoding="async"
-            className="h-12 sm:h-16 md:h-[72px] w-auto drop-shadow-md"
+            className="h-10 sm:h-12 md:h-14 w-auto drop-shadow-md"
             whileHover={{ scale: 1.05 }}
             transition={{ type: "spring", stiffness: 300 }}
           />
