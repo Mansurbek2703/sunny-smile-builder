@@ -331,11 +331,6 @@ function NavruzStep() {
         <ReadingSection title="🎵 Navruz Music and Dance">
           Music and dance are central to Navruz celebrations. Traditional bakhshi musicians perform epic storytelling songs, while dance troupes showcase Uzbek folk dances such as Lazgi, known for its expressive movements. The rhythmic sounds of doira (a frame drum) and nay (a flute-like instrument) fill the air as people dance and celebrate together.
         </ReadingSection>
-
-        <div className="grid sm:grid-cols-2 gap-2 my-2">
-          <img src="/images/webquest1/kupkari.jpg" alt="Kupkari - traditional horseback game" loading="lazy" className="rounded-xl w-full h-auto object-cover shadow-md" />
-        </div>
-
         <ReadingSection title="🐎 Kupkari: Traditional Horseback Games">
           No Navruz celebration in Uzbekistan would be complete without the exhilarating spectacle of Kupkari, a traditional horseback competition that has been played for centuries. Also known as buzkashi in other parts of Central Asia, this game is a test of strength, horsemanship, and teamwork, drawing large crowds eager to witness the action.
           {"\n\n"}In Kupkari, skilled riders compete to seize a goat or calf carcass and carry it to the goal while fending off challengers. The game demands incredible agility, endurance, and strategy, as competitors must not only control their horses but also wrestle the heavy prize from their rivals. The stakes are often high, with winners receiving valuable rewards such as livestock, cash, or even a new horse! During Navruz, Kupkari takes on special significance as communities come together to celebrate the new season.
