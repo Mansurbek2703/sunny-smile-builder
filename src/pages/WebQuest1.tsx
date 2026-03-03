@@ -19,8 +19,7 @@ const steps = [
   { id: "intro", label: "Introduction", icon: BookOpen },
   { id: "task1", label: "Match Countries", icon: PenTool },
   { id: "videos", label: "Video Tasks", icon: Video },
-  { id: "navruz-reading", label: "Reading — Navruz", icon: BookOpen },
-  { id: "navruz-tasks", label: "Navruz Tasks", icon: PenTool },
+  { id: "navruz", label: "Navruz — Reading & Tasks", icon: BookOpen },
   { id: "thanksgiving", label: "Reading — Thanksgiving", icon: BookOpen },
   { id: "thanksgiving-tasks", label: "Thanksgiving Tasks", icon: PenTool },
   { id: "individual", label: "Glossary & Comparison", icon: PenTool },
@@ -198,8 +197,7 @@ function StepContent({ stepId }: { stepId: string }) {
     case "intro": return <IntroStep />;
     case "task1": return <Task1Step />;
     case "videos": return <VideosStep />;
-    case "navruz-reading": return <NavruzReadingStep />;
-    case "navruz-tasks": return <NavruzTasksStep />;
+    case "navruz": return <NavruzStep />;
     case "thanksgiving": return <ThanksgivingReadingStep />;
     case "thanksgiving-tasks": return <ThanksgivingTasksStep />;
     case "individual": return <IndividualStep />;
