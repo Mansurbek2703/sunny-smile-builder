@@ -37,28 +37,30 @@ const WebQuest1 = () => {
   const goTo = useCallback((idx: number) => {
     setCurrentStep(idx);
     setMobileMenuOpen(false);
-    window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
 
   const prev = () => currentStep > 0 && goTo(currentStep - 1);
   const next = () => currentStep < steps.length - 1 && goTo(currentStep + 1);
 
   return (
-    <div className="min-h-screen bg-background relative">
+    <div className="h-screen flex flex-col bg-background relative overflow-hidden">
       {/* Full-screen background image */}
       <div className="fixed inset-0 z-0">
         <img src="/images/webquest1/hero_banner.jpg" alt="" className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-background/55" />
       </div>
 
-      <div className="relative z-10">
-        <SiteHeader />
+      <div className="relative z-10 flex flex-col h-full">
+        {/* Sticky header */}
+        <div className="shrink-0">
+          <SiteHeader />
+        </div>
 
         {/* Main layout: sidebar + content */}
-        <div className="w-full flex flex-1">
+        <div className="flex flex-1 overflow-hidden">
 
           {/* Desktop sidebar */}
-          <aside className="hidden md:flex flex-col w-52 shrink-0 border-r-2 bg-card/70 backdrop-blur-md sticky top-0 self-start min-h-[calc(100vh-56px)] overflow-y-auto py-1 px-1 gap-px"
+          <aside className="hidden md:flex flex-col w-52 shrink-0 border-r-2 bg-card/70 backdrop-blur-md h-full overflow-y-auto py-1 px-1 gap-px"
             style={{ borderImage: 'linear-gradient(to bottom, hsl(var(--quest-sky)), hsl(var(--quest-gold)), hsl(var(--quest-emerald))) 1' }}
           >
             {/* Title inside sidebar */}
@@ -124,7 +126,7 @@ const WebQuest1 = () => {
         </AnimatePresence>
 
         {/* Content area */}
-        <main className="flex-1 min-w-0">
+        <main className="flex-1 min-w-0 overflow-y-auto">
           {/* Mobile top bar */}
           <div className="md:hidden sticky top-0 z-30 bg-card/70 backdrop-blur-md border-b border-border/50">
             <div className="flex items-center gap-2 px-3 pt-2 pb-1">
@@ -168,30 +170,23 @@ const WebQuest1 = () => {
               </div>
             </motion.div>
           </AnimatePresence>
-
-          {/* Navigation buttons */}
-          <div className="flex items-center justify-between px-4 sm:px-6 md:px-8 py-1.5 border-t border-border/50 bg-card/70 backdrop-blur-md">
-            <Button variant="outline" size="sm" onClick={prev} disabled={currentStep === 0} className="font-body">
-              <ChevronLeft className="w-4 h-4 mr-1" /> Previous
-            </Button>
-            <div className="flex gap-1">
-              {steps.map((_, i) => (
-                <button key={i} onClick={() => goTo(i)} className={`w-2 h-2 rounded-full transition-colors ${i === currentStep ? "bg-primary" : "bg-muted-foreground/30"}`} />
-              ))}
-            </div>
-            <Button variant={currentStep === steps.length - 1 ? "outline" : "default"} size="sm" onClick={next} disabled={currentStep === steps.length - 1} className="font-body">
-              Next <ChevronRight className="w-4 h-4 ml-1" />
-            </Button>
-          </div>
         </main>
         </div>
 
-        <footer className="border-t border-border/50 py-6 text-center space-y-1 bg-card/70 backdrop-blur-md">
-          <p className="font-body text-sm text-muted-foreground">WebQuest Explorer — WebQuest 1: Thanksgiving & Navruz</p>
-          <p className="font-body text-xs text-muted-foreground/70">
-            This site developed by <span className="font-semibold text-foreground/70">Mansurbek Qazaqov</span>. Lead specialist of IT department at AL-Khwarizmi University.
-          </p>
-        </footer>
+        {/* Sticky footer navigation */}
+        <div className="shrink-0 flex items-center justify-between px-4 sm:px-6 md:px-8 py-1.5 border-t border-border/50 bg-card/70 backdrop-blur-md">
+          <Button variant="outline" size="sm" onClick={prev} disabled={currentStep === 0} className="font-body">
+            <ChevronLeft className="w-4 h-4 mr-1" /> Previous
+          </Button>
+          <div className="flex gap-1">
+            {steps.map((_, i) => (
+              <button key={i} onClick={() => goTo(i)} className={`w-2 h-2 rounded-full transition-colors ${i === currentStep ? "bg-primary" : "bg-muted-foreground/30"}`} />
+            ))}
+          </div>
+          <Button variant={currentStep === steps.length - 1 ? "outline" : "default"} size="sm" onClick={next} disabled={currentStep === steps.length - 1} className="font-body">
+            Next <ChevronRight className="w-4 h-4 ml-1" />
+          </Button>
+        </div>
       </div>
     </div>
   );
