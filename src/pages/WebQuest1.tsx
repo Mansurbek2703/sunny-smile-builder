@@ -44,21 +44,24 @@ const WebQuest1 = () => {
   const next = () => currentStep < steps.length - 1 && goTo(currentStep + 1);
 
   return (
-    <div className="min-h-screen bg-background relative">
+    <div className="h-screen flex flex-col bg-background relative overflow-hidden">
       {/* Full-screen background image */}
       <div className="fixed inset-0 z-0">
         <img src="/images/webquest1/hero_banner.jpg" alt="" className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-background/55" />
       </div>
 
-      <div className="relative z-10">
-        <SiteHeader />
+      <div className="relative z-10 flex flex-col h-full">
+        {/* Sticky header */}
+        <div className="shrink-0">
+          <SiteHeader />
+        </div>
 
         {/* Main layout: sidebar + content */}
-        <div className="w-full flex flex-1">
+        <div className="flex flex-1 overflow-hidden">
 
           {/* Desktop sidebar */}
-          <aside className="hidden md:flex flex-col w-52 shrink-0 border-r-2 bg-card/70 backdrop-blur-md sticky top-0 self-start min-h-[calc(100vh-56px)] overflow-y-auto py-1 px-1 gap-px"
+          <aside className="hidden md:flex flex-col w-52 shrink-0 border-r-2 bg-card/70 backdrop-blur-md h-full overflow-y-auto py-1 px-1 gap-px"
             style={{ borderImage: 'linear-gradient(to bottom, hsl(var(--quest-sky)), hsl(var(--quest-gold)), hsl(var(--quest-emerald))) 1' }}
           >
             {/* Title inside sidebar */}
