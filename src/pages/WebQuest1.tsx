@@ -278,9 +278,10 @@ function VideosStep() {
   );
 }
 
-function NavruzReadingStep() {
+function NavruzStep() {
   return (
     <>
+      {/* Reading section */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-3">
         <img src="/images/webquest1/navruz_reading1.jpg" alt="Navro'z bayram dasturxoni" loading="lazy" className="rounded-xl w-full h-auto object-cover shadow-md" />
         <img src="/images/webquest1/navruz_reading2.jpg" alt="Sumalak pishirish marosimi" loading="lazy" className="rounded-xl w-full h-auto object-cover shadow-md" />
@@ -300,42 +301,39 @@ function NavruzReadingStep() {
       <ReadingSection title="E — Food and Drink">
         Besides sumalak, popular dishes include halim (wheat and meat porridge) and kuk samsa (pastries filled with greens). Dried fruits and nuts are shared generously.
       </ReadingSection>
-    </>
-  );
-}
 
-function NavruzTasksStep() {
-  return (
-    <>
-      <h4 className="font-display text-sm font-semibold mb-1">Task I: Match headings with paragraphs A–E</h4>
-      <div className="md:columns-2 md:gap-2">
-        <MatchingTask
-          pairs={[
-            { left: "1. How Navruz is celebrated", right: "Paragraph ___" },
-            { left: "2. The origins of Navruz", right: "Paragraph ___" },
-            { left: "3. Regional and international variations", right: "Paragraph ___" },
-            { left: "4. Legends and stories of Navruz", right: "Paragraph ___" },
-            { left: "5. Traditional Navruz food and drink", right: "Paragraph ___" },
-          ]}
-          correctAnswers={{ 0: "A", 1: "B", 2: "C", 3: "D", 4: "E" }}
-        />
-      </div>
-      <div className="mt-4">
-        <h4 className="font-display text-sm font-semibold mb-1.5">Task II: Match Words with Meanings</h4>
-        <VocabularyMatchTask
-          words={[
-            { word: "A. usher in", definition: "To introduce or mark the beginning of something" },
-            { word: "B. cherished", definition: "Highly valued and loved" },
-            { word: "C. reconciliation", definition: "The act of restoring friendly relations" },
-            { word: "D. equinox", definition: "A period when day and night are of equal length" },
-            { word: "E. folklore", definition: "Stories and traditions passed down through generations" },
-            { word: "F. abundance", definition: "A large quantity or plenty of something" },
-            { word: "G. flair", definition: "A distinctive and creative style" },
-            { word: "H. allegory", definition: "A symbolic story with a deeper meaning" },
-            { word: "I. endurance", definition: "The ability to continue despite physical difficulty" },
-            { word: "J. heritage", definition: "Cultural traditions and history passed from the past" },
-          ]}
-        />
+      {/* Tasks section */}
+      <div className="mt-4 pt-4 border-t border-border/50">
+        <h4 className="font-display text-sm font-semibold mb-1">Task I: Match headings with paragraphs A–E</h4>
+        <div className="md:columns-2 md:gap-2">
+          <MatchingTask
+            pairs={[
+              { left: "1. How Navruz is celebrated", right: "Paragraph ___" },
+              { left: "2. The origins of Navruz", right: "Paragraph ___" },
+              { left: "3. Regional and international variations", right: "Paragraph ___" },
+              { left: "4. Legends and stories of Navruz", right: "Paragraph ___" },
+              { left: "5. Traditional Navruz food and drink", right: "Paragraph ___" },
+            ]}
+            correctAnswers={{ 0: "A", 1: "B", 2: "C", 3: "D", 4: "E" }}
+          />
+        </div>
+        <div className="mt-4">
+          <h4 className="font-display text-sm font-semibold mb-1.5">Task II: Match Words with Meanings</h4>
+          <VocabularyMatchTask
+            words={[
+              { word: "A. usher in", definition: "To introduce or mark the beginning of something" },
+              { word: "B. cherished", definition: "Highly valued and loved" },
+              { word: "C. reconciliation", definition: "The act of restoring friendly relations" },
+              { word: "D. equinox", definition: "A period when day and night are of equal length" },
+              { word: "E. folklore", definition: "Stories and traditions passed down through generations" },
+              { word: "F. abundance", definition: "A large quantity or plenty of something" },
+              { word: "G. flair", definition: "A distinctive and creative style" },
+              { word: "H. allegory", definition: "A symbolic story with a deeper meaning" },
+              { word: "I. endurance", definition: "The ability to continue despite physical difficulty" },
+              { word: "J. heritage", definition: "Cultural traditions and history passed from the past" },
+            ]}
+          />
+        </div>
       </div>
     </>
   );
