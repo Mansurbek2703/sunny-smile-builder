@@ -37,7 +37,6 @@ const WebQuest1 = () => {
   const goTo = useCallback((idx: number) => {
     setCurrentStep(idx);
     setMobileMenuOpen(false);
-    window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
 
   const prev = () => currentStep > 0 && goTo(currentStep - 1);
