@@ -127,7 +127,7 @@ const WebQuest1 = () => {
         </AnimatePresence>
 
         {/* Content area */}
-        <main className="flex-1 min-w-0">
+        <main className="flex-1 min-w-0 overflow-y-auto">
           {/* Mobile top bar */}
           <div className="md:hidden sticky top-0 z-30 bg-card/70 backdrop-blur-md border-b border-border/50">
             <div className="flex items-center gap-2 px-3 pt-2 pb-1">
@@ -171,30 +171,23 @@ const WebQuest1 = () => {
               </div>
             </motion.div>
           </AnimatePresence>
-
-          {/* Navigation buttons */}
-          <div className="flex items-center justify-between px-4 sm:px-6 md:px-8 py-1.5 border-t border-border/50 bg-card/70 backdrop-blur-md">
-            <Button variant="outline" size="sm" onClick={prev} disabled={currentStep === 0} className="font-body">
-              <ChevronLeft className="w-4 h-4 mr-1" /> Previous
-            </Button>
-            <div className="flex gap-1">
-              {steps.map((_, i) => (
-                <button key={i} onClick={() => goTo(i)} className={`w-2 h-2 rounded-full transition-colors ${i === currentStep ? "bg-primary" : "bg-muted-foreground/30"}`} />
-              ))}
-            </div>
-            <Button variant={currentStep === steps.length - 1 ? "outline" : "default"} size="sm" onClick={next} disabled={currentStep === steps.length - 1} className="font-body">
-              Next <ChevronRight className="w-4 h-4 ml-1" />
-            </Button>
-          </div>
         </main>
         </div>
 
-        <footer className="border-t border-border/50 py-6 text-center space-y-1 bg-card/70 backdrop-blur-md">
-          <p className="font-body text-sm text-muted-foreground">WebQuest Explorer — WebQuest 1: Thanksgiving & Navruz</p>
-          <p className="font-body text-xs text-muted-foreground/70">
-            This site developed by <span className="font-semibold text-foreground/70">Mansurbek Qazaqov</span>. Lead specialist of IT department at AL-Khwarizmi University.
-          </p>
-        </footer>
+        {/* Sticky footer navigation */}
+        <div className="shrink-0 flex items-center justify-between px-4 sm:px-6 md:px-8 py-1.5 border-t border-border/50 bg-card/70 backdrop-blur-md">
+          <Button variant="outline" size="sm" onClick={prev} disabled={currentStep === 0} className="font-body">
+            <ChevronLeft className="w-4 h-4 mr-1" /> Previous
+          </Button>
+          <div className="flex gap-1">
+            {steps.map((_, i) => (
+              <button key={i} onClick={() => goTo(i)} className={`w-2 h-2 rounded-full transition-colors ${i === currentStep ? "bg-primary" : "bg-muted-foreground/30"}`} />
+            ))}
+          </div>
+          <Button variant={currentStep === steps.length - 1 ? "outline" : "default"} size="sm" onClick={next} disabled={currentStep === steps.length - 1} className="font-body">
+            Next <ChevronRight className="w-4 h-4 ml-1" />
+          </Button>
+        </div>
       </div>
     </div>
   );
