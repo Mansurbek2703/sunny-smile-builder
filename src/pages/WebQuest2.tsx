@@ -385,20 +385,64 @@ function VideoStep() {
 function ReadingStep() {
   return (
     <>
-      <div className="grid sm:grid-cols-2 gap-2 mb-3">
-        <img src="/images/webquest2/reading1.jpg" alt="Holidays abroad" loading="lazy" className="rounded-xl w-full h-40 object-cover shadow-md" />
-        <img src="/images/webquest2/tips1.jpg" alt="Tips" loading="lazy" className="rounded-xl w-full h-40 object-cover shadow-md" />
+      <div className="max-w-3xl mx-auto mb-4">
+        <img src="/images/webquest2/reading_hero.jpg" alt="6 Tips for Celebrating Holidays Abroad" loading="lazy" className="rounded-2xl w-full object-cover shadow-xl" />
       </div>
-      {[
-        { title: "1. Find a Local Guide", text: "Connect with someone native to the country. A local guide can offer insights into meanings behind traditions, explain local etiquette, and help you feel comfortable." },
-        { title: "2. Do Your Homework", text: "Research the holiday's history, meaning, and rituals. Consider: What values does this holiday represent? Are there particular foods or music? Is it family-centered or public?" },
-        { title: "3. Dress for the Occasion", text: "How you dress can carry special meaning. For religious holidays, there may be guidelines on modesty. Ask someone you trust or research appropriate attire." },
-        { title: "4. Be Thoughtful with Gifts", text: "Gift-giving customs vary widely. In some countries, small thoughtful gifts are ideal; in others, extravagant gifts are typical." },
-        { title: "5. Clarify Food Preferences", text: "Food is central to celebrations. Check about dietary needs and religious food restrictions like kosher, halal, or vegetarian." },
-        { title: "6. Keep an Open Mind", text: "Come with curiosity rather than comparison. Watch, listen, and absorb the experience." },
-      ].map((tip, i) => (
-        <ReadingSection key={i} title={tip.title}>{tip.text}</ReadingSection>
-      ))}
+
+      <ReadingSection title="">
+        Ahh, the holidays! No matter what time of year, your first holiday as an expat marks a milestone in your international life. It's a chance to learn about local culture, share your own traditions, and create lasting connections. But it's not always easy.
+      </ReadingSection>
+
+      <ReadingSection title="">
+        Balancing your customs with those of your new country can be both rewarding and challenging. Holidays are intensely personal events for everyone involved. Expats often miss home traditions and holiday gatherings as they carry deep cultural and emotional significance. Adjusting to a new country's way of celebrating can add to the complexity of adapting to a new culture.
+      </ReadingSection>
+
+      <ReadingSection title="">
+        But it's undeniable: embracing new ways of celebrating can be a powerful way to connect with your new country's culture and add a touch of "home." Whether you're attending a local holiday for the first time or re-creating a beloved home tradition, a culturally sensitive approach helps make your celebration more meaningful. We've gathered our top six tips to enjoy holiday celebrations abroad in a practical and respectful way. Let's talk about how to create new memories while honoring both your roots and your new country.
+      </ReadingSection>
+
+      <ReadingSection title="1. Find a Local Guide">
+        <p className="mb-2">One of the best ways to feel comfortable celebrating a new (to you) holiday abroad is to connect with someone who's native to the country. Having a friend, colleague, or neighbor who knows local customs can be invaluable—and can make new holidays immediately feel familiar.</p>
+        <p className="mb-2">A "local guide" can offer insights into the meaning behind traditions, explain local etiquette, and let you know about cultural practices. They can help you understand parts of the holiday or expectations you otherwise might not know. These include things like the flow of events at a holiday gathering, or how to express gratitude in a way that feels natural in the culture.</p>
+        <p>It's also a great way to show your enthusiasm for your new country's culture! People often love sharing their customs and it's a great way to bond with people in the community. It can take courage to knock on a neighbor's door or approach a colleague—but it could lead to lasting friendship.</p>
+      </ReadingSection>
+
+      <ReadingSection title="2. Do Your Homework">
+        <p className="mb-2">Taking the time to understand the cultural background of a holiday can make the experience much richer. Research the holiday's history, meaning, and rituals or symbols associated with it. Having this context can help you feel more connected to the celebration—and avoid any accidental misunderstandings.</p>
+        <p className="mb-2">An interesting example of a potential mishap is fireworks. In some cultures, fireworks mark only religious celebrations, while in others, they're used for general festivity. A little research ahead of time can prevent mix-ups and make sure that your excitement and respect for tradition come through clearly.</p>
+        <p className="mb-2">When starting your research, there are a couple of questions to consider asking:</p>
+        <ul className="list-disc list-inside mb-2 space-y-1">
+          <li>What values or beliefs does this holiday represent?</li>
+          <li>Are there particular activities, foods, or music associated with the celebration?</li>
+          <li>Is the holiday more family-centered, or is it celebrated publicly with the community?</li>
+        </ul>
+        <p>The goal is always to engage meaningfully and show your genuine interest in learning. Preparation is the key to success and a little background knowledge can make all the difference.</p>
+      </ReadingSection>
+
+      <ReadingSection title="3. Dress for the Occasion" image="/images/webquest2/tip_dress.png">
+        <p className="mb-2">In many places, how you dress for a holiday can carry special meaning. For some religious holidays, there may be guidelines on modesty or other considerations. If you're unsure, it's completely okay to ask someone you trust, or do a quick online search to learn about appropriate attire. Even if there's no strict dress code, dressing with respect for the tradition can help you feel more connected to the occasion.</p>
+        <p>Some considerations include color, materials, style, and where the clothes are made. An excellent way to make sure you're outfitted appropriately is to go with a friend, colleague, or neighbor to a local shop. You'll not only hear various points of view regarding proper dress, but you'll get to know your new home a little better, too.</p>
+      </ReadingSection>
+
+      <ReadingSection title="4. Be Thoughtful with Gifts" image="/images/webquest2/tip_gifts.png">
+        <p className="mb-2">Gift-giving customs vary widely across cultures. In some countries, small, thoughtful gifts are ideal, while in others, an extravagant gift might be more typical. If you're invited to a gathering, ask if bringing something is customary. If it is, consider the cultural or religious background of the person to whom you're gifting, as certain items could have specific connotations. Common examples of "controversial gifts" include alcohol, food, or types of flowers.</p>
+        <p>In some cultures, giving a donation to a charity that's meaningful to the recipient is more appreciated than a material gift. In others, money in specially-designed envelopes is given directly to the host. Regardless, a little bit of consideration goes a long way and can make your gesture even more meaningful.</p>
+      </ReadingSection>
+
+      <ReadingSection title="5. Clarify Food Preferences or Restrictions" image="/images/webquest2/tip_food.png">
+        <p className="mb-2">Food is often central to holiday celebrations and every culture has its own dietary customs. If you're bringing a dish or helping with the meal, check first about local dietary needs and religious food restrictions. These can include kosher, halal, or vegetarian. Even within these categories, specific foods may be welcomed or avoided on certain days. Showing awareness of these details and interest in them demonstrates thoughtfulness and helps everyone feel comfortable during the celebration.</p>
+        <p>When in doubt, ask the host. They'll let you know what dishes can be enjoyed by everyone (vegetarian options with culturally-appropriate preparation are often safe bets, dietary restrictions aside). Find out ingredient restrictions and be mindful of choices that are never appropriate for the culture. Pork and beef are two of the most widely avoided foods.</p>
+      </ReadingSection>
+
+      <ReadingSection title="6. Keep an Open Mind">
+        <p className="mb-2">When participating in an unfamiliar celebration, it's helpful to come to it with curiosity rather than comparison. Watch how others interact, listen to the stories they share, and just try to absorb the experience. You might notice different ways of connecting, or a different pace than you're used to. Keeping an open mind lets you immerse yourself in the moment and embrace it without preconceived ideas. It can also lead to unexpected friendships or insights into your own cultural values.</p>
+        <p className="mb-2">This approach is also helpful when you're in a position where your favorite holiday isn't observed. It can be one of the most challenging parts of the expat life. The key to handling this, and so many other expat challenges, is kindness. Be a little extra kind to yourself and acknowledge your feelings. Remind yourself that homesickness is a natural part of international living and use your open mind to appreciate the new customs even while missing the old.</p>
+        <p>One of the biggest TKC superpowers is our ability to adapt to other cultures and embrace their traditions. You can also embrace your flexibility to make your own holidays special in a different way, evolving with you. Celebrating with a new schedule, different people, and local elements can become a cherished tradition!</p>
+      </ReadingSection>
+
+      <div className="text-right mb-3">
+        <a href="https://www.expatkidsclub.com/blog/6-tips-for-celebrating-your-first-holidays-abroad" target="_blank" rel="noopener noreferrer" className="font-body text-xs text-primary/70 hover:text-primary underline">Source: Expat Kids Club</a>
+      </div>
 
       <div className="mt-4">
         <h4 className="font-display text-sm font-semibold mb-2">Task III: Match tips with purposes</h4>
@@ -516,11 +560,14 @@ function ReflectionStep() {
 }
 
 /* Helper components */
-function ReadingSection({ title, children }: { title: string; children: React.ReactNode }) {
+function ReadingSection({ title, children, image }: { title: string; children: React.ReactNode; image?: string }) {
   return (
-    <div className="mb-3 p-3 rounded-xl bg-muted/50 border-l-4 border-primary/40">
+    <div className="mb-3 p-3 rounded-xl bg-muted/50 border-l-4 border-primary/40 overflow-hidden">
       <h5 className="font-display font-semibold text-sm mb-1">{title}</h5>
-      <p className="font-body text-sm text-muted-foreground leading-relaxed">{children}</p>
+      <div className="font-body text-sm text-muted-foreground leading-relaxed">
+        {image && <img src={image} alt={title} className="w-14 h-14 float-left mr-3 mb-1 rounded-lg object-contain" />}
+        {children}
+      </div>
     </div>
   );
 }
