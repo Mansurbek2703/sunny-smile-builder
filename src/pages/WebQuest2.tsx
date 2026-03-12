@@ -209,9 +209,19 @@ function IntroStep() {
       <p className="font-body text-muted-foreground text-xs leading-snug mb-2">
         Holidays and festivals play a significant role in shaping national identity and cultural values. They reflect a country's history, beliefs, traditions, and social practices.
       </p>
-      <p className="font-body text-muted-foreground text-xs leading-snug">
+      <p className="font-body text-muted-foreground text-xs leading-snug mb-4">
         This WebQuest invites students to explore traditional holidays from various countries around the world. By researching and comparing international celebrations, students will expand their cultural knowledge and develop critical thinking, teamwork, and communication skills in English.
       </p>
+      <div className="flex justify-center">
+        <div className="w-full max-w-3xl mx-auto overflow-hidden rounded-2xl border border-border shadow-xl transition-transform duration-300 hover:scale-[1.01]">
+          <img
+            src="/images/webquest2/holidays_intro_infographic.png"
+            alt="Holidays Around the World — Infographic"
+            loading="lazy"
+            className="w-full h-auto object-contain"
+          />
+        </div>
+      </div>
     </>
   );
 }
