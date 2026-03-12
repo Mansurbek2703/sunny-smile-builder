@@ -172,7 +172,16 @@ function StepContent({ stepId }: { stepId: string }) {
 
 function InfographicStep() {
   return (
-    <img src="/images/webquest2/infographic1.jpg" alt="WebQuest 2 Infographic — Holidays Around the World" loading="lazy" className="rounded-xl w-full object-contain shadow-lg" />
+    <div className="flex justify-center py-4">
+      <div className="w-full max-w-4xl mx-auto overflow-hidden rounded-2xl border border-border shadow-2xl transition-transform duration-300 hover:scale-[1.01]">
+        <img
+          src="/images/webquest2/infographic1.jpg"
+          alt="WebQuest 2 Infographic — Holidays Around the World"
+          loading="lazy"
+          className="w-full h-auto object-contain"
+        />
+      </div>
+    </div>
   );
 }
 
