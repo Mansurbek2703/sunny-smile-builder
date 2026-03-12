@@ -516,11 +516,14 @@ function ReflectionStep() {
 }
 
 /* Helper components */
-function ReadingSection({ title, children }: { title: string; children: React.ReactNode }) {
+function ReadingSection({ title, children, image }: { title: string; children: React.ReactNode; image?: string }) {
   return (
-    <div className="mb-3 p-3 rounded-xl bg-muted/50 border-l-4 border-primary/40">
+    <div className="mb-3 p-3 rounded-xl bg-muted/50 border-l-4 border-primary/40 overflow-hidden">
       <h5 className="font-display font-semibold text-sm mb-1">{title}</h5>
-      <p className="font-body text-sm text-muted-foreground leading-relaxed">{children}</p>
+      <div className="font-body text-sm text-muted-foreground leading-relaxed">
+        {image && <img src={image} alt={title} className="w-14 h-14 float-left mr-3 mb-1 rounded-lg object-contain" />}
+        {children}
+      </div>
     </div>
   );
 }
