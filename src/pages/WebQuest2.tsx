@@ -486,7 +486,7 @@ function ReflectionStep() {
       <Card className="mt-4 border-primary/30 bg-primary/5">
         <CardContent className="p-4 text-center">
           <h3 className="font-display text-xl font-bold text-primary mb-1">🎉 Congratulations!</h3>
-          <p className="font-body text-sm text-muted-foreground">
+          <p className="font-body text-sm text-foreground">
             Through this WebQuest, you discovered how holidays and traditions reflect cultural values. By comparing your own holidays with those of other countries, you gained deeper intercultural understanding.
           </p>
         </CardContent>
