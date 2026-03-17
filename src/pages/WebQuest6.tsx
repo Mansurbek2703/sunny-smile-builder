@@ -53,7 +53,7 @@ const WebQuest6 = () => {
           <main className="flex-1 min-w-0 overflow-y-auto">
             <div className="md:hidden sticky top-0 z-30 bg-card/70 backdrop-blur-md border-b border-border/50">
               <div className="flex items-center gap-2 px-3 pt-2 pb-1"><Link to="/" className="text-muted-foreground hover:text-foreground"><ArrowLeft className="w-4 h-4" /></Link><span className="text-[11px] font-body font-medium uppercase tracking-widest text-quest-gold">Module 5</span><span className="font-display text-sm font-bold truncate">🍽️ WQ 6 — Food Culture</span></div>
-              <div className="flex items-center gap-2 px-3 pb-2"><button onClick={() => setMobileMenuOpen(true)} className="p-1.5 rounded-lg hover:bg-muted"><Menu className="w-5 h-5" /></button><span className="font-body text-base text-muted-foreground">{currentStep + 1}/{steps.length}</span><span className="font-display font-semibold text-base truncate">{steps[currentStep].label}</span></div>
+              <div className="flex items-center gap-2 px-3 pb-2"><button onClick={() => setMobileMenuOpen(true)} className="p-1.5 rounded-lg hover:bg-muted"><Menu className="w-5 h-5" /></button><span className="font-body text-base text-primary">{currentStep + 1}/{steps.length}</span><span className="font-display font-semibold text-base truncate">{steps[currentStep].label}</span></div>
             </div>
             <AnimatePresence mode="wait">
               <motion.div key={currentStep} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} transition={{ duration: 0.2 }} className="p-1 sm:p-1.5 md:px-4 md:py-1">
