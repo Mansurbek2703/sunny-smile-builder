@@ -72,7 +72,7 @@ const WebQuest3 = () => {
               </div>
               <div className="flex items-center gap-2 px-3 pb-2">
                 <button onClick={() => setMobileMenuOpen(true)} className="p-1.5 rounded-lg hover:bg-muted"><Menu className="w-5 h-5" /></button>
-                <span className="font-body text-base text-muted-foreground">{currentStep + 1}/{steps.length}</span>
+                <span className="font-body text-base text-primary">{currentStep + 1}/{steps.length}</span>
                 <span className="font-display font-semibold text-base truncate">{steps[currentStep].label}</span>
               </div>
             </div>
@@ -85,7 +85,7 @@ const WebQuest3 = () => {
                   <div className="flex items-center gap-2 mb-1.5">
                     <span className="flex-shrink-0 w-6 h-6 rounded-md bg-primary/10 text-primary flex items-center justify-center">{(() => { const Icon = steps[currentStep].icon; return <Icon className="w-3.5 h-3.5" />; })()}</span>
                     <div>
-                      <span className="text-[11px] font-body text-muted-foreground uppercase tracking-wider">Step {currentStep + 1} / {steps.length}</span>
+                      <span className="text-[11px] font-body text-primary uppercase tracking-wider">Step {currentStep + 1} / {steps.length}</span>
                       <h3 className="font-display text-base font-bold leading-none">{steps[currentStep].label}</h3>
                     </div>
                   </div>
@@ -135,8 +135,8 @@ function IntroStep() {
       <img src="/images/webquest3/hero1.jpg" alt="Stereotypes" loading="lazy" className="rounded-xl w-full h-auto object-cover shadow-md" />
       <img src="/images/webquest3/hero2.jpg" alt="Culture" loading="lazy" className="rounded-xl w-full h-auto object-cover shadow-md" />
     </div>
-    <p className="font-body text-muted-foreground text-sm leading-snug mb-2">Stereotypes are simplified ideas about people and cultures. They often live in compliments, traditions, everyday behavior, songs, and social rules. If people are unaware of cultural differences, stereotypes may cause discomfort, misunderstanding, or even conflict. Remember the proverb: <strong>"Don't judge a book by its cover."</strong></p>
-    <p className="font-body text-muted-foreground text-sm leading-snug">In today's interconnected world, people from different cultural backgrounds interact more frequently than ever before. This WebQuest focuses on exploring cultural stereotypes in a critical and reflective way.</p>
+    <p className="font-body text-foreground text-sm leading-snug mb-2">Stereotypes are simplified ideas about people and cultures. They often live in compliments, traditions, everyday behavior, songs, and social rules. If people are unaware of cultural differences, stereotypes may cause discomfort, misunderstanding, or even conflict. Remember the proverb: <strong>"Don't judge a book by its cover."</strong></p>
+    <p className="font-body text-foreground text-sm leading-snug">In today's interconnected world, people from different cultural backgrounds interact more frequently than ever before. This WebQuest focuses on exploring cultural stereotypes in a critical and reflective way.</p>
   </>);
 }
 
@@ -254,7 +254,7 @@ function ObservationsStep() {
 
 function ResearchStep() {
   return (<>
-    <p className="font-body text-muted-foreground text-base mb-3">In pairs or small groups, list at least 5 cultural stereotypes. Select 3-4 to investigate using reliable sources (BBC Culture, National Geographic, Cultural Atlas, Britannica, UNESCO).</p>
+    <p className="font-body text-foreground text-base mb-3">In pairs or small groups, list at least 5 cultural stereotypes. Select 3-4 to investigate using reliable sources (BBC Culture, National Geographic, Cultural Atlas, Britannica, UNESCO).</p>
     <OpenQuestionTask title="Research & Write" questions={["List 5 cultural stereotypes you have heard about different nations.", "For each stereotype, find facts that confirm or disprove it.", "Compare them with your own country. Which difference could cause the most misunderstanding?"]} />
   </>);
 }
@@ -267,13 +267,13 @@ function ReflectionStep() {
     </div>
     <Card className="mt-4 border-primary/30 bg-primary/5"><CardContent className="p-4 text-center">
       <h3 className="font-display text-xl font-bold text-primary mb-1">🎉 Congratulations!</h3>
-      <p className="font-body text-sm text-muted-foreground">You have learned that stereotypes are not always true — they are generalizations that can hide the diversity within cultures. Understanding the difference between truth and myth helps us become more open-minded and globally aware citizens.</p>
+      <p className="font-body text-sm text-foreground">You have learned that stereotypes are not always true — they are generalizations that can hide the diversity within cultures. Understanding the difference between truth and myth helps us become more open-minded and globally aware citizens.</p>
     </CardContent></Card>
   </>);
 }
 
 function ReadingSection({ title, children }: { title: string; children: React.ReactNode }) {
-  return (<div className="mb-3 p-3 rounded-xl bg-muted/50 border-l-4 border-primary/40"><h5 className="font-display font-semibold text-base mb-1">{title}</h5><p className="font-body text-base text-muted-foreground leading-relaxed">{children}</p></div>);
+  return (<div className="mb-3 p-3 rounded-xl bg-muted/50 border-l-4 border-primary/40"><h5 className="font-display font-semibold text-base mb-1">{title}</h5><p className="font-body text-base text-foreground leading-relaxed">{children}</p></div>);
 }
 
 function SelfEvalChecklist({ items }: { items: string[] }) {

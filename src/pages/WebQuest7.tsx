@@ -63,7 +63,7 @@ const WebQuest7 = () => {
               </div>
               <div className="flex items-center gap-2 px-3 pb-2">
                 <button onClick={() => setMobileMenuOpen(true)} className="p-1.5 rounded-lg hover:bg-muted"><Menu className="w-5 h-5" /></button>
-                <span className="font-body text-base text-muted-foreground">{currentStep + 1}/{steps.length}</span>
+                <span className="font-body text-base text-primary">{currentStep + 1}/{steps.length}</span>
                 <span className="font-display font-semibold text-base truncate">{steps[currentStep].label}</span>
               </div>
             </div>
@@ -76,7 +76,7 @@ const WebQuest7 = () => {
                   <div className="flex items-center gap-2 mb-1.5">
                     <span className="flex-shrink-0 w-6 h-6 rounded-md bg-primary/10 text-primary flex items-center justify-center">{(() => { const Icon = steps[currentStep].icon; return <Icon className="w-3.5 h-3.5" />; })()}</span>
                     <div>
-                      <span className="text-[11px] font-body text-muted-foreground uppercase tracking-wider">Step {currentStep + 1} / {steps.length}</span>
+                      <span className="text-[11px] font-body text-primary uppercase tracking-wider">Step {currentStep + 1} / {steps.length}</span>
                       <h3 className="font-display text-base font-bold leading-none">{steps[currentStep].label}</h3>
                     </div>
                   </div>
@@ -126,7 +126,7 @@ function IntroStep() {
       <img src="/images/webquest7/hero1.jpg" alt="Cultural Heroes" loading="lazy" className="rounded-xl w-full h-auto object-cover shadow-md" />
       <img src="/images/webquest7/hero2.jpg" alt="Heritage" loading="lazy" className="rounded-xl w-full h-auto object-cover shadow-md" />
     </div>
-    <p className="font-body text-muted-foreground text-sm leading-snug">
+    <p className="font-body text-foreground text-sm leading-snug">
       Every culture has its heroes — writers, artists, scientists, musicians, activists — whose ideas and achievements shape national identity and influence the world. In this WebQuest, you will explore the life and legacy of a cultural hero.
     </p>
   </>);
@@ -134,7 +134,7 @@ function IntroStep() {
 
 function TaskStep() {
   return (<>
-    <p className="font-body text-muted-foreground text-base mb-3">
+    <p className="font-body text-foreground text-base mb-3">
       Work in a small group and research a cultural hero from a selected country or culture. Investigate the hero's life, achievements, and cultural impact.
     </p>
     <div className="grid sm:grid-cols-2 gap-2">
@@ -166,7 +166,7 @@ function ResearchStep() {
 
 function CreateStep() {
   return (<>
-    <p className="font-body text-muted-foreground text-base mb-3">Based on your research, create one of the following products:</p>
+    <p className="font-body text-foreground text-base mb-3">Based on your research, create one of the following products:</p>
     <div className="grid sm:grid-cols-2 gap-2 mb-4">
       {[{ title: "🎤 Role-Play Interview", desc: "Prepare and perform an interview with your cultural hero (3-5 min)" },
         { title: "🖼️ Poster / Infographic", desc: "Design a visual biography with key facts and images" },
@@ -175,7 +175,7 @@ function CreateStep() {
       ].map((p, i) => (
         <Card key={i} className="hover:shadow-lg transition-shadow"><CardContent className="p-3">
           <h5 className="font-display font-semibold text-base mb-1">{p.title}</h5>
-          <p className="font-body text-sm text-muted-foreground">{p.desc}</p>
+          <p className="font-body text-sm text-foreground">{p.desc}</p>
         </CardContent></Card>
       ))}
     </div>
@@ -208,7 +208,7 @@ function ReflectionStep() {
     <Card className="mt-4 border-primary/30 bg-primary/5">
       <CardContent className="p-4 text-center">
         <h3 className="font-display text-xl font-bold text-primary mb-1">🎉 Congratulations!</h3>
-        <p className="font-body text-sm text-muted-foreground">Through this WebQuest, you explored the life and legacy of a cultural hero, gaining insight into how individual contributions shape national identity and global culture.</p>
+        <p className="font-body text-sm text-foreground">Through this WebQuest, you explored the life and legacy of a cultural hero, gaining insight into how individual contributions shape national identity and global culture.</p>
       </CardContent>
     </Card>
   </>);

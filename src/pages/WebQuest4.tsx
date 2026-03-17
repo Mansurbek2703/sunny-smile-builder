@@ -60,12 +60,12 @@ const WebQuest4 = () => {
           <main className="flex-1 min-w-0 overflow-y-auto">
             <div className="md:hidden sticky top-0 z-30 bg-card/70 backdrop-blur-md border-b border-border/50">
               <div className="flex items-center gap-2 px-3 pt-2 pb-1"><Link to="/" className="text-muted-foreground hover:text-foreground"><ArrowLeft className="w-4 h-4" /></Link><span className="text-[11px] font-body font-medium uppercase tracking-widest text-quest-gold">Module 3</span><span className="font-display text-sm font-bold truncate">🌍 WQ 4 — City Through Tourist Eyes</span></div>
-              <div className="flex items-center gap-2 px-3 pb-2"><button onClick={() => setMobileMenuOpen(true)} className="p-1.5 rounded-lg hover:bg-muted"><Menu className="w-5 h-5" /></button><span className="font-body text-base text-muted-foreground">{currentStep + 1}/{steps.length}</span><span className="font-display font-semibold text-base truncate">{steps[currentStep].label}</span></div>
+              <div className="flex items-center gap-2 px-3 pb-2"><button onClick={() => setMobileMenuOpen(true)} className="p-1.5 rounded-lg hover:bg-muted"><Menu className="w-5 h-5" /></button><span className="font-body text-base text-primary">{currentStep + 1}/{steps.length}</span><span className="font-display font-semibold text-base truncate">{steps[currentStep].label}</span></div>
             </div>
             <AnimatePresence mode="wait">
               <motion.div key={currentStep} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} transition={{ duration: 0.2 }} className="p-1 sm:p-1.5 md:px-4 md:py-1">
                 <div className="bg-card/80 backdrop-blur-sm rounded-xl p-2 sm:p-3 md:p-4 shadow-sm border-2 border-transparent hover:shadow-lg transition-all duration-300" style={{ borderImage: 'linear-gradient(135deg, hsl(var(--quest-sky)/0.4), hsl(var(--quest-gold)/0.4), hsl(var(--quest-emerald)/0.4)) 1', borderRadius: '0.75rem' }} onMouseEnter={(e) => { e.currentTarget.style.borderImage = 'linear-gradient(135deg, hsl(var(--quest-sky)), hsl(var(--quest-gold)), hsl(var(--quest-emerald))) 1'; }} onMouseLeave={(e) => { e.currentTarget.style.borderImage = 'linear-gradient(135deg, hsl(var(--quest-sky)/0.4), hsl(var(--quest-gold)/0.4), hsl(var(--quest-emerald)/0.4)) 1'; }}>
-                  <div className="flex items-center gap-2 mb-1.5"><span className="flex-shrink-0 w-6 h-6 rounded-md bg-primary/10 text-primary flex items-center justify-center">{(() => { const Icon = steps[currentStep].icon; return <Icon className="w-3.5 h-3.5" />; })()}</span><div><span className="text-[11px] font-body text-muted-foreground uppercase tracking-wider">Step {currentStep + 1} / {steps.length}</span><h3 className="font-display text-base font-bold leading-none">{steps[currentStep].label}</h3></div></div>
+                  <div className="flex items-center gap-2 mb-1.5"><span className="flex-shrink-0 w-6 h-6 rounded-md bg-primary/10 text-primary flex items-center justify-center">{(() => { const Icon = steps[currentStep].icon; return <Icon className="w-3.5 h-3.5" />; })()}</span><div><span className="text-[11px] font-body text-primary uppercase tracking-wider">Step {currentStep + 1} / {steps.length}</span><h3 className="font-display text-base font-bold leading-none">{steps[currentStep].label}</h3></div></div>
                   <StepContent stepId={steps[currentStep].id} />
                 </div>
               </motion.div>
@@ -106,13 +106,13 @@ function IntroStep() {
       <img src="/images/webquest4/hero1.jpg" alt="City" loading="lazy" className="rounded-xl w-full h-auto object-cover shadow-md" />
       <img src="/images/webquest4/hero2.jpg" alt="Tourism" loading="lazy" className="rounded-xl w-full h-auto object-cover shadow-md" />
     </div>
-    <p className="font-body text-muted-foreground text-sm leading-snug">Imagine you are a traveler visiting a new city for the first time. Everything is unfamiliar — the people, the buildings, the traditions, the food, and the language. Tourists see cities differently than local residents because they discover places with curiosity, surprise, and fresh emotions.</p>
+    <p className="font-body text-foreground text-sm leading-snug">Imagine you are a traveler visiting a new city for the first time. Everything is unfamiliar — the people, the buildings, the traditions, the food, and the language. Tourists see cities differently than local residents because they discover places with curiosity, surprise, and fresh emotions.</p>
   </>);
 }
 
 function LandmarksStep() {
   return (<>
-    <p className="font-body text-muted-foreground text-base mb-3">Match each picture (1–10) with the correct landmark name.</p>
+    <p className="font-body text-foreground text-base mb-3">Match each picture (1–10) with the correct landmark name.</p>
     <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2 mb-4">
       {landmarks.map((l) => (<div key={l.num} className="relative rounded-xl overflow-hidden shadow-md border-2 border-border"><img src={l.img} alt={`Landmark ${l.num}`} className="w-full h-24 sm:h-32 object-cover" /><div className="absolute top-1 left-1 bg-primary text-primary-foreground rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold">{l.num}</div></div>))}
     </div>
@@ -171,12 +171,12 @@ function ReflectionStep() {
   return (<>
     <OpenQuestionTask title="Discussion Questions" questions={["How do tourists see a city differently from locals?", "What are the first things a tourist usually notices?", "If a tourist visited your city, what places would impress them most?", "Do tourists focus more on beauty, culture, or comfort?", "How can local people help tourists see the 'real' side of a city?"]} />
     <div className="mt-4"><SelfEvalChecklist items={["I wrote from a tourist's point of view.", "I included facts about culture and daily life.", "I described landmarks or attractions.", "I used my imagination and personal reaction.", "I checked my spelling and grammar."]} /></div>
-    <Card className="mt-4 border-primary/30 bg-primary/5"><CardContent className="p-4 text-center"><h3 className="font-display text-xl font-bold text-primary mb-1">🎉 Congratulations!</h3><p className="font-body text-sm text-muted-foreground">Through this WebQuest, you explored a city from a tourist's perspective and discovered its cultural, historical, and social attractions.</p></CardContent></Card>
+    <Card className="mt-4 border-primary/30 bg-primary/5"><CardContent className="p-4 text-center"><h3 className="font-display text-xl font-bold text-primary mb-1">🎉 Congratulations!</h3><p className="font-body text-sm text-foreground">Through this WebQuest, you explored a city from a tourist's perspective and discovered its cultural, historical, and social attractions.</p></CardContent></Card>
   </>);
 }
 
 function ReadingSection({ title, children }: { title: string; children: React.ReactNode }) {
-  return (<div className="mb-3 p-3 rounded-xl bg-muted/50 border-l-4 border-primary/40"><h5 className="font-display font-semibold text-base mb-1">{title}</h5><p className="font-body text-base text-muted-foreground leading-relaxed">{children}</p></div>);
+  return (<div className="mb-3 p-3 rounded-xl bg-muted/50 border-l-4 border-primary/40"><h5 className="font-display font-semibold text-base mb-1">{title}</h5><p className="font-body text-base text-foreground leading-relaxed">{children}</p></div>);
 }
 
 function SelfEvalChecklist({ items }: { items: string[] }) {

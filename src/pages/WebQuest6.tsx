@@ -53,12 +53,12 @@ const WebQuest6 = () => {
           <main className="flex-1 min-w-0 overflow-y-auto">
             <div className="md:hidden sticky top-0 z-30 bg-card/70 backdrop-blur-md border-b border-border/50">
               <div className="flex items-center gap-2 px-3 pt-2 pb-1"><Link to="/" className="text-muted-foreground hover:text-foreground"><ArrowLeft className="w-4 h-4" /></Link><span className="text-[11px] font-body font-medium uppercase tracking-widest text-quest-gold">Module 5</span><span className="font-display text-sm font-bold truncate">🍽️ WQ 6 — Food Culture</span></div>
-              <div className="flex items-center gap-2 px-3 pb-2"><button onClick={() => setMobileMenuOpen(true)} className="p-1.5 rounded-lg hover:bg-muted"><Menu className="w-5 h-5" /></button><span className="font-body text-base text-muted-foreground">{currentStep + 1}/{steps.length}</span><span className="font-display font-semibold text-base truncate">{steps[currentStep].label}</span></div>
+              <div className="flex items-center gap-2 px-3 pb-2"><button onClick={() => setMobileMenuOpen(true)} className="p-1.5 rounded-lg hover:bg-muted"><Menu className="w-5 h-5" /></button><span className="font-body text-base text-primary">{currentStep + 1}/{steps.length}</span><span className="font-display font-semibold text-base truncate">{steps[currentStep].label}</span></div>
             </div>
             <AnimatePresence mode="wait">
               <motion.div key={currentStep} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} transition={{ duration: 0.2 }} className="p-1 sm:p-1.5 md:px-4 md:py-1">
                 <div className="bg-card/80 backdrop-blur-sm rounded-xl p-2 sm:p-3 md:p-4 shadow-sm border-2 border-transparent hover:shadow-lg transition-all duration-300" style={{ borderImage: 'linear-gradient(135deg, hsl(var(--quest-sky)/0.4), hsl(var(--quest-gold)/0.4), hsl(var(--quest-emerald)/0.4)) 1', borderRadius: '0.75rem' }} onMouseEnter={(e) => { e.currentTarget.style.borderImage = 'linear-gradient(135deg, hsl(var(--quest-sky)), hsl(var(--quest-gold)), hsl(var(--quest-emerald))) 1'; }} onMouseLeave={(e) => { e.currentTarget.style.borderImage = 'linear-gradient(135deg, hsl(var(--quest-sky)/0.4), hsl(var(--quest-gold)/0.4), hsl(var(--quest-emerald)/0.4)) 1'; }}>
-                  <div className="flex items-center gap-2 mb-1.5"><span className="flex-shrink-0 w-6 h-6 rounded-md bg-primary/10 text-primary flex items-center justify-center">{(() => { const Icon = steps[currentStep].icon; return <Icon className="w-3.5 h-3.5" />; })()}</span><div><span className="text-[11px] font-body text-muted-foreground uppercase tracking-wider">Step {currentStep + 1} / {steps.length}</span><h3 className="font-display text-base font-bold leading-none">{steps[currentStep].label}</h3></div></div>
+                  <div className="flex items-center gap-2 mb-1.5"><span className="flex-shrink-0 w-6 h-6 rounded-md bg-primary/10 text-primary flex items-center justify-center">{(() => { const Icon = steps[currentStep].icon; return <Icon className="w-3.5 h-3.5" />; })()}</span><div><span className="text-[11px] font-body text-primary uppercase tracking-wider">Step {currentStep + 1} / {steps.length}</span><h3 className="font-display text-base font-bold leading-none">{steps[currentStep].label}</h3></div></div>
                   <StepContent stepId={steps[currentStep].id} />
                 </div>
               </motion.div>
@@ -96,7 +96,7 @@ function IntroStep() {
         <Card key={i} className="glass-card hover:shadow-lg transition-shadow"><CardContent className="p-2 flex items-start gap-2"><span className="flex-shrink-0 w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center font-display font-bold text-sm">{i + 1}</span><p className="font-body text-sm leading-snug">{o}</p></CardContent></Card>))}
     </div>
     <img src="/images/webquest6/hero1.jpg" alt="Food Culture" loading="lazy" className="rounded-xl w-full h-48 object-cover shadow-md mb-2" />
-    <p className="font-body text-muted-foreground text-sm leading-snug">This WebQuest invites students to explore food culture in various countries. Through guided online research, students will learn how food-related customs, table manners, and social behaviors differ across cultures.</p>
+    <p className="font-body text-foreground text-sm leading-snug">This WebQuest invites students to explore food culture in various countries. Through guided online research, students will learn how food-related customs, table manners, and social behaviors differ across cultures.</p>
   </>);
 }
 
@@ -171,12 +171,12 @@ function ReflectionStep() {
   return (<>
     <OpenQuestionTask title="Intercultural Reflection" questions={["What did you learn about another culture through food?", "What dining rules have you learned?", "How can this knowledge prevent misunderstandings?"]} />
     <div className="mt-4"><SelfEvalChecklist items={["I used 8+ vocabulary words from the unit.", "I used the Passive / Comparatives / Relatives.", "I researched reliable sources.", "I compared two cultures' dining etiquette.", "My final product is clear and organized.", "I worked well in my group."]} /></div>
-    <Card className="mt-4 border-primary/30 bg-primary/5"><CardContent className="p-4 text-center"><h3 className="font-display text-xl font-bold text-primary mb-1">🎉 Congratulations!</h3><p className="font-body text-sm text-muted-foreground">Through this WebQuest, you explored traditional dishes, food etiquette and cultures from different countries. Understanding the meaning of food helps avoid misunderstandings and shows respect for other cultures.</p></CardContent></Card>
+    <Card className="mt-4 border-primary/30 bg-primary/5"><CardContent className="p-4 text-center"><h3 className="font-display text-xl font-bold text-primary mb-1">🎉 Congratulations!</h3><p className="font-body text-sm text-foreground">Through this WebQuest, you explored traditional dishes, food etiquette and cultures from different countries. Understanding the meaning of food helps avoid misunderstandings and shows respect for other cultures.</p></CardContent></Card>
   </>);
 }
 
 function ReadingSection({ title, children }: { title: string; children: React.ReactNode }) {
-  return (<div className="mb-3 p-3 rounded-xl bg-muted/50 border-l-4 border-primary/40"><h5 className="font-display font-semibold text-base mb-1">{title}</h5><p className="font-body text-base text-muted-foreground leading-relaxed">{children}</p></div>);
+  return (<div className="mb-3 p-3 rounded-xl bg-muted/50 border-l-4 border-primary/40"><h5 className="font-display font-semibold text-base mb-1">{title}</h5><p className="font-body text-base text-foreground leading-relaxed">{children}</p></div>);
 }
 
 function SelfEvalChecklist({ items }: { items: string[] }) {

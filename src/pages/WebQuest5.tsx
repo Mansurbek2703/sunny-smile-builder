@@ -57,12 +57,12 @@ const WebQuest5 = () => {
           <main className="flex-1 min-w-0 overflow-y-auto">
             <div className="md:hidden sticky top-0 z-30 bg-card/70 backdrop-blur-md border-b border-border/50">
               <div className="flex items-center gap-2 px-3 pt-2 pb-1"><Link to="/" className="text-muted-foreground hover:text-foreground"><ArrowLeft className="w-4 h-4" /></Link><span className="text-[11px] font-body font-medium uppercase tracking-widest text-quest-gold">Module 4</span><span className="font-display text-sm font-bold truncate">🌍 WQ 5 — Culture Shock</span></div>
-              <div className="flex items-center gap-2 px-3 pb-2"><button onClick={() => setMobileMenuOpen(true)} className="p-1.5 rounded-lg hover:bg-muted"><Menu className="w-5 h-5" /></button><span className="font-body text-base text-muted-foreground">{currentStep + 1}/{steps.length}</span><span className="font-display font-semibold text-base truncate">{steps[currentStep].label}</span></div>
+              <div className="flex items-center gap-2 px-3 pb-2"><button onClick={() => setMobileMenuOpen(true)} className="p-1.5 rounded-lg hover:bg-muted"><Menu className="w-5 h-5" /></button><span className="font-body text-base text-primary">{currentStep + 1}/{steps.length}</span><span className="font-display font-semibold text-base truncate">{steps[currentStep].label}</span></div>
             </div>
             <AnimatePresence mode="wait">
               <motion.div key={currentStep} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} transition={{ duration: 0.2 }} className="p-1 sm:p-1.5 md:px-4 md:py-1">
                 <div className="bg-card/80 backdrop-blur-sm rounded-xl p-2 sm:p-3 md:p-4 shadow-sm border-2 border-transparent hover:shadow-lg transition-all duration-300" style={{ borderImage: 'linear-gradient(135deg, hsl(var(--quest-sky)/0.4), hsl(var(--quest-gold)/0.4), hsl(var(--quest-emerald)/0.4)) 1', borderRadius: '0.75rem' }} onMouseEnter={(e) => { e.currentTarget.style.borderImage = 'linear-gradient(135deg, hsl(var(--quest-sky)), hsl(var(--quest-gold)), hsl(var(--quest-emerald))) 1'; }} onMouseLeave={(e) => { e.currentTarget.style.borderImage = 'linear-gradient(135deg, hsl(var(--quest-sky)/0.4), hsl(var(--quest-gold)/0.4), hsl(var(--quest-emerald)/0.4)) 1'; }}>
-                  <div className="flex items-center gap-2 mb-1.5"><span className="flex-shrink-0 w-6 h-6 rounded-md bg-primary/10 text-primary flex items-center justify-center">{(() => { const Icon = steps[currentStep].icon; return <Icon className="w-3.5 h-3.5" />; })()}</span><div><span className="text-[11px] font-body text-muted-foreground uppercase tracking-wider">Step {currentStep + 1} / {steps.length}</span><h3 className="font-display text-base font-bold leading-none">{steps[currentStep].label}</h3></div></div>
+                  <div className="flex items-center gap-2 mb-1.5"><span className="flex-shrink-0 w-6 h-6 rounded-md bg-primary/10 text-primary flex items-center justify-center">{(() => { const Icon = steps[currentStep].icon; return <Icon className="w-3.5 h-3.5" />; })()}</span><div><span className="text-[11px] font-body text-primary uppercase tracking-wider">Step {currentStep + 1} / {steps.length}</span><h3 className="font-display text-base font-bold leading-none">{steps[currentStep].label}</h3></div></div>
                   <StepContent stepId={steps[currentStep].id} />
                 </div>
               </motion.div>
@@ -105,14 +105,14 @@ function IntroStep() {
       <img src="/images/webquest5/hero1.jpg" alt="Culture Shock" loading="lazy" className="rounded-xl w-full h-auto object-cover shadow-md" />
       <img src="/images/webquest5/hero2.jpg" alt="Adaptation" loading="lazy" className="rounded-xl w-full h-auto object-cover shadow-md" />
     </div>
-    <div className="p-3 rounded-xl bg-muted/50 border-l-4 border-primary/40 mb-2"><p className="font-body text-base italic text-muted-foreground">"When in Rome, do as the Romans do"</p></div>
-    <p className="font-body text-muted-foreground text-sm leading-snug">Have you ever felt out of place in a new country or even in a new group? That feeling of confusion or discomfort is called culture shock. In this WebQuest, you will step into the shoes of exchange students, explore their real-life experiences, and learn how to adapt successfully in multicultural environments.</p>
+    <div className="p-3 rounded-xl bg-muted/50 border-l-4 border-primary/40 mb-2"><p className="font-body text-base italic text-foreground">"When in Rome, do as the Romans do"</p></div>
+    <p className="font-body text-foreground text-sm leading-snug">Have you ever felt out of place in a new country or even in a new group? That feeling of confusion or discomfort is called culture shock. In this WebQuest, you will step into the shoes of exchange students, explore their real-life experiences, and learn how to adapt successfully in multicultural environments.</p>
   </>);
 }
 
 function IdiomsStep() {
   return (<>
-    <p className="font-body text-muted-foreground text-base mb-3">Match the idioms and phrases with their correct meanings.</p>
+    <p className="font-body text-foreground text-base mb-3">Match the idioms and phrases with their correct meanings.</p>
     <SelectMatchingTask pairs={[{ left: "Lost at sea / adrift", right: "" }, { left: "Keep an open mind", right: "" }, { left: "To get the hang of something", right: "" }, { left: "A fish out of water", right: "" }, { left: "To learn the ropes", right: "" }, { left: "Overwhelmed", right: "" }, { left: "Shaken up / taken aback", right: "" }, { left: "Like a deer in headlights", right: "" }, { left: "All at sea", right: "" }]}
       options={["Feeling confused and without direction in a new environment", "Be willing to consider new ideas", "To finally understand or learn how to do something", "Feeling awkward or uncomfortable in an unfamiliar situation", "To learn basic rules or procedures in a new place", "Feeling buried under too much stress or new information", "Feeling very surprised, shocked, or unsettled", "Feeling frozen and unable to react because of shock", "Feeling extremely confused or bewildered"]}
       correctAnswers={{ 0: "Feeling confused and without direction in a new environment", 1: "Be willing to consider new ideas", 2: "To finally understand or learn how to do something", 3: "Feeling awkward or uncomfortable in an unfamiliar situation", 4: "To learn basic rules or procedures in a new place", 5: "Feeling buried under too much stress or new information", 6: "Feeling very surprised, shocked, or unsettled", 7: "Feeling frozen and unable to react because of shock", 8: "Feeling extremely confused or bewildered" }} />
@@ -199,7 +199,7 @@ function VideoStep() {
 
 function CaseStudyStep() {
   return (<>
-    <div className="p-3 rounded-xl bg-muted/50 border-l-4 border-accent/40 mb-4"><p className="font-body text-base text-muted-foreground leading-relaxed"><strong>Situation:</strong> An Uzbek student feels offended because British friends never invite her to their home. The British friends believe they are being polite by respecting privacy.</p></div>
+    <div className="p-3 rounded-xl bg-muted/50 border-l-4 border-accent/40 mb-4"><p className="font-body text-base text-foreground leading-relaxed"><strong>Situation:</strong> An Uzbek student feels offended because British friends never invite her to their home. The British friends believe they are being polite by respecting privacy.</p></div>
     <OpenQuestionTask title="Answer the questions" questions={["What cultural values are in conflict?", "Is this behaviour unfriendly or culturally normal?", "How does the proverb 'When in Rome, do as the Romans do' apply here?"]} />
     <div className="mt-4"><OpenQuestionTask title="Critical Thinking" questions={["Why can gestures cause misunderstandings in global communication?", "How can cultural awareness reduce conflict in international meetings?", "Why is it not necessary to share beliefs in order to respect them?"]} /></div>
   </>);
@@ -212,12 +212,12 @@ function ResearchStep() {
 function ReflectionStep() {
   return (<>
     <SelfEvalChecklist items={["I understand what culture shock is and can explain its main stages.", "I can recognize symptoms of culture shock in myself or others.", "I am open-minded toward cultural differences and new customs.", "I can explain why cross-cultural etiquette is important today.", "I can identify cultural differences in behavior.", "I can compare my own culture with other cultures respectfully."]} />
-    <Card className="mt-4 border-primary/30 bg-primary/5"><CardContent className="p-4 text-center"><h3 className="font-display text-xl font-bold text-primary mb-1">🎉 Congratulations!</h3><p className="font-body text-sm text-muted-foreground">Culture shock is not a setback but a step toward personal growth and global understanding. Awareness of cross-cultural etiquette encourages respect, empathy, and open-mindedness.</p></CardContent></Card>
+    <Card className="mt-4 border-primary/30 bg-primary/5"><CardContent className="p-4 text-center"><h3 className="font-display text-xl font-bold text-primary mb-1">🎉 Congratulations!</h3><p className="font-body text-sm text-foreground">Culture shock is not a setback but a step toward personal growth and global understanding. Awareness of cross-cultural etiquette encourages respect, empathy, and open-mindedness.</p></CardContent></Card>
   </>);
 }
 
 function ReadingSection({ title, children }: { title: string; children: React.ReactNode }) {
-  return (<div className="mb-3 p-3 rounded-xl bg-muted/50 border-l-4 border-primary/40"><h5 className="font-display font-semibold text-base mb-1">{title}</h5><p className="font-body text-base text-muted-foreground leading-relaxed">{children}</p></div>);
+  return (<div className="mb-3 p-3 rounded-xl bg-muted/50 border-l-4 border-primary/40"><h5 className="font-display font-semibold text-base mb-1">{title}</h5><p className="font-body text-base text-foreground leading-relaxed">{children}</p></div>);
 }
 
 function SelfEvalChecklist({ items }: { items: string[] }) {

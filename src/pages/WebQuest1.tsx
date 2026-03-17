@@ -130,7 +130,7 @@ const WebQuest1 = () => {
             </div>
             <div className="flex items-center gap-2 px-3 pb-2">
               <button onClick={() => setMobileMenuOpen(true)} className="p-1.5 rounded-lg hover:bg-muted"><Menu className="w-5 h-5" /></button>
-              <span className="font-body text-base text-muted-foreground">{currentStep + 1}/{steps.length}</span>
+              <span className="font-body text-base text-primary">{currentStep + 1}/{steps.length}</span>
               <span className="font-display font-semibold text-base truncate">{steps[currentStep].label}</span>
             </div>
           </div>
@@ -155,7 +155,7 @@ const WebQuest1 = () => {
                     {(() => { const Icon = steps[currentStep].icon; return <Icon className="w-3.5 h-3.5" />; })()}
                   </span>
                   <div>
-                    <span className="text-[11px] font-body text-muted-foreground uppercase tracking-wider">Step {currentStep + 1} / {steps.length}</span>
+                    <span className="text-[11px] font-body text-primary uppercase tracking-wider">Step {currentStep + 1} / {steps.length}</span>
                     <h3 className="font-display text-base font-bold leading-none">{steps[currentStep].label}</h3>
                   </div>
                 </div>
@@ -222,7 +222,7 @@ function IntroStep() {
           </Card>
         ))}
       </div>
-      <p className="font-body text-muted-foreground text-sm leading-snug mb-2">
+      <p className="font-body text-foreground text-sm leading-snug mb-2">
         Holidays are more than just days off — they reflect the history, culture, and values of people. In this WebQuest, you will explore two important holidays: <strong>Thanksgiving</strong> in the United States and <strong>Navruz</strong> in Central Asia. While they come from different cultural traditions, both emphasize gratitude, family, food, and community.
       </p>
       <div className="grid grid-cols-2 gap-2">
@@ -236,7 +236,7 @@ function IntroStep() {
 function Task1Step() {
   return (
     <>
-      <p className="font-body text-muted-foreground text-base mb-2">
+      <p className="font-body text-foreground text-base mb-2">
         Read the descriptions of holidays in Column B and match them with the countries in Column A. Drag the flag images and drop them next to the correct description.
       </p>
       <DragMatchingTask
@@ -281,7 +281,7 @@ function NavruzStep() {
       </div>
 
       <div className="mb-2 p-2 rounded-lg bg-primary/5 border-l-3 border-primary">
-        <p className="font-body text-sm text-muted-foreground leading-snug">
+        <p className="font-body text-sm text-foreground leading-snug">
           Each spring, Uzbekistan bursts into colour and celebration as Navruz — literally translating to 'New Day' — ushers in the Persian New Year. Marking the arrival of spring on 21 March, Navruz is one of the most significant and cherished festivals across Central Asia, deeply rooted in tradition, history, and community spirit. For Uzbek families, it's a time of joy, renewal, and connection, as people gather to welcome the changing season with open hearts.
         </p>
       </div>
@@ -392,7 +392,7 @@ function ThanksgivingStep() {
       </div>
 
       <div className="mb-2 p-2 rounded-lg bg-primary/5 border-l-3 border-primary">
-        <p className="font-body text-sm text-muted-foreground leading-snug">
+        <p className="font-body text-sm text-foreground leading-snug">
           It's the most wonderful time of the year in the US – a time for food, family, friends, and being thankful. Originating as a harvest festival, Thanksgiving is one of the biggest holidays in the US. People across the country gather together to share a meal and reflect on all the things they're grateful for. But there's much more to do during this beautiful time of giving thanks than just eating. From parades to shopping, running to volunteering – Thanksgiving is celebrated in a wide variety of ways. We've put together our bucket list for the ultimate US Thanksgiving celebration.
         </p>
       </div>
@@ -522,7 +522,7 @@ function RolePlayStep() {
   return (
     <>
       <h4 className="font-display text-base font-semibold mb-0.5">Task VI: Do's and Don'ts for Visitors</h4>
-      <p className="font-body text-sm text-muted-foreground mb-1">Create a "Tourist Behaviour Guide": 3 Do's and 3 Don'ts for each holiday.</p>
+      <p className="font-body text-sm text-foreground mb-1">Create a "Tourist Behaviour Guide": 3 Do's and 3 Don'ts for each holiday.</p>
       <div className="grid md:grid-cols-2 gap-2">
         <OpenQuestionTask
           title="Task VII: Values Behind the Behaviour"
@@ -538,7 +538,7 @@ function RolePlayStep() {
         <Card className="glass-card">
           <CardContent className="p-2 sm:p-3 font-body text-sm space-y-1">
             <p>You are invited to a <strong>Navruz celebration in Uzbekistan</strong> or a <strong>Thanksgiving dinner in the USA</strong>.</p>
-            <ul className="list-disc pl-4 space-y-0.5 text-muted-foreground">
+            <ul className="list-disc pl-4 space-y-0.5 text-foreground">
               <li>Greet people correctly</li>
               <li>Behave politely at the table</li>
               <li>Show respect for traditions</li>
@@ -555,7 +555,7 @@ function RolePlayStep() {
 function ResearchStep() {
   return (
     <>
-      <p className="font-body text-sm text-muted-foreground mb-2">Use these links to deepen your knowledge:</p>
+      <p className="font-body text-sm text-foreground mb-2">Use these links to deepen your knowledge:</p>
       <div className="space-y-1">
         {[
           { name: "Thanksgiving Day — Britannica", url: "https://www.britannica.com/topic/Thanksgiving-Day" },
@@ -581,7 +581,7 @@ function GroupStep() {
       <div className="mt-3">
         <h4 className="font-display text-base font-semibold mb-1">Plan Your Cultural Evening</h4>
         <Card className="glass-card">
-          <CardContent className="p-2 sm:p-3 font-body text-sm space-y-1 text-muted-foreground">
+          <CardContent className="p-2 sm:p-3 font-body text-sm space-y-1 text-foreground">
             <p>Plan a "Thanksgiving–Navruz Cultural Evening" with your group:</p>
             <ul className="list-disc pl-4 space-y-0.5">
               <li>Decide the menu</li>
@@ -622,7 +622,7 @@ function ReflectionStep() {
       <Card className="mt-3 border-primary/30 bg-primary/5">
         <CardContent className="p-2 sm:p-3 text-center">
           <h3 className="font-display text-lg font-bold text-primary mb-1">🎉 Congratulations!</h3>
-          <p className="font-body text-sm text-muted-foreground">
+          <p className="font-body text-sm text-foreground">
             You have compared two important traditions and discovered how people in different cultures celebrate gratitude, renewal, and family. Remember: learning about other cultures is the first step toward becoming a global citizen.
           </p>
         </CardContent>
@@ -637,7 +637,7 @@ function ReadingSection({ title, children }: { title: string; children: React.Re
   return (
     <div className="mb-1.5 p-2 rounded-lg bg-muted/50 border-l-3 border-primary/40">
       <h5 className="font-display font-semibold text-sm mb-0.5">{title}</h5>
-      <p className="font-body text-sm text-muted-foreground leading-snug whitespace-pre-line">{children}</p>
+      <p className="font-body text-sm text-foreground leading-snug whitespace-pre-line">{children}</p>
     </div>
   );
 }

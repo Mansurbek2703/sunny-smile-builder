@@ -106,7 +106,7 @@ const WebQuest2 = () => {
               </div>
               <div className="flex items-center gap-2 px-3 pb-2">
                 <button onClick={() => setMobileMenuOpen(true)} className="p-1.5 rounded-lg hover:bg-muted"><Menu className="w-5 h-5" /></button>
-                <span className="font-body text-base text-muted-foreground">{currentStep + 1}/{steps.length}</span>
+                <span className="font-body text-base text-primary">{currentStep + 1}/{steps.length}</span>
                 <span className="font-display font-semibold text-base truncate">{steps[currentStep].label}</span>
               </div>
             </div>
@@ -123,7 +123,7 @@ const WebQuest2 = () => {
                       {(() => { const Icon = steps[currentStep].icon; return <Icon className="w-3.5 h-3.5" />; })()}
                     </span>
                     <div>
-                      <span className="text-[11px] font-body text-muted-foreground uppercase tracking-wider">Step {currentStep + 1} / {steps.length}</span>
+                      <span className="text-[11px] font-body text-primary uppercase tracking-wider">Step {currentStep + 1} / {steps.length}</span>
                       <h3 className="font-display text-base font-bold leading-none">{steps[currentStep].label}</h3>
                     </div>
                   </div>
@@ -197,10 +197,10 @@ function IntroStep() {
         <img src="/images/webquest2/hero1.jpg" alt="World holiday celebrations" loading="lazy" className="rounded-xl w-full h-auto object-cover shadow-md" />
         <img src="/images/webquest2/hero2.jpg" alt="International celebrations" loading="lazy" className="rounded-xl w-full h-auto object-cover shadow-md" />
       </div>
-      <p className="font-body text-muted-foreground text-lg leading-relaxed mb-2">
+      <p className="font-body text-foreground text-lg leading-relaxed mb-2">
         Holidays and festivals play a significant role in shaping national identity and cultural values. They reflect a country's history, beliefs, traditions, and social practices.
       </p>
-      <p className="font-body text-muted-foreground text-lg leading-relaxed mb-4">
+      <p className="font-body text-foreground text-lg leading-relaxed mb-4">
         This WebQuest invites students to explore traditional holidays from various countries around the world. By researching and comparing international celebrations, students will expand their cultural knowledge and develop critical thinking, teamwork, and communication skills in English.
       </p>
       <div className="flex justify-center">
@@ -215,7 +215,7 @@ function IntroStep() {
 function MatchHolidaysStep() {
   return (
     <>
-      <p className="font-body text-muted-foreground text-base mb-2">
+      <p className="font-body text-foreground text-base mb-2">
         Match each holiday (Column A) with the country where it is traditionally celebrated (Column B). One holiday does not belong — identify the "extra holiday."
       </p>
       <SelectMatchingTask
@@ -447,7 +447,7 @@ function ReadingStep() {
 function ResearchStep() {
   return (
     <>
-      <p className="font-body text-muted-foreground text-base mb-3">Work in groups of 3–4. Each group investigates one country's holiday:</p>
+      <p className="font-body text-foreground text-base mb-3">Work in groups of 3–4. Each group investigates one country's holiday:</p>
       <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-2 mb-4">
         {["🇯🇵 Japan — Hanami", "🇧🇷 Brazil — Carnival", "🇪🇸 Spain — La Tomatina", "🇪🇬 Egypt — Sham El-Nessim", "🇨🇦 Canada — Canada Day", "🇦🇺 Australia — ANZAC Day"].map((c, i) => (
           <Card key={i} className="glass-card"><CardContent className="p-3 font-body text-base font-medium">{c}</CardContent></Card>
@@ -486,7 +486,7 @@ function ReflectionStep() {
       <Card className="mt-4 border-primary/30 bg-primary/5">
         <CardContent className="p-4 text-center">
           <h3 className="font-display text-xl font-bold text-primary mb-1">🎉 Congratulations!</h3>
-          <p className="font-body text-sm text-muted-foreground">
+          <p className="font-body text-sm text-foreground">
             Through this WebQuest, you discovered how holidays and traditions reflect cultural values. By comparing your own holidays with those of other countries, you gained deeper intercultural understanding.
           </p>
         </CardContent>
@@ -499,7 +499,7 @@ function ReadingSection({ title, children, image }: { title: string; children: R
   return (
     <div className="mb-3 p-3 rounded-xl bg-muted/50 border-l-4 border-primary/40 overflow-hidden">
       <h5 className="font-display font-semibold text-base mb-1">{title}</h5>
-      <div className="font-body text-base text-muted-foreground leading-relaxed">
+      <div className="font-body text-base text-foreground leading-relaxed">
         {image && <img src={image} alt={title} className="w-14 h-14 float-left mr-3 mb-1 rounded-lg object-contain" />}
         {children}
       </div>
