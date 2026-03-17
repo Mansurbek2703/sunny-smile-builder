@@ -514,7 +514,7 @@ function SelfEvalChecklist({ items }: { items: string[] }) {
       {items.map((item, i) => (
         <label key={i} className="flex items-start gap-3 p-2 rounded-lg hover:bg-muted/50 transition-colors cursor-pointer">
           <input type="checkbox" checked={checked[i] || false} onChange={() => setChecked((prev) => ({ ...prev, [i]: !prev[i] }))} className="mt-0.5 w-4 h-4 rounded border-primary text-primary focus:ring-primary" />
-          <span className="font-body text-base">{item}</span>
+          <span className="font-body text-sm">{item}</span>
           {checked[i] && <CheckCircle2 className="w-4 h-4 text-primary ml-auto flex-shrink-0" />}
         </label>
       ))}
