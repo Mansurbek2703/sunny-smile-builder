@@ -171,7 +171,7 @@ function ReflectionStep() {
   return (<>
     <OpenQuestionTask title="Discussion Questions" questions={["How do tourists see a city differently from locals?", "What are the first things a tourist usually notices?", "If a tourist visited your city, what places would impress them most?", "Do tourists focus more on beauty, culture, or comfort?", "How can local people help tourists see the 'real' side of a city?"]} />
     <div className="mt-4"><SelfEvalChecklist items={["I wrote from a tourist's point of view.", "I included facts about culture and daily life.", "I described landmarks or attractions.", "I used my imagination and personal reaction.", "I checked my spelling and grammar."]} /></div>
-    <Card className="mt-4 border-primary/30 bg-primary/5"><CardContent className="p-4 text-center"><h3 className="font-display text-xl font-bold text-primary mb-1">🎉 Congratulations!</h3><p className="font-body text-sm text-muted-foreground">Through this WebQuest, you explored a city from a tourist's perspective and discovered its cultural, historical, and social attractions.</p></CardContent></Card>
+    <Card className="mt-4 border-primary/30 bg-primary/5"><CardContent className="p-4 text-center"><h3 className="font-display text-xl font-bold text-primary mb-1">🎉 Congratulations!</h3><p className="font-body text-sm text-foreground">Through this WebQuest, you explored a city from a tourist's perspective and discovered its cultural, historical, and social attractions.</p></CardContent></Card>
   </>);
 }
 
