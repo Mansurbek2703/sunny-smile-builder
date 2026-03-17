@@ -134,7 +134,7 @@ function IntroStep() {
 
 function TaskStep() {
   return (<>
-    <p className="font-body text-muted-foreground text-base mb-3">
+    <p className="font-body text-foreground text-base mb-3">
       Work in a small group and research a cultural hero from a selected country or culture. Investigate the hero's life, achievements, and cultural impact.
     </p>
     <div className="grid sm:grid-cols-2 gap-2">
