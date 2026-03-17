@@ -12,10 +12,10 @@ const OpenQuestionTask = ({ title, questions }: OpenQuestionTaskProps) => {
 
   return (
     <div className="space-y-2">
-      <h4 className="font-display text-base font-semibold">{title}</h4>
+      <h4 className="font-display text-xl font-semibold">{title}</h4>
       {questions.map((q, i) => (
         <div key={i} className="space-y-2">
-          <p className="font-body text-sm font-medium">
+          <p className="font-body text-lg font-medium">
             <span className="text-primary mr-2">{i + 1}.</span>
             {q}
           </p>
@@ -23,7 +23,7 @@ const OpenQuestionTask = ({ title, questions }: OpenQuestionTaskProps) => {
             value={answers[i] || ""}
             onChange={(e) => setAnswers((prev) => ({ ...prev, [i]: e.target.value }))}
             placeholder="Write your answer here..."
-            className="w-full p-2 rounded-lg border bg-background font-body text-sm resize-none min-h-[50px] focus:ring-2 focus:ring-primary focus:outline-none"
+            className="w-full p-2 rounded-lg border bg-background font-body text-lg resize-none min-h-[50px] focus:ring-2 focus:ring-primary focus:outline-none"
           />
         </div>
       ))}
