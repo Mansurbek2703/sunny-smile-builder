@@ -123,7 +123,7 @@ const WebQuest2 = () => {
                       {(() => { const Icon = steps[currentStep].icon; return <Icon className="w-3.5 h-3.5" />; })()}
                     </span>
                     <div>
-                      <span className="text-[11px] font-body text-muted-foreground uppercase tracking-wider">Step {currentStep + 1} / {steps.length}</span>
+                      <span className="text-[11px] font-body text-primary uppercase tracking-wider">Step {currentStep + 1} / {steps.length}</span>
                       <h3 className="font-display text-base font-bold leading-none">{steps[currentStep].label}</h3>
                     </div>
                   </div>
