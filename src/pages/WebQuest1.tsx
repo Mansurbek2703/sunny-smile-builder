@@ -236,7 +236,7 @@ function IntroStep() {
 function Task1Step() {
   return (
     <>
-      <p className="font-body text-muted-foreground text-base mb-2">
+      <p className="font-body text-foreground text-base mb-2">
         Read the descriptions of holidays in Column B and match them with the countries in Column A. Drag the flag images and drop them next to the correct description.
       </p>
       <DragMatchingTask
