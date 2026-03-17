@@ -60,7 +60,7 @@ const DragMatchingTask = ({ items, descriptions, correctAnswers }: DragMatchingT
   return (
     <div className="space-y-2">
       {isMobile && !showResults && (
-        <p className="text-sm font-body text-foreground text-center italic">
+        <p className="text-lg font-body text-foreground text-center italic">
           Bayroqni bosing, keyin joylashtirish uchun qatorni bosing
         </p>
       )}
@@ -93,7 +93,7 @@ const DragMatchingTask = ({ items, descriptions, correctAnswers }: DragMatchingT
             )}
             {selected === i && (
               <div className="absolute inset-0 bg-quest-gold/20 flex items-center justify-center">
-                <span className="text-sm font-body font-bold text-foreground bg-background/80 px-2 py-0.5 rounded">✓ Tanlangan</span>
+                <span className="text-lg font-body font-bold text-foreground bg-background/80 px-2 py-0.5 rounded">✓ Tanlangan</span>
               </div>
             )}
           </motion.div>
@@ -124,7 +124,7 @@ const DragMatchingTask = ({ items, descriptions, correctAnswers }: DragMatchingT
                   : isDropTarget ? "border-quest-gold/60 bg-quest-gold/10" : dragging !== null ? "border-accent/50 bg-accent/5" : "bg-card border-border"
               }`}
             >
-              <span className="font-display font-bold text-sm text-foreground min-w-[24px]">{di + 1}.</span>
+              <span className="font-display font-bold text-lg text-foreground min-w-[24px]">{di + 1}.</span>
 
               <div
                 className={`flex-shrink-0 w-14 h-10 sm:w-16 sm:h-11 rounded-md border-2 border-dashed flex items-center justify-center overflow-hidden transition-all ${
@@ -146,13 +146,13 @@ const DragMatchingTask = ({ items, descriptions, correctAnswers }: DragMatchingT
                     )}
                   </div>
                 ) : isDropTarget ? (
-                  <span className="text-sm text-quest-gold font-body font-medium">👆</span>
+                  <span className="text-lg text-quest-gold font-body font-medium">👆</span>
                 ) : (
-                  <span className="text-sm text-muted-foreground/50 font-body">🏳️</span>
+                  <span className="text-lg text-muted-foreground/50 font-body">🏳️</span>
                 )}
               </div>
 
-              <span className="font-body text-sm flex-1">
+              <span className="font-body text-lg flex-1">
                 <span className="font-semibold text-accent mr-1">{desc.letter}.</span>
                 {desc.text}
               </span>
@@ -178,7 +178,7 @@ const DragMatchingTask = ({ items, descriptions, correctAnswers }: DragMatchingT
         )}
       </div>
       {showResults && (
-        <p className="font-body text-sm font-medium text-primary">
+        <p className="font-body text-lg font-medium text-primary">
           {Object.entries(assignments).filter(([di]) => assignments[Number(di)] === correctAnswers[Number(di)]).length} / {descriptions.length} correct!
         </p>
       )}

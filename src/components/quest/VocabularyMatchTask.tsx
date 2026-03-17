@@ -114,7 +114,7 @@ const VocabularyMatchTask = ({ words }: VocabularyMatchTaskProps) => {
         </svg>
 
         <div className="space-y-2">
-          <h5 className="font-body text-sm font-semibold uppercase tracking-wider text-accent mb-2">Words</h5>
+          <h5 className="font-body text-lg font-semibold uppercase tracking-wider text-accent mb-2">Words</h5>
           {words.map((w, i) => (
             <motion.button
               key={i}
@@ -122,7 +122,7 @@ const VocabularyMatchTask = ({ words }: VocabularyMatchTaskProps) => {
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               onClick={() => handleWordClick(i)}
-              className={`w-full text-left p-2 sm:p-3 rounded-xl border-[3px] font-body text-sm transition-all ${
+              className={`w-full text-left p-2 sm:p-3 rounded-xl border-[3px] font-body text-lg transition-all ${
                 activeWord === i
                   ? "border-accent bg-accent/15 ring-2 ring-accent/30 shadow-md"
                   : selected[i] !== undefined
@@ -140,7 +140,7 @@ const VocabularyMatchTask = ({ words }: VocabularyMatchTaskProps) => {
           ))}
         </div>
         <div className="space-y-2">
-          <h5 className="font-body text-sm font-semibold uppercase tracking-wider text-accent mb-2">Definitions</h5>
+          <h5 className="font-body text-lg font-semibold uppercase tracking-wider text-accent mb-2">Definitions</h5>
           {shuffledDefs.map((def, di) => {
             const isUsed = Object.values(selected).includes(di);
             const matchedWordIdx = Object.entries(selected).find(([, v]) => v === di)?.[0];
@@ -153,7 +153,7 @@ const VocabularyMatchTask = ({ words }: VocabularyMatchTaskProps) => {
                 whileTap={{ scale: 0.98 }}
                 onClick={() => handleDefClick(di)}
                 disabled={isUsed || activeWord === null}
-                className={`w-full text-left p-2 sm:p-3 rounded-xl border-[3px] font-body text-sm transition-all ${
+                className={`w-full text-left p-2 sm:p-3 rounded-xl border-[3px] font-body text-lg transition-all ${
                   verified && isUsed
                     ? defCorrect
                       ? "border-emerald-500 bg-emerald-50 text-emerald-800 shadow-sm"
@@ -176,7 +176,7 @@ const VocabularyMatchTask = ({ words }: VocabularyMatchTaskProps) => {
         </Button>
       </div>
       {verified && (
-        <p className={`font-body text-sm font-medium ${
+        <p className={`font-body text-lg font-medium ${
           Object.keys(selected).filter((k) => isCorrect(Number(k))).length === words.length ? "text-green-600" : "text-primary"
         }`}>
           {Object.keys(selected).filter((k) => isCorrect(Number(k))).length} / {words.length} correct!

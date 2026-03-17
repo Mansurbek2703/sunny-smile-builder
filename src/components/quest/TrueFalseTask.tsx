@@ -38,7 +38,7 @@ const TrueFalseTask = ({ statements }: TrueFalseTaskProps) => {
               : "bg-card border-border hover:border-accent/30"
           }`}
         >
-          <span className="font-body text-sm flex-1">
+          <span className="font-body text-lg flex-1">
             <span className="font-semibold text-primary mr-2">{i + 1}.</span>
             {s.text}
           </span>
@@ -46,7 +46,7 @@ const TrueFalseTask = ({ statements }: TrueFalseTaskProps) => {
             <button
               onClick={() => handleSelect(i, true)}
               disabled={showResults}
-              className={`px-4 py-1.5 rounded-lg font-body text-sm font-medium transition-all border-2 ${
+              className={`px-4 py-1.5 rounded-lg font-body text-lg font-medium transition-all border-2 ${
                 answers[i] === true
                   ? "bg-primary text-primary-foreground border-primary"
                   : "bg-background border-border hover:border-primary/40"
@@ -57,7 +57,7 @@ const TrueFalseTask = ({ statements }: TrueFalseTaskProps) => {
             <button
               onClick={() => handleSelect(i, false)}
               disabled={showResults}
-              className={`px-4 py-1.5 rounded-lg font-body text-sm font-medium transition-all border-2 ${
+              className={`px-4 py-1.5 rounded-lg font-body text-lg font-medium transition-all border-2 ${
                 answers[i] === false
                   ? "bg-destructive text-destructive-foreground border-destructive"
                   : "bg-background border-border hover:border-destructive/40"
@@ -84,7 +84,7 @@ const TrueFalseTask = ({ statements }: TrueFalseTaskProps) => {
         )}
       </div>
       {showResults && (
-        <p className="font-body text-sm font-medium text-primary">
+        <p className="font-body text-lg font-medium text-primary">
           {correctCount} / {statements.length} correct!
         </p>
       )}
