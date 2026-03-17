@@ -86,7 +86,7 @@ const WebQuest2 = () => {
                     const active = i === currentStep;
                     return (
                       <button key={s.id} onClick={() => goTo(i)}
-                        className={`flex items-center gap-3 w-full px-3 py-2.5 rounded-lg text-left transition-colors text-base font-body mb-1 ${active ? "bg-primary text-primary-foreground font-semibold" : "hover:bg-muted text-muted-foreground"}`}>
+                        className={`flex items-center gap-3 w-full px-3 py-2.5 rounded-lg text-left transition-colors text-sm font-body mb-1 ${active ? "bg-primary text-primary-foreground font-semibold" : "hover:bg-muted text-muted-foreground"}`}>
                         <Icon className="w-4 h-4 shrink-0" />
                         <span>{s.label}</span>
                       </button>
