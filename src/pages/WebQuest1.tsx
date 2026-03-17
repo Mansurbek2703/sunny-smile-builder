@@ -581,7 +581,7 @@ function GroupStep() {
       <div className="mt-3">
         <h4 className="font-display text-base font-semibold mb-1">Plan Your Cultural Evening</h4>
         <Card className="glass-card">
-          <CardContent className="p-2 sm:p-3 font-body text-sm space-y-1 text-muted-foreground">
+          <CardContent className="p-2 sm:p-3 font-body text-sm space-y-1 text-foreground">
             <p>Plan a "Thanksgiving–Navruz Cultural Evening" with your group:</p>
             <ul className="list-disc pl-4 space-y-0.5">
               <li>Decide the menu</li>
