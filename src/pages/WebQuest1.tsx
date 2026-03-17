@@ -392,7 +392,7 @@ function ThanksgivingStep() {
       </div>
 
       <div className="mb-2 p-2 rounded-lg bg-primary/5 border-l-3 border-primary">
-        <p className="font-body text-sm text-muted-foreground leading-snug">
+        <p className="font-body text-sm text-foreground leading-snug">
           It's the most wonderful time of the year in the US – a time for food, family, friends, and being thankful. Originating as a harvest festival, Thanksgiving is one of the biggest holidays in the US. People across the country gather together to share a meal and reflect on all the things they're grateful for. But there's much more to do during this beautiful time of giving thanks than just eating. From parades to shopping, running to volunteering – Thanksgiving is celebrated in a wide variety of ways. We've put together our bucket list for the ultimate US Thanksgiving celebration.
         </p>
       </div>
