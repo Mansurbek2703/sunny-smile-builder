@@ -72,7 +72,7 @@ const WebQuest1 = () => {
               <button
                 key={s.id}
                 onClick={() => goTo(i)}
-                className={`flex items-center gap-2 px-2 py-1 rounded-lg text-left transition-all text-lg font-body ${
+                className={`flex items-center gap-2 px-2 py-1 rounded-lg text-left transition-all text-sm font-body ${
                   active
                     ? "bg-primary text-primary-foreground font-semibold shadow-md"
                     : "hover:bg-muted text-muted-foreground hover:text-foreground"
@@ -103,7 +103,7 @@ const WebQuest1 = () => {
                     <button
                       key={s.id}
                       onClick={() => goTo(i)}
-                      className={`flex items-center gap-3 w-full px-3 py-2.5 rounded-lg text-left transition-colors text-lg font-body mb-1 ${
+                      className={`flex items-center gap-3 w-full px-3 py-2.5 rounded-lg text-left transition-colors text-sm font-body mb-1 ${
                         active
                           ? "bg-primary text-primary-foreground font-semibold"
                           : "hover:bg-muted text-muted-foreground"

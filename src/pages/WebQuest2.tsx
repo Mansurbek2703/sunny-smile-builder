@@ -63,7 +63,7 @@ const WebQuest2 = () => {
               const active = i === currentStep;
               return (
                 <button key={s.id} onClick={() => goTo(i)}
-                  className={`flex items-center gap-2 px-2 py-1 rounded-lg text-left transition-all text-lg font-body ${active ? "bg-primary text-primary-foreground font-semibold shadow-md" : "hover:bg-muted text-muted-foreground hover:text-foreground"}`}>
+                  className={`flex items-center gap-2 px-2 py-1 rounded-lg text-left transition-all text-sm font-body ${active ? "bg-primary text-primary-foreground font-semibold shadow-md" : "hover:bg-muted text-muted-foreground hover:text-foreground"}`}>
                   <Icon className="w-4 h-4 shrink-0" />
                   <span className="truncate">{s.label}</span>
                   {active && <span className="ml-auto w-1.5 h-1.5 rounded-full bg-primary-foreground" />}
@@ -86,7 +86,7 @@ const WebQuest2 = () => {
                     const active = i === currentStep;
                     return (
                       <button key={s.id} onClick={() => goTo(i)}
-                        className={`flex items-center gap-3 w-full px-3 py-2.5 rounded-lg text-left transition-colors text-lg font-body mb-1 ${active ? "bg-primary text-primary-foreground font-semibold" : "hover:bg-muted text-muted-foreground"}`}>
+                        className={`flex items-center gap-3 w-full px-3 py-2.5 rounded-lg text-left transition-colors text-sm font-body mb-1 ${active ? "bg-primary text-primary-foreground font-semibold" : "hover:bg-muted text-muted-foreground"}`}>
                         <Icon className="w-4 h-4 shrink-0" />
                         <span>{s.label}</span>
                       </button>
