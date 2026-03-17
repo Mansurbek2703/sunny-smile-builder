@@ -499,7 +499,7 @@ function ReadingSection({ title, children, image }: { title: string; children: R
   return (
     <div className="mb-3 p-3 rounded-xl bg-muted/50 border-l-4 border-primary/40 overflow-hidden">
       <h5 className="font-display font-semibold text-base mb-1">{title}</h5>
-      <div className="font-body text-base text-muted-foreground leading-relaxed">
+      <div className="font-body text-base text-foreground leading-relaxed">
         {image && <img src={image} alt={title} className="w-14 h-14 float-left mr-3 mb-1 rounded-lg object-contain" />}
         {children}
       </div>
