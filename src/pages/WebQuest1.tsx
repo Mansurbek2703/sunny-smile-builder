@@ -222,7 +222,7 @@ function IntroStep() {
           </Card>
         ))}
       </div>
-      <p className="font-body text-muted-foreground text-sm leading-snug mb-2">
+      <p className="font-body text-foreground text-sm leading-snug mb-2">
         Holidays are more than just days off — they reflect the history, culture, and values of people. In this WebQuest, you will explore two important holidays: <strong>Thanksgiving</strong> in the United States and <strong>Navruz</strong> in Central Asia. While they come from different cultural traditions, both emphasize gratitude, family, food, and community.
       </p>
       <div className="grid grid-cols-2 gap-2">
