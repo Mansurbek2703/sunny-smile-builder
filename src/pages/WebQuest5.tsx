@@ -105,8 +105,8 @@ function IntroStep() {
       <img src="/images/webquest5/hero1.jpg" alt="Culture Shock" loading="lazy" className="rounded-xl w-full h-auto object-cover shadow-md" />
       <img src="/images/webquest5/hero2.jpg" alt="Adaptation" loading="lazy" className="rounded-xl w-full h-auto object-cover shadow-md" />
     </div>
-    <div className="p-3 rounded-xl bg-muted/50 border-l-4 border-primary/40 mb-2"><p className="font-body text-base italic text-muted-foreground">"When in Rome, do as the Romans do"</p></div>
-    <p className="font-body text-muted-foreground text-sm leading-snug">Have you ever felt out of place in a new country or even in a new group? That feeling of confusion or discomfort is called culture shock. In this WebQuest, you will step into the shoes of exchange students, explore their real-life experiences, and learn how to adapt successfully in multicultural environments.</p>
+    <div className="p-3 rounded-xl bg-muted/50 border-l-4 border-primary/40 mb-2"><p className="font-body text-base italic text-foreground">"When in Rome, do as the Romans do"</p></div>
+    <p className="font-body text-foreground text-sm leading-snug">Have you ever felt out of place in a new country or even in a new group? That feeling of confusion or discomfort is called culture shock. In this WebQuest, you will step into the shoes of exchange students, explore their real-life experiences, and learn how to adapt successfully in multicultural environments.</p>
   </>);
 }
 
