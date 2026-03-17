@@ -112,7 +112,7 @@ function IntroStep() {
 
 function IdiomsStep() {
   return (<>
-    <p className="font-body text-muted-foreground text-base mb-3">Match the idioms and phrases with their correct meanings.</p>
+    <p className="font-body text-foreground text-base mb-3">Match the idioms and phrases with their correct meanings.</p>
     <SelectMatchingTask pairs={[{ left: "Lost at sea / adrift", right: "" }, { left: "Keep an open mind", right: "" }, { left: "To get the hang of something", right: "" }, { left: "A fish out of water", right: "" }, { left: "To learn the ropes", right: "" }, { left: "Overwhelmed", right: "" }, { left: "Shaken up / taken aback", right: "" }, { left: "Like a deer in headlights", right: "" }, { left: "All at sea", right: "" }]}
       options={["Feeling confused and without direction in a new environment", "Be willing to consider new ideas", "To finally understand or learn how to do something", "Feeling awkward or uncomfortable in an unfamiliar situation", "To learn basic rules or procedures in a new place", "Feeling buried under too much stress or new information", "Feeling very surprised, shocked, or unsettled", "Feeling frozen and unable to react because of shock", "Feeling extremely confused or bewildered"]}
       correctAnswers={{ 0: "Feeling confused and without direction in a new environment", 1: "Be willing to consider new ideas", 2: "To finally understand or learn how to do something", 3: "Feeling awkward or uncomfortable in an unfamiliar situation", 4: "To learn basic rules or procedures in a new place", 5: "Feeling buried under too much stress or new information", 6: "Feeling very surprised, shocked, or unsettled", 7: "Feeling frozen and unable to react because of shock", 8: "Feeling extremely confused or bewildered" }} />
