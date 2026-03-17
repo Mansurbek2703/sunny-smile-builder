@@ -55,7 +55,7 @@ const WebQuest2 = () => {
               <Link to="/" className="flex items-center gap-1 text-muted-foreground hover:text-foreground text-sm font-body mb-0.5 transition-colors">
                 <ArrowLeft className="w-3 h-3" /> Orqaga
               </Link>
-              <span className="text-[11px] font-body font-medium uppercase tracking-widest text-quest-gold">Module 1</span>
+              <span className="text-xs font-body font-medium uppercase tracking-widest text-quest-gold">Module 1</span>
               <h1 className="font-display text-base font-bold leading-tight">🌍 WebQuest 2 — Holidays Around the World</h1>
             </div>
             {steps.map((s, i) => {
