@@ -101,7 +101,7 @@ const WebQuest2 = () => {
             <div className="md:hidden sticky top-0 z-30 bg-card/70 backdrop-blur-md border-b border-border/50">
               <div className="flex items-center gap-2 px-3 pt-2 pb-1">
                 <Link to="/" className="text-muted-foreground hover:text-foreground"><ArrowLeft className="w-4 h-4" /></Link>
-                <span className="text-[11px] font-body font-medium uppercase tracking-widest text-quest-gold">Module 1</span>
+                <span className="text-xs font-body font-medium uppercase tracking-widest text-quest-gold">Module 1</span>
                 <span className="font-display text-sm font-bold truncate">🌍 WQ 2 — Holidays Around the World</span>
               </div>
               <div className="flex items-center gap-2 px-3 pb-2">
