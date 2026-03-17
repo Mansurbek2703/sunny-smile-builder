@@ -17,24 +17,18 @@ const DragMatchingTask = ({ items, descriptions, correctAnswers }: DragMatchingT
   const [showResults, setShowResults] = useState(false);
   const isMobile = useIsMobile();
 
-  const handleDragStart = (itemIndex: number) => {
-    setDragging(itemIndex);
-  };
+  const handleDragStart = (itemIndex: number) => { setDragging(itemIndex); };
 
   const handleDrop = (descIndex: number) => {
     if (dragging === null || showResults) return;
     const newAssignments = { ...assignments };
-    Object.entries(newAssignments).forEach(([key, val]) => {
-      if (val === dragging) delete newAssignments[Number(key)];
-    });
+    Object.entries(newAssignments).forEach(([key, val]) => { if (val === dragging) delete newAssignments[Number(key)]; });
     newAssignments[descIndex] = dragging;
     setAssignments(newAssignments);
     setDragging(null);
   };
 
-  const handleDragOver = (e: React.DragEvent) => {
-    e.preventDefault();
-  };
+  const handleDragOver = (e: React.DragEvent) => { e.preventDefault(); };
 
   const removeAssignment = (descIndex: number) => {
     if (showResults) return;
@@ -51,16 +45,9 @@ const DragMatchingTask = ({ items, descriptions, correctAnswers }: DragMatchingT
 
   const handleDropZoneTap = (descIndex: number) => {
     if (!isMobile || showResults) return;
-    if (selected === null) {
-      if (assignments[descIndex] !== undefined) {
-        removeAssignment(descIndex);
-      }
-      return;
-    }
+    if (selected === null) { if (assignments[descIndex] !== undefined) { removeAssignment(descIndex); } return; }
     const newAssignments = { ...assignments };
-    Object.entries(newAssignments).forEach(([key, val]) => {
-      if (val === selected) delete newAssignments[Number(key)];
-    });
+    Object.entries(newAssignments).forEach(([key, val]) => { if (val === selected) delete newAssignments[Number(key)]; });
     newAssignments[descIndex] = selected;
     setAssignments(newAssignments);
     setSelected(null);
@@ -68,12 +55,7 @@ const DragMatchingTask = ({ items, descriptions, correctAnswers }: DragMatchingT
 
   const usedItems = new Set(Object.values(assignments));
 
-  const reset = () => {
-    setAssignments({});
-    setShowResults(false);
-    setDragging(null);
-    setSelected(null);
-  };
+  const reset = () => { setAssignments({}); setShowResults(false); setDragging(null); setSelected(null); };
 
   return (
     <div className="space-y-2">
@@ -96,28 +78,18 @@ const DragMatchingTask = ({ items, descriptions, correctAnswers }: DragMatchingT
             className={`relative transition-all rounded-xl overflow-hidden shadow-md border-2 ${
               isMobile ? "cursor-pointer" : "cursor-grab active:cursor-grabbing"
             } ${
-              usedItems.has(i)
-                ? "opacity-30 cursor-not-allowed border-muted"
-                : selected === i
-                ? "ring-4 ring-quest-gold shadow-lg border-quest-gold scale-105"
-                : dragging === i
-                ? "ring-4 ring-accent shadow-lg border-accent"
+              usedItems.has(i) ? "opacity-30 cursor-not-allowed border-muted"
+                : selected === i ? "ring-4 ring-quest-gold shadow-lg border-quest-gold scale-105"
+                : dragging === i ? "ring-4 ring-accent shadow-lg border-accent"
                 : "border-border hover:border-accent hover:shadow-xl"
             }`}
           >
-            <img
-              src={item.image}
-              alt={item.label}
-              className="w-20 h-14 sm:w-28 sm:h-18 object-contain p-0.5 pointer-events-none"
-              draggable={false}
-            />
+            <img src={item.image} alt={item.label} className="w-20 h-14 sm:w-28 sm:h-18 object-contain p-0.5 pointer-events-none" draggable={false} />
             <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-foreground/80 to-transparent px-2 py-1">
               <span className="text-[12px] font-body font-semibold text-background">{item.label}</span>
             </div>
             {!usedItems.has(i) && !showResults && !isMobile && (
-              <div className="absolute top-1 right-1 bg-background/70 rounded p-0.5">
-                <GripHorizontal className="w-3 h-3 text-muted-foreground" />
-              </div>
+              <div className="absolute top-1 right-1 bg-background/70 rounded p-0.5"><GripHorizontal className="w-3 h-3 text-muted-foreground" /></div>
             )}
             {selected === i && (
               <div className="absolute inset-0 bg-quest-gold/20 flex items-center justify-center">
@@ -148,38 +120,20 @@ const DragMatchingTask = ({ items, descriptions, correctAnswers }: DragMatchingT
                 isMobile && selected !== null ? "cursor-pointer" : ""
               } ${
                 showResults
-                  ? isCorrect
-                    ? "bg-primary/10 border-primary/40"
-                    : isWrong
-                    ? "bg-destructive/10 border-destructive/40"
-                    : "bg-muted/20 border-border"
-                  : isDropTarget
-                  ? "border-quest-gold/60 bg-quest-gold/10"
-                  : dragging !== null
-                  ? "border-accent/50 bg-accent/5"
-                  : "bg-card border-border"
+                  ? isCorrect ? "bg-primary/10 border-primary/40" : isWrong ? "bg-destructive/10 border-destructive/40" : "bg-muted/20 border-border"
+                  : isDropTarget ? "border-quest-gold/60 bg-quest-gold/10" : dragging !== null ? "border-accent/50 bg-accent/5" : "bg-card border-border"
               }`}
             >
-              <span className="font-display font-bold text-base text-foreground min-w-[24px]">
-                {di + 1}.
-              </span>
+              <span className="font-display font-bold text-sm text-foreground min-w-[24px]">{di + 1}.</span>
 
               <div
                 className={`flex-shrink-0 w-14 h-10 sm:w-16 sm:h-11 rounded-md border-2 border-dashed flex items-center justify-center overflow-hidden transition-all ${
-                  assignedItem
-                    ? "border-solid border-accent/50"
-                    : isDropTarget
-                    ? "border-quest-gold bg-quest-gold/15 animate-pulse"
-                    : dragging !== null
-                    ? "border-accent bg-accent/10 animate-pulse"
+                  assignedItem ? "border-solid border-accent/50"
+                    : isDropTarget ? "border-quest-gold bg-quest-gold/15 animate-pulse"
+                    : dragging !== null ? "border-accent bg-accent/10 animate-pulse"
                     : "border-muted-foreground/20"
                 }`}
-                onClick={(e) => {
-                  if (assignedItem && !isMobile) {
-                    e.stopPropagation();
-                    removeAssignment(di);
-                  }
-                }}
+                onClick={(e) => { if (assignedItem && !isMobile) { e.stopPropagation(); removeAssignment(di); } }}
                 title={assignedItem ? "Click to remove" : "Drop flag here"}
               >
                 {assignedItem ? (
@@ -198,16 +152,14 @@ const DragMatchingTask = ({ items, descriptions, correctAnswers }: DragMatchingT
                 )}
               </div>
 
-              <span className="font-body text-base flex-1">
+              <span className="font-body text-sm flex-1">
                 <span className="font-semibold text-accent mr-1">{desc.letter}.</span>
                 {desc.text}
               </span>
 
               {showResults && (
-                isCorrect
-                  ? <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0" />
-                  : isWrong
-                  ? <XCircle className="w-5 h-5 text-destructive flex-shrink-0" />
+                isCorrect ? <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0" />
+                  : isWrong ? <XCircle className="w-5 h-5 text-destructive flex-shrink-0" />
                   : null
               )}
             </motion.div>
@@ -226,7 +178,7 @@ const DragMatchingTask = ({ items, descriptions, correctAnswers }: DragMatchingT
         )}
       </div>
       {showResults && (
-        <p className="font-body text-base font-medium text-primary">
+        <p className="font-body text-sm font-medium text-primary">
           {Object.entries(assignments).filter(([di]) => assignments[Number(di)] === correctAnswers[Number(di)]).length} / {descriptions.length} correct!
         </p>
       )}

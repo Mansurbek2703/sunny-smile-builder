@@ -45,11 +45,11 @@ const WebQuest3 = () => {
             style={{ borderImage: 'linear-gradient(to bottom, hsl(var(--quest-sky)), hsl(var(--quest-gold)), hsl(var(--quest-emerald))) 1' }}>
             <div className="px-1.5 pb-1 mb-0.5 border-b border-border/50">
               <Link to="/" className="flex items-center gap-1 text-muted-foreground hover:text-foreground text-sm font-body mb-0.5 transition-colors"><ArrowLeft className="w-3 h-3" /> Orqaga</Link>
-              <span className="text-[11px] font-body font-medium uppercase tracking-widest text-quest-gold">Module 2</span>
+              <span className="text-xs font-body font-medium uppercase tracking-widest text-quest-gold">Module 2</span>
               <h1 className="font-display text-base font-bold leading-tight">🌍 WebQuest 3 — Cultural Stereotypes</h1>
             </div>
             {steps.map((s, i) => { const Icon = s.icon; const active = i === currentStep; return (
-              <button key={s.id} onClick={() => goTo(i)} className={`flex items-center gap-2 px-2 py-1 rounded-lg text-left transition-all text-[15px] font-body ${active ? "bg-primary text-primary-foreground font-semibold shadow-md" : "hover:bg-muted text-muted-foreground hover:text-foreground"}`}>
+              <button key={s.id} onClick={() => goTo(i)} className={`flex items-center gap-2 px-2 py-1 rounded-lg text-left transition-all text-sm font-body ${active ? "bg-primary text-primary-foreground font-semibold shadow-md" : "hover:bg-muted text-muted-foreground hover:text-foreground"}`}>
                 <Icon className="w-4 h-4 shrink-0" /><span className="truncate">{s.label}</span>{active && <span className="ml-auto w-1.5 h-1.5 rounded-full bg-primary-foreground" />}
               </button>); })}
           </aside>
@@ -59,7 +59,7 @@ const WebQuest3 = () => {
               <motion.aside initial={{ x: -280 }} animate={{ x: 0 }} exit={{ x: -280 }} transition={{ type: "spring", damping: 25, stiffness: 300 }} className="fixed left-0 top-0 bottom-0 w-72 bg-card border-r z-50 md:hidden overflow-y-auto py-4 px-3">
                 <div className="flex items-center justify-between mb-4 px-2"><span className="font-display font-bold text-base">Steps</span><button onClick={() => setMobileMenuOpen(false)}><X className="w-5 h-5" /></button></div>
                 {steps.map((s, i) => { const Icon = s.icon; const active = i === currentStep; return (
-                  <button key={s.id} onClick={() => goTo(i)} className={`flex items-center gap-3 w-full px-3 py-2.5 rounded-lg text-left transition-colors text-base font-body mb-1 ${active ? "bg-primary text-primary-foreground font-semibold" : "hover:bg-muted text-muted-foreground"}`}><Icon className="w-4 h-4 shrink-0" /><span>{s.label}</span></button>); })}
+                  <button key={s.id} onClick={() => goTo(i)} className={`flex items-center gap-3 w-full px-3 py-2.5 rounded-lg text-left transition-colors text-sm font-body mb-1 ${active ? "bg-primary text-primary-foreground font-semibold" : "hover:bg-muted text-muted-foreground"}`}><Icon className="w-4 h-4 shrink-0" /><span>{s.label}</span></button>); })}
               </motion.aside>
             </>)}
           </AnimatePresence>
@@ -67,13 +67,13 @@ const WebQuest3 = () => {
             <div className="md:hidden sticky top-0 z-30 bg-card/70 backdrop-blur-md border-b border-border/50">
               <div className="flex items-center gap-2 px-3 pt-2 pb-1">
                 <Link to="/" className="text-muted-foreground hover:text-foreground"><ArrowLeft className="w-4 h-4" /></Link>
-                <span className="text-[11px] font-body font-medium uppercase tracking-widest text-quest-gold">Module 2</span>
+                <span className="text-xs font-body font-medium uppercase tracking-widest text-quest-gold">Module 2</span>
                 <span className="font-display text-sm font-bold truncate">🌍 WQ 3 — Cultural Stereotypes</span>
               </div>
               <div className="flex items-center gap-2 px-3 pb-2">
                 <button onClick={() => setMobileMenuOpen(true)} className="p-1.5 rounded-lg hover:bg-muted"><Menu className="w-5 h-5" /></button>
-                <span className="font-body text-base text-primary">{currentStep + 1}/{steps.length}</span>
-                <span className="font-display font-semibold text-base truncate">{steps[currentStep].label}</span>
+                <span className="font-body text-sm text-primary">{currentStep + 1}/{steps.length}</span>
+                <span className="font-display font-semibold text-sm truncate">{steps[currentStep].label}</span>
               </div>
             </div>
             <AnimatePresence mode="wait">
@@ -85,7 +85,7 @@ const WebQuest3 = () => {
                   <div className="flex items-center gap-2 mb-1.5">
                     <span className="flex-shrink-0 w-6 h-6 rounded-md bg-primary/10 text-primary flex items-center justify-center">{(() => { const Icon = steps[currentStep].icon; return <Icon className="w-3.5 h-3.5" />; })()}</span>
                     <div>
-                      <span className="text-[11px] font-body text-primary uppercase tracking-wider">Step {currentStep + 1} / {steps.length}</span>
+                      <span className="text-xs font-body text-primary uppercase tracking-wider">Step {currentStep + 1} / {steps.length}</span>
                       <h3 className="font-display text-base font-bold leading-none">{steps[currentStep].label}</h3>
                     </div>
                   </div>
@@ -233,7 +233,7 @@ function ObservationsStep() {
     <h4 className="font-display text-base font-semibold mb-2">Task I: Cultural Observations</h4>
     <div className="space-y-2 mb-4">
       {["In Kazakh culture, female beauty is often described as moon-faced and tall in songs.", "In Uzbek culture, bread is treated as a sacred symbol, not just food.", "In Anglo-Saxon cultures, inviting someone to a restaurant may be more common than inviting them home.", "In Japanese culture, openly correcting an older person is considered impolite.", "In Italian culture, loud emotional speech is often seen as natural and sincere."].map((obs, i) => (
-        <Card key={i} className="glass-card"><CardContent className="p-2 font-body text-base">{obs}</CardContent></Card>))}
+        <Card key={i} className="glass-card"><CardContent className="p-2 font-body text-sm">{obs}</CardContent></Card>))}
     </div>
     <h4 className="font-display text-base font-semibold mb-2">Task II: Match situation with cultural meaning</h4>
     <SelectMatchingTask pairs={[{ left: "Bread is never thrown away", right: "" }, { left: "Guests are treated as 'sent by God'", right: "" }, { left: "Older people are not openly corrected", right: "" }, { left: "Home is a private space", right: "" }, { left: "Direct eye contact is avoided", right: "" }]}
@@ -254,7 +254,7 @@ function ObservationsStep() {
 
 function ResearchStep() {
   return (<>
-    <p className="font-body text-foreground text-base mb-3">In pairs or small groups, list at least 5 cultural stereotypes. Select 3-4 to investigate using reliable sources (BBC Culture, National Geographic, Cultural Atlas, Britannica, UNESCO).</p>
+    <p className="font-body text-foreground text-sm mb-3">In pairs or small groups, list at least 5 cultural stereotypes. Select 3-4 to investigate using reliable sources (BBC Culture, National Geographic, Cultural Atlas, Britannica, UNESCO).</p>
     <OpenQuestionTask title="Research & Write" questions={["List 5 cultural stereotypes you have heard about different nations.", "For each stereotype, find facts that confirm or disprove it.", "Compare them with your own country. Which difference could cause the most misunderstanding?"]} />
   </>);
 }
@@ -266,14 +266,14 @@ function ReflectionStep() {
       <SelfEvalChecklist items={["I identified common cultural stereotypes.", "I checked stereotypes using reliable sources.", "I can tell the difference between facts and opinions.", "I learned new information about another culture.", "I understand why stereotypes can be misleading or harmful.", "I participated actively in the WebQuest activities.", "I can reflect on my own attitudes and assumptions."]} />
     </div>
     <Card className="mt-4 border-primary/30 bg-primary/5"><CardContent className="p-4 text-center">
-      <h3 className="font-display text-xl font-bold text-primary mb-1">🎉 Congratulations!</h3>
+      <h3 className="font-display text-base font-bold text-primary mb-1">🎉 Congratulations!</h3>
       <p className="font-body text-sm text-foreground">You have learned that stereotypes are not always true — they are generalizations that can hide the diversity within cultures. Understanding the difference between truth and myth helps us become more open-minded and globally aware citizens.</p>
     </CardContent></Card>
   </>);
 }
 
 function ReadingSection({ title, children }: { title: string; children: React.ReactNode }) {
-  return (<div className="mb-3 p-3 rounded-xl bg-muted/50 border-l-4 border-primary/40"><h5 className="font-display font-semibold text-base mb-1">{title}</h5><p className="font-body text-base text-foreground leading-relaxed">{children}</p></div>);
+  return (<div className="mb-3 p-3 rounded-xl bg-muted/50 border-l-4 border-primary/40"><h5 className="font-display font-semibold text-sm mb-1">{title}</h5><p className="font-body text-sm text-foreground leading-relaxed">{children}</p></div>);
 }
 
 function SelfEvalChecklist({ items }: { items: string[] }) {
@@ -281,7 +281,7 @@ function SelfEvalChecklist({ items }: { items: string[] }) {
   return (<div className="space-y-1">{items.map((item, i) => (
     <label key={i} className="flex items-start gap-3 p-2 rounded-lg hover:bg-muted/50 transition-colors cursor-pointer">
       <input type="checkbox" checked={checked[i] || false} onChange={() => setChecked((prev) => ({ ...prev, [i]: !prev[i] }))} className="mt-0.5 w-4 h-4 rounded border-primary text-primary focus:ring-primary" />
-      <span className="font-body text-base">{item}</span>{checked[i] && <CheckCircle2 className="w-4 h-4 text-primary ml-auto flex-shrink-0" />}
+      <span className="font-body text-sm">{item}</span>{checked[i] && <CheckCircle2 className="w-4 h-4 text-primary ml-auto flex-shrink-0" />}
     </label>))}</div>);
 }
 
