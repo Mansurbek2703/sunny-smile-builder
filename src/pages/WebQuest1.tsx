@@ -281,7 +281,7 @@ function NavruzStep() {
       </div>
 
       <div className="mb-2 p-2 rounded-lg bg-primary/5 border-l-3 border-primary">
-        <p className="font-body text-sm text-muted-foreground leading-snug">
+        <p className="font-body text-sm text-foreground leading-snug">
           Each spring, Uzbekistan bursts into colour and celebration as Navruz — literally translating to 'New Day' — ushers in the Persian New Year. Marking the arrival of spring on 21 March, Navruz is one of the most significant and cherished festivals across Central Asia, deeply rooted in tradition, history, and community spirit. For Uzbek families, it's a time of joy, renewal, and connection, as people gather to welcome the changing season with open hearts.
         </p>
       </div>
