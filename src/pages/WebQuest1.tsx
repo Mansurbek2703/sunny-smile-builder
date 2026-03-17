@@ -637,7 +637,7 @@ function ReadingSection({ title, children }: { title: string; children: React.Re
   return (
     <div className="mb-1.5 p-2 rounded-lg bg-muted/50 border-l-3 border-primary/40">
       <h5 className="font-display font-semibold text-sm mb-0.5">{title}</h5>
-      <p className="font-body text-sm text-muted-foreground leading-snug whitespace-pre-line">{children}</p>
+      <p className="font-body text-sm text-foreground leading-snug whitespace-pre-line">{children}</p>
     </div>
   );
 }
