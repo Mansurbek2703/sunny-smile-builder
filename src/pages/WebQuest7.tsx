@@ -126,7 +126,7 @@ function IntroStep() {
       <img src="/images/webquest7/hero1.jpg" alt="Cultural Heroes" loading="lazy" className="rounded-xl w-full h-auto object-cover shadow-md" />
       <img src="/images/webquest7/hero2.jpg" alt="Heritage" loading="lazy" className="rounded-xl w-full h-auto object-cover shadow-md" />
     </div>
-    <p className="font-body text-muted-foreground text-sm leading-snug">
+    <p className="font-body text-foreground text-sm leading-snug">
       Every culture has its heroes — writers, artists, scientists, musicians, activists — whose ideas and achievements shape national identity and influence the world. In this WebQuest, you will explore the life and legacy of a cultural hero.
     </p>
   </>);
