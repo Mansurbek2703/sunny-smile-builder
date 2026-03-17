@@ -45,11 +45,11 @@ const WebQuest3 = () => {
             style={{ borderImage: 'linear-gradient(to bottom, hsl(var(--quest-sky)), hsl(var(--quest-gold)), hsl(var(--quest-emerald))) 1' }}>
             <div className="px-1.5 pb-1 mb-0.5 border-b border-border/50">
               <Link to="/" className="flex items-center gap-1 text-muted-foreground hover:text-foreground text-sm font-body mb-0.5 transition-colors"><ArrowLeft className="w-3 h-3" /> Orqaga</Link>
-              <span className="text-[11px] font-body font-medium uppercase tracking-widest text-quest-gold">Module 2</span>
+              <span className="text-xs font-body font-medium uppercase tracking-widest text-quest-gold">Module 2</span>
               <h1 className="font-display text-base font-bold leading-tight">🌍 WebQuest 3 — Cultural Stereotypes</h1>
             </div>
             {steps.map((s, i) => { const Icon = s.icon; const active = i === currentStep; return (
-              <button key={s.id} onClick={() => goTo(i)} className={`flex items-center gap-2 px-2 py-1 rounded-lg text-left transition-all text-[15px] font-body ${active ? "bg-primary text-primary-foreground font-semibold shadow-md" : "hover:bg-muted text-muted-foreground hover:text-foreground"}`}>
+              <button key={s.id} onClick={() => goTo(i)} className={`flex items-center gap-2 px-2 py-1 rounded-lg text-left transition-all text-sm font-body ${active ? "bg-primary text-primary-foreground font-semibold shadow-md" : "hover:bg-muted text-muted-foreground hover:text-foreground"}`}>
                 <Icon className="w-4 h-4 shrink-0" /><span className="truncate">{s.label}</span>{active && <span className="ml-auto w-1.5 h-1.5 rounded-full bg-primary-foreground" />}
               </button>); })}
           </aside>
