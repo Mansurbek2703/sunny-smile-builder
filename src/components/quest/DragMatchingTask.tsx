@@ -7,13 +7,13 @@ import { useIsMobile } from "@/hooks/use-mobile";
 interface DragMatchingTaskProps {
   items: { label: string; image: string }[];
   descriptions: { letter: string; text: string }[];
-  correctAnswers: Record<number, number>; // descIndex -> itemIndex
+  correctAnswers: Record<number, number>;
 }
 
 const DragMatchingTask = ({ items, descriptions, correctAnswers }: DragMatchingTaskProps) => {
-  const [assignments, setAssignments] = useState<Record<number, number>>({}); // descIndex -> itemIndex
+  const [assignments, setAssignments] = useState<Record<number, number>>({});
   const [dragging, setDragging] = useState<number | null>(null);
-  const [selected, setSelected] = useState<number | null>(null); // for tap-to-place on mobile
+  const [selected, setSelected] = useState<number | null>(null);
   const [showResults, setShowResults] = useState(false);
   const isMobile = useIsMobile();
 
@@ -43,7 +43,6 @@ const DragMatchingTask = ({ items, descriptions, correctAnswers }: DragMatchingT
     setAssignments(newAssignments);
   };
 
-  // Tap-to-select on mobile: tap flag -> tap drop zone
   const handleItemTap = (itemIndex: number) => {
     if (showResults || !isMobile) return;
     if (usedItems.has(itemIndex)) return;
@@ -53,7 +52,6 @@ const DragMatchingTask = ({ items, descriptions, correctAnswers }: DragMatchingT
   const handleDropZoneTap = (descIndex: number) => {
     if (!isMobile || showResults) return;
     if (selected === null) {
-      // If tapping a filled zone, remove it
       if (assignments[descIndex] !== undefined) {
         removeAssignment(descIndex);
       }
@@ -79,14 +77,12 @@ const DragMatchingTask = ({ items, descriptions, correctAnswers }: DragMatchingT
 
   return (
     <div className="space-y-2">
-      {/* Instruction for mobile */}
       {isMobile && !showResults && (
-        <p className="text-xs font-body text-muted-foreground text-center italic">
+        <p className="text-sm font-body text-muted-foreground text-center italic">
           Bayroqni bosing, keyin joylashtirish uchun qatorni bosing
         </p>
       )}
 
-      {/* Flag images on top */}
       <div className="flex flex-wrap gap-2 justify-center p-2 rounded-xl bg-muted/30 border-2 border-dashed border-border">
         {items.map((item, i) => (
           <motion.div
@@ -116,7 +112,7 @@ const DragMatchingTask = ({ items, descriptions, correctAnswers }: DragMatchingT
               draggable={false}
             />
             <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-foreground/80 to-transparent px-2 py-1">
-              <span className="text-[10px] font-body font-semibold text-background">{item.label}</span>
+              <span className="text-[12px] font-body font-semibold text-background">{item.label}</span>
             </div>
             {!usedItems.has(i) && !showResults && !isMobile && (
               <div className="absolute top-1 right-1 bg-background/70 rounded p-0.5">
@@ -125,14 +121,13 @@ const DragMatchingTask = ({ items, descriptions, correctAnswers }: DragMatchingT
             )}
             {selected === i && (
               <div className="absolute inset-0 bg-quest-gold/20 flex items-center justify-center">
-                <span className="text-xs font-body font-bold text-foreground bg-background/80 px-2 py-0.5 rounded">✓ Tanlangan</span>
+                <span className="text-sm font-body font-bold text-foreground bg-background/80 px-2 py-0.5 rounded">✓ Tanlangan</span>
               </div>
             )}
           </motion.div>
         ))}
       </div>
 
-      {/* Description rows with drop zones */}
       <div className="grid md:grid-cols-2 gap-1.5">
         {descriptions.map((desc, di) => {
           const assignedItem = assignments[di] !== undefined ? items[assignments[di]] : null;
@@ -165,11 +160,10 @@ const DragMatchingTask = ({ items, descriptions, correctAnswers }: DragMatchingT
                   : "bg-card border-border"
               }`}
             >
-              <span className="font-display font-bold text-sm text-muted-foreground min-w-[24px]">
+              <span className="font-display font-bold text-base text-muted-foreground min-w-[24px]">
                 {di + 1}.
               </span>
 
-              {/* Drop zone for flag */}
               <div
                 className={`flex-shrink-0 w-14 h-10 sm:w-16 sm:h-11 rounded-md border-2 border-dashed flex items-center justify-center overflow-hidden transition-all ${
                   assignedItem
@@ -198,13 +192,13 @@ const DragMatchingTask = ({ items, descriptions, correctAnswers }: DragMatchingT
                     )}
                   </div>
                 ) : isDropTarget ? (
-                  <span className="text-xs text-quest-gold font-body font-medium">👆</span>
+                  <span className="text-sm text-quest-gold font-body font-medium">👆</span>
                 ) : (
-                  <span className="text-xs text-muted-foreground/50 font-body">🏳️</span>
+                  <span className="text-sm text-muted-foreground/50 font-body">🏳️</span>
                 )}
               </div>
 
-              <span className="font-body text-sm flex-1">
+              <span className="font-body text-base flex-1">
                 <span className="font-semibold text-accent mr-1">{desc.letter}.</span>
                 {desc.text}
               </span>
@@ -232,7 +226,7 @@ const DragMatchingTask = ({ items, descriptions, correctAnswers }: DragMatchingT
         )}
       </div>
       {showResults && (
-        <p className="font-body text-sm font-medium text-primary">
+        <p className="font-body text-base font-medium text-primary">
           {Object.entries(assignments).filter(([di]) => assignments[Number(di)] === correctAnswers[Number(di)]).length} / {descriptions.length} correct!
         </p>
       )}

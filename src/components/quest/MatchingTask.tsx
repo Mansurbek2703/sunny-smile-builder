@@ -37,7 +37,7 @@ const MatchingTask = ({ pairs, correctAnswers }: MatchingTaskProps) => {
               : "bg-card border-border"
           }`}
         >
-          <span className="font-body font-medium text-sm min-w-[120px]">{pair.left}</span>
+          <span className="font-body font-medium text-base min-w-[120px]">{pair.left}</span>
           <input
             type="text"
             maxLength={1}
@@ -45,9 +45,9 @@ const MatchingTask = ({ pairs, correctAnswers }: MatchingTaskProps) => {
             onChange={(e) => handleChange(i, e.target.value)}
             disabled={showResults}
             placeholder="?"
-            className="w-10 h-10 text-center rounded-lg border bg-background font-display font-bold text-lg focus:ring-2 focus:ring-primary focus:outline-none disabled:opacity-60"
+            className="w-10 h-10 text-center rounded-lg border bg-background font-display font-bold text-xl focus:ring-2 focus:ring-primary focus:outline-none disabled:opacity-60"
           />
-          <span className="font-body text-xs text-muted-foreground flex-1">{pair.right}</span>
+          <span className="font-body text-sm text-muted-foreground flex-1">{pair.right}</span>
           {showResults && (
             answers[i] === correctAnswers[i]
               ? <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0" />

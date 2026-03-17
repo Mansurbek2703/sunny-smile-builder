@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 
 interface FillBlanksTaskProps {
   wordBank: string[];
-  sentences: { text: string; blank: string }[]; // text has ___ where blank goes
+  sentences: { text: string; blank: string }[];
 }
 
 const FillBlanksTask = ({ wordBank, sentences }: FillBlanksTaskProps) => {
@@ -22,7 +22,7 @@ const FillBlanksTask = ({ wordBank, sentences }: FillBlanksTaskProps) => {
     <div className="space-y-4">
       <div className="flex flex-wrap gap-2 p-3 rounded-xl bg-muted/40 border-2 border-dashed border-border">
         {wordBank.map((w, i) => (
-          <span key={i} className="px-3 py-1 rounded-full bg-primary/10 text-primary font-body text-sm font-medium border border-primary/20">
+          <span key={i} className="px-3 py-1 rounded-full bg-primary/10 text-primary font-body text-base font-medium border border-primary/20">
             {w}
           </span>
         ))}
@@ -35,7 +35,7 @@ const FillBlanksTask = ({ wordBank, sentences }: FillBlanksTaskProps) => {
             initial={{ opacity: 0, x: -10 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: i * 0.04 }}
-            className={`flex flex-wrap items-center gap-1 p-3 rounded-xl border-2 font-body text-sm ${
+            className={`flex flex-wrap items-center gap-1 p-3 rounded-xl border-2 font-body text-base ${
               showResults
                 ? answers[i]?.toLowerCase().trim() === s.blank.toLowerCase().trim()
                   ? "bg-primary/10 border-primary/40"
@@ -49,7 +49,7 @@ const FillBlanksTask = ({ wordBank, sentences }: FillBlanksTaskProps) => {
               value={answers[i] || ""}
               onChange={(e) => setAnswers((prev) => ({ ...prev, [i]: e.target.value }))}
               disabled={showResults}
-              className="px-2 py-1 rounded-lg border-2 bg-background font-body text-sm min-w-[140px] focus:ring-2 focus:ring-accent focus:outline-none"
+              className="px-2 py-1 rounded-lg border-2 bg-background font-body text-base min-w-[140px] focus:ring-2 focus:ring-accent focus:outline-none"
             >
               <option value="">— select —</option>
               {wordBank.map((w, wi) => (
@@ -60,7 +60,7 @@ const FillBlanksTask = ({ wordBank, sentences }: FillBlanksTaskProps) => {
             {showResults && (
               answers[i]?.toLowerCase().trim() === s.blank.toLowerCase().trim()
                 ? <CheckCircle2 className="w-4 h-4 text-primary ml-1" />
-                : <span className="text-xs text-primary font-medium ml-1">({s.blank})</span>
+                : <span className="text-sm text-primary font-medium ml-1">({s.blank})</span>
             )}
           </motion.div>
         );
@@ -76,7 +76,7 @@ const FillBlanksTask = ({ wordBank, sentences }: FillBlanksTaskProps) => {
         )}
       </div>
       {showResults && (
-        <p className="font-body text-sm font-medium text-primary">
+        <p className="font-body text-base font-medium text-primary">
           {correctCount} / {sentences.length} correct!
         </p>
       )}

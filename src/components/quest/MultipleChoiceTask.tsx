@@ -38,7 +38,7 @@ const MultipleChoiceTask = ({ questions }: MultipleChoiceTaskProps) => {
           transition={{ delay: qi * 0.05 }}
           className="space-y-2"
         >
-          <p className="font-body text-sm font-semibold">
+          <p className="font-body text-base font-semibold">
             <span className="text-primary mr-2">{qi + 1}.</span>
             {q.question}
           </p>
@@ -52,7 +52,7 @@ const MultipleChoiceTask = ({ questions }: MultipleChoiceTaskProps) => {
                   key={oi}
                   onClick={() => handleSelect(qi, oi)}
                   disabled={showResults}
-                  className={`text-left p-3 rounded-lg font-body text-sm border-2 transition-all ${
+                  className={`text-left p-3 rounded-lg font-body text-base border-2 transition-all ${
                     isCorrect
                       ? "bg-primary/10 border-primary/50 font-medium"
                       : isWrong
@@ -85,7 +85,7 @@ const MultipleChoiceTask = ({ questions }: MultipleChoiceTaskProps) => {
         )}
       </div>
       {showResults && (
-        <p className="font-body text-sm font-medium text-primary">
+        <p className="font-body text-base font-medium text-primary">
           {correctCount} / {questions.length} correct!
         </p>
       )}
