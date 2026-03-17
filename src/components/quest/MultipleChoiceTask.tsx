@@ -62,7 +62,7 @@ const MultipleChoiceTask = ({ questions }: MultipleChoiceTaskProps) => {
                       : "bg-card border-border hover:border-accent/30"
                   }`}
                 >
-                  <span className="font-semibold mr-2 text-muted-foreground">
+                  <span className="font-semibold mr-2 text-foreground">
                     {String.fromCharCode(97 + oi)})
                   </span>
                   {opt}

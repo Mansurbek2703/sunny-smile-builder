@@ -160,7 +160,7 @@ const DragMatchingTask = ({ items, descriptions, correctAnswers }: DragMatchingT
                   : "bg-card border-border"
               }`}
             >
-              <span className="font-display font-bold text-base text-muted-foreground min-w-[24px]">
+              <span className="font-display font-bold text-base text-foreground min-w-[24px]">
                 {di + 1}.
               </span>
 

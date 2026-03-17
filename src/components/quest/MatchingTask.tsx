@@ -47,7 +47,7 @@ const MatchingTask = ({ pairs, correctAnswers }: MatchingTaskProps) => {
             placeholder="?"
             className="w-10 h-10 text-center rounded-lg border bg-background font-display font-bold text-xl focus:ring-2 focus:ring-primary focus:outline-none disabled:opacity-60"
           />
-          <span className="font-body text-sm text-muted-foreground flex-1">{pair.right}</span>
+          <span className="font-body text-sm text-foreground flex-1">{pair.right}</span>
           {showResults && (
             answers[i] === correctAnswers[i]
               ? <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0" />

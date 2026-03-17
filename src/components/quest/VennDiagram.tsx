@@ -35,7 +35,7 @@ const VennDiagram = ({ leftLabel, rightLabel }: VennDiagramProps) => {
         </div>
         {/* Center overlap */}
         <div className="relative z-10 w-[30%] md:w-[20%] flex flex-col items-center justify-center">
-          <h5 className="font-display font-semibold text-sm text-muted-foreground mb-1">Both</h5>
+          <h5 className="font-display font-semibold text-sm text-foreground mb-1">Both</h5>
           <textarea
             value={centerItems}
             onChange={(e) => setCenterItems(e.target.value)}
