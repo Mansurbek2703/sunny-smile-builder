@@ -555,7 +555,7 @@ function RolePlayStep() {
 function ResearchStep() {
   return (
     <>
-      <p className="font-body text-sm text-muted-foreground mb-2">Use these links to deepen your knowledge:</p>
+      <p className="font-body text-sm text-foreground mb-2">Use these links to deepen your knowledge:</p>
       <div className="space-y-1">
         {[
           { name: "Thanksgiving Day — Britannica", url: "https://www.britannica.com/topic/Thanksgiving-Day" },
