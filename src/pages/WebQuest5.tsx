@@ -199,7 +199,7 @@ function VideoStep() {
 
 function CaseStudyStep() {
   return (<>
-    <div className="p-3 rounded-xl bg-muted/50 border-l-4 border-accent/40 mb-4"><p className="font-body text-base text-muted-foreground leading-relaxed"><strong>Situation:</strong> An Uzbek student feels offended because British friends never invite her to their home. The British friends believe they are being polite by respecting privacy.</p></div>
+    <div className="p-3 rounded-xl bg-muted/50 border-l-4 border-accent/40 mb-4"><p className="font-body text-base text-foreground leading-relaxed"><strong>Situation:</strong> An Uzbek student feels offended because British friends never invite her to their home. The British friends believe they are being polite by respecting privacy.</p></div>
     <OpenQuestionTask title="Answer the questions" questions={["What cultural values are in conflict?", "Is this behaviour unfriendly or culturally normal?", "How does the proverb 'When in Rome, do as the Romans do' apply here?"]} />
     <div className="mt-4"><OpenQuestionTask title="Critical Thinking" questions={["Why can gestures cause misunderstandings in global communication?", "How can cultural awareness reduce conflict in international meetings?", "Why is it not necessary to share beliefs in order to respect them?"]} /></div>
   </>);
