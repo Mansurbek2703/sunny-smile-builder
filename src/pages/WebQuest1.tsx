@@ -62,7 +62,7 @@ const WebQuest1 = () => {
               <Link to="/" className="flex items-center gap-1 text-muted-foreground hover:text-foreground text-sm font-body mb-0.5 transition-colors">
                 <ArrowLeft className="w-3 h-3" /> Orqaga
               </Link>
-              <span className="text-[11px] font-body font-medium uppercase tracking-widest text-quest-gold">Module 1</span>
+              <span className="text-xs font-body font-medium uppercase tracking-widest text-quest-gold">Module 1</span>
               <h1 className="font-display text-base font-bold leading-tight">🌍 WebQuest 1 — Thanksgiving & Navruz</h1>
             </div>
           {steps.map((s, i) => {
@@ -72,7 +72,7 @@ const WebQuest1 = () => {
               <button
                 key={s.id}
                 onClick={() => goTo(i)}
-                className={`flex items-center gap-2 px-2 py-1 rounded-lg text-left transition-all text-[15px] font-body ${
+                className={`flex items-center gap-2 px-2 py-1 rounded-lg text-left transition-all text-sm font-body ${
                   active
                     ? "bg-primary text-primary-foreground font-semibold shadow-md"
                     : "hover:bg-muted text-muted-foreground hover:text-foreground"
@@ -103,7 +103,7 @@ const WebQuest1 = () => {
                     <button
                       key={s.id}
                       onClick={() => goTo(i)}
-                      className={`flex items-center gap-3 w-full px-3 py-2.5 rounded-lg text-left transition-colors text-base font-body mb-1 ${
+                      className={`flex items-center gap-3 w-full px-3 py-2.5 rounded-lg text-left transition-colors text-sm font-body mb-1 ${
                         active
                           ? "bg-primary text-primary-foreground font-semibold"
                           : "hover:bg-muted text-muted-foreground"
@@ -125,13 +125,13 @@ const WebQuest1 = () => {
           <div className="md:hidden sticky top-0 z-30 bg-card/70 backdrop-blur-md border-b border-border/50">
             <div className="flex items-center gap-2 px-3 pt-2 pb-1">
               <Link to="/" className="text-muted-foreground hover:text-foreground"><ArrowLeft className="w-4 h-4" /></Link>
-              <span className="text-[11px] font-body font-medium uppercase tracking-widest text-quest-gold">Module 1</span>
+              <span className="text-xs font-body font-medium uppercase tracking-widest text-quest-gold">Module 1</span>
               <span className="font-display text-sm font-bold truncate">🌍 WQ 1 — Thanksgiving & Navruz</span>
             </div>
             <div className="flex items-center gap-2 px-3 pb-2">
               <button onClick={() => setMobileMenuOpen(true)} className="p-1.5 rounded-lg hover:bg-muted"><Menu className="w-5 h-5" /></button>
-              <span className="font-body text-base text-primary">{currentStep + 1}/{steps.length}</span>
-              <span className="font-display font-semibold text-base truncate">{steps[currentStep].label}</span>
+              <span className="font-body text-sm text-primary">{currentStep + 1}/{steps.length}</span>
+              <span className="font-display font-semibold text-sm truncate">{steps[currentStep].label}</span>
             </div>
           </div>
 
@@ -155,7 +155,7 @@ const WebQuest1 = () => {
                     {(() => { const Icon = steps[currentStep].icon; return <Icon className="w-3.5 h-3.5" />; })()}
                   </span>
                   <div>
-                    <span className="text-[11px] font-body text-primary uppercase tracking-wider">Step {currentStep + 1} / {steps.length}</span>
+                    <span className="text-xs font-body text-primary uppercase tracking-wider">Step {currentStep + 1} / {steps.length}</span>
                     <h3 className="font-display text-base font-bold leading-none">{steps[currentStep].label}</h3>
                   </div>
                 </div>
@@ -236,7 +236,7 @@ function IntroStep() {
 function Task1Step() {
   return (
     <>
-      <p className="font-body text-foreground text-base mb-2">
+      <p className="font-body text-foreground text-sm mb-2">
         Read the descriptions of holidays in Column B and match them with the countries in Column A. Drag the flag images and drop them next to the correct description.
       </p>
       <DragMatchingTask
@@ -621,7 +621,7 @@ function ReflectionStep() {
       </div>
       <Card className="mt-3 border-primary/30 bg-primary/5">
         <CardContent className="p-2 sm:p-3 text-center">
-          <h3 className="font-display text-lg font-bold text-primary mb-1">🎉 Congratulations!</h3>
+          <h3 className="font-display text-base font-bold text-primary mb-1">🎉 Congratulations!</h3>
           <p className="font-body text-sm text-foreground">
             You have compared two important traditions and discovered how people in different cultures celebrate gratitude, renewal, and family. Remember: learning about other cultures is the first step toward becoming a global citizen.
           </p>
