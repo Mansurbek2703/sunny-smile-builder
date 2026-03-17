@@ -67,13 +67,13 @@ const WebQuest3 = () => {
             <div className="md:hidden sticky top-0 z-30 bg-card/70 backdrop-blur-md border-b border-border/50">
               <div className="flex items-center gap-2 px-3 pt-2 pb-1">
                 <Link to="/" className="text-muted-foreground hover:text-foreground"><ArrowLeft className="w-4 h-4" /></Link>
-                <span className="text-[11px] font-body font-medium uppercase tracking-widest text-quest-gold">Module 2</span>
+                <span className="text-xs font-body font-medium uppercase tracking-widest text-quest-gold">Module 2</span>
                 <span className="font-display text-sm font-bold truncate">🌍 WQ 3 — Cultural Stereotypes</span>
               </div>
               <div className="flex items-center gap-2 px-3 pb-2">
                 <button onClick={() => setMobileMenuOpen(true)} className="p-1.5 rounded-lg hover:bg-muted"><Menu className="w-5 h-5" /></button>
-                <span className="font-body text-base text-primary">{currentStep + 1}/{steps.length}</span>
-                <span className="font-display font-semibold text-base truncate">{steps[currentStep].label}</span>
+                <span className="font-body text-sm text-primary">{currentStep + 1}/{steps.length}</span>
+                <span className="font-display font-semibold text-sm truncate">{steps[currentStep].label}</span>
               </div>
             </div>
             <AnimatePresence mode="wait">
