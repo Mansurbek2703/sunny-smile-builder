@@ -96,7 +96,7 @@ function IntroStep() {
         <Card key={i} className="glass-card hover:shadow-lg transition-shadow"><CardContent className="p-2 flex items-start gap-2"><span className="flex-shrink-0 w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center font-display font-bold text-sm">{i + 1}</span><p className="font-body text-sm leading-snug">{o}</p></CardContent></Card>))}
     </div>
     <img src="/images/webquest6/hero1.jpg" alt="Food Culture" loading="lazy" className="rounded-xl w-full h-48 object-cover shadow-md mb-2" />
-    <p className="font-body text-muted-foreground text-sm leading-snug">This WebQuest invites students to explore food culture in various countries. Through guided online research, students will learn how food-related customs, table manners, and social behaviors differ across cultures.</p>
+    <p className="font-body text-foreground text-sm leading-snug">This WebQuest invites students to explore food culture in various countries. Through guided online research, students will learn how food-related customs, table manners, and social behaviors differ across cultures.</p>
   </>);
 }
 
