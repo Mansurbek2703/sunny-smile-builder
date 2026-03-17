@@ -187,8 +187,8 @@ function IntroStep() {
         ].map((outcome, i) => (
           <Card key={i} className="glass-card hover:shadow-lg transition-shadow">
             <CardContent className="p-2 flex items-start gap-2">
-              <span className="flex-shrink-0 w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center font-display font-bold text-sm">{i + 1}</span>
-              <p className="font-body text-sm leading-snug">{outcome}</p>
+              <span className="flex-shrink-0 w-7 h-7 rounded-full bg-primary/10 text-primary flex items-center justify-center font-display font-bold text-lg">{i + 1}</span>
+              <p className="font-body text-base leading-relaxed">{outcome}</p>
             </CardContent>
           </Card>
         ))}
