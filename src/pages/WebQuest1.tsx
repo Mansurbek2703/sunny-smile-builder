@@ -522,7 +522,7 @@ function RolePlayStep() {
   return (
     <>
       <h4 className="font-display text-base font-semibold mb-0.5">Task VI: Do's and Don'ts for Visitors</h4>
-      <p className="font-body text-sm text-muted-foreground mb-1">Create a "Tourist Behaviour Guide": 3 Do's and 3 Don'ts for each holiday.</p>
+      <p className="font-body text-sm text-foreground mb-1">Create a "Tourist Behaviour Guide": 3 Do's and 3 Don'ts for each holiday.</p>
       <div className="grid md:grid-cols-2 gap-2">
         <OpenQuestionTask
           title="Task VII: Values Behind the Behaviour"
