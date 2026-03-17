@@ -175,7 +175,7 @@ function CreateStep() {
       ].map((p, i) => (
         <Card key={i} className="hover:shadow-lg transition-shadow"><CardContent className="p-3">
           <h5 className="font-display font-semibold text-base mb-1">{p.title}</h5>
-          <p className="font-body text-sm text-muted-foreground">{p.desc}</p>
+          <p className="font-body text-sm text-foreground">{p.desc}</p>
         </CardContent></Card>
       ))}
     </div>
