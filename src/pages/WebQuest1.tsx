@@ -538,7 +538,7 @@ function RolePlayStep() {
         <Card className="glass-card">
           <CardContent className="p-2 sm:p-3 font-body text-sm space-y-1">
             <p>You are invited to a <strong>Navruz celebration in Uzbekistan</strong> or a <strong>Thanksgiving dinner in the USA</strong>.</p>
-            <ul className="list-disc pl-4 space-y-0.5 text-muted-foreground">
+            <ul className="list-disc pl-4 space-y-0.5 text-foreground">
               <li>Greet people correctly</li>
               <li>Behave politely at the table</li>
               <li>Show respect for traditions</li>
