@@ -447,7 +447,7 @@ function ReadingStep() {
 function ResearchStep() {
   return (
     <>
-      <p className="font-body text-muted-foreground text-base mb-3">Work in groups of 3–4. Each group investigates one country's holiday:</p>
+      <p className="font-body text-foreground text-base mb-3">Work in groups of 3–4. Each group investigates one country's holiday:</p>
       <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-2 mb-4">
         {["🇯🇵 Japan — Hanami", "🇧🇷 Brazil — Carnival", "🇪🇸 Spain — La Tomatina", "🇪🇬 Egypt — Sham El-Nessim", "🇨🇦 Canada — Canada Day", "🇦🇺 Australia — ANZAC Day"].map((c, i) => (
           <Card key={i} className="glass-card"><CardContent className="p-3 font-body text-base font-medium">{c}</CardContent></Card>
