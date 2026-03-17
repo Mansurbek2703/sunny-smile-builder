@@ -267,7 +267,7 @@ function ReflectionStep() {
     </div>
     <Card className="mt-4 border-primary/30 bg-primary/5"><CardContent className="p-4 text-center">
       <h3 className="font-display text-xl font-bold text-primary mb-1">🎉 Congratulations!</h3>
-      <p className="font-body text-sm text-muted-foreground">You have learned that stereotypes are not always true — they are generalizations that can hide the diversity within cultures. Understanding the difference between truth and myth helps us become more open-minded and globally aware citizens.</p>
+      <p className="font-body text-sm text-foreground">You have learned that stereotypes are not always true — they are generalizations that can hide the diversity within cultures. Understanding the difference between truth and myth helps us become more open-minded and globally aware citizens.</p>
     </CardContent></Card>
   </>);
 }
