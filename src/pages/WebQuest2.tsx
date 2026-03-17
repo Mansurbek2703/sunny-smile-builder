@@ -215,7 +215,7 @@ function IntroStep() {
 function MatchHolidaysStep() {
   return (
     <>
-      <p className="font-body text-muted-foreground text-base mb-2">
+      <p className="font-body text-foreground text-base mb-2">
         Match each holiday (Column A) with the country where it is traditionally celebrated (Column B). One holiday does not belong — identify the "extra holiday."
       </p>
       <SelectMatchingTask
