@@ -78,7 +78,7 @@ const DragMatchingTask = ({ items, descriptions, correctAnswers }: DragMatchingT
   return (
     <div className="space-y-2">
       {isMobile && !showResults && (
-        <p className="text-sm font-body text-muted-foreground text-center italic">
+        <p className="text-sm font-body text-foreground text-center italic">
           Bayroqni bosing, keyin joylashtirish uchun qatorni bosing
         </p>
       )}
