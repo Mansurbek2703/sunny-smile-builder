@@ -233,7 +233,7 @@ function ObservationsStep() {
     <h4 className="font-display text-base font-semibold mb-2">Task I: Cultural Observations</h4>
     <div className="space-y-2 mb-4">
       {["In Kazakh culture, female beauty is often described as moon-faced and tall in songs.", "In Uzbek culture, bread is treated as a sacred symbol, not just food.", "In Anglo-Saxon cultures, inviting someone to a restaurant may be more common than inviting them home.", "In Japanese culture, openly correcting an older person is considered impolite.", "In Italian culture, loud emotional speech is often seen as natural and sincere."].map((obs, i) => (
-        <Card key={i} className="glass-card"><CardContent className="p-2 font-body text-base">{obs}</CardContent></Card>))}
+        <Card key={i} className="glass-card"><CardContent className="p-2 font-body text-sm">{obs}</CardContent></Card>))}
     </div>
     <h4 className="font-display text-base font-semibold mb-2">Task II: Match situation with cultural meaning</h4>
     <SelectMatchingTask pairs={[{ left: "Bread is never thrown away", right: "" }, { left: "Guests are treated as 'sent by God'", right: "" }, { left: "Older people are not openly corrected", right: "" }, { left: "Home is a private space", right: "" }, { left: "Direct eye contact is avoided", right: "" }]}
