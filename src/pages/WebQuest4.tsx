@@ -112,7 +112,7 @@ function IntroStep() {
 
 function LandmarksStep() {
   return (<>
-    <p className="font-body text-muted-foreground text-base mb-3">Match each picture (1–10) with the correct landmark name.</p>
+    <p className="font-body text-foreground text-base mb-3">Match each picture (1–10) with the correct landmark name.</p>
     <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2 mb-4">
       {landmarks.map((l) => (<div key={l.num} className="relative rounded-xl overflow-hidden shadow-md border-2 border-border"><img src={l.img} alt={`Landmark ${l.num}`} className="w-full h-24 sm:h-32 object-cover" /><div className="absolute top-1 left-1 bg-primary text-primary-foreground rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold">{l.num}</div></div>))}
     </div>
