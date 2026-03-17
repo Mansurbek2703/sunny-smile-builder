@@ -106,7 +106,7 @@ function IntroStep() {
       <img src="/images/webquest4/hero1.jpg" alt="City" loading="lazy" className="rounded-xl w-full h-auto object-cover shadow-md" />
       <img src="/images/webquest4/hero2.jpg" alt="Tourism" loading="lazy" className="rounded-xl w-full h-auto object-cover shadow-md" />
     </div>
-    <p className="font-body text-muted-foreground text-sm leading-snug">Imagine you are a traveler visiting a new city for the first time. Everything is unfamiliar — the people, the buildings, the traditions, the food, and the language. Tourists see cities differently than local residents because they discover places with curiosity, surprise, and fresh emotions.</p>
+    <p className="font-body text-foreground text-sm leading-snug">Imagine you are a traveler visiting a new city for the first time. Everything is unfamiliar — the people, the buildings, the traditions, the food, and the language. Tourists see cities differently than local residents because they discover places with curiosity, surprise, and fresh emotions.</p>
   </>);
 }
 
