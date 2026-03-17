@@ -208,7 +208,7 @@ function ReflectionStep() {
     <Card className="mt-4 border-primary/30 bg-primary/5">
       <CardContent className="p-4 text-center">
         <h3 className="font-display text-xl font-bold text-primary mb-1">🎉 Congratulations!</h3>
-        <p className="font-body text-sm text-muted-foreground">Through this WebQuest, you explored the life and legacy of a cultural hero, gaining insight into how individual contributions shape national identity and global culture.</p>
+        <p className="font-body text-sm text-foreground">Through this WebQuest, you explored the life and legacy of a cultural hero, gaining insight into how individual contributions shape national identity and global culture.</p>
       </CardContent>
     </Card>
   </>);
