@@ -16,8 +16,8 @@ const VideoTask = ({ title, instruction, videoUrl, thumbnail }: VideoTaskProps) 
 
   return (
     <div className="space-y-3">
-      <h4 className="font-display text-lg font-semibold">{title}</h4>
-      <p className="font-body text-sm text-muted-foreground">{instruction}</p>
+      <h4 className="font-display text-xl font-semibold">{title}</h4>
+      <p className="font-body text-base text-muted-foreground">{instruction}</p>
       <motion.div
         whileHover={{ scale: 1.01 }}
         className="rounded-xl overflow-hidden shadow-lg border aspect-video"
@@ -34,7 +34,7 @@ const VideoTask = ({ title, instruction, videoUrl, thumbnail }: VideoTaskProps) 
         href={videoUrl}
         target="_blank"
         rel="noopener noreferrer"
-        className="inline-flex items-center gap-1 text-xs text-primary hover:underline font-body"
+        className="inline-flex items-center gap-1 text-sm text-primary hover:underline font-body"
       >
         <ExternalLink className="w-3 h-3" /> Open in YouTube
       </a>

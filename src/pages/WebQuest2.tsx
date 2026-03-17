@@ -49,22 +49,21 @@ const WebQuest2 = () => {
         <div className="shrink-0"><SiteHeader /></div>
 
         <div className="flex flex-1 overflow-hidden">
-          {/* Desktop sidebar */}
-          <aside className="hidden md:flex flex-col w-52 shrink-0 border-r-2 bg-card/70 backdrop-blur-md h-full overflow-y-auto py-1 px-1 gap-px"
+          <aside className="hidden md:flex flex-col w-56 shrink-0 border-r-2 bg-card/70 backdrop-blur-md h-full overflow-y-auto py-1 px-1 gap-px"
             style={{ borderImage: 'linear-gradient(to bottom, hsl(var(--quest-sky)), hsl(var(--quest-gold)), hsl(var(--quest-emerald))) 1' }}>
             <div className="px-1.5 pb-1 mb-0.5 border-b border-border/50">
-              <Link to="/" className="flex items-center gap-1 text-muted-foreground hover:text-foreground text-xs font-body mb-0.5 transition-colors">
+              <Link to="/" className="flex items-center gap-1 text-muted-foreground hover:text-foreground text-sm font-body mb-0.5 transition-colors">
                 <ArrowLeft className="w-3 h-3" /> Orqaga
               </Link>
-              <span className="text-[9px] font-body font-medium uppercase tracking-widest text-quest-gold">Module 1</span>
-              <h1 className="font-display text-sm font-bold leading-tight">🌍 WebQuest 2 — Holidays Around the World</h1>
+              <span className="text-[11px] font-body font-medium uppercase tracking-widest text-quest-gold">Module 1</span>
+              <h1 className="font-display text-base font-bold leading-tight">🌍 WebQuest 2 — Holidays Around the World</h1>
             </div>
             {steps.map((s, i) => {
               const Icon = s.icon;
               const active = i === currentStep;
               return (
                 <button key={s.id} onClick={() => goTo(i)}
-                  className={`flex items-center gap-2 px-2 py-1 rounded-lg text-left transition-all text-[13px] font-body ${active ? "bg-primary text-primary-foreground font-semibold shadow-md" : "hover:bg-muted text-muted-foreground hover:text-foreground"}`}>
+                  className={`flex items-center gap-2 px-2 py-1 rounded-lg text-left transition-all text-[15px] font-body ${active ? "bg-primary text-primary-foreground font-semibold shadow-md" : "hover:bg-muted text-muted-foreground hover:text-foreground"}`}>
                   <Icon className="w-4 h-4 shrink-0" />
                   <span className="truncate">{s.label}</span>
                   {active && <span className="ml-auto w-1.5 h-1.5 rounded-full bg-primary-foreground" />}
@@ -73,14 +72,13 @@ const WebQuest2 = () => {
             })}
           </aside>
 
-          {/* Mobile menu */}
           <AnimatePresence>
             {mobileMenuOpen && (
               <>
                 <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="fixed inset-0 bg-black/50 z-40 md:hidden" onClick={() => setMobileMenuOpen(false)} />
                 <motion.aside initial={{ x: -280 }} animate={{ x: 0 }} exit={{ x: -280 }} transition={{ type: "spring", damping: 25, stiffness: 300 }} className="fixed left-0 top-0 bottom-0 w-72 bg-card border-r z-50 md:hidden overflow-y-auto py-4 px-3">
                   <div className="flex items-center justify-between mb-4 px-2">
-                    <span className="font-display font-bold text-sm">Steps</span>
+                    <span className="font-display font-bold text-base">Steps</span>
                     <button onClick={() => setMobileMenuOpen(false)}><X className="w-5 h-5" /></button>
                   </div>
                   {steps.map((s, i) => {
@@ -88,7 +86,7 @@ const WebQuest2 = () => {
                     const active = i === currentStep;
                     return (
                       <button key={s.id} onClick={() => goTo(i)}
-                        className={`flex items-center gap-3 w-full px-3 py-2.5 rounded-lg text-left transition-colors text-sm font-body mb-1 ${active ? "bg-primary text-primary-foreground font-semibold" : "hover:bg-muted text-muted-foreground"}`}>
+                        className={`flex items-center gap-3 w-full px-3 py-2.5 rounded-lg text-left transition-colors text-base font-body mb-1 ${active ? "bg-primary text-primary-foreground font-semibold" : "hover:bg-muted text-muted-foreground"}`}>
                         <Icon className="w-4 h-4 shrink-0" />
                         <span>{s.label}</span>
                       </button>
@@ -99,18 +97,17 @@ const WebQuest2 = () => {
             )}
           </AnimatePresence>
 
-          {/* Content */}
           <main className="flex-1 min-w-0 overflow-y-auto">
             <div className="md:hidden sticky top-0 z-30 bg-card/70 backdrop-blur-md border-b border-border/50">
               <div className="flex items-center gap-2 px-3 pt-2 pb-1">
                 <Link to="/" className="text-muted-foreground hover:text-foreground"><ArrowLeft className="w-4 h-4" /></Link>
-                <span className="text-[9px] font-body font-medium uppercase tracking-widest text-quest-gold">Module 1</span>
-                <span className="font-display text-xs font-bold truncate">🌍 WQ 2 — Holidays Around the World</span>
+                <span className="text-[11px] font-body font-medium uppercase tracking-widest text-quest-gold">Module 1</span>
+                <span className="font-display text-sm font-bold truncate">🌍 WQ 2 — Holidays Around the World</span>
               </div>
               <div className="flex items-center gap-2 px-3 pb-2">
                 <button onClick={() => setMobileMenuOpen(true)} className="p-1.5 rounded-lg hover:bg-muted"><Menu className="w-5 h-5" /></button>
-                <span className="font-body text-sm text-muted-foreground">{currentStep + 1}/{steps.length}</span>
-                <span className="font-display font-semibold text-sm truncate">{steps[currentStep].label}</span>
+                <span className="font-body text-base text-muted-foreground">{currentStep + 1}/{steps.length}</span>
+                <span className="font-display font-semibold text-base truncate">{steps[currentStep].label}</span>
               </div>
             </div>
 
@@ -126,8 +123,8 @@ const WebQuest2 = () => {
                       {(() => { const Icon = steps[currentStep].icon; return <Icon className="w-3.5 h-3.5" />; })()}
                     </span>
                     <div>
-                      <span className="text-[9px] font-body text-muted-foreground uppercase tracking-wider">Step {currentStep + 1} / {steps.length}</span>
-                      <h3 className="font-display text-sm font-bold leading-none">{steps[currentStep].label}</h3>
+                      <span className="text-[11px] font-body text-muted-foreground uppercase tracking-wider">Step {currentStep + 1} / {steps.length}</span>
+                      <h3 className="font-display text-base font-bold leading-none">{steps[currentStep].label}</h3>
                     </div>
                   </div>
                   <StepContent stepId={steps[currentStep].id} />
@@ -137,7 +134,6 @@ const WebQuest2 = () => {
           </main>
         </div>
 
-        {/* Sticky footer */}
         <div className="shrink-0 flex items-center justify-between px-4 sm:px-6 md:px-8 py-1.5 border-t border-border/50 bg-card/70 backdrop-blur-md">
           <Button variant="outline" size="sm" onClick={prev} disabled={currentStep === 0} className="font-body">
             <ChevronLeft className="w-4 h-4 mr-1" /> Previous
@@ -174,12 +170,7 @@ function InfographicStep() {
   return (
     <div className="flex justify-center py-4">
       <div className="w-full max-w-4xl mx-auto overflow-hidden rounded-2xl border border-border shadow-2xl transition-transform duration-300 hover:scale-[1.01]">
-        <img
-          src="/images/webquest2/infographic1.jpg"
-          alt="WebQuest 2 Infographic — Holidays Around the World"
-          loading="lazy"
-          className="w-full h-auto object-contain"
-        />
+        <img src="/images/webquest2/infographic1.jpg" alt="WebQuest 2 Infographic — Holidays Around the World" loading="lazy" className="w-full h-auto object-contain" />
       </div>
     </div>
   );
@@ -196,8 +187,8 @@ function IntroStep() {
         ].map((outcome, i) => (
           <Card key={i} className="glass-card hover:shadow-lg transition-shadow">
             <CardContent className="p-2 flex items-start gap-2">
-              <span className="flex-shrink-0 w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center font-display font-bold text-xs">{i + 1}</span>
-              <p className="font-body text-xs leading-snug">{outcome}</p>
+              <span className="flex-shrink-0 w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center font-display font-bold text-sm">{i + 1}</span>
+              <p className="font-body text-sm leading-snug">{outcome}</p>
             </CardContent>
           </Card>
         ))}
@@ -206,20 +197,15 @@ function IntroStep() {
         <img src="/images/webquest2/hero1.jpg" alt="World holiday celebrations" loading="lazy" className="rounded-xl w-full h-auto object-cover shadow-md" />
         <img src="/images/webquest2/hero2.jpg" alt="International celebrations" loading="lazy" className="rounded-xl w-full h-auto object-cover shadow-md" />
       </div>
-      <p className="font-body text-muted-foreground text-xs leading-snug mb-2">
+      <p className="font-body text-muted-foreground text-sm leading-snug mb-2">
         Holidays and festivals play a significant role in shaping national identity and cultural values. They reflect a country's history, beliefs, traditions, and social practices.
       </p>
-      <p className="font-body text-muted-foreground text-xs leading-snug mb-4">
+      <p className="font-body text-muted-foreground text-sm leading-snug mb-4">
         This WebQuest invites students to explore traditional holidays from various countries around the world. By researching and comparing international celebrations, students will expand their cultural knowledge and develop critical thinking, teamwork, and communication skills in English.
       </p>
       <div className="flex justify-center">
         <div className="w-full max-w-3xl mx-auto overflow-hidden rounded-2xl border border-border shadow-xl transition-transform duration-300 hover:scale-[1.01]">
-          <img
-            src="/images/webquest2/holidays_intro_infographic.png"
-            alt="Holidays Around the World — Infographic"
-            loading="lazy"
-            className="w-full h-auto object-contain"
-          />
+          <img src="/images/webquest2/holidays_intro_infographic.png" alt="Holidays Around the World — Infographic" loading="lazy" className="w-full h-auto object-contain" />
         </div>
       </div>
     </>
@@ -229,7 +215,7 @@ function IntroStep() {
 function MatchHolidaysStep() {
   return (
     <>
-      <p className="font-body text-muted-foreground text-sm mb-2">
+      <p className="font-body text-muted-foreground text-base mb-2">
         Match each holiday (Column A) with the country where it is traditionally celebrated (Column B). One holiday does not belong — identify the "extra holiday."
       </p>
       <SelectMatchingTask
@@ -246,15 +232,12 @@ function MatchHolidaysStep() {
         correctAnswers={{ 0: "Japan", 1: "Germany", 2: "France", 3: "Italy", 4: "Saudi Arabia", 5: "South Africa", 6: "Extra — no match" }}
       />
       <div className="mt-4">
-        <OpenQuestionTask
-          title="Answer the following questions"
-          questions={[
-            "Which holidays are national, and which are religious or cultural?",
-            "Which of these holidays represent identity and unity for the nation? Give examples.",
-            "Compare Heritage Day (South Africa) and Bastille Day (France): how do they reflect historical memory?",
-            "Why is \"Thanksgiving\" marked as an extra holiday in this activity?",
-          ]}
-        />
+        <OpenQuestionTask title="Answer the following questions" questions={[
+          "Which holidays are national, and which are religious or cultural?",
+          "Which of these holidays represent identity and unity for the nation? Give examples.",
+          "Compare Heritage Day (South Africa) and Bastille Day (France): how do they reflect historical memory?",
+          "Why is \"Thanksgiving\" marked as an extra holiday in this activity?",
+        ]} />
       </div>
     </>
   );
@@ -263,30 +246,25 @@ function MatchHolidaysStep() {
 function DiscussionStep() {
   return (
     <>
-      <OpenQuestionTask
-        title="Discuss in pairs or small groups"
-        questions={[
-          "What is the most important holiday in your country?",
-          "How do you usually celebrate it?",
-          "Why is it important for your culture?",
-          "Are holidays in your country more influenced by religion, culture, or history?",
-          "Do global celebrations help people understand other cultures? Explain your view.",
-        ]}
-      />
+      <OpenQuestionTask title="Discuss in pairs or small groups" questions={[
+        "What is the most important holiday in your country?",
+        "How do you usually celebrate it?",
+        "Why is it important for your culture?",
+        "Are holidays in your country more influenced by religion, culture, or history?",
+        "Do global celebrations help people understand other cultures? Explain your view.",
+      ]} />
       <div className="mt-4">
-        <h4 className="font-display text-sm font-semibold mb-2">Give definitions to the words</h4>
-        <VocabularyMatchTask
-          words={[
-            { word: "festival", definition: "A large public celebration or event" },
-            { word: "tradition", definition: "A custom passed from generation to generation" },
-            { word: "custom", definition: "A traditional way of behaving" },
-            { word: "parade", definition: "A public march or procession to celebrate" },
-            { word: "celebration", definition: "An act of marking a special event" },
-            { word: "commemoration", definition: "Remembering and honoring a person or event" },
-            { word: "heritage", definition: "Cultural traditions inherited from the past" },
-            { word: "ritual", definition: "A ceremony or series of prescribed actions" },
-          ]}
-        />
+        <h4 className="font-display text-base font-semibold mb-2">Give definitions to the words</h4>
+        <VocabularyMatchTask words={[
+          { word: "festival", definition: "A large public celebration or event" },
+          { word: "tradition", definition: "A custom passed from generation to generation" },
+          { word: "custom", definition: "A traditional way of behaving" },
+          { word: "parade", definition: "A public march or procession to celebrate" },
+          { word: "celebration", definition: "An act of marking a special event" },
+          { word: "commemoration", definition: "Remembering and honoring a person or event" },
+          { word: "heritage", definition: "Cultural traditions inherited from the past" },
+          { word: "ritual", definition: "A ceremony or series of prescribed actions" },
+        ]} />
       </div>
       <div className="grid grid-cols-2 md:grid-cols-4 gap-2 mt-4">
         <img src="/images/webquest2/carnival.jpg" alt="Carnival" className="rounded-xl w-full h-28 sm:h-36 object-cover shadow-md" />
@@ -301,82 +279,51 @@ function DiscussionStep() {
 function VideoStep() {
   return (
     <>
-      <VideoTask
-        title="Holidays Around the World"
-        instruction="Watch the video about holidays around the world and complete the tasks below."
-        videoUrl="https://www.youtube.com/watch?v=6sdCUbe0s7E"
-        thumbnail="/images/webquest2/video_thumb.jpg"
-      />
+      <VideoTask title="Holidays Around the World" instruction="Watch the video about holidays around the world and complete the tasks below." videoUrl="https://www.youtube.com/watch?v=6sdCUbe0s7E" thumbnail="/images/webquest2/video_thumb.jpg" />
       <div className="mt-4">
-        <h4 className="font-display text-sm font-semibold mb-2">Task A: Match holidays with descriptions</h4>
+        <h4 className="font-display text-base font-semibold mb-2">Task A: Match holidays with descriptions</h4>
         <SelectMatchingTask
           pairs={[
-            { left: "1. Christmas", right: "" },
-            { left: "2. Hanukkah", right: "" },
-            { left: "3. Eid al-Fitr", right: "" },
-            { left: "4. Chinese New Year", right: "" },
-            { left: "5. Cinco de Mayo", right: "" },
-            { left: "6. Thanksgiving", right: "" },
+            { left: "1. Christmas", right: "" }, { left: "2. Hanukkah", right: "" },
+            { left: "3. Eid al-Fitr", right: "" }, { left: "4. Chinese New Year", right: "" },
+            { left: "5. Cinco de Mayo", right: "" }, { left: "6. Thanksgiving", right: "" },
           ]}
-          options={[
-            "Commemorates the birth of a religious figure",
-            "Remembers a miracle involving oil",
-            "Celebrates the end of a fasting period",
-            "Focuses on a new beginning and family reunions",
-            "Celebrates military victory over foreign forces",
-            "Marks gratitude for harvest and blessings",
-          ]}
-          correctAnswers={{
-            0: "Commemorates the birth of a religious figure",
-            1: "Remembers a miracle involving oil",
-            2: "Celebrates the end of a fasting period",
-            3: "Focuses on a new beginning and family reunions",
-            4: "Celebrates military victory over foreign forces",
-            5: "Marks gratitude for harvest and blessings",
-          }}
+          options={["Commemorates the birth of a religious figure", "Remembers a miracle involving oil", "Celebrates the end of a fasting period", "Focuses on a new beginning and family reunions", "Celebrates military victory over foreign forces", "Marks gratitude for harvest and blessings"]}
+          correctAnswers={{ 0: "Commemorates the birth of a religious figure", 1: "Remembers a miracle involving oil", 2: "Celebrates the end of a fasting period", 3: "Focuses on a new beginning and family reunions", 4: "Celebrates military victory over foreign forces", 5: "Marks gratitude for harvest and blessings" }}
         />
       </div>
       <div className="mt-4">
-        <h4 className="font-display text-sm font-semibold mb-2">Task B: True or False</h4>
-        <TrueFalseTask
-          statements={[
-            { text: "All holidays mentioned in the video are religious in origin.", answer: false },
-            { text: "Some holiday traditions are thousands of years old.", answer: true },
-            { text: "Diwali is celebrated in the same way in every country.", answer: false },
-            { text: "Chinese New Year includes parades and traditional food.", answer: true },
-            { text: "Thanksgiving is celebrated worldwide.", answer: false },
-          ]}
-        />
+        <h4 className="font-display text-base font-semibold mb-2">Task B: True or False</h4>
+        <TrueFalseTask statements={[
+          { text: "All holidays mentioned in the video are religious in origin.", answer: false },
+          { text: "Some holiday traditions are thousands of years old.", answer: true },
+          { text: "Diwali is celebrated in the same way in every country.", answer: false },
+          { text: "Chinese New Year includes parades and traditional food.", answer: true },
+          { text: "Thanksgiving is celebrated worldwide.", answer: false },
+        ]} />
       </div>
       <div className="mt-4">
-        <h4 className="font-display text-sm font-semibold mb-2">Task C: Choose the correct answer</h4>
-        <MultipleChoiceTask
-          questions={[
-            { question: "According to the video, holidays may be based on:", options: ["Religion only", "Culture, religion, or history", "Climate and geography", "Age groups"], correctIndex: 1 },
-            { question: "Which activity is NOT mentioned as part of Christmas celebrations?", options: ["Decorating homes", "Exchanging gifts", "Lighting oil lamps", "Attending church services"], correctIndex: 2 },
-            { question: "Cinco de Mayo commemorates:", options: ["Mexico's independence", "A religious celebration", "A historical military victory", "The end of a harvest season"], correctIndex: 2 },
-          ]}
-        />
+        <h4 className="font-display text-base font-semibold mb-2">Task C: Choose the correct answer</h4>
+        <MultipleChoiceTask questions={[
+          { question: "According to the video, holidays may be based on:", options: ["Religion only", "Culture, religion, or history", "Climate and geography", "Age groups"], correctIndex: 1 },
+          { question: "Which activity is NOT mentioned as part of Christmas celebrations?", options: ["Decorating homes", "Exchanging gifts", "Lighting oil lamps", "Attending church services"], correctIndex: 2 },
+          { question: "Cinco de Mayo commemorates:", options: ["Mexico's independence", "A religious celebration", "A historical military victory", "The end of a harvest season"], correctIndex: 2 },
+        ]} />
       </div>
       <div className="mt-4">
-        <OpenQuestionTask
-          title="Task D: Answer in 1-2 sentences"
-          questions={[
-            "Why does the video emphasize that holidays are celebrated by different faiths and cultures?",
-            "How does the video connect holidays with family and community values?",
-          ]}
-        />
+        <OpenQuestionTask title="Task D: Answer in 1-2 sentences" questions={[
+          "Why does the video emphasize that holidays are celebrated by different faiths and cultures?",
+          "How does the video connect holidays with family and community values?",
+        ]} />
       </div>
       <div className="mt-4">
-        <h4 className="font-display text-sm font-semibold mb-2">Task E: Match words with meanings</h4>
-        <VocabularyMatchTask
-          words={[
-            { word: "Tradition", definition: "Long-established custom" },
-            { word: "Gratitude", definition: "Feeling of thankfulness" },
-            { word: "Parade", definition: "Public celebration or march" },
-            { word: "Unity", definition: "Being joined together" },
-          ]}
-        />
+        <h4 className="font-display text-base font-semibold mb-2">Task E: Match words with meanings</h4>
+        <VocabularyMatchTask words={[
+          { word: "Tradition", definition: "Long-established custom" },
+          { word: "Gratitude", definition: "Feeling of thankfulness" },
+          { word: "Parade", definition: "Public celebration or march" },
+          { word: "Unity", definition: "Being joined together" },
+        ]} />
       </div>
     </>
   );
@@ -441,38 +388,33 @@ function ReadingStep() {
       </ReadingSection>
 
       <div className="text-right mb-3">
-        <a href="https://www.expatkidsclub.com/blog/6-tips-for-celebrating-your-first-holidays-abroad" target="_blank" rel="noopener noreferrer" className="font-body text-xs text-primary/70 hover:text-primary underline">Source: Expat Kids Club</a>
+        <a href="https://www.expatkidsclub.com/blog/6-tips-for-celebrating-your-first-holidays-abroad" target="_blank" rel="noopener noreferrer" className="font-body text-sm text-primary/70 hover:text-primary underline">Source: Expat Kids Club</a>
       </div>
 
       <div className="mt-4">
-        <h4 className="font-display text-sm font-semibold mb-2">Task III: Match tips with purposes</h4>
+        <h4 className="font-display text-base font-semibold mb-2">Task III: Match tips with purposes</h4>
         <SelectMatchingTask
           pairs={[
-            { left: "1. Find a Local Guide", right: "" },
-            { left: "2. Do Your Homework", right: "" },
-            { left: "3. Dress for the Occasion", right: "" },
-            { left: "4. Be Thoughtful with Gifts", right: "" },
-            { left: "5. Clarify Food Preferences", right: "" },
-            { left: "6. Keep an Open Mind", right: "" },
+            { left: "1. Find a Local Guide", right: "" }, { left: "2. Do Your Homework", right: "" },
+            { left: "3. Dress for the Occasion", right: "" }, { left: "4. Be Thoughtful with Gifts", right: "" },
+            { left: "5. Clarify Food Preferences", right: "" }, { left: "6. Keep an Open Mind", right: "" },
           ]}
           options={["Builds trust and community connections", "Helps avoid misunderstandings", "Shows respect for religious and cultural norms", "Prevents cultural offense", "Ensures inclusivity and comfort", "Encourages cultural adaptation"]}
           correctAnswers={{ 0: "Builds trust and community connections", 1: "Helps avoid misunderstandings", 2: "Shows respect for religious and cultural norms", 3: "Prevents cultural offense", 4: "Ensures inclusivity and comfort", 5: "Encourages cultural adaptation" }}
         />
       </div>
       <div className="mt-4">
-        <h4 className="font-display text-sm font-semibold mb-2">Task V: Match words with definitions</h4>
-        <VocabularyMatchTask
-          words={[
-            { word: "milestone", definition: "A significant stage or achievement" },
-            { word: "expat", definition: "Living outside one's home country" },
-            { word: "etiquette", definition: "Accepted social behavior" },
-            { word: "cultural significance", definition: "Traditional actions or ceremonies" },
-            { word: "adaptability", definition: "Ability to change behavior in new situations" },
-          ]}
-        />
+        <h4 className="font-display text-base font-semibold mb-2">Task V: Match words with definitions</h4>
+        <VocabularyMatchTask words={[
+          { word: "milestone", definition: "A significant stage or achievement" },
+          { word: "expat", definition: "Living outside one's home country" },
+          { word: "etiquette", definition: "Accepted social behavior" },
+          { word: "cultural significance", definition: "Traditional actions or ceremonies" },
+          { word: "adaptability", definition: "Ability to change behavior in new situations" },
+        ]} />
       </div>
       <div className="mt-4">
-        <h4 className="font-display text-sm font-semibold mb-2">Task VI: Fill in the blanks</h4>
+        <h4 className="font-display text-base font-semibold mb-2">Task VI: Fill in the blanks</h4>
         <FillBlanksTask
           wordBank={["customs", "etiquette", "sensitive", "adapt", "meaningful"]}
           sentences={[
@@ -485,7 +427,7 @@ function ReadingStep() {
         />
       </div>
       <div className="mt-4">
-        <h4 className="font-display text-sm font-semibold mb-2">Task VII: Match situations with advice</h4>
+        <h4 className="font-display text-base font-semibold mb-2">Task VII: Match situations with advice</h4>
         <SelectMatchingTask
           pairs={[
             { left: "You are invited to a religious holiday", right: "" },
@@ -505,21 +447,18 @@ function ReadingStep() {
 function ResearchStep() {
   return (
     <>
-      <p className="font-body text-muted-foreground text-sm mb-3">Work in groups of 3–4. Each group investigates one country's holiday:</p>
+      <p className="font-body text-muted-foreground text-base mb-3">Work in groups of 3–4. Each group investigates one country's holiday:</p>
       <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-2 mb-4">
         {["🇯🇵 Japan — Hanami", "🇧🇷 Brazil — Carnival", "🇪🇸 Spain — La Tomatina", "🇪🇬 Egypt — Sham El-Nessim", "🇨🇦 Canada — Canada Day", "🇦🇺 Australia — ANZAC Day"].map((c, i) => (
-          <Card key={i} className="glass-card"><CardContent className="p-3 font-body text-sm font-medium">{c}</CardContent></Card>
+          <Card key={i} className="glass-card"><CardContent className="p-3 font-body text-base font-medium">{c}</CardContent></Card>
         ))}
       </div>
-      <OpenQuestionTask
-        title="Research Questions"
-        questions={[
-          "When is the holiday celebrated?",
-          "What is its historical or cultural background?",
-          "What traditions, foods, or activities are typical?",
-          "How is it similar or different from holidays in your country?",
-        ]}
-      />
+      <OpenQuestionTask title="Research Questions" questions={[
+        "When is the holiday celebrated?",
+        "What is its historical or cultural background?",
+        "What traditions, foods, or activities are typical?",
+        "How is it similar or different from holidays in your country?",
+      ]} />
     </>
   );
 }
@@ -527,15 +466,12 @@ function ResearchStep() {
 function ReflectionStep() {
   return (
     <>
-      <OpenQuestionTask
-        title="Reflect on your experience"
-        questions={[
-          "Which holiday did you find most interesting and why?",
-          "What similarities/differences did you notice between this holiday and your own traditions?",
-          "What does this tell us about the role of holidays in cultural identity?",
-          "How did you contribute to your group? What skills did you develop?",
-        ]}
-      />
+      <OpenQuestionTask title="Reflect on your experience" questions={[
+        "Which holiday did you find most interesting and why?",
+        "What similarities/differences did you notice between this holiday and your own traditions?",
+        "What does this tell us about the role of holidays in cultural identity?",
+        "How did you contribute to your group? What skills did you develop?",
+      ]} />
       <div className="mt-4">
         <SelfEvalChecklist items={[
           "I understood the task and objectives.",
@@ -549,8 +485,8 @@ function ReflectionStep() {
       </div>
       <Card className="mt-4 border-primary/30 bg-primary/5">
         <CardContent className="p-4 text-center">
-          <h3 className="font-display text-lg font-bold text-primary mb-1">🎉 Congratulations!</h3>
-          <p className="font-body text-xs text-muted-foreground">
+          <h3 className="font-display text-xl font-bold text-primary mb-1">🎉 Congratulations!</h3>
+          <p className="font-body text-sm text-muted-foreground">
             Through this WebQuest, you discovered how holidays and traditions reflect cultural values. By comparing your own holidays with those of other countries, you gained deeper intercultural understanding.
           </p>
         </CardContent>
@@ -559,12 +495,11 @@ function ReflectionStep() {
   );
 }
 
-/* Helper components */
 function ReadingSection({ title, children, image }: { title: string; children: React.ReactNode; image?: string }) {
   return (
     <div className="mb-3 p-3 rounded-xl bg-muted/50 border-l-4 border-primary/40 overflow-hidden">
-      <h5 className="font-display font-semibold text-sm mb-1">{title}</h5>
-      <div className="font-body text-sm text-muted-foreground leading-relaxed">
+      <h5 className="font-display font-semibold text-base mb-1">{title}</h5>
+      <div className="font-body text-base text-muted-foreground leading-relaxed">
         {image && <img src={image} alt={title} className="w-14 h-14 float-left mr-3 mb-1 rounded-lg object-contain" />}
         {children}
       </div>
@@ -579,7 +514,7 @@ function SelfEvalChecklist({ items }: { items: string[] }) {
       {items.map((item, i) => (
         <label key={i} className="flex items-start gap-3 p-2 rounded-lg hover:bg-muted/50 transition-colors cursor-pointer">
           <input type="checkbox" checked={checked[i] || false} onChange={() => setChecked((prev) => ({ ...prev, [i]: !prev[i] }))} className="mt-0.5 w-4 h-4 rounded border-primary text-primary focus:ring-primary" />
-          <span className="font-body text-sm">{item}</span>
+          <span className="font-body text-base">{item}</span>
           {checked[i] && <CheckCircle2 className="w-4 h-4 text-primary ml-auto flex-shrink-0" />}
         </label>
       ))}
