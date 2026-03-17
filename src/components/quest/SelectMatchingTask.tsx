@@ -40,7 +40,7 @@ const SelectMatchingTask = ({ pairs, options, correctAnswers }: SelectMatchingTa
                 : "bg-card border-border hover:border-accent/30"
             }`}
           >
-            <span className="font-body font-semibold text-base min-w-0 sm:min-w-[200px] flex-shrink-0">{pair.left}</span>
+            <span className="font-body font-semibold text-sm min-w-0 sm:min-w-[200px] flex-shrink-0">{pair.left}</span>
             
             {hasAnswer && (
               <ArrowRight className={`w-4 h-4 flex-shrink-0 hidden sm:block ${
@@ -52,7 +52,7 @@ const SelectMatchingTask = ({ pairs, options, correctAnswers }: SelectMatchingTa
               value={answers[i] || ""}
               onChange={(e) => handleChange(i, e.target.value)}
               disabled={showResults}
-              className="w-full sm:w-auto sm:min-w-[200px] sm:flex-1 p-2 sm:p-2.5 rounded-lg border-2 bg-background font-body text-sm sm:text-base focus:ring-2 focus:ring-accent focus:border-accent focus:outline-none disabled:opacity-60 appearance-none cursor-pointer"
+              className="w-full sm:w-auto sm:min-w-[200px] sm:flex-1 p-2 sm:p-2.5 rounded-lg border-2 bg-background font-body text-sm focus:ring-2 focus:ring-accent focus:border-accent focus:outline-none disabled:opacity-60 appearance-none cursor-pointer"
             >
               <option value="">— Select —</option>
               {options.map((opt, oi) => (
@@ -82,7 +82,7 @@ const SelectMatchingTask = ({ pairs, options, correctAnswers }: SelectMatchingTa
         )}
       </div>
       {showResults && (
-        <p className="font-body text-base font-medium text-primary">
+        <p className="font-body text-sm font-medium text-primary">
           {Object.entries(answers).filter(([k]) => answers[Number(k)] === correctAnswers[Number(k)]).length} / {pairs.length} correct!
         </p>
       )}

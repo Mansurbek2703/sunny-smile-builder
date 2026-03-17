@@ -16,8 +16,8 @@ const VideoTask = ({ title, instruction, videoUrl, thumbnail }: VideoTaskProps) 
 
   return (
     <div className="space-y-3">
-      <h4 className="font-display text-xl font-semibold">{title}</h4>
-      <p className="font-body text-base text-foreground">{instruction}</p>
+      <h4 className="font-display text-base font-semibold">{title}</h4>
+      <p className="font-body text-sm text-foreground">{instruction}</p>
       <motion.div
         whileHover={{ scale: 1.01 }}
         className="rounded-xl overflow-hidden shadow-lg border aspect-video"

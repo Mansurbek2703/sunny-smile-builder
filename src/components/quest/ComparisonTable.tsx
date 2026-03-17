@@ -18,21 +18,21 @@ const ComparisonTable = ({ headers, rows }: ComparisonTableProps) => {
         <thead>
           <tr className="bg-primary/5">
             {headers.map((h, i) => (
-              <th key={i} className="p-3 font-display text-base font-semibold text-left border-b">{h}</th>
+              <th key={i} className="p-3 font-display text-sm font-semibold text-left border-b">{h}</th>
             ))}
           </tr>
         </thead>
         <tbody>
           {rows.map((row, ri) => (
             <tr key={ri} className="border-b last:border-0 hover:bg-muted/30 transition-colors">
-              <td className="p-3 font-body text-base font-medium">{row.aspect}</td>
+              <td className="p-3 font-body text-sm font-medium">{row.aspect}</td>
               {headers.slice(1).map((_, ci) => (
                 <td key={ci} className="p-2">
                   <textarea
                     value={cells[`${ri}-${ci}`] || ""}
                     onChange={(e) => handleChange(ri, ci, e.target.value)}
                     placeholder="Write here..."
-                    className="w-full p-2 rounded-lg border bg-background font-body text-base resize-none min-h-[60px] focus:ring-2 focus:ring-primary focus:outline-none"
+                    className="w-full p-2 rounded-lg border bg-background font-body text-sm resize-none min-h-[60px] focus:ring-2 focus:ring-primary focus:outline-none"
                   />
                 </td>
               ))}
