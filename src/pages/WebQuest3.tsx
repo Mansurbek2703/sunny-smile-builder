@@ -72,7 +72,7 @@ const WebQuest3 = () => {
               </div>
               <div className="flex items-center gap-2 px-3 pb-2">
                 <button onClick={() => setMobileMenuOpen(true)} className="p-1.5 rounded-lg hover:bg-muted"><Menu className="w-5 h-5" /></button>
-                <span className="font-body text-base text-muted-foreground">{currentStep + 1}/{steps.length}</span>
+                <span className="font-body text-base text-primary">{currentStep + 1}/{steps.length}</span>
                 <span className="font-display font-semibold text-base truncate">{steps[currentStep].label}</span>
               </div>
             </div>
