@@ -42,32 +42,28 @@ const WebQuest1 = () => {
 
   return (
     <div className="h-screen flex flex-col bg-background relative overflow-hidden">
-      {/* Full-screen background image */}
       <div className="fixed inset-0 z-0">
         <img src="/images/webquest1/hero_banner.jpg" alt="" className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-background/55" />
       </div>
 
       <div className="relative z-10 flex flex-col h-full">
-        {/* Sticky header */}
         <div className="shrink-0">
           <SiteHeader />
         </div>
 
-        {/* Main layout: sidebar + content */}
         <div className="flex flex-1 overflow-hidden">
 
           {/* Desktop sidebar */}
-          <aside className="hidden md:flex flex-col w-52 shrink-0 border-r-2 bg-card/70 backdrop-blur-md h-full overflow-y-auto py-1 px-1 gap-px"
+          <aside className="hidden md:flex flex-col w-56 shrink-0 border-r-2 bg-card/70 backdrop-blur-md h-full overflow-y-auto py-1 px-1 gap-px"
             style={{ borderImage: 'linear-gradient(to bottom, hsl(var(--quest-sky)), hsl(var(--quest-gold)), hsl(var(--quest-emerald))) 1' }}
           >
-            {/* Title inside sidebar */}
             <div className="px-1.5 pb-1 mb-0.5 border-b border-border/50">
-              <Link to="/" className="flex items-center gap-1 text-muted-foreground hover:text-foreground text-xs font-body mb-0.5 transition-colors">
+              <Link to="/" className="flex items-center gap-1 text-muted-foreground hover:text-foreground text-sm font-body mb-0.5 transition-colors">
                 <ArrowLeft className="w-3 h-3" /> Orqaga
               </Link>
-              <span className="text-[9px] font-body font-medium uppercase tracking-widest text-quest-gold">Module 1</span>
-              <h1 className="font-display text-sm font-bold leading-tight">🌍 WebQuest 1 — Thanksgiving & Navruz</h1>
+              <span className="text-[11px] font-body font-medium uppercase tracking-widest text-quest-gold">Module 1</span>
+              <h1 className="font-display text-base font-bold leading-tight">🌍 WebQuest 1 — Thanksgiving & Navruz</h1>
             </div>
           {steps.map((s, i) => {
             const Icon = s.icon;
@@ -76,7 +72,7 @@ const WebQuest1 = () => {
               <button
                 key={s.id}
                 onClick={() => goTo(i)}
-                className={`flex items-center gap-2 px-2 py-1 rounded-lg text-left transition-all text-[13px] font-body ${
+                className={`flex items-center gap-2 px-2 py-1 rounded-lg text-left transition-all text-[15px] font-body ${
                   active
                     ? "bg-primary text-primary-foreground font-semibold shadow-md"
                     : "hover:bg-muted text-muted-foreground hover:text-foreground"
@@ -97,7 +93,7 @@ const WebQuest1 = () => {
               <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="fixed inset-0 bg-black/50 z-40 md:hidden" onClick={() => setMobileMenuOpen(false)} />
               <motion.aside initial={{ x: -280 }} animate={{ x: 0 }} exit={{ x: -280 }} transition={{ type: "spring", damping: 25, stiffness: 300 }} className="fixed left-0 top-0 bottom-0 w-72 bg-card border-r z-50 md:hidden overflow-y-auto py-4 px-3">
                 <div className="flex items-center justify-between mb-4 px-2">
-                  <span className="font-display font-bold text-sm">Steps</span>
+                  <span className="font-display font-bold text-base">Steps</span>
                   <button onClick={() => setMobileMenuOpen(false)}><X className="w-5 h-5" /></button>
                 </div>
                 {steps.map((s, i) => {
@@ -107,7 +103,7 @@ const WebQuest1 = () => {
                     <button
                       key={s.id}
                       onClick={() => goTo(i)}
-                      className={`flex items-center gap-3 w-full px-3 py-2.5 rounded-lg text-left transition-colors text-sm font-body mb-1 ${
+                      className={`flex items-center gap-3 w-full px-3 py-2.5 rounded-lg text-left transition-colors text-base font-body mb-1 ${
                         active
                           ? "bg-primary text-primary-foreground font-semibold"
                           : "hover:bg-muted text-muted-foreground"
@@ -129,13 +125,13 @@ const WebQuest1 = () => {
           <div className="md:hidden sticky top-0 z-30 bg-card/70 backdrop-blur-md border-b border-border/50">
             <div className="flex items-center gap-2 px-3 pt-2 pb-1">
               <Link to="/" className="text-muted-foreground hover:text-foreground"><ArrowLeft className="w-4 h-4" /></Link>
-              <span className="text-[9px] font-body font-medium uppercase tracking-widest text-quest-gold">Module 1</span>
-              <span className="font-display text-xs font-bold truncate">🌍 WQ 1 — Thanksgiving & Navruz</span>
+              <span className="text-[11px] font-body font-medium uppercase tracking-widest text-quest-gold">Module 1</span>
+              <span className="font-display text-sm font-bold truncate">🌍 WQ 1 — Thanksgiving & Navruz</span>
             </div>
             <div className="flex items-center gap-2 px-3 pb-2">
               <button onClick={() => setMobileMenuOpen(true)} className="p-1.5 rounded-lg hover:bg-muted"><Menu className="w-5 h-5" /></button>
-              <span className="font-body text-sm text-muted-foreground">{currentStep + 1}/{steps.length}</span>
-              <span className="font-display font-semibold text-sm truncate">{steps[currentStep].label}</span>
+              <span className="font-body text-base text-muted-foreground">{currentStep + 1}/{steps.length}</span>
+              <span className="font-display font-semibold text-base truncate">{steps[currentStep].label}</span>
             </div>
           </div>
 
@@ -159,8 +155,8 @@ const WebQuest1 = () => {
                     {(() => { const Icon = steps[currentStep].icon; return <Icon className="w-3.5 h-3.5" />; })()}
                   </span>
                   <div>
-                    <span className="text-[9px] font-body text-muted-foreground uppercase tracking-wider">Step {currentStep + 1} / {steps.length}</span>
-                    <h3 className="font-display text-sm font-bold leading-none">{steps[currentStep].label}</h3>
+                    <span className="text-[11px] font-body text-muted-foreground uppercase tracking-wider">Step {currentStep + 1} / {steps.length}</span>
+                    <h3 className="font-display text-base font-bold leading-none">{steps[currentStep].label}</h3>
                   </div>
                 </div>
 
@@ -220,13 +216,13 @@ function IntroStep() {
         ].map((outcome, i) => (
           <Card key={i} className="glass-card hover:shadow-lg transition-shadow">
             <CardContent className="p-2 flex items-start gap-2">
-              <span className="flex-shrink-0 w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center font-display font-bold text-xs">{i + 1}</span>
-              <p className="font-body text-xs leading-snug">{outcome}</p>
+              <span className="flex-shrink-0 w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center font-display font-bold text-sm">{i + 1}</span>
+              <p className="font-body text-sm leading-snug">{outcome}</p>
             </CardContent>
           </Card>
         ))}
       </div>
-      <p className="font-body text-muted-foreground text-xs leading-snug mb-2">
+      <p className="font-body text-muted-foreground text-sm leading-snug mb-2">
         Holidays are more than just days off — they reflect the history, culture, and values of people. In this WebQuest, you will explore two important holidays: <strong>Thanksgiving</strong> in the United States and <strong>Navruz</strong> in Central Asia. While they come from different cultural traditions, both emphasize gratitude, family, food, and community.
       </p>
       <div className="grid grid-cols-2 gap-2">
@@ -240,7 +236,7 @@ function IntroStep() {
 function Task1Step() {
   return (
     <>
-      <p className="font-body text-muted-foreground text-sm mb-2">
+      <p className="font-body text-muted-foreground text-base mb-2">
         Read the descriptions of holidays in Column B and match them with the countries in Column A. Drag the flag images and drop them next to the correct description.
       </p>
       <DragMatchingTask
@@ -279,15 +275,13 @@ function VideosStep() {
 function NavruzStep() {
   return (
     <>
-      {/* Reading section */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-3">
         <img src="/images/webquest1/navruz_reading1.jpg" alt="Navro'z bayram dasturxoni" loading="lazy" className="rounded-xl w-full h-auto object-cover shadow-md" />
         <img src="/images/webquest1/navruz_reading2.jpg" alt="Sumalak pishirish marosimi" loading="lazy" className="rounded-xl w-full h-auto object-cover shadow-md" />
       </div>
 
-      {/* Intro paragraph */}
       <div className="mb-2 p-2 rounded-lg bg-primary/5 border-l-3 border-primary">
-        <p className="font-body text-xs text-muted-foreground leading-snug">
+        <p className="font-body text-sm text-muted-foreground leading-snug">
           Each spring, Uzbekistan bursts into colour and celebration as Navruz — literally translating to 'New Day' — ushers in the Persian New Year. Marking the arrival of spring on 21 March, Navruz is one of the most significant and cherished festivals across Central Asia, deeply rooted in tradition, history, and community spirit. For Uzbek families, it's a time of joy, renewal, and connection, as people gather to welcome the changing season with open hearts.
         </p>
       </div>
@@ -322,7 +316,6 @@ function NavruzStep() {
         While traditional customs remain at the heart of Navruz, modern adaptations have emerged, particularly in urban areas. Large-scale concerts and cultural events are organised in city centres, featuring contemporary music and dance alongside traditional performances. Eco-friendly initiatives, such as tree planting and community clean-ups, have become a growing trend, aligning with Navruz's themes of renewal and harmony with nature.
       </ReadingSection>
 
-      {/* Extra thematic sections */}
       <div className="mt-2 space-y-1.5">
         <ReadingSection title="🎈 Navruz Activities for Children">
           Navruz is a joyous time for children, who take part in games, storytelling, and craft-making activities. Many schools organise Navruz-themed performances and encourage students to create traditional decorations. Kite flying and outdoor games are also popular, as families embrace the warmer weather and festive atmosphere.
@@ -352,7 +345,7 @@ function NavruzStep() {
 
       {/* Tasks section */}
       <div className="mt-4 pt-4 border-t border-border/50">
-        <h4 className="font-display text-sm font-semibold mb-1">Task I: Match headings with paragraphs A–H</h4>
+        <h4 className="font-display text-base font-semibold mb-1">Task I: Match headings with paragraphs A–H</h4>
         <div className="md:columns-2 md:gap-2">
           <MatchingTask
             pairs={[
@@ -369,7 +362,7 @@ function NavruzStep() {
           />
         </div>
         <div className="mt-4">
-          <h4 className="font-display text-sm font-semibold mb-1.5">Task II: Match Words with Meanings</h4>
+          <h4 className="font-display text-base font-semibold mb-1.5">Task II: Match Words with Meanings</h4>
           <VocabularyMatchTask
             words={[
               { word: "A. usher in", definition: "To introduce or mark the beginning of something" },
@@ -393,15 +386,13 @@ function NavruzStep() {
 function ThanksgivingStep() {
   return (
     <>
-      {/* Reading section */}
       <div className="grid sm:grid-cols-2 gap-2 mb-2">
         <img src="/images/webquest1/thanksgiving2.jpg" alt="Thanksgiving" className="rounded-lg w-full h-24 sm:h-28 object-cover shadow-sm bg-muted/30" />
         <img src="/images/webquest1/thanksgiving3.jpg" alt="Thanksgiving" className="rounded-lg w-full h-24 sm:h-28 object-cover shadow-sm bg-muted/30" />
       </div>
 
-      {/* Intro paragraph */}
       <div className="mb-2 p-2 rounded-lg bg-primary/5 border-l-3 border-primary">
-        <p className="font-body text-xs text-muted-foreground leading-snug">
+        <p className="font-body text-sm text-muted-foreground leading-snug">
           It's the most wonderful time of the year in the US – a time for food, family, friends, and being thankful. Originating as a harvest festival, Thanksgiving is one of the biggest holidays in the US. People across the country gather together to share a meal and reflect on all the things they're grateful for. But there's much more to do during this beautiful time of giving thanks than just eating. From parades to shopping, running to volunteering – Thanksgiving is celebrated in a wide variety of ways. We've put together our bucket list for the ultimate US Thanksgiving celebration.
         </p>
       </div>
@@ -458,7 +449,7 @@ function ThanksgivingStep() {
             ]}
           />
           <div>
-            <h4 className="font-display text-sm font-semibold mb-1">Cultural Meanings</h4>
+            <h4 className="font-display text-base font-semibold mb-1">Cultural Meanings</h4>
             <SelectMatchingTask
               pairs={[
                 { left: "Sharing what you're thankful for", right: "" },
@@ -495,7 +486,7 @@ function ThanksgivingStep() {
 function IndividualStep() {
   return (
     <>
-      <h4 className="font-display text-sm font-semibold mb-1.5">Task IV: Holiday Glossary</h4>
+      <h4 className="font-display text-base font-semibold mb-1.5">Task IV: Holiday Glossary</h4>
       <VocabularyMatchTask
         words={[
           { word: "Harvest", definition: "The time of year when crops are collected" },
@@ -511,7 +502,7 @@ function IndividualStep() {
         ]}
       />
       <div className="mt-3">
-        <h4 className="font-display text-sm font-semibold mb-1.5">Task V: Compare Navruz & Thanksgiving</h4>
+        <h4 className="font-display text-base font-semibold mb-1.5">Task V: Compare Navruz & Thanksgiving</h4>
         <ComparisonTable
           headers={["Aspect", "Navruz (Uzbekistan)", "Thanksgiving (USA)"]}
           rows={[
@@ -530,8 +521,8 @@ function IndividualStep() {
 function RolePlayStep() {
   return (
     <>
-      <h4 className="font-display text-sm font-semibold mb-0.5">Task VI: Do's and Don'ts for Visitors</h4>
-      <p className="font-body text-xs text-muted-foreground mb-1">Create a "Tourist Behaviour Guide": 3 Do's and 3 Don'ts for each holiday.</p>
+      <h4 className="font-display text-base font-semibold mb-0.5">Task VI: Do's and Don'ts for Visitors</h4>
+      <p className="font-body text-sm text-muted-foreground mb-1">Create a "Tourist Behaviour Guide": 3 Do's and 3 Don'ts for each holiday.</p>
       <div className="grid md:grid-cols-2 gap-2">
         <OpenQuestionTask
           title="Task VII: Values Behind the Behaviour"
@@ -543,9 +534,9 @@ function RolePlayStep() {
           ]}
         />
         <div>
-          <h4 className="font-display text-sm font-semibold mb-0.5">Task VIII: Cultural Scenario Role-Play</h4>
+          <h4 className="font-display text-base font-semibold mb-0.5">Task VIII: Cultural Scenario Role-Play</h4>
         <Card className="glass-card">
-          <CardContent className="p-2 sm:p-3 font-body text-xs space-y-1">
+          <CardContent className="p-2 sm:p-3 font-body text-sm space-y-1">
             <p>You are invited to a <strong>Navruz celebration in Uzbekistan</strong> or a <strong>Thanksgiving dinner in the USA</strong>.</p>
             <ul className="list-disc pl-4 space-y-0.5 text-muted-foreground">
               <li>Greet people correctly</li>
@@ -564,7 +555,7 @@ function RolePlayStep() {
 function ResearchStep() {
   return (
     <>
-      <p className="font-body text-xs text-muted-foreground mb-2">Use these links to deepen your knowledge:</p>
+      <p className="font-body text-sm text-muted-foreground mb-2">Use these links to deepen your knowledge:</p>
       <div className="space-y-1">
         {[
           { name: "Thanksgiving Day — Britannica", url: "https://www.britannica.com/topic/Thanksgiving-Day" },
@@ -572,7 +563,7 @@ function ResearchStep() {
           { name: "Nowruz — UNESCO", url: "https://ich.unesco.org/en/RL/nawrouz-novruz-nowrouz-nowruz-nawruz-nauryz-nooruz-nowruz-navruz-nauroz-nevruz-and-nowruz-00550" },
           { name: "Navruz — Nord Anglia Education", url: "https://www.nordangliaeducation.com" },
         ].map((link, i) => (
-          <a key={i} href={link.url} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 p-2 rounded-md bg-primary/5 hover:bg-primary/10 transition-colors font-body text-xs text-primary">
+          <a key={i} href={link.url} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 p-2 rounded-md bg-primary/5 hover:bg-primary/10 transition-colors font-body text-sm text-primary">
             <Search className="w-4 h-4" />
             {link.name}
           </a>
@@ -585,12 +576,12 @@ function ResearchStep() {
 function GroupStep() {
   return (
     <>
-      <h4 className="font-display text-sm font-semibold mb-1.5">Task IX: Venn Diagram</h4>
+      <h4 className="font-display text-base font-semibold mb-1.5">Task IX: Venn Diagram</h4>
       <VennDiagram leftLabel="Navruz" rightLabel="Thanksgiving" />
       <div className="mt-3">
-        <h4 className="font-display text-sm font-semibold mb-1">Plan Your Cultural Evening</h4>
+        <h4 className="font-display text-base font-semibold mb-1">Plan Your Cultural Evening</h4>
         <Card className="glass-card">
-          <CardContent className="p-2 sm:p-3 font-body text-xs space-y-1 text-muted-foreground">
+          <CardContent className="p-2 sm:p-3 font-body text-sm space-y-1 text-muted-foreground">
             <p>Plan a "Thanksgiving–Navruz Cultural Evening" with your group:</p>
             <ul className="list-disc pl-4 space-y-0.5">
               <li>Decide the menu</li>
@@ -616,7 +607,7 @@ function ReflectionStep() {
         ]}
       />
       <div className="mt-3">
-        <h4 className="font-display text-sm font-semibold mb-1.5">Self-Evaluation Checklist</h4>
+        <h4 className="font-display text-base font-semibold mb-1.5">Self-Evaluation Checklist</h4>
         <SelfEvalChecklist items={[
           "I can explain the origins of Navruz and Thanksgiving.",
           "I know the main traditions and foods of each holiday.",
@@ -630,8 +621,8 @@ function ReflectionStep() {
       </div>
       <Card className="mt-3 border-primary/30 bg-primary/5">
         <CardContent className="p-2 sm:p-3 text-center">
-          <h3 className="font-display text-base font-bold text-primary mb-1">🎉 Congratulations!</h3>
-          <p className="font-body text-xs text-muted-foreground">
+          <h3 className="font-display text-lg font-bold text-primary mb-1">🎉 Congratulations!</h3>
+          <p className="font-body text-sm text-muted-foreground">
             You have compared two important traditions and discovered how people in different cultures celebrate gratitude, renewal, and family. Remember: learning about other cultures is the first step toward becoming a global citizen.
           </p>
         </CardContent>
@@ -645,8 +636,8 @@ function ReflectionStep() {
 function ReadingSection({ title, children }: { title: string; children: React.ReactNode }) {
   return (
     <div className="mb-1.5 p-2 rounded-lg bg-muted/50 border-l-3 border-primary/40">
-      <h5 className="font-display font-semibold text-xs mb-0.5">{title}</h5>
-      <p className="font-body text-xs text-muted-foreground leading-snug whitespace-pre-line">{children}</p>
+      <h5 className="font-display font-semibold text-sm mb-0.5">{title}</h5>
+      <p className="font-body text-sm text-muted-foreground leading-snug whitespace-pre-line">{children}</p>
     </div>
   );
 }
@@ -658,7 +649,7 @@ function SelfEvalChecklist({ items }: { items: string[] }) {
       {items.map((item, i) => (
         <label key={i} className="flex items-start gap-2 p-1.5 rounded-md hover:bg-muted/50 transition-colors cursor-pointer">
           <input type="checkbox" checked={checked[i] || false} onChange={() => setChecked((prev) => ({ ...prev, [i]: !prev[i] }))} className="mt-0.5 w-3.5 h-3.5 rounded border-primary text-primary focus:ring-primary" />
-          <span className="font-body text-xs">{item}</span>
+          <span className="font-body text-sm">{item}</span>
           {checked[i] && <CheckCircle2 className="w-4 h-4 text-primary ml-auto flex-shrink-0" />}
         </label>
       ))}
