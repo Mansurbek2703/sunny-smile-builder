@@ -254,7 +254,7 @@ function ObservationsStep() {
 
 function ResearchStep() {
   return (<>
-    <p className="font-body text-muted-foreground text-base mb-3">In pairs or small groups, list at least 5 cultural stereotypes. Select 3-4 to investigate using reliable sources (BBC Culture, National Geographic, Cultural Atlas, Britannica, UNESCO).</p>
+    <p className="font-body text-foreground text-base mb-3">In pairs or small groups, list at least 5 cultural stereotypes. Select 3-4 to investigate using reliable sources (BBC Culture, National Geographic, Cultural Atlas, Britannica, UNESCO).</p>
     <OpenQuestionTask title="Research & Write" questions={["List 5 cultural stereotypes you have heard about different nations.", "For each stereotype, find facts that confirm or disprove it.", "Compare them with your own country. Which difference could cause the most misunderstanding?"]} />
   </>);
 }
