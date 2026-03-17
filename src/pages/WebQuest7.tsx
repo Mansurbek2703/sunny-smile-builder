@@ -166,7 +166,7 @@ function ResearchStep() {
 
 function CreateStep() {
   return (<>
-    <p className="font-body text-muted-foreground text-base mb-3">Based on your research, create one of the following products:</p>
+    <p className="font-body text-foreground text-base mb-3">Based on your research, create one of the following products:</p>
     <div className="grid sm:grid-cols-2 gap-2 mb-4">
       {[{ title: "🎤 Role-Play Interview", desc: "Prepare and perform an interview with your cultural hero (3-5 min)" },
         { title: "🖼️ Poster / Infographic", desc: "Design a visual biography with key facts and images" },
