@@ -187,8 +187,8 @@ function IntroStep() {
         ].map((outcome, i) => (
           <Card key={i} className="glass-card hover:shadow-lg transition-shadow">
             <CardContent className="p-2 flex items-start gap-2">
-              <span className="flex-shrink-0 w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center font-display font-bold text-sm">{i + 1}</span>
-              <p className="font-body text-sm leading-snug">{outcome}</p>
+              <span className="flex-shrink-0 w-7 h-7 rounded-full bg-primary/10 text-primary flex items-center justify-center font-display font-bold text-lg">{i + 1}</span>
+              <p className="font-body text-base leading-relaxed">{outcome}</p>
             </CardContent>
           </Card>
         ))}
@@ -197,10 +197,10 @@ function IntroStep() {
         <img src="/images/webquest2/hero1.jpg" alt="World holiday celebrations" loading="lazy" className="rounded-xl w-full h-auto object-cover shadow-md" />
         <img src="/images/webquest2/hero2.jpg" alt="International celebrations" loading="lazy" className="rounded-xl w-full h-auto object-cover shadow-md" />
       </div>
-      <p className="font-body text-muted-foreground text-sm leading-snug mb-2">
+      <p className="font-body text-muted-foreground text-lg leading-relaxed mb-2">
         Holidays and festivals play a significant role in shaping national identity and cultural values. They reflect a country's history, beliefs, traditions, and social practices.
       </p>
-      <p className="font-body text-muted-foreground text-sm leading-snug mb-4">
+      <p className="font-body text-muted-foreground text-lg leading-relaxed mb-4">
         This WebQuest invites students to explore traditional holidays from various countries around the world. By researching and comparing international celebrations, students will expand their cultural knowledge and develop critical thinking, teamwork, and communication skills in English.
       </p>
       <div className="flex justify-center">
