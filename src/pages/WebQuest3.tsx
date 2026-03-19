@@ -192,9 +192,8 @@ function VocabularyStep() {
 
 function ReadingStepContent() {
   return (<>
-    <div className="grid sm:grid-cols-2 gap-2 mb-3">
-      <img src="/images/webquest3/reading1.jpg" alt="Reading" loading="lazy" className="rounded-xl w-full h-40 object-cover shadow-md" />
-      <img src="/images/webquest3/reading2.jpg" alt="Stereotypes" loading="lazy" className="rounded-xl w-full h-40 object-cover shadow-md" />
+    <div className="mb-4">
+      <img src="/images/webquest3/stereotypes_info.png" alt="Cultural Stereotypes Infographic" loading="lazy" className="rounded-xl w-full max-h-[400px] object-contain shadow-md mx-auto" />
     </div>
     <ReadingSection title="What are stereotypes?">Cultural stereotypes are fixed ideas that people have about what specific social groups or individuals are like especially an idea that is wrong. Other terms that are associated with the term stereotype are prejudice and clichés. The term has a Greek origin: stereos means solid or firm and typos mean blow, impression, engraved, or mark. The term was first used in the printing business. The first modern English use of the term was in 1850, meaning "image perpetuated without change."</ReadingSection>
     <ReadingSection title="Why do stereotypes exist?">Because stereotypes are standardized and simplified ideas of groups based on some prejudices, they are not derived from objective facts but rather from subjective and often unverifiable ideas. As Sociologist Charles E. Hurst states "One reason for stereotypes is the lack of personal, concrete familiarity that individuals have with persons in other racial or ethnic groups. Lack of familiarity encourages the lumping together of unknown individuals". The existence of stereotypes may be explained by the need for groups of people to view themselves as more normal or superior to other groups. Consequently, stereotypes may be used to justify ill-founded prejudices or ignorance and prevent people of stereotyped groups from entering or succeeding in various activities or fields. The stereotyping group is, generally, reluctant to reconsider their attitudes and behavior towards the stereotyped group.</ReadingSection>
