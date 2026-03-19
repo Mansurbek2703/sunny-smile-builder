@@ -131,9 +131,8 @@ function IntroStep() {
           <p className="font-body text-lg leading-snug">{o}</p>
         </CardContent></Card>))}
     </div>
-    <div className="grid grid-cols-2 gap-2 mb-2">
-      <img src="/images/webquest3/hero1.jpg" alt="Stereotypes" loading="lazy" className="rounded-xl w-full h-auto object-cover shadow-md" />
-      <img src="/images/webquest3/hero2.jpg" alt="Culture" loading="lazy" className="rounded-xl w-full h-auto object-cover shadow-md" />
+    <div className="mb-2 flex justify-center">
+      <img src="/images/webquest3/hero2.jpg" alt="The Perfect European" loading="lazy" className="rounded-xl max-w-lg w-full h-auto object-cover shadow-md" />
     </div>
     <p className="font-body text-foreground text-lg leading-snug mb-2">Stereotypes are simplified ideas about people and cultures. They often live in compliments, traditions, everyday behavior, songs, and social rules. If people are unaware of cultural differences, stereotypes may cause discomfort, misunderstanding, or even conflict. Remember the proverb: <strong>"Don't judge a book by its cover."</strong></p>
     <p className="font-body text-foreground text-lg leading-snug">In today's interconnected world, people from different cultural backgrounds interact more frequently than ever before. This WebQuest focuses on exploring cultural stereotypes in a critical and reflective way.</p>
