@@ -84,7 +84,7 @@ const WebQuest4 = () => {
 
 function StepContent({ stepId }: { stepId: string }) {
   switch (stepId) {
-    case "infographic": return <img src="/images/webquest4/infographic1.jpg" alt="WebQuest 4 Infographic" loading="lazy" className="rounded-xl w-full object-contain shadow-lg" />;
+    case "infographic": return <img src="/images/webquest4/infographic1.png" alt="WebQuest 4 Infographic" loading="lazy" className="rounded-xl w-full object-contain shadow-lg" />;
     case "intro": return <IntroStep />;
     case "landmarks": return <LandmarksStep />;
     case "idioms": return <IdiomsStep />;
