@@ -41,6 +41,7 @@ const App = () => (
             <Route path="/quest/4" element={<WebQuest4 />} />
             <Route path="/quest/5" element={<WebQuest5 />} />
             <Route path="/quest/6" element={<WebQuest6 />} />
+            <Route path="/quest/:id/complete" element={<QuestCompletePage />} />
             <Route path="/quest/7" element={<WebQuest7 />} />
             <Route path="/admin" element={<AdminLogin />} />
             <Route path="/admin/dashboard" element={<AdminDashboard />} />

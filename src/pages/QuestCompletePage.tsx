@@ -42,10 +42,14 @@ export default function QuestCompletePage() {
   const [confetti, setConfetti] = useState(true);
 
   const respondentId = localStorage.getItem("respondent_id");
-  if (!respondentId) return <Navigate to="/" replace />;
-  if (!data) return <Navigate to="/" replace />;
 
   useEffect(() => {
+    const timer = setTimeout(() => setConfetti(false), 5000);
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (!respondentId) return <Navigate to="/" replace />;
+  if (!data) return <Navigate to="/" replace />;
     const timer = setTimeout(() => setConfetti(false), 5000);
     return () => clearTimeout(timer);
   }, []);
