@@ -81,7 +81,7 @@ const WebQuest5 = () => {
 
 function StepContent({ stepId }: { stepId: string }) {
   switch (stepId) {
-    case "infographic": return <img src="/images/webquest5/infographic1.png" alt="WebQuest 5 — Culture Shock Infographic" loading="lazy" className="rounded-xl w-full object-contain shadow-lg" />;
+    case "infographic": return <img src="/images/webquest5/infographic1.webp" alt="WebQuest 5 — Culture Shock Infographic" loading="lazy" decoding="async" className="rounded-xl w-full object-contain shadow-lg" />;
     case "intro": return <IntroStep />;
     case "idioms": return <IdiomsStep />;
     case "vocabulary": return <VocabularyStep />;
