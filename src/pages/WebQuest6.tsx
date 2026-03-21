@@ -1,4 +1,5 @@
 import { useState, useCallback } from "react";
+import { useResponseTracker } from "@/hooks/useResponseTracker";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowLeft, ChevronLeft, ChevronRight, Menu, X, BookOpen, Video, PenTool, Users, Search, MessageSquare, CheckCircle2, UtensilsCrossed } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -25,6 +26,7 @@ const steps = [
 const WebQuest6 = () => {
   const [currentStep, setCurrentStep] = useState(0);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  useResponseTracker(6, steps, currentStep);
   const goTo = useCallback((idx: number) => { setCurrentStep(idx); setMobileMenuOpen(false); }, []);
   const prev = () => currentStep > 0 && goTo(currentStep - 1);
   const next = () => currentStep < steps.length - 1 && goTo(currentStep + 1);

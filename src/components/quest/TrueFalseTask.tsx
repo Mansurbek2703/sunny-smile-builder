@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { trackAnswer } from "@/lib/trackAnswer";
 import { motion } from "framer-motion";
 import { CheckCircle2, XCircle, RotateCcw } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -74,7 +75,7 @@ const TrueFalseTask = ({ statements }: TrueFalseTaskProps) => {
         </motion.div>
       ))}
       <div className="flex gap-3 pt-3">
-        <Button onClick={() => setShowResults(true)} disabled={showResults || Object.keys(answers).length < statements.length} size="sm" className="font-body">
+        <Button onClick={() => { setShowResults(true); const cc = Object.entries(answers).filter(([k]) => answers[Number(k)] === statements[Number(k)].answer).length; trackAnswer("true_false", `tf_${statements.length}`, answers, cc === statements.length); }} disabled={showResults || Object.keys(answers).length < statements.length} size="sm" className="font-body">
           <CheckCircle2 className="w-4 h-4 mr-1" /> Check Answers
         </Button>
         {showResults && (

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { trackAnswer } from "@/lib/trackAnswer";
 import { motion } from "framer-motion";
 import { CheckCircle2, XCircle, RotateCcw, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -72,7 +73,7 @@ const SelectMatchingTask = ({ pairs, options, correctAnswers }: SelectMatchingTa
         );
       })}
       <div className="flex gap-3 pt-4">
-        <Button onClick={() => setShowResults(true)} disabled={showResults} size="sm" className="font-body">
+        <Button onClick={() => { setShowResults(true); const cc = Object.entries(answers).filter(([k]) => answers[Number(k)] === correctAnswers[Number(k)]).length; trackAnswer("select_matching", `sm_${pairs.length}`, answers, cc === pairs.length); }} disabled={showResults} size="sm" className="font-body">
           <CheckCircle2 className="w-4 h-4 mr-1" /> Check Answers
         </Button>
         {showResults && (

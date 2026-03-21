@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { trackAnswer } from "@/lib/trackAnswer";
 import { motion } from "framer-motion";
 import { CheckCircle2, XCircle, RotateCcw } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -18,7 +19,7 @@ const MatchingTask = ({ pairs, correctAnswers }: MatchingTaskProps) => {
     setAnswers((prev) => ({ ...prev, [index]: value.toUpperCase() }));
   };
 
-  const checkAnswers = () => setShowResults(true);
+  const checkAnswers = () => { setShowResults(true); trackAnswer("matching", `match_${pairs.length}`, answers, Object.entries(answers).every(([k]) => answers[Number(k)] === correctAnswers[Number(k)])); };
   const reset = () => { setAnswers({}); setShowResults(false); };
 
   return (
