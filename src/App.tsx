@@ -13,6 +13,8 @@ const WebQuest4 = lazy(() => import("./pages/WebQuest4"));
 const WebQuest5 = lazy(() => import("./pages/WebQuest5"));
 const WebQuest6 = lazy(() => import("./pages/WebQuest6"));
 const WebQuest7 = lazy(() => import("./pages/WebQuest7"));
+const AdminLogin = lazy(() => import("./pages/AdminLogin"));
+const AdminDashboard = lazy(() => import("./pages/AdminDashboard"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 const queryClient = new QueryClient();
