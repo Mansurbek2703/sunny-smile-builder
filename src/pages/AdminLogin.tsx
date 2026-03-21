@@ -36,7 +36,7 @@ const AdminLogin = () => {
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-950 via-blue-900 to-blue-950 p-4">
       <Card className="w-full max-w-sm border-blue-700 bg-blue-900/80 backdrop-blur">
         <CardHeader className="text-center">
-          <img src="/images/webquest6/aysek_logo.webp" alt="AYSEK Logo" className="mx-auto h-14 w-auto mb-3" />
+          <img src="/images/aysek_logo.webp" alt="AYSEK Logo" className="mx-auto h-14 w-auto mb-3" />
           <div className="mx-auto w-12 h-12 rounded-full bg-cyan-500/20 flex items-center justify-center mb-2">
             <Lock className="w-6 h-6 text-cyan-400" />
           </div>
