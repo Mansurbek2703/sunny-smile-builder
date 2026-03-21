@@ -175,7 +175,7 @@ function ProcessStep() {
         { name: "Alisher Navoi", img: "/images/webquest7/navoi.webp", num: 6 },
       ].map((hero) => (
         <Card key={hero.num} className="overflow-hidden">
-          <img src={hero.img} alt={hero.name} loading="eager" decoding="async" className="w-full h-32 object-cover" />
+          <img src={hero.img} alt={hero.name} loading="eager" decoding="async" className="w-full h-48 sm:h-56 object-contain bg-muted/30" />
           <CardContent className="p-2 text-center">
             <span className="font-display font-bold text-primary text-lg mr-1">{hero.num}.</span>
             <span className="font-body text-lg">{hero.name}</span>
