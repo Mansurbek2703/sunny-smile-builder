@@ -1,22 +1,24 @@
 
 
-# WebQuest 7 — Process & Tasks bo'limidagi 6 ta hero rasmlarini almashtirish
+# WebQuest 7 — Buyuk shaxslar rasmlarini tuzatish
 
 ## Muammo
-Hozirgi 6 ta rasm Unsplash dan olingan umumiy rasmlar — buyuk shaxslarning o'zlari emas. Har bir shaxsning haqiqiy portret rasmi bo'lishi kerak.
+Wikimedia Commons hotlinking ni bloklaydi — rasmlar brauzerda ochilmaydi.
 
-## Yechim (`src/pages/WebQuest7.tsx`, 170-175 qatorlar)
+## Yechim
+6 ta hero portret rasmini Wikimedia dan yuklab, WebP formatga konvertatsiya qilib `public/images/webquest7/` ga saqlash, keyin `src/pages/WebQuest7.tsx` dagi URL larni lokal yo'llarga o'zgartirish.
 
-6 ta Unsplash URL ni Wikimedia Commons dagi haqiqiy portret rasmlar bilan almashtirish:
+### 1. Rasmlarni yuklab olish va konvertatsiya (lov-exec)
+- `sharp` yordamida 6 ta rasmni Wikimedia dan yuklab, WebP formatga o'tkazish
+- Saqlash: `public/images/webquest7/shakespeare.webp`, `gandhi.webp`, `davinci.webp`, `confucius.webp`, `mandela.webp`, `navoi.webp`
 
-| # | Shaxs | Rasm manbasi |
-|---|---|---|
-| 1 | William Shakespeare | Chandos Portrait (Wikipedia) |
-| 2 | Mahatma Gandhi | Studio portrait, 1931 (Wikimedia Commons) |
-| 3 | Leonardo da Vinci | Self-portrait (Wikimedia Commons) |
-| 4 | Confucius | Portrait painting (Wikimedia Commons) |
-| 5 | Nelson Mandela | Official portrait, 1994 (Wikipedia) |
-| 6 | Alisher Navoi | Navoiy portrait (Wikimedia Commons) |
+### 2. Kod o'zgarishi (`src/pages/WebQuest7.tsx`, 170-175 qatorlar)
+6 ta Wikimedia URL ni lokal yo'llarga almashtirish:
+```
+/images/webquest7/shakespeare.webp
+/images/webquest7/gandhi.webp
+...
+```
 
-Faqat `img` URL lari o'zgaradi, boshqa hech narsa o'zgarmaydi. Bitta fayl, 6 ta qator.
+Faqat 6 ta `img` URL o'zgaradi.
 
