@@ -5,6 +5,7 @@ import { ArrowLeft, ChevronLeft, ChevronRight, Menu, X, BookOpen, Lightbulb, Boo
 import { Link, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { QuestSubmitButton } from "@/components/QuestSubmitButton";
 import OpenQuestionTask from "@/components/quest/OpenQuestionTask";
 import SelectMatchingTask from "@/components/quest/SelectMatchingTask";
 import VideoTask from "@/components/quest/VideoTask";

@@ -5,6 +5,7 @@ import { ArrowLeft, ChevronLeft, ChevronRight, Menu, X, BookOpen, Video, PenTool
 import { Link, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { QuestSubmitButton } from "@/components/QuestSubmitButton";
 import SiteHeader from "@/components/SiteHeader";
 import DragMatchingTask from "@/components/quest/DragMatchingTask";
 import MatchingTask from "@/components/quest/MatchingTask";
