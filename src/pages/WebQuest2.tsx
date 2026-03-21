@@ -30,6 +30,7 @@ const steps = [
 const WebQuest2 = () => {
   const [currentStep, setCurrentStep] = useState(0);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  useResponseTracker(2, steps, currentStep);
 
   const goTo = useCallback((idx: number) => {
     setCurrentStep(idx);
