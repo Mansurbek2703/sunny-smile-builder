@@ -102,9 +102,8 @@ function IntroStep() {
       {["Identify key landmarks, attractions, and cultural features of a chosen city.", "Analyze what makes a city unique from a tourist's perspective.", "Compare cultural, historical, and social aspects of cities.", "Create a multimedia presentation or visual guide for tourists.", "Demonstrate effective communication and collaboration skills."].map((o, i) => (
         <Card key={i} className="glass-card hover:shadow-lg transition-shadow"><CardContent className="p-2 flex items-start gap-2"><span className="flex-shrink-0 w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center font-display font-bold text-lg">{i + 1}</span><p className="font-body text-lg leading-snug">{o}</p></CardContent></Card>))}
     </div>
-    <div className="grid grid-cols-2 gap-2 mb-2">
-      <img src="/images/webquest4/hero1.jpg" alt="City" loading="lazy" className="rounded-xl w-full h-auto object-cover shadow-md" />
-      <img src="/images/webquest4/hero2.jpg" alt="Tourism" loading="lazy" className="rounded-xl w-full h-auto object-cover shadow-md" />
+    <div className="mb-2">
+      <img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=800" alt="Tourist exploring a city" loading="lazy" className="rounded-xl w-full max-h-[350px] object-cover shadow-md mx-auto" />
     </div>
     <p className="font-body text-foreground text-lg leading-snug">Imagine you are a traveler visiting a new city for the first time. Everything is unfamiliar — the people, the buildings, the traditions, the food, and the language. Tourists see cities differently than local residents because they discover places with curiosity, surprise, and fresh emotions.</p>
   </>);
