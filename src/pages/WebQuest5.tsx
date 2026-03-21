@@ -125,14 +125,78 @@ function VocabularyStep() {
 
 function ReadingStep() {
   return (<>
-    <div className="grid sm:grid-cols-2 gap-2 mb-3">
-      <img src="/images/webquest5/culture_shock.jpg" alt="Culture Shock Stages" loading="lazy" className="rounded-xl w-full h-40 object-cover shadow-md" />
-      <img src="/images/webquest5/etiquette1.jpg" alt="Cross-cultural etiquette" loading="lazy" className="rounded-xl w-full h-40 object-cover shadow-md" />
-    </div>
-    <ReadingSection title="What Is Culture Shock?">Culture shock happens when people experience uncertainty, confusion, or anxiety as they adjust to a new culture. It often follows stages: honeymoon, frustration, adaptation, and acceptance.</ReadingSection>
-    <ReadingSection title="The Four Stages"><strong>Honeymoon:</strong> Excitement. <strong>Frustration:</strong> Irritation and homesickness. <strong>Adaptation:</strong> Gradually adjusting. <strong>Acceptance:</strong> Feeling comfortable and confident.</ReadingSection>
-    <ReadingSection title="Symptoms">Homesickness, feeling helpless or isolated, lack of concentration, irritability, sadness, sleep or eating disturbances.</ReadingSection>
-    <ReadingSection title="Strategies to Overcome">Be open-minded, avoid constantly comparing to home, keep a journal, socialize with locals, ask for advice.</ReadingSection>
+    <img src="/images/webquest5/culture_shock_reading.png" alt="Culture Shock concept illustration" loading="lazy" className="w-full max-h-[350px] object-contain rounded-xl shadow-md mx-auto mb-3" />
+
+    <ReadingSection title="Definition">
+      <p className="mb-2">Culture shock is the feeling of confusion and uncertainty when an individual is in a new country or environment.</p>
+      <p className="mb-2">Culture shock happens when people experience uncertainty, confusion, or anxiety as they adjust to a new culture when they move abroad or study in another country. It often follows stages: the honeymoon phase of excitement, frustration from differences, gradual adaptation, and acceptance. While it can be challenging, overcoming culture shock can help people grow and develop a deeper appreciation for new cultures.</p>
+      <p className="font-semibold mt-3 mb-1">Key Takeaways</p>
+      <ul className="list-disc pl-5 space-y-1">
+        <li>Culture shock refers to feelings of confusion and anxiety when adapting to a new environment or culture.</li>
+        <li>It typically consists of four stages: honeymoon, frustration, adaptation, and acceptance.</li>
+        <li>Common symptoms include homesickness, irritability, and difficulty concentrating.</li>
+        <li>Overcoming culture shock involves openness, socializing, and learning about the new culture.</li>
+        <li>Successfully adjusting can lead to personal growth and an appreciation of the new environment.</li>
+      </ul>
+    </ReadingSection>
+
+    <ReadingSection title="Insight into the Culture Shock Experience (B)">
+      <p className="mb-2">Culture shock occurs when an individual leaves the comfort of their home and familiar surroundings and moves to an unfamiliar environment. The adjustment period can be fairly intense, particularly if the two locations are completely different, such as going from a small rural area to a large metropolis or moving to another country. People can also experience culture shock when moving from one place to another within the same country.</p>
+      <p className="mb-2">Typically, no single event causes culture shock, nor does it occur suddenly or without reason. Instead, it gradually builds from a series of incidents, and culture shock can be difficult to identify while struggling with it.</p>
+      <p>The feeling is particularly intense at the beginning and can be tough to overcome. It's important to remember that the cultural adjustment usually dissipates over time as a person becomes more familiar with a place, the people, customs, food, and language. As a result, navigation of surroundings gets easier, friends are made, and everything becomes more comfortable. Over time, adjusting to culture shock can lead to personal growth and appreciation for the new environment.</p>
+    </ReadingSection>
+
+    <ReadingSection title="Recognizing the Symptoms (C)">
+      <p className="mb-2">Culture shock can produce a range of symptoms, which can vary greatly from person to person in terms of scope and intensity. These may include:</p>
+      <ul className="list-disc pl-5 space-y-1">
+        <li>Being homesick</li>
+        <li>Feeling helpless</li>
+        <li>Feeling isolated</li>
+        <li>Disorientation</li>
+        <li>Lack of concentration</li>
+        <li>Irritability</li>
+        <li>Sadness</li>
+        <li>Sleep or eating disturbances</li>
+        <li>Paranoia</li>
+      </ul>
+    </ReadingSection>
+
+    <ReadingSection title="Navigating the Four Stages (D)">
+      <p className="mb-2">People who experience culture shock may go through four phases that are explained below.</p>
+      <p className="font-semibold mt-3 mb-1">Embracing the Honeymoon Stage</p>
+      <p className="mb-2">The first stage is commonly referred to as the honeymoon phase. That's because people are thrilled to be in their new environment. They often see it as an adventure. If someone is on a short stay, this initial excitement may define the entire experience. However, the honeymoon phase for those on a longer-term move eventually ends, even though people expect it to last.</p>
+      <p className="font-semibold mt-3 mb-1">Managing the Frustration Stage</p>
+      <p className="mb-2">As initial excitement fades, people may feel more irritated and disoriented. Fatigue can develop from misunderstandings about others' actions, conversations, and customs. Language barriers can leave people feeling overwhelmed by a new culture. Local habits can also become increasingly challenging, and previously easy tasks can take longer to accomplish, leading to exhaustion.</p>
+      <p className="mb-2">The inability to effectively communicate—interpreting what others mean and making oneself understood—is usually the prime source of frustration. This stage can be the most difficult period of cultural adjustment, as some people may feel the urge to withdraw. For example, international students adjusting to life in the United States during study abroad programs can feel angry and anxious, leading to withdrawal from new friends.</p>
+      <p className="font-semibold mt-3 mb-1">Transitioning Through the Adaptation Stage</p>
+      <p className="mb-2">The adaptation stage gradually occurs as people feel more at home. The feelings from the frustration stage begin to subside as people adjust to their new environment. Although they may still not understand certain cultural cues, people will become more familiar—at least to the point that interpreting them becomes much easier.</p>
+      <p className="font-semibold mt-3 mb-1">Achieving Acceptance in Your New Culture</p>
+      <p className="mb-2">In the acceptance stage, people can better enjoy their new home. Typically, beliefs and attitudes toward their new surroundings improve, leading to increased self-confidence and a return of their sense of humor.</p>
+      <p className="mb-2">By resolving misunderstandings, people become more relaxed and happy in their new setting. At this stage, most people experience growth and may change their old behaviors and adopt manners from their new culture.</p>
+      <p>A specific event doesn't cause culture shock. Instead, it can result from encountering different ways of doing things, being cut off from behavioral cues, having your own values brought into question, and feeling you don't know the rules.</p>
+    </ReadingSection>
+
+    <ReadingSection title="Strategies to Overcome Culture Shock (E)">
+      <p className="mb-2">Time and habit help manage culture shock, but individuals can also reduce its impact:</p>
+      <ul className="list-disc pl-5 space-y-1 mb-3">
+        <li>Be open-minded and learn about the new country or culture to understand the reasons for cultural differences.</li>
+        <li>Avoid constantly comparing your new surroundings to home.</li>
+        <li>Write a journal of your experience, including the positive aspects of the new culture.</li>
+        <li>Don't seal yourself off—be active and socialize with the locals.</li>
+        <li>Be open about feeling disoriented or confused. Ask for advice and help.</li>
+        <li>Talk about and share your cultural background—communication runs both ways.</li>
+      </ul>
+      <p className="font-semibold mt-3 mb-1">What Is the Definition of Culture Shock?</p>
+      <p className="mb-2">Culture shock or adjustment occurs when someone is cut off from familiar surroundings and culture after moving or traveling to a new environment. Culture shock can lead to a flurry of emotions, including excitement, anxiety, confusion, and uncertainty.</p>
+      <p className="font-semibold mt-3 mb-1">Is Culture Shock Good or Bad?</p>
+      <p className="mb-2">Although it may have a seemingly negative connotation, culture shock is a normal experience that many people go through when moving or traveling. While it can be challenging, those who can resolve their feelings and adjust to their new environment often overcome culture shock. As a result, cultural adjustment can lead to personal growth and a favorable experience.</p>
+      <p className="font-semibold mt-3 mb-1">What Is an Example of Culture Shock?</p>
+      <p className="mb-2">For example, international students who have come to the United States for a study abroad semester can experience culture shock. Language barriers and unfamiliar customs can make it challenging to adjust, leading some students to feel angry and anxious. Over time, students become more familiar with their new surroundings as they make new friends and learn social cues. The result can lead to growth and a new appreciation of the culture.</p>
+      <p className="font-semibold mt-3 mb-1">What Are the Types of Culture Shock?</p>
+      <p className="mb-2">Culture shock is typically divided into four stages: honeymoon, frustration, adaptation, and acceptance. These periods are characterized by feelings of excitement, anger, homesickness, adjustment, and acceptance. Note that some people might not go through all four phases and might not reach the acceptance phase.</p>
+      <p className="font-semibold mt-3 mb-1">The Bottom Line</p>
+      <p>Culture shock is the feeling of uncertainty or anxiety when you're adjusting to a new environment. It usually happens in four stages: honeymoon, frustration, adaptation, and acceptance. You may feel homesick or irritable, but over time, you can grow, become more confident, and appreciate your new cultures. Staying open-minded, connecting with local communities, and learning about cultural differences help ease the transition, making the experience more positive and rewarding.</p>
+    </ReadingSection>
     <div className="mt-4">
       <h4 className="font-display text-xl font-semibold mb-2">Match headings to paragraphs</h4>
       <SelectMatchingTask pairs={[{ left: "Paragraph A", right: "" }, { left: "Paragraph B", right: "" }, { left: "Paragraph C", right: "" }, { left: "Paragraph D", right: "" }, { left: "Paragraph E", right: "" }]}
