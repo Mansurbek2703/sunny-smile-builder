@@ -215,13 +215,32 @@ function ReadingStep() {
 
 function EtiquetteStep() {
   return (<>
-    <div className="grid sm:grid-cols-2 gap-2 mb-3">
-      <img src="/images/webquest5/etiquette1.jpg" alt="Etiquette" loading="lazy" className="rounded-xl w-full h-40 object-cover shadow-md" />
-      <img src="/images/webquest5/etiquette2.jpg" alt="Cultural rules" loading="lazy" className="rounded-xl w-full h-40 object-cover shadow-md" />
-    </div>
-    <ReadingSection title="Why Cross-Cultural Etiquette Matters">When we think about cross-cultural etiquette rules, our first thought may be our next Zoom meeting with global partners. Universal social codes include politeness, kindness, and empathy.</ReadingSection>
-    <ReadingSection title="Key Tips">Do your research about the culture. Pay special attention to attitude toward time, space, religion, food/dining, dress, hand gestures, and body language.</ReadingSection>
-    <ReadingSection title="Examples">Looking into someone's eyes is considered rude in Japan. A simple thumbs up is offensive in parts of Africa, Australia, and Greece. In Asia, saving face means never pointing out an elder's mistake in public.</ReadingSection>
+    <img src="/images/webquest5/etiquette_reading.png" alt="Cross-Cultural Etiquette" loading="lazy" className="w-full max-h-[350px] object-cover rounded-xl shadow-md mx-auto mb-3" />
+
+    <ReadingSection title="Why Cross-Cultural Etiquette Matters">
+      These days, when we think about cross-cultural etiquette rules, and which rules work where, our first thought is probably not about our next trip to Paris, or Rome, but rather our next Zoom meeting with global partners.{"\n\n"}
+      In these turbulent times of forced electronic connections, we need to be particularly mindful of cultural nuances and customs as we navigate relationships with our colleagues around the world. Why? Well, we all want to be successful and build relationships that create value for everyone.{"\n\n"}
+      To be respectful — and get your point across — there are some universal social codes you can learn. These cross all boundaries, and apply no matter what culture, climate or circumstance you find yourself in. These etiquette rules often focus on politeness, kindness and your innate ability to conduct yourself with dignity, integrity, and empathy.{"\n\n"}
+      Etiquette is a great way to set yourself apart from your peers. It gives you a subtle but noticeable career advantage. So, what does it take to communicate across cultures effectively and politely? How can you prepare yourself for your next global Zoom meeting and — once the pandemic is over — your next work or personal trip abroad?
+    </ReadingSection>
+
+    <ReadingSection title="Do Your Research">
+      First, do some research. Research the culture, and learn the most relevant customs, beliefs and nuances so you can have a better understanding of life and work in another place. Making an effort to learn some etiquette rules that are specific to the region you find yourself in most frequently by taking a class or reading some books is the essence of cultural awareness and the first step toward competence.{"\n\n"}
+      Pay special attention to the culture's attitude toward time, space, religion, food/dining, dress, hand gestures and body language. Learn what is considered taboo, and which subjects to avoid. If you are physically traveling — and we all will again, someday! — Remember to follow the host country's customs and rules. Be particularly respectful of your surroundings when you're not home because remember, it's the host country's rules that count. Once you're aware of some cultural nuances, it will be easy for you to put them into practice.{"\n\n"}
+      For instance, in certain parts of the world it's important to be very punctual; in others — not so much. If you know the difference, you might not be upset if someone is late for a meeting. Once we are all able to travel freely and meet again in-person, you have to understand that in some parts of the world, things are quite different than what you're used to. What's considered personal space varies, as do food preferences, religious beliefs and common gender roles.{"\n\n"}
+      When I travel to the Middle East, I know I need to pack a large scarf to cover my hair in certain situations out of respect for the host's country's customs and expectations. You don't have to share beliefs to be knowledgeable and respectful of them, within reason.
+    </ReadingSection>
+
+    <ReadingSection title="Cultural Examples & Hand Gestures">
+      For example, looking right into someone's eyes is considered rude in Japan. This is directly opposite our more direct American customs. In many parts of Asia it's also important to save face, meaning you never point out an elder or superior is wrong — even when they are — in a group setting. Further, silence can be awkward for some Americans, but for the Japanese it's an expression of respect to the person speaking. Remember that during your next global virtual meeting with Japanese peers.{"\n\n"}
+      There are also many hand gestures that Americans commonly use, that we should curtail when traveling or while on virtual meetings. A simple thumbs up might be okay in France, but it's offensive in parts of Africa, Australia and Greece. Making the "okay" sign has very different meanings in other parts of the world, from sexual to representing the evil eye. Waving your hands while talking might help you get your point across, but to others in certain places you may seem insincere and even a bit crazy. So, cool the arm waving on your next trip or global Zoom meeting.
+    </ReadingSection>
+
+    <ReadingSection title="Conclusion">
+      The beauty of this world is in its diversity, and it can be a lot of fun to learn how to successfully communicate using our common denominators around kindness, curiosity and respect.{"\n\n"}
+      So, be curious, do your research — and you will have a leg-up on achieving your global communication goals.{"\n\n"}
+      <em className="text-muted-foreground text-sm">Written by Heidi Dulebohn · Apr 14, 2020</em>
+    </ReadingSection>
     <div className="mt-4"><OpenQuestionTask title="Reading Comprehension" questions={["Why is cross-cultural etiquette especially important today?", "What advantages can good etiquette give in professional life?", "How does the attitude toward eye contact differ in the USA and Japan?"]} /></div>
     <div className="mt-4">
       <h4 className="font-display text-xl font-semibold mb-2">True or False</h4>
