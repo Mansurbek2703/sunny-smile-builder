@@ -162,12 +162,21 @@ function Reading1Step() {
 
 function Reading2Step() {
   return (<>
-    <ReadingSection title="India — Right Hand Only">Eating with your hands is the norm. You should only ever use your right hand.</ReadingSection>
-    <ReadingSection title="Italy — Coffee Rules">Don't order a cappuccino after 11 am. Never cut your pasta with a knife.</ReadingSection>
-    <ReadingSection title="China — Burping & Chopsticks">Burping gently is a sign of gratitude. Never stick chopsticks vertically in rice.</ReadingSection>
-    <ReadingSection title="Japan — Slurping & Wine">Slurping noodles is a compliment. Always pour wine for others, not for yourself.</ReadingSection>
-    <ReadingSection title="USA — Tipping">Leaving without tipping 15-20% is unheard of.</ReadingSection>
-    <ReadingSection title="Ethiopia — Injera">Dishes are served on injera flatbread. Everyone shares from the same platter using only the right hand.</ReadingSection>
+    <div className="grid sm:grid-cols-2 gap-3 mb-3">
+      <img src="/images/webquest6/manners_sandwich.webp" alt="Mind Your Manners — Dining Etiquette Around the World" className="w-full h-auto rounded-xl shadow-md object-contain" loading="eager" decoding="async" />
+      <img src="/images/webquest6/manners_indian.webp" alt="Traditional Indian dining etiquette" className="w-full h-auto rounded-xl shadow-md object-contain" loading="eager" decoding="async" />
+    </div>
+    <ReadingSection title="Mind Your Manners: Introduction">Dining in different countries involves learning the local etiquette – at least if you want to avoid any cultural faux pas. Trying the local cuisine is one of the highlights of travelling. But what's acceptable at the dinner table in one country may not be the case in another. We all grow up with different table manners, but sometimes, when you travel, the etiquette you're used to may be flipped on its head faster than you can say, 'No elbows on the table!' From eating only with your right hand in India to slurping your noodles in Japan, here are some dining etiquette practices you may encounter on your travels.</ReadingSection>
+    <ReadingSection title="India & Italy">
+      <strong>1. Don't eat with your left hand in India.</strong> Eating with your hands is the norm in many parts of India. Locals even say it makes the food taste better. However, you should only ever use your right hand – even if you're a leftie. The left hand is traditionally reserved for 'unsavoury' activities, so using it to eat is considered unclean.{"\n\n"}<strong>2. Don't drink a milky coffee after 11 am in Italy.</strong> If you order a cappuccino in Italy after 11 am, be prepared to be met with a look of disdain. There's an unwritten rule that cappuccinos should only be consumed at breakfast. Italians think milk is heavy and believe drinking it later can disrupt digestion. Do like the Italians and order "Un caffè, per favore" — a small but caffeine-packed shot of espresso. Also, don't ask for a 'latte' unless you want a glass of milk – ask for a "caffe latte".{"\n\n"}<strong>3. Don't cut pasta in Italy.</strong> Never, ever cut your pasta with a knife in Italy — it's considered sacrilege. The whole point of Italian cuisine is to take your time and savour each bite. Breaking pasta in half before boiling is a severe culinary sin in the eyes of an Italian.
+    </ReadingSection>
+    <ReadingSection title="China & Japan">
+      <strong>4. Burping at the dinner table is acceptable in China.</strong> Burping gently is seen as a sign of gratitude to the chef. While you don't have to participate, remain open-minded to hearing a burp or two at the dining table.{"\n\n"}<strong>5. Feel free to slurp your noodles in Japan.</strong> Slurping noodles is seen as a compliment to the cook. But just because slurping is fine in ramen joints doesn't mean you should do it in other restaurant settings.{"\n\n"}<strong>6. Don't stick chopsticks in your rice in Japan.</strong> Sticking chopsticks in rice resembles 'tate-bashi', a type of offering reserved for Buddhist and Shinto funerals. Doing it at a dinner table is considered a bad omen. Instead, rest your chopsticks over your bowl or place them in the chopstick holder.
+    </ReadingSection>
+    <ReadingSection title="USA & Ethiopia">
+      <strong>7. Don't leave without tipping in the USA.</strong> Leaving a sit-down restaurant without tipping is unheard of. Hospitality staff rely on tips as they're usually paid below the federal minimum wage. The accepted amount is 15 to 20 per cent of the bill. In bars, it's standard to tip USD $1 per drink.{"\n\n"}<strong>8. Don't lick your fingers in Ethiopia.</strong> Most dishes are brought out on injera, a large, spongy flatbread which also serves as cutlery. The platter is placed in the middle of the table so everyone can tear off pieces and scoop up stews, curries and salads. Like in India, eating should only be done with the right hand. Don't lick your fingers during the meal — hold out till the end when you wash your hands.
+    </ReadingSection>
+    <ReadingSection title="Conclusion">There can be a lot to navigate when you travel to a new country for the first time. When you travel with an expert local leader by your side, they can help you with the do's and don'ts so you can get a true taste of the local culture.{"\n\n"}<em>Written by Cliona Elliott, May 10, 2024</em></ReadingSection>
     <div className="mt-4">
       <h4 className="font-display text-xl font-semibold mb-2">True, False, or Culture-dependent?</h4>
       <TrueFalseTask statements={[{ text: "Slurping food is rude in all countries.", answer: false }, { text: "Using the left hand while eating is acceptable everywhere.", answer: false }, { text: "Tipping is optional in the USA.", answer: false }, { text: "Burping at the table is always impolite.", answer: false }]} />
@@ -195,7 +204,7 @@ function ReflectionStep() {
 }
 
 function ReadingSection({ title, children }: { title: string; children: React.ReactNode }) {
-  return (<div className="mb-3 p-3 rounded-xl bg-muted/50 border-l-4 border-primary/40"><h5 className="font-display font-semibold text-xl mb-1">{title}</h5><p className="font-body text-xl text-foreground leading-relaxed">{children}</p></div>);
+  return (<div className="mb-3 p-3 rounded-xl bg-muted/50 border-l-4 border-primary/40"><h5 className="font-display font-semibold text-xl mb-1">{title}</h5><div className="font-body text-xl text-foreground leading-relaxed whitespace-pre-line">{children}</div></div>);
 }
 
 function SelfEvalChecklist({ items }: { items: string[] }) {
