@@ -77,7 +77,7 @@ const WebQuest6 = () => {
 
 function StepContent({ stepId }: { stepId: string }) {
   switch (stepId) {
-    case "infographic": return <img src="/images/webquest6/infographic1.jpg" alt="WebQuest 6 Infographic" loading="lazy" className="rounded-xl w-full object-contain shadow-lg" />;
+    case "infographic": return <img src="/images/webquest6/infographic.webp" alt="Cross-Cultural Dining Etiquette — Know the Do's and Don'ts Around the World" loading="eager" decoding="async" className="rounded-xl w-full object-contain shadow-lg" />;
     case "intro": return <IntroStep />;
     case "video": return <VideoStep />;
     case "reading1": return <Reading1Step />;
