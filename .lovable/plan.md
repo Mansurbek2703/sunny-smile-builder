@@ -1,24 +1,29 @@
 
 
-# WebQuest 5 — Rasm ko'rinishi va yuklanish tezligini tuzatish
+# WebQuest 6 — Reading Culinary bo'limini to'liqlashtirish
 
-## Muammolar
-1. **Etiquette rasm kesilib qolyapti**: `object-cover` + `max-h-[350px]` rasmni kesadi. `object-contain` bo'lishi kerak.
-2. **Rasmlar kechikib yuklanadi**: Barcha rasmlar `loading="lazy"` — bo'lim ochilganda rasm darhol ko'rinmaydi. `loading="eager"` bo'lishi kerak.
+## O'zgarishlar (`src/pages/WebQuest6.tsx` — `Reading1Step` funksiyasi, 123-141 qatorlar)
 
-## Yechim (`src/pages/WebQuest5.tsx`)
+### 1. Rasmlar (125-128 qatorlar)
+2 ta eski rasm (`reading1.jpg`, `reading2.jpg`) o'rniga foydalanuvchi yuklagan 2 ta yangi rasmni qo'yish:
+- `user-uploads://image-69.png` → `public/images/webquest6/culinary_map.webp` (xarita — dunyo oshxonalari)
+- `user-uploads://image-70.png` → `public/images/webquest6/culinary_dishes.webp` (turli taomlar)
+- WebP formatga konvertatsiya (hajmni kamaytirish)
+- `loading="eager"` va `decoding="async"` qo'shiladi
 
-### 1. Etiquette rasm (218-qator)
-- `object-cover` → `object-contain` (rasm to'liq ko'rinadi, kesilmaydi)
-- `max-h-[350px]` → `max-h-[500px]` (infografik rasm balandroq bo'lishi uchun)
-- `loading="lazy"` → `loading="eager"`
+### 2. Reading matnlari (129-132 qatorlar)
+4 ta qisqa `ReadingSection` o'rniga to'liq matnlar:
 
-### 2. Barcha boshqa rasmlar ham `loading="eager"` ga o'tkaziladi
-- 84-qator: infographic rasm
-- 104-qator: intro rasm  
-- 128-qator: culture shock reading rasm
+| Sarlavha | Mazmun |
+|---|---|
+| "Food Culture & Identity" | Kirish — civilization, community identity, Japan tea, Ethiopia feasts + maqsad |
+| "Geographical Factors" | Iqlim, tropik mevalar, quruq hududlar — kuskus, dengiz mahsulotlari, Skandinaviya, Shveytsariya |
+| "Historical Roots of Culinary Traditions" | Kolumb almashinuvi, kartoshka/pomidor, Ipak yo'li, ziravorlar |
+| "Role of Food in Cultural Rituals" | Japan sado, Hindiston Diwali/Eid, Italiya pasta, Meksika tamales, Xitoy dumplings, AQSh BBQ |
+| "Globalization's Impact & Conclusion" | Fast food, culinary tourism, sushi New York'da, xulosa — diversity, universal language |
 
-Jami 4 ta `loading="lazy"` → `loading="eager"` o'zgarish + 1 ta `object-cover` → `object-contain`.
+### 3. Topshiriqlar (133-141 qatorlar)
+O'zgarmaydi — MultipleChoiceTask va TrueFalseTask saqlanadi.
 
-Boshqa hech narsa o'zgarmaydi.
+2 ta rasm nusxalanadi + WebP konvertatsiya + 1 fayl tahrir.
 
