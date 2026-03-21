@@ -200,7 +200,7 @@ const AdminDashboard = () => {
       {/* Header */}
       <header className="bg-blue-900/90 border-b border-blue-800 px-4 py-3 flex items-center justify-between sticky top-0 z-50 backdrop-blur">
         <div className="flex items-center gap-3">
-          <img src="/images/webquest6/aysek_logo.webp" alt="AYSEK Logo" className="h-9 w-auto" />
+          <img src="/images/aysek_logo.webp" alt="AYSEK Logo" className="h-9 w-auto" />
           <h1 className="text-lg font-bold text-white">📊 Admin Dashboard</h1>
         </div>
         <div className="flex gap-2 items-center">
