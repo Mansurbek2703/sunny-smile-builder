@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { trackAnswer } from "@/lib/trackAnswer";
 import { motion } from "framer-motion";
 import { CheckCircle2, XCircle, RotateCcw } from "lucide-react";
 import { Button } from "@/components/ui/button";
