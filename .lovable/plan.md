@@ -1,31 +1,24 @@
 
 
-# WebQuest 5 — Rasmlar tez yuklanishini ta'minlash
+# WebQuest 5 — Rasm ko'rinishi va yuklanish tezligini tuzatish
 
-## Muammo
-Profiling natijalari:
-- `infographic1.png` — **2.5MB**, 1254ms yuklanish
-- `aysek_logo.png` — **1.7MB**, 1168ms yuklanish
-- Boshqa rasmlar (culture_shock_reading.png, etiquette_reading.png, intro_culture.png) ham katta PNG fayllar
+## Muammolar
+1. **Etiquette rasm kesilib qolyapti**: `object-cover` + `max-h-[350px]` rasmni kesadi. `object-contain` bo'lishi kerak.
+2. **Rasmlar kechikib yuklanadi**: Barcha rasmlar `loading="lazy"` — bo'lim ochilganda rasm darhol ko'rinmaydi. `loading="eager"` bo'lishi kerak.
 
-PNG formatdagi rasmlar juda og'ir — bu kechikishning asosiy sababi.
+## Yechim (`src/pages/WebQuest5.tsx`)
 
-## Yechim
+### 1. Etiquette rasm (218-qator)
+- `object-cover` → `object-contain` (rasm to'liq ko'rinadi, kesilmaydi)
+- `max-h-[350px]` → `max-h-[500px]` (infografik rasm balandroq bo'lishi uchun)
+- `loading="lazy"` → `loading="eager"`
 
-Rasmlarni siqib, WebP formatga o'tkazish orqali hajmini 5-10 baravar kamaytirish. Bu o'zgarish faqat rasmlarni optimallashtiradi, kodda boshqa hech narsa o'zgarmaydi.
+### 2. Barcha boshqa rasmlar ham `loading="eager"` ga o'tkaziladi
+- 84-qator: infographic rasm
+- 104-qator: intro rasm  
+- 128-qator: culture shock reading rasm
 
-### 1. Rasm fayllarni kompressiya qilish (lov-exec orqali)
-- `sharp` kutubxonasi yordamida barcha WebQuest 5 PNG rasmlarni WebP formatga konvertatsiya qilish (sifat 80-85%)
-- `aysek_logo.png` ni ham siqish
-- Asl fayllarni yangi siqilgan versiyalar bilan almashtirish (`.webp` yoki siqilgan `.png`)
+Jami 4 ta `loading="lazy"` → `loading="eager"` o'zgarish + 1 ta `object-cover` → `object-contain`.
 
-### 2. Kod o'zgarishlari (`src/pages/WebQuest5.tsx` + `src/components/SiteHeader.tsx`)
-- Rasm `src` yo'llarini yangi `.webp` fayllarga o'zgartirish
-- `decoding="async"` atributi qo'shish (brauzerga asinxron dekodlash imkonini beradi)
-- `fetchPriority="low"` — lazy rasmlar uchun, `fetchPriority="high"` — logo uchun
-
-### Kutilgan natija
-- Rasm hajmi: ~2.5MB → ~200-400KB (har biri)
-- Yuklanish vaqti: ~1200ms → ~100-200ms (har biri)
-- Boshqa hech narsa o'zgarmaydi
+Boshqa hech narsa o'zgarmaydi.
 
