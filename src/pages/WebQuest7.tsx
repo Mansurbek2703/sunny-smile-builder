@@ -167,12 +167,12 @@ function ProcessStep() {
 
     <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-4">
       {[
-        { name: "William Shakespeare", img: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Shakespeare.jpg/440px-Shakespeare.jpg", num: 1 },
-        { name: "Mahatma Gandhi", img: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Mahatma-Gandhi%2C_studio%2C_1931.jpg/440px-Mahatma-Gandhi%2C_studio%2C_1931.jpg", num: 2 },
-        { name: "Leonardo da Vinci", img: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Leonardo_da_Vinci_%281452-1519%29_-_The_Last_Supper_%281495-1498%29.jpg/440px-Leonardo_da_Vinci_%281452-1519%29_-_The_Last_Supper_%281495-1498%29.jpg", num: 3 },
-        { name: "Confucius", img: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Confucius_Tang_Dynasty.jpg/440px-Confucius_Tang_Dynasty.jpg", num: 4 },
-        { name: "Nelson Mandela", img: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Nelson_Mandela_1994.jpg/440px-Nelson_Mandela_1994.jpg", num: 5 },
-        { name: "Alisher Navoi", img: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Alisher_Navoiy.jpg/440px-Alisher_Navoiy.jpg", num: 6 },
+        { name: "William Shakespeare", img: "/images/webquest7/shakespeare.webp", num: 1 },
+        { name: "Mahatma Gandhi", img: "/images/webquest7/gandhi.webp", num: 2 },
+        { name: "Leonardo da Vinci", img: "/images/webquest7/davinci.webp", num: 3 },
+        { name: "Confucius", img: "/images/webquest7/confucius.webp", num: 4 },
+        { name: "Nelson Mandela", img: "/images/webquest7/mandela.webp", num: 5 },
+        { name: "Alisher Navoi", img: "/images/webquest7/navoi.webp", num: 6 },
       ].map((hero) => (
         <Card key={hero.num} className="overflow-hidden">
           <img src={hero.img} alt={hero.name} loading="eager" decoding="async" className="w-full h-32 object-cover" />
