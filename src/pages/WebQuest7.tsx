@@ -167,12 +167,12 @@ function ProcessStep() {
 
     <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-4">
       {[
-        { name: "William Shakespeare", img: "https://images.unsplash.com/photo-1519791883288-dc8bd696e667?w=300", num: 1 },
-        { name: "Mahatma Gandhi", img: "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=300", num: 2 },
-        { name: "Leonardo da Vinci", img: "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=300", num: 3 },
-        { name: "Confucius", img: "https://images.unsplash.com/photo-1547981609-4b6bfe67ca0b?w=300", num: 4 },
-        { name: "Nelson Mandela", img: "https://images.unsplash.com/photo-1580060839134-75a5edca2e99?w=300", num: 5 },
-        { name: "Alisher Navoi", img: "https://images.unsplash.com/photo-1585468274952-66591eb14165?w=300", num: 6 },
+        { name: "William Shakespeare", img: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Shakespeare.jpg/440px-Shakespeare.jpg", num: 1 },
+        { name: "Mahatma Gandhi", img: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Mahatma-Gandhi%2C_studio%2C_1931.jpg/440px-Mahatma-Gandhi%2C_studio%2C_1931.jpg", num: 2 },
+        { name: "Leonardo da Vinci", img: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Leonardo_da_Vinci_%281452-1519%29_-_The_Last_Supper_%281495-1498%29.jpg/440px-Leonardo_da_Vinci_%281452-1519%29_-_The_Last_Supper_%281495-1498%29.jpg", num: 3 },
+        { name: "Confucius", img: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Confucius_Tang_Dynasty.jpg/440px-Confucius_Tang_Dynasty.jpg", num: 4 },
+        { name: "Nelson Mandela", img: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Nelson_Mandela_1994.jpg/440px-Nelson_Mandela_1994.jpg", num: 5 },
+        { name: "Alisher Navoi", img: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Alisher_Navoiy.jpg/440px-Alisher_Navoiy.jpg", num: 6 },
       ].map((hero) => (
         <Card key={hero.num} className="overflow-hidden">
           <img src={hero.img} alt={hero.name} loading="eager" decoding="async" className="w-full h-32 object-cover" />
