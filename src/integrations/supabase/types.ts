@@ -14,6 +14,44 @@ export type Database = {
   }
   public: {
     Tables: {
+      activity_log: {
+        Row: {
+          action: string
+          created_at: string
+          duration_seconds: number | null
+          id: string
+          quest_number: number
+          respondent_id: string
+          step_id: string | null
+        }
+        Insert: {
+          action: string
+          created_at?: string
+          duration_seconds?: number | null
+          id?: string
+          quest_number: number
+          respondent_id: string
+          step_id?: string | null
+        }
+        Update: {
+          action?: string
+          created_at?: string
+          duration_seconds?: number | null
+          id?: string
+          quest_number?: number
+          respondent_id?: string
+          step_id?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "activity_log_respondent_id_fkey"
+            columns: ["respondent_id"]
+            isOneToOne: false
+            referencedRelation: "respondents"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       quest_images: {
         Row: {
           alt_text: string | null
@@ -134,6 +172,83 @@ export type Database = {
             columns: ["step_id"]
             isOneToOne: false
             referencedRelation: "quest_steps"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      respondents: {
+        Row: {
+          course_direction: string
+          email: string
+          father_name: string | null
+          first_name: string
+          id: string
+          last_name: string
+          registered_at: string
+          university: string
+        }
+        Insert: {
+          course_direction: string
+          email: string
+          father_name?: string | null
+          first_name: string
+          id?: string
+          last_name: string
+          registered_at?: string
+          university: string
+        }
+        Update: {
+          course_direction?: string
+          email?: string
+          father_name?: string | null
+          first_name?: string
+          id?: string
+          last_name?: string
+          registered_at?: string
+          university?: string
+        }
+        Relationships: []
+      }
+      responses: {
+        Row: {
+          answer_data: Json
+          created_at: string
+          id: string
+          is_correct: boolean | null
+          quest_number: number
+          respondent_id: string
+          step_id: string
+          task_id: string
+          task_type: string
+        }
+        Insert: {
+          answer_data?: Json
+          created_at?: string
+          id?: string
+          is_correct?: boolean | null
+          quest_number: number
+          respondent_id: string
+          step_id: string
+          task_id: string
+          task_type?: string
+        }
+        Update: {
+          answer_data?: Json
+          created_at?: string
+          id?: string
+          is_correct?: boolean | null
+          quest_number?: number
+          respondent_id?: string
+          step_id?: string
+          task_id?: string
+          task_type?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "responses_respondent_id_fkey"
+            columns: ["respondent_id"]
+            isOneToOne: false
+            referencedRelation: "respondents"
             referencedColumns: ["id"]
           },
         ]
