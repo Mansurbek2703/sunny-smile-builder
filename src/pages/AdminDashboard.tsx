@@ -169,7 +169,7 @@ const AdminDashboard = () => {
         Familiya: r.last_name, Ism: r.first_name, "Otasining ismi": r.father_name || "",
         Email: r.email, Universitet: r.university, "Kurs/Yo'nalish": r.course_direction,
         "Ro'yxatdan o'tgan": r.registered_at.slice(0, 16).replace("T", " "),
-        "Quest №": resp.quest_number, Qadam: resp.step_id, Topshiriq: resp.task_id,
+        "Quest №": String(resp.quest_number), Qadam: resp.step_id, Topshiriq: resp.task_id,
         "Topshiriq turi": resp.task_type,
         "Javob": typeof resp.answer_data === "object" ? JSON.stringify(resp.answer_data) : String(resp.answer_data),
         "To'g'ri/Noto'g'ri": resp.is_correct === null ? "" : resp.is_correct ? "To'g'ri" : "Noto'g'ri",
