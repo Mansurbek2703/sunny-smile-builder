@@ -42,10 +42,10 @@ export default function RegistrationModal({ open, onClose, onRegister, onSuccess
     setLoading(true);
     try {
       await onRegister(form);
-      toast({ title: "Ro'yxatdan o'tdingiz!", description: "Endi barcha WebQuest'larni ishlashingiz mumkin." });
+      toast({ title: "Registration Successful!", description: "You can now access all WebQuests." });
       onSuccess();
     } catch (err: any) {
-      toast({ title: "Xatolik", description: err?.message || "Nimadir xato ketdi", variant: "destructive" });
+      toast({ title: "Error", description: err?.message || "Something went wrong", variant: "destructive" });
     } finally {
       setLoading(false);
     }
@@ -57,10 +57,10 @@ export default function RegistrationModal({ open, onClose, onRegister, onSuccess
         <DialogHeader>
           <DialogTitle className="flex items-center gap-2 text-foreground">
             <UserPlus className="w-5 h-5 text-primary" />
-            Ro'yxatdan o'tish
+            Registration
           </DialogTitle>
           <DialogDescription className="text-muted-foreground">
-            WebQuest'larni ishlash uchun quyidagi ma'lumotlarni to'ldiring. Faqat bir marta to'ldiriladi.
+            Please fill in the following information to access the WebQuests. This only needs to be done once.
           </DialogDescription>
         </DialogHeader>
         <form onSubmit={handleSubmit} className="space-y-3 mt-2">
@@ -70,28 +70,28 @@ export default function RegistrationModal({ open, onClose, onRegister, onSuccess
           </div>
           <div className="grid grid-cols-2 gap-3">
             <div>
-              <Label htmlFor="reg-ln">Familiya *</Label>
-              <Input id="reg-ln" required placeholder="Familiya" value={form.last_name} onChange={(e) => set("last_name", e.target.value)} />
+              <Label htmlFor="reg-ln">Last Name *</Label>
+              <Input id="reg-ln" required placeholder="Last Name" value={form.last_name} onChange={(e) => set("last_name", e.target.value)} />
             </div>
             <div>
-              <Label htmlFor="reg-fn">Ism *</Label>
-              <Input id="reg-fn" required placeholder="Ism" value={form.first_name} onChange={(e) => set("first_name", e.target.value)} />
+              <Label htmlFor="reg-fn">First Name *</Label>
+              <Input id="reg-fn" required placeholder="First Name" value={form.first_name} onChange={(e) => set("first_name", e.target.value)} />
             </div>
           </div>
           <div>
-            <Label htmlFor="reg-pn">Otasining ismi</Label>
-            <Input id="reg-pn" placeholder="Otasining ismi (ixtiyoriy)" value={form.father_name} onChange={(e) => set("father_name", e.target.value)} />
+            <Label htmlFor="reg-pn">Father's Name</Label>
+            <Input id="reg-pn" placeholder="Father's Name (optional)" value={form.father_name} onChange={(e) => set("father_name", e.target.value)} />
           </div>
           <div>
-            <Label htmlFor="reg-cd">Kurs va yo'nalish *</Label>
-            <Input id="reg-cd" required placeholder="Masalan: 3-kurs, Ingliz tili" value={form.course_direction} onChange={(e) => set("course_direction", e.target.value)} />
+            <Label htmlFor="reg-cd">Course & Direction *</Label>
+            <Input id="reg-cd" required placeholder="e.g., 3rd year, English Language" value={form.course_direction} onChange={(e) => set("course_direction", e.target.value)} />
           </div>
           <div>
-            <Label htmlFor="reg-uni">Universitet nomi *</Label>
-            <Input id="reg-uni" required placeholder="Universitet nomi" value={form.university} onChange={(e) => set("university", e.target.value)} />
+            <Label htmlFor="reg-uni">University *</Label>
+            <Input id="reg-uni" required placeholder="University name" value={form.university} onChange={(e) => set("university", e.target.value)} />
           </div>
           <Button type="submit" className="w-full" disabled={!valid || loading}>
-            {loading ? "Yuklanmoqda..." : "Ro'yxatdan o'tish va boshlash"}
+            {loading ? "Loading..." : "Register & Start"}
           </Button>
         </form>
       </DialogContent>
