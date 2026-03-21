@@ -215,7 +215,7 @@ function ReadingStep() {
 
 function EtiquetteStep() {
   return (<>
-    <img src="/images/webquest5/etiquette_reading.webp" alt="Cross-Cultural Etiquette" loading="lazy" decoding="async" className="w-full max-h-[350px] object-cover rounded-xl shadow-md mx-auto mb-3" />
+    <img src="/images/webquest5/etiquette_reading.webp" alt="Cross-Cultural Etiquette" loading="eager" decoding="async" className="w-full max-h-[500px] object-contain rounded-xl shadow-md mx-auto mb-3" />
 
     <ReadingSection title="Why Cross-Cultural Etiquette Matters">
       These days, when we think about cross-cultural etiquette rules, and which rules work where, our first thought is probably not about our next trip to Paris, or Rome, but rather our next Zoom meeting with global partners.{"\n\n"}
