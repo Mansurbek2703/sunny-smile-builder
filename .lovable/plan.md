@@ -1,46 +1,29 @@
 
 
-# Submit tugmasi + Congratulations sahifasi + Javoblarni tekshirish
+# Registration Modal va boshqa matnlarni ingliz tiliga o'tkazish
 
-## 1. Har bir WebQuest reflection bo'limida o'zgarish (7 ta fayl)
+## O'zgarishlar
 
-Har bir WebQuest (1-7) dagi reflection step'dagi `Congratulations` Card o'rniga **"Submit" tugmasi** qo'yiladi. Tugma bosilganda:
-- `activity_log` ga `quest_completed` yoziladi
-- `/quest/{n}/complete` sahifasiga yo'naltiriladi
+### `src/components/RegistrationModal.tsx`
+O'zbek tilidagi barcha matnlarni ingliz tiliga almashtirish:
 
-## 2. Yangi `QuestCompletePage.tsx` komponenti
+| Qator | Hozirgi (O'zbekcha) | Yangi (Inglizcha) |
+|---|---|---|
+| 45 | "Ro'yxatdan o'tdingiz!" | "Registration Successful!" |
+| 45 | "Endi barcha WebQuest'larni ishlashingiz mumkin." | "You can now access all WebQuests." |
+| 48 | "Xatolik" | "Error" |
+| 48 | "Nimadir xato ketdi" | "Something went wrong" |
+| 60 | "Ro'yxatdan o'tish" | "Registration" |
+| 63 | "WebQuest'larni ishlash uchun..." | "Please fill in the following information to access the WebQuests. This only needs to be done once." |
+| 73 | "Familiya *" / placeholder | "Last Name *" / "Last Name" |
+| 77 | "Ism *" / placeholder | "First Name *" / "First Name" |
+| 82 | "Otasining ismi" / placeholder | "Father's Name" / "Father's Name (optional)" |
+| 86 | "Kurs va yo'nalish *" / placeholder | "Course & Direction *" / "e.g., 3rd year, English Language" |
+| 90 | "Universitet nomi *" / placeholder | "University *" / "University name" |
+| 94 | "Yuklanmoqda..." / "Ro'yxatdan o'tish va boshlash" | "Loading..." / "Register & Start" |
 
-Bitta universal sahifa yaratiladi — `src/pages/QuestCompletePage.tsx`:
-- URL parametridan quest raqamini oladi (`/quest/:id/complete`)
-- Har bir quest uchun o'ziga xos congratulations matni (massivda saqlanadi)
-- Chiroyli dizayn: confetti effekt, quest nomi, congrat matn
-- "Keyingi WebQuest" tugmasi (quest 7 da — "Bosh sahifaga qaytish")
-- Respondent ID yo'q bo'lsa — bosh sahifaga redirect
+### Boshqa fayllar
+`QuestCompletePage.tsx` va `QuestSubmitButton.tsx` — allaqachon ingliz tilida. O'zgartirish kerak emas.
 
-## 3. Routing (`src/App.tsx`)
-
-Yangi route qo'shiladi:
-```
-/quest/:id/complete → QuestCompletePage
-```
-
-## 4. Javoblarni aniq tekshirish
-
-Hozirgi task komponentlari (`MultipleChoiceTask`, `TrueFalseTask`, `SelectMatchingTask`, `MatchingTask`, `FillBlanksTask`) allaqachon `trackAnswer()` chaqirib, `is_correct` ni bazaga yozadi. Bu qism ishlaydi — o'zgartirish kerak emas.
-
-## Jami o'zgarishlar
-
-| Fayl | O'zgarish |
-|---|---|
-| `src/pages/QuestCompletePage.tsx` | **Yangi** — universal congrat sahifa |
-| `src/App.tsx` | Route qo'shish |
-| `src/pages/WebQuest1.tsx` | Congrat Card → Submit tugma |
-| `src/pages/WebQuest2.tsx` | Congrat Card → Submit tugma |
-| `src/pages/WebQuest3.tsx` | Congrat Card → Submit tugma |
-| `src/pages/WebQuest4.tsx` | Congrat Card → Submit tugma |
-| `src/pages/WebQuest5.tsx` | Congrat Card → Submit tugma |
-| `src/pages/WebQuest6.tsx` | Congrat Card → Submit tugma |
-| `src/pages/WebQuest7.tsx` | Congrat Card → Submit tugma |
-
-9 ta fayl (1 yangi + 8 tahrir).
+Faqat 1 ta fayl tahrirlanadi.
 
