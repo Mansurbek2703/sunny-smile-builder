@@ -67,7 +67,7 @@ const FillBlanksTask = ({ wordBank, sentences }: FillBlanksTaskProps) => {
         );
       })}
       <div className="flex gap-3 pt-3">
-        <Button onClick={() => setShowResults(true)} disabled={showResults} size="sm" className="font-body">
+        <Button onClick={() => { setShowResults(true); const cc = Object.entries(answers).filter(([k]) => answers[Number(k)]?.toLowerCase().trim() === sentences[Number(k)].blank.toLowerCase().trim()).length; trackAnswer("fill_blanks", `fb_${sentences.length}`, answers, cc === sentences.length); }} disabled={showResults} size="sm" className="font-body">
           <CheckCircle2 className="w-4 h-4 mr-1" /> Check Answers
         </Button>
         {showResults && (

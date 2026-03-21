@@ -29,6 +29,11 @@ const OpenQuestionTask = ({ title, questions }: OpenQuestionTaskProps) => {
           />
         </div>
       ))}
+      {Object.keys(answers).length > 0 && (
+        <Button size="sm" variant="outline" className="font-body" onClick={() => trackAnswer("open_question", title, answers, null)}>
+          <Save className="w-4 h-4 mr-1" /> Save Answers
+        </Button>
+      )}
     </div>
   );
 };

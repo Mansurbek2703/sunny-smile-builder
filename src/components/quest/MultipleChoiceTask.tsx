@@ -76,7 +76,7 @@ const MultipleChoiceTask = ({ questions }: MultipleChoiceTaskProps) => {
         </motion.div>
       ))}
       <div className="flex gap-3 pt-3">
-        <Button onClick={() => setShowResults(true)} disabled={showResults || Object.keys(answers).length < questions.length} size="sm" className="font-body">
+        <Button onClick={() => { setShowResults(true); const cc = Object.entries(answers).filter(([k]) => answers[Number(k)] === questions[Number(k)].correctIndex).length; trackAnswer("multiple_choice", `mc_${questions.length}`, answers, cc === questions.length); }} disabled={showResults || Object.keys(answers).length < questions.length} size="sm" className="font-body">
           <CheckCircle2 className="w-4 h-4 mr-1" /> Check Answers
         </Button>
         {showResults && (
