@@ -2,9 +2,10 @@ import { useState, useCallback } from "react";
 import { useResponseTracker } from "@/hooks/useResponseTracker";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowLeft, ChevronLeft, ChevronRight, Menu, X, BookOpen, Video, PenTool, Users, Search, MessageSquare, CheckCircle2 } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { QuestSubmitButton } from "@/components/QuestSubmitButton";
 import SiteHeader from "@/components/SiteHeader";
 import DragMatchingTask from "@/components/quest/DragMatchingTask";
 import MatchingTask from "@/components/quest/MatchingTask";
@@ -621,14 +622,7 @@ function ReflectionStep() {
           "I can use this knowledge in future intercultural situations.",
         ]} />
       </div>
-      <Card className="mt-3 border-primary/30 bg-primary/5">
-        <CardContent className="p-2 sm:p-3 text-center">
-          <h3 className="font-display text-xl font-bold text-primary mb-1">🎉 Congratulations!</h3>
-          <p className="font-body text-lg text-foreground">
-            You have compared two important traditions and discovered how people in different cultures celebrate gratitude, renewal, and family. Remember: learning about other cultures is the first step toward becoming a global citizen.
-          </p>
-        </CardContent>
-      </Card>
+      <QuestSubmitButton questNumber={1} />
     </>
   );
 }

@@ -2,9 +2,10 @@ import { useState, useCallback } from "react";
 import { useResponseTracker } from "@/hooks/useResponseTracker";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowLeft, ChevronLeft, ChevronRight, Menu, X, BookOpen, Video, PenTool, Users, Search, MessageSquare, CheckCircle2 } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { QuestSubmitButton } from "@/components/QuestSubmitButton";
 import SiteHeader from "@/components/SiteHeader";
 import SelectMatchingTask from "@/components/quest/SelectMatchingTask";
 import VocabularyMatchTask from "@/components/quest/VocabularyMatchTask";
@@ -265,10 +266,7 @@ function ReflectionStep() {
     <div className="mt-4">
       <SelfEvalChecklist items={["I identified common cultural stereotypes.", "I checked stereotypes using reliable sources.", "I can tell the difference between facts and opinions.", "I learned new information about another culture.", "I understand why stereotypes can be misleading or harmful.", "I participated actively in the WebQuest activities.", "I can reflect on my own attitudes and assumptions."]} />
     </div>
-    <Card className="mt-4 border-primary/30 bg-primary/5"><CardContent className="p-4 text-center">
-      <h3 className="font-display text-xl font-bold text-primary mb-1">🎉 Congratulations!</h3>
-      <p className="font-body text-lg text-foreground">You have learned that stereotypes are not always true — they are generalizations that can hide the diversity within cultures. Understanding the difference between truth and myth helps us become more open-minded and globally aware citizens.</p>
-    </CardContent></Card>
+    <QuestSubmitButton questNumber={3} />
   </>);
 }
 

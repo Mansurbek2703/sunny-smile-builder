@@ -13,6 +13,7 @@ const WebQuest4 = lazy(() => import("./pages/WebQuest4"));
 const WebQuest5 = lazy(() => import("./pages/WebQuest5"));
 const WebQuest6 = lazy(() => import("./pages/WebQuest6"));
 const WebQuest7 = lazy(() => import("./pages/WebQuest7"));
+const QuestCompletePage = lazy(() => import("./pages/QuestCompletePage"));
 const AdminLogin = lazy(() => import("./pages/AdminLogin"));
 const AdminDashboard = lazy(() => import("./pages/AdminDashboard"));
 const NotFound = lazy(() => import("./pages/NotFound"));
@@ -40,6 +41,7 @@ const App = () => (
             <Route path="/quest/4" element={<WebQuest4 />} />
             <Route path="/quest/5" element={<WebQuest5 />} />
             <Route path="/quest/6" element={<WebQuest6 />} />
+            <Route path="/quest/:id/complete" element={<QuestCompletePage />} />
             <Route path="/quest/7" element={<WebQuest7 />} />
             <Route path="/admin" element={<AdminLogin />} />
             <Route path="/admin/dashboard" element={<AdminDashboard />} />

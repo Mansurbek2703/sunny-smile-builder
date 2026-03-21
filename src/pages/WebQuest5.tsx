@@ -2,9 +2,10 @@ import { useState, useCallback } from "react";
 import { useResponseTracker } from "@/hooks/useResponseTracker";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowLeft, ChevronLeft, ChevronRight, Menu, X, BookOpen, Video, PenTool, Users, Search, MessageSquare, CheckCircle2 } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { QuestSubmitButton } from "@/components/QuestSubmitButton";
 import SiteHeader from "@/components/SiteHeader";
 import SelectMatchingTask from "@/components/quest/SelectMatchingTask";
 import VocabularyMatchTask from "@/components/quest/VocabularyMatchTask";
@@ -294,7 +295,7 @@ function ResearchStep() {
 function ReflectionStep() {
   return (<>
     <SelfEvalChecklist items={["I understand what culture shock is and can explain its main stages.", "I can recognize symptoms of culture shock in myself or others.", "I am open-minded toward cultural differences and new customs.", "I can explain why cross-cultural etiquette is important today.", "I can identify cultural differences in behavior.", "I can compare my own culture with other cultures respectfully."]} />
-    <Card className="mt-4 border-primary/30 bg-primary/5"><CardContent className="p-4 text-center"><h3 className="font-display text-xl font-bold text-primary mb-1">🎉 Congratulations!</h3><p className="font-body text-lg text-foreground">Culture shock is not a setback but a step toward personal growth and global understanding. Awareness of cross-cultural etiquette encourages respect, empathy, and open-mindedness.</p></CardContent></Card>
+    <QuestSubmitButton questNumber={5} />
   </>);
 }
 

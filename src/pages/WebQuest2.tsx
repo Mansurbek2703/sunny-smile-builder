@@ -2,9 +2,10 @@ import { useState, useCallback } from "react";
 import { useResponseTracker } from "@/hooks/useResponseTracker";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowLeft, ChevronLeft, ChevronRight, Menu, X, BookOpen, Video, PenTool, Users, Search, MessageSquare, CheckCircle2 } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { QuestSubmitButton } from "@/components/QuestSubmitButton";
 import SiteHeader from "@/components/SiteHeader";
 
 import SelectMatchingTask from "@/components/quest/SelectMatchingTask";
@@ -485,14 +486,7 @@ function ReflectionStep() {
           "I contributed to the final group product.",
         ]} />
       </div>
-      <Card className="mt-4 border-primary/30 bg-primary/5">
-        <CardContent className="p-4 text-center">
-          <h3 className="font-display text-xl font-bold text-primary mb-1">🎉 Congratulations!</h3>
-          <p className="font-body text-lg text-foreground">
-            Through this WebQuest, you discovered how holidays and traditions reflect cultural values. By comparing your own holidays with those of other countries, you gained deeper intercultural understanding.
-          </p>
-        </CardContent>
-      </Card>
+      <QuestSubmitButton questNumber={2} />
     </>
   );
 }

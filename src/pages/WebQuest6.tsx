@@ -2,9 +2,10 @@ import { useState, useCallback } from "react";
 import { useResponseTracker } from "@/hooks/useResponseTracker";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowLeft, ChevronLeft, ChevronRight, Menu, X, BookOpen, Video, PenTool, Users, Search, MessageSquare, CheckCircle2, UtensilsCrossed } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { QuestSubmitButton } from "@/components/QuestSubmitButton";
 import SiteHeader from "@/components/SiteHeader";
 import SelectMatchingTask from "@/components/quest/SelectMatchingTask";
 import OpenQuestionTask from "@/components/quest/OpenQuestionTask";
@@ -201,7 +202,7 @@ function ReflectionStep() {
   return (<>
     <OpenQuestionTask title="Intercultural Reflection" questions={["What did you learn about another culture through food?", "What dining rules have you learned?", "How can this knowledge prevent misunderstandings?"]} />
     <div className="mt-4"><SelfEvalChecklist items={["I used 8+ vocabulary words from the unit.", "I used the Passive / Comparatives / Relatives.", "I researched reliable sources.", "I compared two cultures' dining etiquette.", "My final product is clear and organized.", "I worked well in my group."]} /></div>
-    <Card className="mt-4 border-primary/30 bg-primary/5"><CardContent className="p-4 text-center"><h3 className="font-display text-xl font-bold text-primary mb-1">🎉 Congratulations!</h3><p className="font-body text-lg text-foreground">Through this WebQuest, you explored traditional dishes, food etiquette and cultures from different countries. Understanding the meaning of food helps avoid misunderstandings and shows respect for other cultures.</p></CardContent></Card>
+    <QuestSubmitButton questNumber={6} />
   </>);
 }
 
