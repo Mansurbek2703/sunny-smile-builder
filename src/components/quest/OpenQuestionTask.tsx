@@ -1,5 +1,7 @@
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import { Save } from "lucide-react";
+import { trackAnswer } from "@/lib/trackAnswer";
+import { Button } from "@/components/ui/button";
 import { Button } from "@/components/ui/button";
 
 interface OpenQuestionTaskProps {
