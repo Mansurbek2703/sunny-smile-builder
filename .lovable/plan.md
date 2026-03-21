@@ -1,26 +1,26 @@
 
 
-# WebQuest 5 — Reading Culture Shock bo'limini to'liqlashtirish
+# WebQuest 5 — Etiquette Reading bo'limini to'liqlashtirish
 
-## O'zgarishlar (`src/pages/WebQuest5.tsx`)
+## O'zgarishlar (`src/pages/WebQuest5.tsx` — `EtiquetteStep` funksiyasi, 216-247 qatorlar)
 
-### 1. Rasmlar (128-131 qatorlar)
-2 ta rasm (`culture_shock.jpg`, `etiquette1.jpg`) o'rniga foydalanuvchi yuklagan bitta rasmni qo'yish:
-- Yuklangan rasmni `public/images/webquest5/culture_shock_reading.png` ga nusxalash
-- `w-full max-h-[350px] object-contain rounded-xl shadow-md mx-auto mb-3`
+### 1. Rasmlar (218-221 qatorlar)
+2 ta rasm (`etiquette1.jpg`, `etiquette2.jpg`) o'rniga foydalanuvchi yuklagan bitta rasmni qo'yish:
+- Yuklangan rasmni `public/images/webquest5/etiquette_reading.png` ga nusxalash
+- `w-full max-h-[350px] object-cover rounded-xl shadow-md mx-auto mb-3`
 
-### 2. Reading matnlari (132-135 qatorlar)
-4 ta qisqa `ReadingSection` o'rniga to'liq matnlar (foydalanuvchi bergan matn bo'yicha):
+### 2. Reading matnlari (222-224 qatorlar)
+3 ta qisqa `ReadingSection` o'rniga to'liq matnlar:
 
 | Sarlavha | Mazmun |
 |---|---|
-| "Definition" | Culture shock ta'rifi + Paragraph A (umumiy tushuntirish, bosqichlar) + Key Takeaways |
-| "Insight into the Culture Shock Experience (B)" | Comfort zone, adjustment period, vaqt o'tishi bilan moslashish |
-| "Recognizing the Symptoms (C)" | Homesickness, isolation, irritability ro'yxati |
-| "Navigating the Four Stages (D)" | Honeymoon, Frustration, Adaptation, Acceptance — batafsil |
-| "Strategies to Overcome Culture Shock (E)" | 6 ta maslahat + FAQ (definition, good/bad, example, types) + Bottom Line |
+| "Why Cross-Cultural Etiquette Matters" | Zoom meetings, turbulent times, universal social codes (politeness, kindness, empathy), career advantage |
+| "Do Your Research" | Madaniyatni o'rganish, customs/beliefs, time/space/religion/food/dress/gestures, taboo, host country rules |
+| "Cultural Examples & Hand Gestures" | Punctuality farqlari, personal space, Middle East — scarf, Japan — eye contact & silence, saving face, thumbs up/okay gestures |
+| "Conclusion" | Diversity beauty, curiosity & respect, Heidi Dulebohn, Apr 14, 2020 |
 
-Topshiriqlar (136-148 qatorlar) o'zgarmaydi.
+### 3. Topshiriqlar (225-246 qatorlar)
+O'zgarmaydi — barcha OpenQuestionTask, TrueFalseTask, SelectMatchingTask, FillBlanksTask saqlanadi.
 
 Bitta fayl o'zgaradi + 1 ta rasm nusxalanadi.
 
