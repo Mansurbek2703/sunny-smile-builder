@@ -91,7 +91,6 @@ const AdminDashboard = () => {
 
   const logout = () => { localStorage.removeItem("admin_token"); navigate("/admin"); };
 
-  // Derived data
   const universities = useMemo(() => [...new Set(respondents.map(r => r.university))].sort(), [respondents]);
   const courses = useMemo(() => [...new Set(respondents.map(r => r.course_direction))].sort(), [respondents]);
 
@@ -113,7 +112,6 @@ const AdminDashboard = () => {
   const paged = filtered.slice(page * PAGE_SIZE, (page + 1) * PAGE_SIZE);
   const totalPages = Math.ceil(filtered.length / PAGE_SIZE);
 
-  // Chart data
   const questParticipation = useMemo(() => {
     const map: Record<number, Set<string>> = {};
     for (let i = 1; i <= 7; i++) map[i] = new Set();
@@ -152,7 +150,6 @@ const AdminDashboard = () => {
     return quests.size;
   }, [activity]);
 
-  // Excel export
   const exportExcel = useCallback((data: Respondent[], filename: string) => {
     const rows = data.flatMap(r => {
       const rResponses = responses.filter(resp => resp.respondent_id === r.id);
@@ -182,7 +179,6 @@ const AdminDashboard = () => {
     XLSX.writeFile(wb, filename);
   }, [responses]);
 
-  // Respondent detail
   const respondentResponses = useMemo(() => {
     if (!selectedRespondent) return [];
     return responses.filter(r => r.respondent_id === selectedRespondent.id).sort((a, b) => a.created_at.localeCompare(b.created_at));
@@ -194,24 +190,27 @@ const AdminDashboard = () => {
   }, [selectedRespondent, activity]);
 
   if (loading) return (
-    <div className="min-h-screen flex items-center justify-center bg-slate-900">
-      <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary" />
+    <div className="min-h-screen flex items-center justify-center bg-blue-950">
+      <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-cyan-400" />
     </div>
   );
 
   return (
-    <div className="min-h-screen bg-slate-900 text-white">
+    <div className="min-h-screen bg-blue-950 text-white">
       {/* Header */}
-      <header className="bg-slate-800/80 border-b border-slate-700 px-4 py-3 flex items-center justify-between sticky top-0 z-50 backdrop-blur">
-        <h1 className="text-lg font-bold">📊 Admin Dashboard</h1>
-        <div className="flex gap-2">
-          <Button size="sm" variant="outline" onClick={() => exportExcel(filtered, "respondentlar_filtered.xlsx")} className="text-slate-300 border-slate-600">
-            <Download className="w-4 h-4 mr-1" /> Filtrlangan ({filtered.length})
+      <header className="bg-blue-900/90 border-b border-blue-800 px-4 py-3 flex items-center justify-between sticky top-0 z-50 backdrop-blur">
+        <div className="flex items-center gap-3">
+          <img src="/images/webquest6/aysek_logo.webp" alt="AYSEK Logo" className="h-9 w-auto" />
+          <h1 className="text-lg font-bold text-white">📊 Admin Dashboard</h1>
+        </div>
+        <div className="flex gap-2 items-center">
+          <Button size="sm" onClick={() => exportExcel(filtered, "respondentlar_filtered.xlsx")} className="bg-emerald-600 hover:bg-emerald-700 text-white font-medium text-sm px-3">
+            <Download className="w-4 h-4 mr-1.5" /> Filtrlangan ({filtered.length})
           </Button>
-          <Button size="sm" variant="outline" onClick={() => exportExcel(respondents, "respondentlar_all.xlsx")} className="text-slate-300 border-slate-600">
-            <Download className="w-4 h-4 mr-1" /> Barchasi ({respondents.length})
+          <Button size="sm" onClick={() => exportExcel(respondents, "respondentlar_all.xlsx")} className="bg-cyan-600 hover:bg-cyan-700 text-white font-medium text-sm px-3">
+            <Download className="w-4 h-4 mr-1.5" /> Barchasi ({respondents.length})
           </Button>
-          <Button size="sm" variant="ghost" onClick={logout} className="text-slate-400">
+          <Button size="sm" variant="ghost" onClick={logout} className="text-gray-300 hover:text-white">
             <LogOut className="w-4 h-4" />
           </Button>
         </div>
@@ -226,12 +225,12 @@ const AdminDashboard = () => {
             { icon: Activity, label: "Faollik yozuvlari", value: activity.length, color: "text-amber-400" },
             { icon: TrendingUp, label: "Eng faol Quest", value: questParticipation.reduce((a, b) => b.count > a.count ? b : a, { quest: "-", count: 0 }).quest, color: "text-cyan-400" },
           ].map((s, i) => (
-            <Card key={i} className="bg-slate-800 border-slate-700">
+            <Card key={i} className="bg-blue-900/60 border-blue-800">
               <CardContent className="p-4 flex items-center gap-3">
                 <s.icon className={`w-8 h-8 ${s.color}`} />
                 <div>
                   <p className="text-2xl font-bold text-white">{s.value}</p>
-                  <p className="text-xs text-slate-400">{s.label}</p>
+                  <p className="text-xs text-gray-300">{s.label}</p>
                 </div>
               </CardContent>
             </Card>
@@ -240,58 +239,58 @@ const AdminDashboard = () => {
 
         {/* Charts */}
         <div className="grid md:grid-cols-2 gap-4">
-          <Card className="bg-slate-800 border-slate-700">
-            <CardHeader className="pb-2"><CardTitle className="text-sm text-slate-300">Quest bo'yicha ishtirok</CardTitle></CardHeader>
+          <Card className="bg-blue-900/60 border-blue-800">
+            <CardHeader className="pb-2"><CardTitle className="text-sm text-cyan-300">Quest bo'yicha ishtirok</CardTitle></CardHeader>
             <CardContent>
               <ResponsiveContainer width="100%" height={220}>
                 <BarChart data={questParticipation}>
-                  <XAxis dataKey="quest" tick={{ fill: "#94a3b8", fontSize: 12 }} />
-                  <YAxis tick={{ fill: "#94a3b8", fontSize: 12 }} />
-                  <Tooltip contentStyle={{ background: "#1e293b", border: "1px solid #475569", color: "#fff" }} />
+                  <XAxis dataKey="quest" tick={{ fill: "#cbd5e1", fontSize: 12 }} />
+                  <YAxis tick={{ fill: "#cbd5e1", fontSize: 12 }} />
+                  <Tooltip contentStyle={{ background: "#1e3a5f", border: "1px solid #2563eb", color: "#fff" }} />
                   <Bar dataKey="count" fill="#6366f1" radius={[4, 4, 0, 0]} />
                 </BarChart>
               </ResponsiveContainer>
             </CardContent>
           </Card>
 
-          <Card className="bg-slate-800 border-slate-700">
-            <CardHeader className="pb-2"><CardTitle className="text-sm text-slate-300">Universitetlar taqsimoti</CardTitle></CardHeader>
+          <Card className="bg-blue-900/60 border-blue-800">
+            <CardHeader className="pb-2"><CardTitle className="text-sm text-cyan-300">Universitetlar taqsimoti</CardTitle></CardHeader>
             <CardContent>
               <ResponsiveContainer width="100%" height={220}>
                 <PieChart>
                   <Pie data={universityDistribution} dataKey="value" nameKey="name" cx="50%" cy="50%" outerRadius={80} label={({ name, percent }) => `${name} ${(percent * 100).toFixed(0)}%`}>
                     {universityDistribution.map((_, i) => <Cell key={i} fill={COLORS[i % COLORS.length]} />)}
                   </Pie>
-                  <Tooltip contentStyle={{ background: "#1e293b", border: "1px solid #475569", color: "#fff" }} />
+                  <Tooltip contentStyle={{ background: "#1e3a5f", border: "1px solid #2563eb", color: "#fff" }} />
                 </PieChart>
               </ResponsiveContainer>
             </CardContent>
           </Card>
 
-          <Card className="bg-slate-800 border-slate-700">
-            <CardHeader className="pb-2"><CardTitle className="text-sm text-slate-300">Kunlik ro'yxatga olish</CardTitle></CardHeader>
+          <Card className="bg-blue-900/60 border-blue-800">
+            <CardHeader className="pb-2"><CardTitle className="text-sm text-cyan-300">Kunlik ro'yxatga olish</CardTitle></CardHeader>
             <CardContent>
               <ResponsiveContainer width="100%" height={220}>
                 <LineChart data={dailyRegistrations}>
-                  <CartesianGrid strokeDasharray="3 3" stroke="#334155" />
-                  <XAxis dataKey="date" tick={{ fill: "#94a3b8", fontSize: 10 }} />
-                  <YAxis tick={{ fill: "#94a3b8", fontSize: 12 }} />
-                  <Tooltip contentStyle={{ background: "#1e293b", border: "1px solid #475569", color: "#fff" }} />
+                  <CartesianGrid strokeDasharray="3 3" stroke="#1e40af" />
+                  <XAxis dataKey="date" tick={{ fill: "#cbd5e1", fontSize: 10 }} />
+                  <YAxis tick={{ fill: "#cbd5e1", fontSize: 12 }} />
+                  <Tooltip contentStyle={{ background: "#1e3a5f", border: "1px solid #2563eb", color: "#fff" }} />
                   <Line type="monotone" dataKey="count" stroke="#22c55e" strokeWidth={2} dot={{ r: 3, fill: "#22c55e" }} />
                 </LineChart>
               </ResponsiveContainer>
             </CardContent>
           </Card>
 
-          <Card className="bg-slate-800 border-slate-700">
-            <CardHeader className="pb-2"><CardTitle className="text-sm text-slate-300">To'g'ri / Noto'g'ri javoblar</CardTitle></CardHeader>
+          <Card className="bg-blue-900/60 border-blue-800">
+            <CardHeader className="pb-2"><CardTitle className="text-sm text-cyan-300">To'g'ri / Noto'g'ri javoblar</CardTitle></CardHeader>
             <CardContent>
               <ResponsiveContainer width="100%" height={220}>
                 <BarChart data={correctnessData}>
-                  <XAxis dataKey="quest" tick={{ fill: "#94a3b8", fontSize: 12 }} />
-                  <YAxis tick={{ fill: "#94a3b8", fontSize: 12 }} />
-                  <Tooltip contentStyle={{ background: "#1e293b", border: "1px solid #475569", color: "#fff" }} />
-                  <Legend wrapperStyle={{ color: "#94a3b8" }} />
+                  <XAxis dataKey="quest" tick={{ fill: "#cbd5e1", fontSize: 12 }} />
+                  <YAxis tick={{ fill: "#cbd5e1", fontSize: 12 }} />
+                  <Tooltip contentStyle={{ background: "#1e3a5f", border: "1px solid #2563eb", color: "#fff" }} />
+                  <Legend wrapperStyle={{ color: "#cbd5e1" }} />
                   <Bar dataKey="correct" fill="#22c55e" name="To'g'ri" radius={[4, 4, 0, 0]} />
                   <Bar dataKey="incorrect" fill="#ef4444" name="Noto'g'ri" radius={[4, 4, 0, 0]} />
                 </BarChart>
@@ -301,35 +300,35 @@ const AdminDashboard = () => {
         </div>
 
         {/* Filters */}
-        <Card className="bg-slate-800 border-slate-700">
+        <Card className="bg-blue-900/60 border-blue-800">
           <CardContent className="p-4">
             <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
               <div className="col-span-2 md:col-span-1 relative">
-                <Search className="absolute left-2 top-2.5 w-4 h-4 text-slate-500" />
-                <Input value={searchText} onChange={(e) => { setSearchText(e.target.value); setPage(0); }} placeholder="Ism, email..." className="pl-8 bg-slate-700 border-slate-600 text-white text-sm" />
+                <Search className="absolute left-2 top-2.5 w-4 h-4 text-gray-400" />
+                <Input value={searchText} onChange={(e) => { setSearchText(e.target.value); setPage(0); }} placeholder="Ism, email..." className="pl-8 bg-blue-900 border-blue-700 text-white text-sm placeholder:text-gray-400" />
               </div>
               <Select value={filterUniversity} onValueChange={(v) => { setFilterUniversity(v); setPage(0); }}>
-                <SelectTrigger className="bg-slate-700 border-slate-600 text-white text-sm"><SelectValue placeholder="Universitet" /></SelectTrigger>
+                <SelectTrigger className="bg-blue-900 border-blue-700 text-white text-sm"><SelectValue placeholder="Universitet" /></SelectTrigger>
                 <SelectContent>
                   <SelectItem value="all">Barcha universitetlar</SelectItem>
                   {universities.map(u => <SelectItem key={u} value={u}>{u}</SelectItem>)}
                 </SelectContent>
               </Select>
               <Select value={filterCourse} onValueChange={(v) => { setFilterCourse(v); setPage(0); }}>
-                <SelectTrigger className="bg-slate-700 border-slate-600 text-white text-sm"><SelectValue placeholder="Kurs" /></SelectTrigger>
+                <SelectTrigger className="bg-blue-900 border-blue-700 text-white text-sm"><SelectValue placeholder="Kurs" /></SelectTrigger>
                 <SelectContent>
                   <SelectItem value="all">Barcha kurslar</SelectItem>
                   {courses.map(c => <SelectItem key={c} value={c}>{c}</SelectItem>)}
                 </SelectContent>
               </Select>
               <Select value={filterQuest} onValueChange={(v) => { setFilterQuest(v); setPage(0); }}>
-                <SelectTrigger className="bg-slate-700 border-slate-600 text-white text-sm"><SelectValue placeholder="Quest" /></SelectTrigger>
+                <SelectTrigger className="bg-blue-900 border-blue-700 text-white text-sm"><SelectValue placeholder="Quest" /></SelectTrigger>
                 <SelectContent>
                   <SelectItem value="all">Barcha questlar</SelectItem>
                   {[1, 2, 3, 4, 5, 6, 7].map(n => <SelectItem key={n} value={String(n)}>Quest {n}</SelectItem>)}
                 </SelectContent>
               </Select>
-              <Button size="sm" variant="outline" onClick={() => { setSearchText(""); setFilterUniversity("all"); setFilterCourse("all"); setFilterQuest("all"); setPage(0); }} className="text-slate-300 border-slate-600 text-sm">
+              <Button size="sm" variant="outline" onClick={() => { setSearchText(""); setFilterUniversity("all"); setFilterCourse("all"); setFilterQuest("all"); setPage(0); }} className="text-white border-blue-700 hover:bg-blue-800 text-sm">
                 Tozalash
               </Button>
             </div>
@@ -337,48 +336,48 @@ const AdminDashboard = () => {
         </Card>
 
         {/* Respondents Table */}
-        <Card className="bg-slate-800 border-slate-700">
+        <Card className="bg-blue-900/60 border-blue-800">
           <CardHeader className="pb-2">
-            <CardTitle className="text-sm text-slate-300">Respondentlar ({filtered.length})</CardTitle>
+            <CardTitle className="text-sm text-cyan-300">Respondentlar ({filtered.length})</CardTitle>
           </CardHeader>
           <CardContent className="overflow-x-auto p-0">
             <Table>
               <TableHeader>
-                <TableRow className="border-slate-700 hover:bg-transparent">
-                  <TableHead className="text-slate-400 text-xs">#</TableHead>
-                  <TableHead className="text-slate-400 text-xs">Ism Familiya</TableHead>
-                  <TableHead className="text-slate-400 text-xs">Email</TableHead>
-                  <TableHead className="text-slate-400 text-xs">Universitet</TableHead>
-                  <TableHead className="text-slate-400 text-xs">Kurs</TableHead>
-                  <TableHead className="text-slate-400 text-xs">Sana</TableHead>
-                  <TableHead className="text-slate-400 text-xs">Questlar</TableHead>
-                  <TableHead className="text-slate-400 text-xs"></TableHead>
+                <TableRow className="border-blue-800 hover:bg-transparent">
+                  <TableHead className="text-cyan-300 text-xs">#</TableHead>
+                  <TableHead className="text-cyan-300 text-xs">Ism Familiya</TableHead>
+                  <TableHead className="text-cyan-300 text-xs">Email</TableHead>
+                  <TableHead className="text-cyan-300 text-xs">Universitet</TableHead>
+                  <TableHead className="text-cyan-300 text-xs">Kurs</TableHead>
+                  <TableHead className="text-cyan-300 text-xs">Sana</TableHead>
+                  <TableHead className="text-cyan-300 text-xs">Questlar</TableHead>
+                  <TableHead className="text-cyan-300 text-xs"></TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
                 {paged.map((r, i) => (
-                  <TableRow key={r.id} className="border-slate-700 hover:bg-slate-700/50 cursor-pointer" onClick={() => setSelectedRespondent(r)}>
-                    <TableCell className="text-slate-400 text-sm">{page * PAGE_SIZE + i + 1}</TableCell>
+                  <TableRow key={r.id} className="border-blue-800 hover:bg-blue-800/50 cursor-pointer" onClick={() => setSelectedRespondent(r)}>
+                    <TableCell className="text-gray-300 text-sm">{page * PAGE_SIZE + i + 1}</TableCell>
                     <TableCell className="text-white text-sm font-medium">{r.last_name} {r.first_name}</TableCell>
-                    <TableCell className="text-slate-300 text-sm">{r.email}</TableCell>
-                    <TableCell className="text-slate-300 text-sm max-w-[150px] truncate">{r.university}</TableCell>
-                    <TableCell className="text-slate-300 text-sm">{r.course_direction}</TableCell>
-                    <TableCell className="text-slate-400 text-sm">{r.registered_at.slice(0, 10)}</TableCell>
-                    <TableCell className="text-slate-300 text-sm text-center">{getRespondentQuestCount(r.id)}</TableCell>
-                    <TableCell><Eye className="w-4 h-4 text-slate-500" /></TableCell>
+                    <TableCell className="text-gray-200 text-sm">{r.email}</TableCell>
+                    <TableCell className="text-gray-200 text-sm max-w-[150px] truncate">{r.university}</TableCell>
+                    <TableCell className="text-gray-200 text-sm">{r.course_direction}</TableCell>
+                    <TableCell className="text-gray-300 text-sm">{r.registered_at.slice(0, 10)}</TableCell>
+                    <TableCell className="text-gray-200 text-sm text-center">{getRespondentQuestCount(r.id)}</TableCell>
+                    <TableCell><Eye className="w-4 h-4 text-cyan-400" /></TableCell>
                   </TableRow>
                 ))}
                 {paged.length === 0 && (
-                  <TableRow><TableCell colSpan={8} className="text-center text-slate-500 py-8">Ma'lumot topilmadi</TableCell></TableRow>
+                  <TableRow><TableCell colSpan={8} className="text-center text-gray-400 py-8">Ma'lumot topilmadi</TableCell></TableRow>
                 )}
               </TableBody>
             </Table>
             {totalPages > 1 && (
-              <div className="flex items-center justify-between px-4 py-3 border-t border-slate-700">
-                <span className="text-xs text-slate-500">{page * PAGE_SIZE + 1}–{Math.min((page + 1) * PAGE_SIZE, filtered.length)} / {filtered.length}</span>
+              <div className="flex items-center justify-between px-4 py-3 border-t border-blue-800">
+                <span className="text-xs text-gray-400">{page * PAGE_SIZE + 1}–{Math.min((page + 1) * PAGE_SIZE, filtered.length)} / {filtered.length}</span>
                 <div className="flex gap-1">
-                  <Button size="sm" variant="ghost" disabled={page === 0} onClick={() => setPage(p => p - 1)} className="text-slate-400"><ChevronLeft className="w-4 h-4" /></Button>
-                  <Button size="sm" variant="ghost" disabled={page >= totalPages - 1} onClick={() => setPage(p => p + 1)} className="text-slate-400"><ChevronRight className="w-4 h-4" /></Button>
+                  <Button size="sm" variant="ghost" disabled={page === 0} onClick={() => setPage(p => p - 1)} className="text-gray-300"><ChevronLeft className="w-4 h-4" /></Button>
+                  <Button size="sm" variant="ghost" disabled={page >= totalPages - 1} onClick={() => setPage(p => p + 1)} className="text-gray-300"><ChevronRight className="w-4 h-4" /></Button>
                 </div>
               </div>
             )}
@@ -388,48 +387,48 @@ const AdminDashboard = () => {
 
       {/* Detail Modal */}
       <Dialog open={!!selectedRespondent} onOpenChange={() => setSelectedRespondent(null)}>
-        <DialogContent className="max-w-2xl max-h-[80vh] overflow-y-auto bg-slate-800 border-slate-700 text-white">
+        <DialogContent className="max-w-2xl max-h-[80vh] overflow-y-auto bg-blue-900 border-blue-800 text-white">
           {selectedRespondent && (
             <>
               <DialogHeader>
                 <DialogTitle>{selectedRespondent.last_name} {selectedRespondent.first_name} {selectedRespondent.father_name || ""}</DialogTitle>
               </DialogHeader>
               <div className="grid grid-cols-2 gap-2 text-sm">
-                <p className="text-slate-400">Email: <span className="text-white">{selectedRespondent.email}</span></p>
-                <p className="text-slate-400">Universitet: <span className="text-white">{selectedRespondent.university}</span></p>
-                <p className="text-slate-400">Kurs: <span className="text-white">{selectedRespondent.course_direction}</span></p>
-                <p className="text-slate-400">Sana: <span className="text-white">{selectedRespondent.registered_at.slice(0, 16).replace("T", " ")}</span></p>
+                <p className="text-gray-300">Email: <span className="text-white">{selectedRespondent.email}</span></p>
+                <p className="text-gray-300">Universitet: <span className="text-white">{selectedRespondent.university}</span></p>
+                <p className="text-gray-300">Kurs: <span className="text-white">{selectedRespondent.course_direction}</span></p>
+                <p className="text-gray-300">Sana: <span className="text-white">{selectedRespondent.registered_at.slice(0, 16).replace("T", " ")}</span></p>
               </div>
 
-              <h4 className="font-semibold mt-4 mb-2 text-sm text-slate-300">Javoblar ({respondentResponses.length})</h4>
+              <h4 className="font-semibold mt-4 mb-2 text-sm text-cyan-300">Javoblar ({respondentResponses.length})</h4>
               {respondentResponses.length > 0 ? (
                 <div className="space-y-2 max-h-60 overflow-y-auto">
                   {respondentResponses.map(r => (
-                    <div key={r.id} className="p-2 rounded bg-slate-700/50 text-xs">
+                    <div key={r.id} className="p-2 rounded bg-blue-800/50 text-xs">
                       <div className="flex justify-between mb-1">
-                        <span className="font-medium text-indigo-400">Quest {r.quest_number} / {r.step_id}</span>
-                        <span className={r.is_correct === true ? "text-green-400" : r.is_correct === false ? "text-red-400" : "text-slate-500"}>
+                        <span className="font-medium text-indigo-300">Quest {r.quest_number} / {r.step_id}</span>
+                        <span className={r.is_correct === true ? "text-green-400" : r.is_correct === false ? "text-red-400" : "text-gray-400"}>
                           {r.is_correct === true ? "✓ To'g'ri" : r.is_correct === false ? "✗ Noto'g'ri" : "—"}
                         </span>
                       </div>
-                      <p className="text-slate-400">Turi: {r.task_type} | ID: {r.task_id}</p>
-                      <p className="text-slate-300 break-all">{typeof r.answer_data === "object" ? JSON.stringify(r.answer_data) : String(r.answer_data)}</p>
+                      <p className="text-gray-300">Turi: {r.task_type} | ID: {r.task_id}</p>
+                      <p className="text-gray-200 break-all">{typeof r.answer_data === "object" ? JSON.stringify(r.answer_data) : String(r.answer_data)}</p>
                     </div>
                   ))}
                 </div>
-              ) : <p className="text-slate-500 text-sm">Javoblar topilmadi</p>}
+              ) : <p className="text-gray-400 text-sm">Javoblar topilmadi</p>}
 
-              <h4 className="font-semibold mt-4 mb-2 text-sm text-slate-300">Faollik logi ({respondentActivity.length})</h4>
+              <h4 className="font-semibold mt-4 mb-2 text-sm text-cyan-300">Faollik logi ({respondentActivity.length})</h4>
               {respondentActivity.length > 0 ? (
                 <div className="space-y-1 max-h-40 overflow-y-auto">
                   {respondentActivity.map(a => (
-                    <div key={a.id} className="flex justify-between text-xs p-1.5 rounded bg-slate-700/30">
-                      <span className="text-slate-300">Quest {a.quest_number} / {a.step_id} — <span className="text-amber-400">{a.action}</span></span>
-                      <span className="text-slate-500">{a.duration_seconds ? `${a.duration_seconds}s` : ""} {a.created_at.slice(11, 16)}</span>
+                    <div key={a.id} className="flex justify-between text-xs p-1.5 rounded bg-blue-800/30">
+                      <span className="text-gray-200">Quest {a.quest_number} / {a.step_id} — <span className="text-amber-400">{a.action}</span></span>
+                      <span className="text-gray-400">{a.duration_seconds ? `${a.duration_seconds}s` : ""} {a.created_at.slice(11, 16)}</span>
                     </div>
                   ))}
                 </div>
-              ) : <p className="text-slate-500 text-sm">Faollik topilmadi</p>}
+              ) : <p className="text-gray-400 text-sm">Faollik topilmadi</p>}
             </>
           )}
         </DialogContent>
