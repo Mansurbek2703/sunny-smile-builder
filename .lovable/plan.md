@@ -1,31 +1,46 @@
 
 
-# Admin Panel dizaynini yaxshilash
+# Submit tugmasi + Congratulations sahifasi + Javoblarni tekshirish
 
-## Muammolar
-1. Header dagi Excel tugmalari matnlari ko'rinmayapti (matn kichik, rang past kontrast)
-2. Logo yo'q navbarda
-3. Umumiy dizayn kontrastni kuchaytirish kerak
+## 1. Har bir WebQuest reflection bo'limida o'zgarish (7 ta fayl)
 
-## O'zgarishlar
+Har bir WebQuest (1-7) dagi reflection step'dagi `Congratulations` Card o'rniga **"Submit" tugmasi** qo'yiladi. Tugma bosilganda:
+- `activity_log` ga `quest_completed` yoziladi
+- `/quest/{n}/complete` sahifasiga yo'naltiriladi
 
-### 1. `src/pages/AdminDashboard.tsx` — Header (205-218 qatorlar)
-- Logo qo'shish: `<img src="/images/webquest6/aysek_logo.webp" />` (mavjud logo)
-- Excel tugmalari: `bg-emerald-600 hover:bg-emerald-700 text-white font-medium` — yashil fon, oq matn, aniq ko'rinadigan
-- Tugma matnlarini kattalashtirish: `text-sm` → o'lchamni oshirish
-- Header fonini `bg-blue-900/90` qilish
+## 2. Yangi `QuestCompletePage.tsx` komponenti
 
-### 2. `src/pages/AdminDashboard.tsx` — Umumiy dizayn
-- Asosiy fon: `bg-slate-900` → `bg-blue-950` (moviy)
-- Kartalar: `bg-slate-800` → `bg-blue-900/60 border-blue-800`
-- Matnlar kontrastini kuchaytirish: `text-slate-300` → `text-white`, `text-slate-400` → `text-gray-300`
-- Filtrlar: `bg-slate-700` → `bg-blue-900 border-blue-700`
-- Jadval sarlavhalari: `text-slate-400` → `text-cyan-300`
+Bitta universal sahifa yaratiladi — `src/pages/QuestCompletePage.tsx`:
+- URL parametridan quest raqamini oladi (`/quest/:id/complete`)
+- Har bir quest uchun o'ziga xos congratulations matni (massivda saqlanadi)
+- Chiroyli dizayn: confetti effekt, quest nomi, congrat matn
+- "Keyingi WebQuest" tugmasi (quest 7 da — "Bosh sahifaga qaytish")
+- Respondent ID yo'q bo'lsa — bosh sahifaga redirect
 
-### 3. `src/pages/AdminLogin.tsx` — Login sahifasi
-- Fon: `from-slate-900` → `from-blue-950 via-blue-900 to-blue-950`
-- Karta: `bg-slate-800/80` → `bg-blue-900/80 border-blue-700`
-- Logo qo'shish login sahifasiga ham
+## 3. Routing (`src/App.tsx`)
 
-2 ta fayl tahrirlanadi, boshqa hech narsa o'zgarmaydi.
+Yangi route qo'shiladi:
+```
+/quest/:id/complete → QuestCompletePage
+```
+
+## 4. Javoblarni aniq tekshirish
+
+Hozirgi task komponentlari (`MultipleChoiceTask`, `TrueFalseTask`, `SelectMatchingTask`, `MatchingTask`, `FillBlanksTask`) allaqachon `trackAnswer()` chaqirib, `is_correct` ni bazaga yozadi. Bu qism ishlaydi — o'zgartirish kerak emas.
+
+## Jami o'zgarishlar
+
+| Fayl | O'zgarish |
+|---|---|
+| `src/pages/QuestCompletePage.tsx` | **Yangi** — universal congrat sahifa |
+| `src/App.tsx` | Route qo'shish |
+| `src/pages/WebQuest1.tsx` | Congrat Card → Submit tugma |
+| `src/pages/WebQuest2.tsx` | Congrat Card → Submit tugma |
+| `src/pages/WebQuest3.tsx` | Congrat Card → Submit tugma |
+| `src/pages/WebQuest4.tsx` | Congrat Card → Submit tugma |
+| `src/pages/WebQuest5.tsx` | Congrat Card → Submit tugma |
+| `src/pages/WebQuest6.tsx` | Congrat Card → Submit tugma |
+| `src/pages/WebQuest7.tsx` | Congrat Card → Submit tugma |
+
+9 ta fayl (1 yangi + 8 tahrir).
 
