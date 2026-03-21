@@ -91,7 +91,7 @@ export default function RegistrationModal({ open, onClose, onRegister, onSuccess
             <Input id="reg-uni" required placeholder="University name" value={form.university} onChange={(e) => set("university", e.target.value)} />
           </div>
           <Button type="submit" className="w-full" disabled={!valid || loading}>
-            {loading ? "Yuklanmoqda..." : "Ro'yxatdan o'tish va boshlash"}
+            {loading ? "Loading..." : "Register & Start"}
           </Button>
         </form>
       </DialogContent>
