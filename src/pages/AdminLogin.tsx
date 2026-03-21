@@ -33,25 +33,26 @@ const AdminLogin = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 p-4">
-      <Card className="w-full max-w-sm border-slate-700 bg-slate-800/80 backdrop-blur">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-950 via-blue-900 to-blue-950 p-4">
+      <Card className="w-full max-w-sm border-blue-700 bg-blue-900/80 backdrop-blur">
         <CardHeader className="text-center">
-          <div className="mx-auto w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center mb-2">
-            <Lock className="w-6 h-6 text-primary" />
+          <img src="/images/webquest6/aysek_logo.webp" alt="AYSEK Logo" className="mx-auto h-14 w-auto mb-3" />
+          <div className="mx-auto w-12 h-12 rounded-full bg-cyan-500/20 flex items-center justify-center mb-2">
+            <Lock className="w-6 h-6 text-cyan-400" />
           </div>
           <CardTitle className="text-white text-xl">Admin Panel</CardTitle>
         </CardHeader>
         <CardContent>
           <form onSubmit={handleLogin} className="space-y-4">
             <div>
-              <Label className="text-slate-300">Login</Label>
-              <Input value={username} onChange={(e) => setUsername(e.target.value)} placeholder="Username" className="bg-slate-700 border-slate-600 text-white" />
+              <Label className="text-gray-200">Login</Label>
+              <Input value={username} onChange={(e) => setUsername(e.target.value)} placeholder="Username" className="bg-blue-800 border-blue-700 text-white placeholder:text-gray-400" />
             </div>
             <div>
-              <Label className="text-slate-300">Parol</Label>
-              <Input type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Password" className="bg-slate-700 border-slate-600 text-white" />
+              <Label className="text-gray-200">Parol</Label>
+              <Input type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Password" className="bg-blue-800 border-blue-700 text-white placeholder:text-gray-400" />
             </div>
-            <Button type="submit" className="w-full" disabled={loading || !username || !password}>
+            <Button type="submit" className="w-full bg-cyan-600 hover:bg-cyan-700 text-white" disabled={loading || !username || !password}>
               <LogIn className="w-4 h-4 mr-2" />
               {loading ? "Tekshirilmoqda..." : "Kirish"}
             </Button>
