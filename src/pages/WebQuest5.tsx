@@ -125,7 +125,7 @@ function VocabularyStep() {
 
 function ReadingStep() {
   return (<>
-    <img src="/images/webquest5/culture_shock_reading.webp" alt="Culture Shock concept illustration" loading="lazy" decoding="async" className="w-full max-h-[350px] object-contain rounded-xl shadow-md mx-auto mb-3" />
+    <img src="/images/webquest5/culture_shock_reading.webp" alt="Culture Shock concept illustration" loading="eager" decoding="async" className="w-full max-h-[350px] object-contain rounded-xl shadow-md mx-auto mb-3" />
 
     <ReadingSection title="Definition">
       <p className="mb-2">Culture shock is the feeling of confusion and uncertainty when an individual is in a new country or environment.</p>
