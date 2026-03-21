@@ -42,10 +42,10 @@ export default function RegistrationModal({ open, onClose, onRegister, onSuccess
     setLoading(true);
     try {
       await onRegister(form);
-      toast({ title: "Ro'yxatdan o'tdingiz!", description: "Endi barcha WebQuest'larni ishlashingiz mumkin." });
+      toast({ title: "Registration Successful!", description: "You can now access all WebQuests." });
       onSuccess();
     } catch (err: any) {
-      toast({ title: "Xatolik", description: err?.message || "Nimadir xato ketdi", variant: "destructive" });
+      toast({ title: "Error", description: err?.message || "Something went wrong", variant: "destructive" });
     } finally {
       setLoading(false);
     }
