@@ -50,9 +50,6 @@ export default function QuestCompletePage() {
 
   if (!respondentId) return <Navigate to="/" replace />;
   if (!data) return <Navigate to="/" replace />;
-    const timer = setTimeout(() => setConfetti(false), 5000);
-    return () => clearTimeout(timer);
-  }, []);
 
   const nextQuest = questNumber < 7 ? questNumber + 1 : null;
 
