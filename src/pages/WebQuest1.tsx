@@ -621,14 +621,7 @@ function ReflectionStep() {
           "I can use this knowledge in future intercultural situations.",
         ]} />
       </div>
-      <Card className="mt-3 border-primary/30 bg-primary/5">
-        <CardContent className="p-2 sm:p-3 text-center">
-          <h3 className="font-display text-xl font-bold text-primary mb-1">🎉 Congratulations!</h3>
-          <p className="font-body text-lg text-foreground">
-            You have compared two important traditions and discovered how people in different cultures celebrate gratitude, renewal, and family. Remember: learning about other cultures is the first step toward becoming a global citizen.
-          </p>
-        </CardContent>
-      </Card>
+      <QuestSubmitButton questNumber={1} />
     </>
   );
 }

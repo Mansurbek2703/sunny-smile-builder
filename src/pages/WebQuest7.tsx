@@ -494,12 +494,7 @@ function ReflectionStep() {
       </div>
     </div>
 
-    <Card className="mt-4 border-primary/30 bg-primary/5">
-      <CardContent className="p-4 text-center">
-        <h3 className="font-display text-xl font-bold text-primary mb-1">🎉 Congratulations!</h3>
-        <p className="font-body text-lg text-foreground">In this module, you learned about outstanding cultural figures and their contributions to society. Studying these heroes helped you appreciate creativity, perseverance, and ethical responsibility. The activities encouraged reflection, intercultural awareness, and inspiration to make positive contributions to your own communities.</p>
-      </CardContent>
-    </Card>
+    <QuestSubmitButton questNumber={7} />
   </>);
 }
 
