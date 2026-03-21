@@ -57,10 +57,10 @@ export default function RegistrationModal({ open, onClose, onRegister, onSuccess
         <DialogHeader>
           <DialogTitle className="flex items-center gap-2 text-foreground">
             <UserPlus className="w-5 h-5 text-primary" />
-            Ro'yxatdan o'tish
+            Registration
           </DialogTitle>
           <DialogDescription className="text-muted-foreground">
-            WebQuest'larni ishlash uchun quyidagi ma'lumotlarni to'ldiring. Faqat bir marta to'ldiriladi.
+            Please fill in the following information to access the WebQuests. This only needs to be done once.
           </DialogDescription>
         </DialogHeader>
         <form onSubmit={handleSubmit} className="space-y-3 mt-2">
