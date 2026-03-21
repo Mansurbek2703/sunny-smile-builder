@@ -11,7 +11,7 @@ const SiteHeader = () => {
         {/* Logo */}
         <Link to="/" className="flex-shrink-0">
           <motion.img
-            src="/images/aysek_logo.png"
+            src="/images/aysek_logo.webp"
             alt="AySek Global Study"
             loading="eager"
             decoding="async"
