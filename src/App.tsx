@@ -41,6 +41,8 @@ const App = () => (
             <Route path="/quest/5" element={<WebQuest5 />} />
             <Route path="/quest/6" element={<WebQuest6 />} />
             <Route path="/quest/7" element={<WebQuest7 />} />
+            <Route path="/admin" element={<AdminLogin />} />
+            <Route path="/admin/dashboard" element={<AdminDashboard />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
