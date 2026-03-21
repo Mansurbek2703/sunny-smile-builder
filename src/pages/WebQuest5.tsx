@@ -81,7 +81,7 @@ const WebQuest5 = () => {
 
 function StepContent({ stepId }: { stepId: string }) {
   switch (stepId) {
-    case "infographic": return <img src="/images/webquest5/infographic1.png" alt="WebQuest 5 — Culture Shock Infographic" loading="lazy" className="rounded-xl w-full object-contain shadow-lg" />;
+    case "infographic": return <img src="/images/webquest5/infographic1.webp" alt="WebQuest 5 — Culture Shock Infographic" loading="lazy" decoding="async" className="rounded-xl w-full object-contain shadow-lg" />;
     case "intro": return <IntroStep />;
     case "idioms": return <IdiomsStep />;
     case "vocabulary": return <VocabularyStep />;
@@ -101,7 +101,7 @@ function IntroStep() {
       {["Understand how culture shock affects people.", "Learn strategies for successful cultural adaptation.", "Develop intercultural communication and teamwork skills.", "Learn cross-cultural etiquette rules and body language."].map((o, i) => (
         <Card key={i} className="glass-card hover:shadow-lg transition-shadow"><CardContent className="p-2 flex items-start gap-2"><span className="flex-shrink-0 w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center font-display font-bold text-lg">{i + 1}</span><p className="font-body text-lg leading-snug">{o}</p></CardContent></Card>))}
     </div>
-    <img src="/images/webquest5/intro_culture.png" alt="Culture Shock and Etiquette Around the World" loading="lazy" className="w-full max-h-[350px] object-cover rounded-xl shadow-md mx-auto mb-2" />
+    <img src="/images/webquest5/intro_culture.webp" alt="Culture Shock and Etiquette Around the World" loading="lazy" decoding="async" className="w-full max-h-[350px] object-cover rounded-xl shadow-md mx-auto mb-2" />
     <div className="p-3 rounded-xl bg-muted/50 border-l-4 border-primary/40 mb-2"><p className="font-body text-xl italic text-foreground">"When in Rome, do as the Romans do"</p></div>
     <p className="font-body text-foreground text-lg leading-snug">Have you ever felt out of place in a new country or even in a new group? That feeling of confusion or discomfort is called culture shock. In this WebQuest, you will step into the shoes of exchange students, explore their real-life experiences, and learn how to adapt successfully in multicultural environments.</p>
   </>);
@@ -125,7 +125,7 @@ function VocabularyStep() {
 
 function ReadingStep() {
   return (<>
-    <img src="/images/webquest5/culture_shock_reading.png" alt="Culture Shock concept illustration" loading="lazy" className="w-full max-h-[350px] object-contain rounded-xl shadow-md mx-auto mb-3" />
+    <img src="/images/webquest5/culture_shock_reading.webp" alt="Culture Shock concept illustration" loading="lazy" decoding="async" className="w-full max-h-[350px] object-contain rounded-xl shadow-md mx-auto mb-3" />
 
     <ReadingSection title="Definition">
       <p className="mb-2">Culture shock is the feeling of confusion and uncertainty when an individual is in a new country or environment.</p>
@@ -215,7 +215,7 @@ function ReadingStep() {
 
 function EtiquetteStep() {
   return (<>
-    <img src="/images/webquest5/etiquette_reading.png" alt="Cross-Cultural Etiquette" loading="lazy" className="w-full max-h-[350px] object-cover rounded-xl shadow-md mx-auto mb-3" />
+    <img src="/images/webquest5/etiquette_reading.webp" alt="Cross-Cultural Etiquette" loading="lazy" decoding="async" className="w-full max-h-[350px] object-cover rounded-xl shadow-md mx-auto mb-3" />
 
     <ReadingSection title="Why Cross-Cultural Etiquette Matters">
       These days, when we think about cross-cultural etiquette rules, and which rules work where, our first thought is probably not about our next trip to Paris, or Rome, but rather our next Zoom meeting with global partners.{"\n\n"}
