@@ -171,12 +171,12 @@ function ProcessStep() {
 
     <DragMatchingTask
       items={[
-        { label: "Hero 1", image: "/images/webquest7/shakespeare.webp" },
-        { label: "Hero 2", image: "/images/webquest7/gandhi.webp" },
-        { label: "Hero 3", image: "/images/webquest7/davinci.webp" },
-        { label: "Hero 4", image: "/images/webquest7/confucius.webp" },
-        { label: "Hero 5", image: "/images/webquest7/mandela.webp" },
-        { label: "Hero 6", image: "/images/webquest7/navoi.webp" },
+        { label: "Hero 1", image: "/images/webquest7/mandela.webp" },
+        { label: "Hero 2", image: "/images/webquest7/davinci.webp" },
+        { label: "Hero 3", image: "/images/webquest7/navoi.webp" },
+        { label: "Hero 4", image: "/images/webquest7/shakespeare.webp" },
+        { label: "Hero 5", image: "/images/webquest7/confucius.webp" },
+        { label: "Hero 6", image: "/images/webquest7/gandhi.webp" },
       ]}
       descriptions={[
         { letter: "A", text: "William Shakespeare" },
@@ -186,7 +186,7 @@ function ProcessStep() {
         { letter: "E", text: "Nelson Mandela" },
         { letter: "F", text: "Alisher Navoi" },
       ]}
-      correctAnswers={{ 0: 0, 1: 1, 2: 2, 3: 3, 4: 4, 5: 5 }}
+      correctAnswers={{ 0: 4, 1: 2, 2: 5, 3: 0, 4: 3, 5: 1 }}
     />
 
     <h4 className="font-display text-xl font-semibold mb-2">Task I: Match each cultural hero (A–F) with the correct description (1–6)</h4>
