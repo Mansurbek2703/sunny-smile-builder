@@ -254,13 +254,12 @@ function Task1Step() {
         descriptions={[
           { letter: "A", text: "Spring festival, March 21, sumalak, cultural performances" },
           { letter: "B", text: "Festival of lights, victory of good over evil, fireworks" },
-          { letter: "C", text: "Late November, turkey, pumpkin pie, gratitude" },
           { letter: "D", text: "Lunar calendar, dragon dances, red envelopes" },
           { letter: "E", text: "March 17, patron saint, wearing green, parades" },
           { letter: "F", text: "Honouring deceased relatives, sugar skulls, marigolds" },
           { letter: "G", text: "July 4, fireworks, barbecues, Declaration of Independence" },
         ]}
-        correctAnswers={{ 0: 1, 1: 3, 3: 4, 4: 2, 5: 5, 6: 0 }}
+        correctAnswers={{ 0: 1, 1: 3, 2: 4, 3: 2, 4: 5, 5: 0 }}
       />
     </>
   );
