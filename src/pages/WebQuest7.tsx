@@ -186,7 +186,7 @@ function ProcessStep() {
         { letter: "E", text: "Nelson Mandela" },
         { letter: "F", text: "Alisher Navoi" },
       ]}
-      correctAnswers={{ 0: 4, 1: 2, 2: 5, 3: 0, 4: 3, 5: 1 }}
+      correctAnswers={{ 0: 3, 1: 5, 2: 1, 3: 4, 4: 0, 5: 2 }}
     />
 
     <h4 className="font-display text-xl font-semibold mb-2">Task I: Match each cultural hero (A–F) with the correct description (1–6)</h4>
