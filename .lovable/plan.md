@@ -1,27 +1,24 @@
 
-
-# WebQuest 7 — Rasmlar tartibini aralashtirish
+# WebQuest 7 — correctAnswers teskari yozilgan, tuzatish
 
 ## Muammo
-Rasmlar ismlar bilan bir xil tartibda turibdi (Shakespeare=Hero1→A, Gandhi=Hero2→B...), shuning uchun javob juda oson.
+`correctAnswers` xaritasi `item_index → description_index` sifatida yozilgan, lekin komponent uni `description_index → item_index` sifatida tekshiradi (`assignments[di] === correctAnswers[di]`).
 
-## Yechim: `src/pages/WebQuest7.tsx` (173-189 qatorlar)
+## Tuzatish: `src/pages/WebQuest7.tsx` (189-qator)
 
-Rasmlar tartibini aralashtirish va `correctAnswers` ni yangilash:
+Items: 0=Mandela, 1=Da Vinci, 2=Navoi, 3=Shakespeare, 4=Confucius, 5=Gandhi
+Descriptions: 0=Shakespeare, 1=Gandhi, 2=Da Vinci, 3=Confucius, 4=Mandela, 5=Navoi
 
-**Yangi tartib:**
-| Items index | Rasm | Mos description index |
-|---|---|---|
-| 0 | Mandela (Hero 1) | 4 (E) |
-| 1 | Da Vinci (Hero 2) | 2 (C) |
-| 2 | Navoi (Hero 3) | 5 (F) |
-| 3 | Shakespeare (Hero 4) | 0 (A) |
-| 4 | Confucius (Hero 5) | 3 (D) |
-| 5 | Gandhi (Hero 6) | 1 (B) |
+To'g'ri xarita (desc → item):
+- 0 (Shakespeare) → 3
+- 1 (Gandhi) → 5
+- 2 (Da Vinci) → 1
+- 3 (Confucius) → 4
+- 4 (Mandela) → 0
+- 5 (Navoi) → 2
 
 ```
-correctAnswers={{ 0: 4, 1: 2, 2: 5, 3: 0, 4: 3, 5: 1 }}
+correctAnswers={{ 0: 3, 1: 5, 2: 1, 3: 4, 4: 0, 5: 2 }}
 ```
 
-Faqat 1 ta fayl, items tartibi va correctAnswers o'zgaradi.
-
+Faqat 1 qator o'zgaradi.
