@@ -1,24 +1,26 @@
 
-# WebQuest 7 — correctAnswers teskari yozilgan, tuzatish
+
+# WebQuest 3 — Gaplarni aralashtirish
 
 ## Muammo
-`correctAnswers` xaritasi `item_index → description_index` sifatida yozilgan, lekin komponent uni `description_index → item_index` sifatida tekshiradi (`assignments[di] === correctAnswers[di]`).
+Gaplar wordBank bilan bir xil tartibda joylashgan: 1-gap = "stereotype", 2-gap = "discrimination", 3-gap = "bias"... Javob juda oson.
 
-## Tuzatish: `src/pages/WebQuest7.tsx` (189-qator)
+## Yechim: `src/pages/WebQuest3.tsx` (181-192 qatorlar)
 
-Items: 0=Mandela, 1=Da Vinci, 2=Navoi, 3=Shakespeare, 4=Confucius, 5=Gandhi
-Descriptions: 0=Shakespeare, 1=Gandhi, 2=Da Vinci, 3=Confucius, 4=Mandela, 5=Navoi
+Sentences tartibini aralashtirish (wordBank o'zgarmaydi):
 
-To'g'ri xarita (desc → item):
-- 0 (Shakespeare) → 3
-- 1 (Gandhi) → 5
-- 2 (Da Vinci) → 1
-- 3 (Confucius) → 4
-- 4 (Mandela) → 0
-- 5 (Navoi) → 2
+| # | Gap (yangi tartib) | Javob |
+|---|---|---|
+| 1 | Having a ___ means favoring one group... | bias |
+| 2 | ___ refers to the variety of cultures... | diversity |
+| 3 | A ___ is a fixed, oversimplified belief... | stereotype |
+| 4 | ___ is a negative attitude toward someone... | prejudice |
+| 5 | An ___ is something believed to be true without proof. | assumption |
+| 6 | ___ is judging another culture based on... | ethnocentrism |
+| 7 | ___ means accepting and respecting differences... | tolerance |
+| 8 | ___ occurs when someone is treated unfairly... | discrimination |
+| 9 | A person's ___ includes their traditions... | cultural identity |
+| 10 | A ___ is a broad statement that applies... | generalization |
 
-```
-correctAnswers={{ 0: 3, 1: 5, 2: 1, 3: 4, 4: 0, 5: 2 }}
-```
+Faqat sentences massivi tartibi o'zgaradi. wordBank va blank qiymatlari o'zgarmaydi.
 
-Faqat 1 qator o'zgaradi.
