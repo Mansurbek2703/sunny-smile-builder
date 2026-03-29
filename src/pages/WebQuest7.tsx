@@ -8,6 +8,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { QuestSubmitButton } from "@/components/QuestSubmitButton";
 import OpenQuestionTask from "@/components/quest/OpenQuestionTask";
 import SelectMatchingTask from "@/components/quest/SelectMatchingTask";
+import DragMatchingTask from "@/components/quest/DragMatchingTask";
 import VideoTask from "@/components/quest/VideoTask";
 import SiteHeader from "@/components/SiteHeader";
 
