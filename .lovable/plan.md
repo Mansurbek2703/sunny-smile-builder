@@ -1,29 +1,27 @@
 
 
-# WebQuest 1 — Match Countries topshiriqni tuzatish
+# WebQuest 7 — Rasm-ism matching task (mobil + desktop)
 
-## Muammo
-7 ta tavsif (A-G) va 6 ta bayroq bor. 3-tavsif (C — Thanksgiving) ortiqcha.
+## Yaxshi xabar
+`DragMatchingTask` komponenti **allaqachon** ikkala rejimni qo'llab-quvvatlaydi:
+- **Mobil**: rasmni bosish → kerakli ism qatorini bosish (tap-to-place)
+- **Desktop**: rasmni sichqoncha bilan tutib, kerakli maydonga sudrab olib borish (drag-and-drop)
 
-## O'zgarish: `src/pages/WebQuest1.tsx` (254-263 qatorlar)
+Faqat bitta kichik tuzatish kerak: mobil ko'rsatma matni hozir o'zbekcha va bayroqlar haqida ("Bayroqni bosing..."). Uni inglizchaga va rasmlar haqida qilib o'zgartirish kerak.
 
-**Olib tashlanadigan tavsif:**
-- `{ letter: "C", text: "Late November, turkey, pumpkin pie, gratitude" }` — bu 3-tavsifni o'chirish
+## O'zgarishlar
 
-**Yangi correctAnswers xaritasi** (tavsif indeksi → bayroq indeksi):
+### 1. `src/components/quest/DragMatchingTask.tsx` (64-qator)
+Mobil ko'rsatma matnini o'zgartirish:
+- Hozirgi: `"Bayroqni bosing, keyin joylashtirish uchun qatorni bosing"`
+- Yangi: `"Tap a picture, then tap the row to place it"`
 
-| Tavsif | Matn | Javob (bayroq) | Index |
-|---|---|---|---|
-| A (0) | Spring festival, March 21... | Uzbekistan (1) | 0→1 |
-| B (1) | Festival of lights... | India (3) | 1→3 |
-| D (2) | Lunar calendar... | China (4) | 2→4 |
-| E (3) | March 17, patron saint... | Ireland (2) | 3→2 |
-| F (4) | Honouring deceased... | Mexico (5) | 4→5 |
-| G (5) | July 4, fireworks... | USA (0) | 5→0 |
+### 2. `src/pages/WebQuest7.tsx`
+- `DragMatchingTask` import qo'shish
+- Step 2 dagi statik rasm-ism gridni `DragMatchingTask` ga almashtirish:
+  - **Items**: 6 ta rasm (Shakespeare, Gandhi, Da Vinci, Confucius, Mandela, Navoi)
+  - **Descriptions**: A–F harflari bilan ismlar
+  - **correctAnswers**: `{{ 0: 0, 1: 1, 2: 2, 3: 3, 4: 4, 5: 5 }}`
 
-```
-correctAnswers={{ 0: 1, 1: 3, 2: 4, 3: 2, 4: 5, 5: 0 }}
-```
-
-Faqat 1 ta fayl, 1 ta joy tahrirlanadi.
+2 ta fayl tahrirlanadi.
 
