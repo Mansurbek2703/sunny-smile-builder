@@ -61,7 +61,7 @@ const DragMatchingTask = ({ items, descriptions, correctAnswers }: DragMatchingT
     <div className="space-y-2">
       {isMobile && !showResults && (
         <p className="text-lg font-body text-foreground text-center italic">
-          Bayroqni bosing, keyin joylashtirish uchun qatorni bosing
+          Tap a picture, then tap the row to place it
         </p>
       )}
 
