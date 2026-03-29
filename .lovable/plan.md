@@ -1,27 +1,27 @@
 
 
-# WebQuest 7 — Rasm-ism matching task (mobil + desktop)
+# WebQuest 7 — Rasmlar tartibini aralashtirish
 
-## Yaxshi xabar
-`DragMatchingTask` komponenti **allaqachon** ikkala rejimni qo'llab-quvvatlaydi:
-- **Mobil**: rasmni bosish → kerakli ism qatorini bosish (tap-to-place)
-- **Desktop**: rasmni sichqoncha bilan tutib, kerakli maydonga sudrab olib borish (drag-and-drop)
+## Muammo
+Rasmlar ismlar bilan bir xil tartibda turibdi (Shakespeare=Hero1→A, Gandhi=Hero2→B...), shuning uchun javob juda oson.
 
-Faqat bitta kichik tuzatish kerak: mobil ko'rsatma matni hozir o'zbekcha va bayroqlar haqida ("Bayroqni bosing..."). Uni inglizchaga va rasmlar haqida qilib o'zgartirish kerak.
+## Yechim: `src/pages/WebQuest7.tsx` (173-189 qatorlar)
 
-## O'zgarishlar
+Rasmlar tartibini aralashtirish va `correctAnswers` ni yangilash:
 
-### 1. `src/components/quest/DragMatchingTask.tsx` (64-qator)
-Mobil ko'rsatma matnini o'zgartirish:
-- Hozirgi: `"Bayroqni bosing, keyin joylashtirish uchun qatorni bosing"`
-- Yangi: `"Tap a picture, then tap the row to place it"`
+**Yangi tartib:**
+| Items index | Rasm | Mos description index |
+|---|---|---|
+| 0 | Mandela (Hero 1) | 4 (E) |
+| 1 | Da Vinci (Hero 2) | 2 (C) |
+| 2 | Navoi (Hero 3) | 5 (F) |
+| 3 | Shakespeare (Hero 4) | 0 (A) |
+| 4 | Confucius (Hero 5) | 3 (D) |
+| 5 | Gandhi (Hero 6) | 1 (B) |
 
-### 2. `src/pages/WebQuest7.tsx`
-- `DragMatchingTask` import qo'shish
-- Step 2 dagi statik rasm-ism gridni `DragMatchingTask` ga almashtirish:
-  - **Items**: 6 ta rasm (Shakespeare, Gandhi, Da Vinci, Confucius, Mandela, Navoi)
-  - **Descriptions**: A–F harflari bilan ismlar
-  - **correctAnswers**: `{{ 0: 0, 1: 1, 2: 2, 3: 3, 4: 4, 5: 5 }}`
+```
+correctAnswers={{ 0: 4, 1: 2, 2: 5, 3: 0, 4: 3, 5: 1 }}
+```
 
-2 ta fayl tahrirlanadi.
+Faqat 1 ta fayl, items tartibi va correctAnswers o'zgaradi.
 
