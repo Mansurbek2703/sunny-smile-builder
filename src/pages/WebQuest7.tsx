@@ -171,12 +171,12 @@ function ProcessStep() {
 
     <DragMatchingTask
       items={[
-        { type: "image" as const, src: "/images/webquest7/shakespeare.webp", alt: "Hero 1" },
-        { type: "image" as const, src: "/images/webquest7/gandhi.webp", alt: "Hero 2" },
-        { type: "image" as const, src: "/images/webquest7/davinci.webp", alt: "Hero 3" },
-        { type: "image" as const, src: "/images/webquest7/confucius.webp", alt: "Hero 4" },
-        { type: "image" as const, src: "/images/webquest7/mandela.webp", alt: "Hero 5" },
-        { type: "image" as const, src: "/images/webquest7/navoi.webp", alt: "Hero 6" },
+        { label: "Hero 1", image: "/images/webquest7/shakespeare.webp" },
+        { label: "Hero 2", image: "/images/webquest7/gandhi.webp" },
+        { label: "Hero 3", image: "/images/webquest7/davinci.webp" },
+        { label: "Hero 4", image: "/images/webquest7/confucius.webp" },
+        { label: "Hero 5", image: "/images/webquest7/mandela.webp" },
+        { label: "Hero 6", image: "/images/webquest7/navoi.webp" },
       ]}
       descriptions={[
         { letter: "A", text: "William Shakespeare" },
