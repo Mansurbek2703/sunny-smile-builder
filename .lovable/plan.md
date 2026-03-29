@@ -1,29 +1,29 @@
 
 
-# Registration Modal va boshqa matnlarni ingliz tiliga o'tkazish
+# WebQuest 1 — Match Countries topshiriqni tuzatish
 
-## O'zgarishlar
+## Muammo
+7 ta tavsif (A-G) va 6 ta bayroq bor. 3-tavsif (C — Thanksgiving) ortiqcha.
 
-### `src/components/RegistrationModal.tsx`
-O'zbek tilidagi barcha matnlarni ingliz tiliga almashtirish:
+## O'zgarish: `src/pages/WebQuest1.tsx` (254-263 qatorlar)
 
-| Qator | Hozirgi (O'zbekcha) | Yangi (Inglizcha) |
-|---|---|---|
-| 45 | "Ro'yxatdan o'tdingiz!" | "Registration Successful!" |
-| 45 | "Endi barcha WebQuest'larni ishlashingiz mumkin." | "You can now access all WebQuests." |
-| 48 | "Xatolik" | "Error" |
-| 48 | "Nimadir xato ketdi" | "Something went wrong" |
-| 60 | "Ro'yxatdan o'tish" | "Registration" |
-| 63 | "WebQuest'larni ishlash uchun..." | "Please fill in the following information to access the WebQuests. This only needs to be done once." |
-| 73 | "Familiya *" / placeholder | "Last Name *" / "Last Name" |
-| 77 | "Ism *" / placeholder | "First Name *" / "First Name" |
-| 82 | "Otasining ismi" / placeholder | "Father's Name" / "Father's Name (optional)" |
-| 86 | "Kurs va yo'nalish *" / placeholder | "Course & Direction *" / "e.g., 3rd year, English Language" |
-| 90 | "Universitet nomi *" / placeholder | "University *" / "University name" |
-| 94 | "Yuklanmoqda..." / "Ro'yxatdan o'tish va boshlash" | "Loading..." / "Register & Start" |
+**Olib tashlanadigan tavsif:**
+- `{ letter: "C", text: "Late November, turkey, pumpkin pie, gratitude" }` — bu 3-tavsifni o'chirish
 
-### Boshqa fayllar
-`QuestCompletePage.tsx` va `QuestSubmitButton.tsx` — allaqachon ingliz tilida. O'zgartirish kerak emas.
+**Yangi correctAnswers xaritasi** (tavsif indeksi → bayroq indeksi):
 
-Faqat 1 ta fayl tahrirlanadi.
+| Tavsif | Matn | Javob (bayroq) | Index |
+|---|---|---|---|
+| A (0) | Spring festival, March 21... | Uzbekistan (1) | 0→1 |
+| B (1) | Festival of lights... | India (3) | 1→3 |
+| D (2) | Lunar calendar... | China (4) | 2→4 |
+| E (3) | March 17, patron saint... | Ireland (2) | 3→2 |
+| F (4) | Honouring deceased... | Mexico (5) | 4→5 |
+| G (5) | July 4, fireworks... | USA (0) | 5→0 |
+
+```
+correctAnswers={{ 0: 1, 1: 3, 2: 4, 3: 2, 4: 5, 5: 0 }}
+```
+
+Faqat 1 ta fayl, 1 ta joy tahrirlanadi.
 
