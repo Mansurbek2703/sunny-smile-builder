@@ -179,16 +179,16 @@ function VocabularyStep() {
     <h4 className="font-display text-xl font-semibold mb-2">Task V: Fill in the Gaps</h4>
     <FillBlanksTask wordBank={["stereotype", "discrimination", "bias", "ethnocentrism", "assumption", "diversity", "generalization", "prejudice", "tolerance", "cultural identity"]}
       sentences={[
-        { text: "A ___ is a fixed, oversimplified belief about a group of people.", blank: "stereotype" },
-        { text: "___ occurs when someone is treated unfairly because of their race, gender, or culture.", blank: "discrimination" },
         { text: "Having a ___ means favoring one group over another, often unconsciously.", blank: "bias" },
-        { text: "___ is judging another culture based on the standards of one's own.", blank: "ethnocentrism" },
-        { text: "An ___ is something believed to be true without proof.", blank: "assumption" },
         { text: "___ refers to the variety of cultures, beliefs, and backgrounds in a group.", blank: "diversity" },
-        { text: "A ___ is a broad statement that applies a single idea to many people.", blank: "generalization" },
+        { text: "A ___ is a fixed, oversimplified belief about a group of people.", blank: "stereotype" },
         { text: "___ is a negative attitude toward someone based solely on group membership.", blank: "prejudice" },
+        { text: "An ___ is something believed to be true without proof.", blank: "assumption" },
+        { text: "___ is judging another culture based on the standards of one's own.", blank: "ethnocentrism" },
         { text: "___ means accepting and respecting differences between people.", blank: "tolerance" },
+        { text: "___ occurs when someone is treated unfairly because of their race, gender, or culture.", blank: "discrimination" },
         { text: "A person's ___ includes their traditions, language, values, and sense of belonging.", blank: "cultural identity" },
+        { text: "A ___ is a broad statement that applies a single idea to many people.", blank: "generalization" },
       ]} />
   </>);
 }
