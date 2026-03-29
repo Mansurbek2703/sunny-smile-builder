@@ -8,6 +8,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { QuestSubmitButton } from "@/components/QuestSubmitButton";
 import OpenQuestionTask from "@/components/quest/OpenQuestionTask";
 import SelectMatchingTask from "@/components/quest/SelectMatchingTask";
+import DragMatchingTask from "@/components/quest/DragMatchingTask";
 import VideoTask from "@/components/quest/VideoTask";
 import SiteHeader from "@/components/SiteHeader";
 
@@ -168,24 +169,25 @@ function ProcessStep() {
     <h4 className="font-display text-xl font-semibold mb-2">Match picture with the name</h4>
     <p className="font-body text-lg text-foreground mb-3">Match each cultural hero's picture with their name.</p>
 
-    <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-4">
-      {[
-        { name: "William Shakespeare", img: "/images/webquest7/shakespeare.webp", num: 1 },
-        { name: "Mahatma Gandhi", img: "/images/webquest7/gandhi.webp", num: 2 },
-        { name: "Leonardo da Vinci", img: "/images/webquest7/davinci.webp", num: 3 },
-        { name: "Confucius", img: "/images/webquest7/confucius.webp", num: 4 },
-        { name: "Nelson Mandela", img: "/images/webquest7/mandela.webp", num: 5 },
-        { name: "Alisher Navoi", img: "/images/webquest7/navoi.webp", num: 6 },
-      ].map((hero) => (
-        <Card key={hero.num} className="overflow-hidden">
-          <img src={hero.img} alt={hero.name} loading="eager" decoding="async" className="w-full h-48 sm:h-56 object-contain bg-muted/30" />
-          <CardContent className="p-2 text-center">
-            <span className="font-display font-bold text-primary text-lg mr-1">{hero.num}.</span>
-            <span className="font-body text-lg">{hero.name}</span>
-          </CardContent>
-        </Card>
-      ))}
-    </div>
+    <DragMatchingTask
+      items={[
+        { label: "Hero 1", image: "/images/webquest7/shakespeare.webp" },
+        { label: "Hero 2", image: "/images/webquest7/gandhi.webp" },
+        { label: "Hero 3", image: "/images/webquest7/davinci.webp" },
+        { label: "Hero 4", image: "/images/webquest7/confucius.webp" },
+        { label: "Hero 5", image: "/images/webquest7/mandela.webp" },
+        { label: "Hero 6", image: "/images/webquest7/navoi.webp" },
+      ]}
+      descriptions={[
+        { letter: "A", text: "William Shakespeare" },
+        { letter: "B", text: "Mahatma Gandhi" },
+        { letter: "C", text: "Leonardo da Vinci" },
+        { letter: "D", text: "Confucius" },
+        { letter: "E", text: "Nelson Mandela" },
+        { letter: "F", text: "Alisher Navoi" },
+      ]}
+      correctAnswers={{ 0: 0, 1: 1, 2: 2, 3: 3, 4: 4, 5: 5 }}
+    />
 
     <h4 className="font-display text-xl font-semibold mb-2">Task I: Match each cultural hero (A–F) with the correct description (1–6)</h4>
     <SelectMatchingTask
