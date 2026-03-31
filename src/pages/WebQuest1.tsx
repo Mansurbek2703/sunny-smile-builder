@@ -293,7 +293,7 @@ function NavruzStep() {
         {"\n\n"}Another key aspect of Navruz is acts of kindness and charity. Many people give to those in need, while elders are honoured with visits and special meals. It's a time for reconciliation — any past grievances are set aside, which reinforces the spirit of unity.
       </ReadingSection>
 
-      <ReadingSection title="B — Origins of Navruz">
+      <ReadingSection title="B">
         Navruz (also known as Nowruz, Nawruz, Norooz or Nevruz) dates back over 3,000 years to the Zoroastrian era, celebrated by ancient Persians and Central Asian civilisations as the first day of the new year. It is closely tied to nature, symbolising rebirth, hope, and harmony. The festival is based on the solar calendar, aligning with the vernal equinox — a time when day and night are equal in length, signifying balance and new beginnings.
       </ReadingSection>
 
