@@ -212,7 +212,7 @@ function ReadingStepContent() {
     </div>
     <div className="mt-4">
       <h4 className="font-display text-xl font-semibold mb-2">Fill in the blanks</h4>
-      <FillBlanksTask wordBank={["fixed", "wrong", "Greek", "contact", "superior", "ignorance", "unwilling", "false", "xenophobic", "inferior"]}
+      <FillBlanksTask wordBank={["xenophobic", "contact", "fixed", "ignorance", "wrong", "inferior", "superior", "Greek", "unwilling", "false"]}
         sentences={[
           { text: "Cultural stereotypes are ___ ideas that people believe about certain groups.", blank: "fixed" },
           { text: "These beliefs are often ___ and not based on real facts.", blank: "wrong" },
@@ -238,7 +238,7 @@ function ObservationsStep() {
     </div>
     <h4 className="font-display text-xl font-semibold mb-2">Task II: Match situation with cultural meaning</h4>
     <SelectMatchingTask pairs={[{ left: "Bread is never thrown away", right: "" }, { left: "Guests are treated as 'sent by God'", right: "" }, { left: "Older people are not openly corrected", right: "" }, { left: "Home is a private space", right: "" }, { left: "Direct eye contact is avoided", right: "" }]}
-      options={["Age-based respect", "Clear personal boundaries", "Sacred everyday objects", "Respect and modesty", "Moral obligation of hospitality"]}
+      options={["Moral obligation of hospitality", "Respect and modesty", "Sacred everyday objects", "Clear personal boundaries", "Age-based respect"]}
       correctAnswers={{ 0: "Sacred everyday objects", 1: "Moral obligation of hospitality", 2: "Age-based respect", 3: "Clear personal boundaries", 4: "Respect and modesty" }} />
     <div className="mt-4">
       <h4 className="font-display text-xl font-semibold mb-2">Task III: True, False, or Depends?</h4>
