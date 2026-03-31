@@ -310,7 +310,7 @@ function NavruzStep() {
         Food plays a central role in Navruz festivities, symbolising abundance and prosperity. Besides sumalak, popular dishes include halim (a slow-cooked wheat and meat porridge) and kuk samsa (flaky pastries filled with fragrant greens). Dried fruits and nuts are shared generously, while herbal teas and refreshing drinks made from sumalak juice are enjoyed throughout the celebrations.
       </ReadingSection>
 
-      <ReadingSection title="F — Navruz Greetings">
+      <ReadingSection title="F">
         If you want to greet someone during Navruz, a simple "Navruz muborak!" (Happy Navruz!) is a warm and appreciated way to share in the joy of the season. You might also hear "Navruz bayramingiz muborak bo'lsin!" which expresses wishes for a blessed and happy Navruz.
       </ReadingSection>
 
