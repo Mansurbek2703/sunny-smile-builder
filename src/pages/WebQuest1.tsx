@@ -288,33 +288,33 @@ function NavruzStep() {
         </p>
       </div>
 
-      <ReadingSection title="A — How Navruz is Celebrated">
+      <ReadingSection title="A">
         In Uzbekistan, Navruz is more than just a holiday; it is an expression of national identity and cultural pride. Streets come alive with festivities, music, and dance, while families prepare special meals and visit relatives. One of the most beloved traditions is cooking and sharing sumalak, a thick, sweet wheat-based dish that requires hours of slow stirring. Made in large cauldrons, it's normally prepared collectively, with family and friends taking turns stirring and making wishes for the coming year.
         {"\n\n"}Another key aspect of Navruz is acts of kindness and charity. Many people give to those in need, while elders are honoured with visits and special meals. It's a time for reconciliation — any past grievances are set aside, which reinforces the spirit of unity.
       </ReadingSection>
 
-      <ReadingSection title="B — Origins of Navruz">
+      <ReadingSection title="B">
         Navruz (also known as Nowruz, Nawruz, Norooz or Nevruz) dates back over 3,000 years to the Zoroastrian era, celebrated by ancient Persians and Central Asian civilisations as the first day of the new year. It is closely tied to nature, symbolising rebirth, hope, and harmony. The festival is based on the solar calendar, aligning with the vernal equinox — a time when day and night are equal in length, signifying balance and new beginnings.
       </ReadingSection>
 
-      <ReadingSection title="C — Regional and International Variations">
+      <ReadingSection title="C">
         While Uzbekistan's Navruz celebrations are distinct, the festival is observed across many countries, each adding their own cultural flair. In neighbouring Tajikistan and Iran, for example, Navruz involves setting up a Haft-Seen table, featuring seven symbolic items starting with the Persian letter 'S'. Meanwhile, in Kazakhstan and Kyrgyzstan, traditional equestrian games and wrestling competitions play a central role.
         {"\n\n"}Even within Uzbekistan, different regions have their own customs. In the Fergana Valley, Navruz often features intricate atlas silk costumes and lively folk performances, while in Samarkand and Bukhara, the holiday embraces Persian influences, with poetry readings and classical music.
       </ReadingSection>
 
-      <ReadingSection title="D — Legends and Stories of Navruz">
+      <ReadingSection title="D">
         Navruz is steeped in folklore. One of the most famous legends tells of the tyrant Zahhak, whose rule was overthrown by the hero Kaveh, bringing light and justice back to the land — an allegory for the arrival of spring. Another story tells of a wise ruler who declared Navruz a day for forgiveness and new beginnings, ensuring that every citizen, regardless of status, started the year afresh.
       </ReadingSection>
 
-      <ReadingSection title="E — Traditional Navruz Food and Drink">
+      <ReadingSection title="E">
         Food plays a central role in Navruz festivities, symbolising abundance and prosperity. Besides sumalak, popular dishes include halim (a slow-cooked wheat and meat porridge) and kuk samsa (flaky pastries filled with fragrant greens). Dried fruits and nuts are shared generously, while herbal teas and refreshing drinks made from sumalak juice are enjoyed throughout the celebrations.
       </ReadingSection>
 
-      <ReadingSection title="F — Navruz Greetings">
+      <ReadingSection title="F">
         If you want to greet someone during Navruz, a simple "Navruz muborak!" (Happy Navruz!) is a warm and appreciated way to share in the joy of the season. You might also hear "Navruz bayramingiz muborak bo'lsin!" which expresses wishes for a blessed and happy Navruz.
       </ReadingSection>
 
-      <ReadingSection title="G — Modern Adaptations">
+      <ReadingSection title="G">
         While traditional customs remain at the heart of Navruz, modern adaptations have emerged, particularly in urban areas. Large-scale concerts and cultural events are organised in city centres, featuring contemporary music and dance alongside traditional performances. Eco-friendly initiatives, such as tree planting and community clean-ups, have become a growing trend, aligning with Navruz's themes of renewal and harmony with nature.
       </ReadingSection>
 
@@ -340,7 +340,7 @@ function NavruzStep() {
         </ReadingSection>
       </div>
 
-      <ReadingSection title="H — Conclusion">
+      <ReadingSection title="H">
         Navruz is not just a celebration; it embodies the values of renewal, generosity, and gratitude. Whether through sharing meals, reconnecting with loved ones, or honouring traditions passed down for generations, Navruz remains a powerful reminder of the importance of community and cultural heritage.
         {"\n\n"}As Uzbekistan embraces the new season, the warmth of Navruz brings people together, reaffirming the belief that every new beginning holds the promise of joy, growth, and unity.
       </ReadingSection>
