@@ -402,7 +402,7 @@ function ReadingStep() {
             { left: "3. Dress for the Occasion", right: "" }, { left: "4. Be Thoughtful with Gifts", right: "" },
             { left: "5. Clarify Food Preferences", right: "" }, { left: "6. Keep an Open Mind", right: "" },
           ]}
-          options={["Builds trust and community connections", "Helps avoid misunderstandings", "Shows respect for religious and cultural norms", "Prevents cultural offense", "Ensures inclusivity and comfort", "Encourages cultural adaptation"]}
+          options={["Ensures inclusivity and comfort", "Shows respect for religious and cultural norms", "Encourages cultural adaptation", "Builds trust and community connections", "Prevents cultural offense", "Helps avoid misunderstandings"]}
           correctAnswers={{ 0: "Builds trust and community connections", 1: "Helps avoid misunderstandings", 2: "Shows respect for religious and cultural norms", 3: "Prevents cultural offense", 4: "Ensures inclusivity and comfort", 5: "Encourages cultural adaptation" }}
         />
       </div>
