@@ -328,7 +328,7 @@ const AdminDashboard = () => {
                   {[1, 2, 3, 4, 5, 6, 7].map(n => <SelectItem key={n} value={String(n)}>Quest {n}</SelectItem>)}
                 </SelectContent>
               </Select>
-              <Button size="sm" variant="outline" onClick={() => { setSearchText(""); setFilterUniversity("all"); setFilterCourse("all"); setFilterQuest("all"); setPage(0); }} className="text-white border-blue-700 hover:bg-blue-800 text-sm">
+              <Button size="sm" onClick={() => { setSearchText(""); setFilterUniversity("all"); setFilterCourse("all"); setFilterQuest("all"); setPage(0); }} className="bg-cyan-600 hover:bg-cyan-700 text-white font-medium text-sm px-3">
                 Tozalash
               </Button>
             </div>
