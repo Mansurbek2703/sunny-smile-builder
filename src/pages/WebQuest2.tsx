@@ -439,7 +439,7 @@ function ReadingStep() {
             { left: "You want to bring a present", right: "" },
             { left: "You are unsure what to wear", right: "" },
           ]}
-          options={["Clarify food restrictions", "Find a local guide", "Keep an open mind", "Be thoughtful with gifts", "Dress for the occasion"]}
+          options={["Keep an open mind", "Dress for the occasion", "Clarify food restrictions", "Be thoughtful with gifts", "Find a local guide"]}
           correctAnswers={{ 0: "Clarify food restrictions", 1: "Find a local guide", 2: "Keep an open mind", 3: "Be thoughtful with gifts", 4: "Dress for the occasion" }}
         />
       </div>
