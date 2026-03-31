@@ -229,9 +229,9 @@ function MatchHolidaysStep() {
           { left: "4. Carnival of Venice", right: "" },
           { left: "5. Eid al-Fitr", right: "" },
           { left: "6. Heritage Day", right: "" },
-          { left: "7. Thanksgiving (Extra!)", right: "" },
+          { left: "7. Thanksgiving", right: "" },
         ]}
-        options={["Japan", "Germany", "France", "Italy", "Saudi Arabia", "South Africa", "Extra — no match"]}
+        options={["South Africa", "France", "Extra — no match", "Italy", "Japan", "Saudi Arabia", "Germany"]}
         correctAnswers={{ 0: "Japan", 1: "Germany", 2: "France", 3: "Italy", 4: "Saudi Arabia", 5: "South Africa", 6: "Extra — no match" }}
       />
       <div className="mt-4">
