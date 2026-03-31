@@ -1,26 +1,21 @@
 
 
-# WebQuest 1 — Navruz paragraf sarlavhalaridan nomlarni olib tashlash
+# Tozalash tugmasi rangini o'zgartirish
 
 ## Muammo
-Navruz o'qish bo'limlarida sarlavhalar "A — How Navruz is Celebrated" ko'rinishida berilgan. Task I da talabalar aynan shu sarlavhalarni paragraflarga moslashi kerak. Hozirgi holatda javob allaqachon ko'rinib turibdi — topshiriq ma'nosiz bo'lib qolgan.
+Tozalash tugmasi `variant="outline"` bilan oq rangda ko'rinadi, boshqa tugmalar esa rangli (emerald, cyan).
 
-## Yechim: `src/pages/WebQuest1.tsx`
+## Yechim: `src/pages/AdminDashboard.tsx` (331-qator)
 
-Navruz reading bo'limlarining sarlavhalaridan tavsifiy nomlarni olib tashlash. Faqat harf qoldirish:
+Hozirgi:
+```
+variant="outline" ... className="text-white border-blue-700 hover:bg-blue-800 text-sm"
+```
 
-| Hozirgi | Yangi |
-|---|---|
-| `A — How Navruz is Celebrated` | `A` |
-| `B — Origins of Navruz` | `B` |
-| `C — Regional and International Variations` | `C` |
-| `D — Legends and Stories of Navruz` | `D` |
-| `E — Traditional Navruz Food and Drink` | `E` |
-| `F — Navruz Greetings` | `F` |
-| `G — Modern Adaptations` | `G` |
-| `H — Conclusion` | `H` |
+Yangi (cyan rangda, boshqa tugmalardek):
+```
+className="bg-cyan-600 hover:bg-cyan-700 text-white font-medium text-sm px-3"
+```
 
-**Eslatma:** Qolgan bo'limlar (🎈 Navruz Activities for Children, 🎵 Music and Dance, 🐎 Kupkari, 👗 Fashion, ✨ Astrological) task I ga kirmaydi — ular qo'shimcha ma'lumot. Ularning sarlavhalari o'zgarmaydi.
-
-Faqat 8 ta `ReadingSection` sarlavhasi o'zgaradi (291–343 qatorlar orasida).
+`variant="outline"` olib tashlanadi. Faqat 1 qator o'zgaradi.
 
