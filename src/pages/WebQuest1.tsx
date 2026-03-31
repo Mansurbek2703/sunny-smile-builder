@@ -306,7 +306,7 @@ function NavruzStep() {
         Navruz is steeped in folklore. One of the most famous legends tells of the tyrant Zahhak, whose rule was overthrown by the hero Kaveh, bringing light and justice back to the land — an allegory for the arrival of spring. Another story tells of a wise ruler who declared Navruz a day for forgiveness and new beginnings, ensuring that every citizen, regardless of status, started the year afresh.
       </ReadingSection>
 
-      <ReadingSection title="E — Traditional Navruz Food and Drink">
+      <ReadingSection title="E">
         Food plays a central role in Navruz festivities, symbolising abundance and prosperity. Besides sumalak, popular dishes include halim (a slow-cooked wheat and meat porridge) and kuk samsa (flaky pastries filled with fragrant greens). Dried fruits and nuts are shared generously, while herbal teas and refreshing drinks made from sumalak juice are enjoyed throughout the celebrations.
       </ReadingSection>
 
