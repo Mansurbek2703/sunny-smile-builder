@@ -288,7 +288,7 @@ function NavruzStep() {
         </p>
       </div>
 
-      <ReadingSection title="A — How Navruz is Celebrated">
+      <ReadingSection title="A">
         In Uzbekistan, Navruz is more than just a holiday; it is an expression of national identity and cultural pride. Streets come alive with festivities, music, and dance, while families prepare special meals and visit relatives. One of the most beloved traditions is cooking and sharing sumalak, a thick, sweet wheat-based dish that requires hours of slow stirring. Made in large cauldrons, it's normally prepared collectively, with family and friends taking turns stirring and making wishes for the coming year.
         {"\n\n"}Another key aspect of Navruz is acts of kindness and charity. Many people give to those in need, while elders are honoured with visits and special meals. It's a time for reconciliation — any past grievances are set aside, which reinforces the spirit of unity.
       </ReadingSection>
