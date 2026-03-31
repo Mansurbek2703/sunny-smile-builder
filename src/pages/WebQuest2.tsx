@@ -291,7 +291,7 @@ function VideoStep() {
             { left: "3. Eid al-Fitr", right: "" }, { left: "4. Chinese New Year", right: "" },
             { left: "5. Cinco de Mayo", right: "" }, { left: "6. Thanksgiving", right: "" },
           ]}
-          options={["Commemorates the birth of a religious figure", "Remembers a miracle involving oil", "Celebrates the end of a fasting period", "Focuses on a new beginning and family reunions", "Celebrates military victory over foreign forces", "Marks gratitude for harvest and blessings"]}
+          options={["Celebrates military victory over foreign forces", "Commemorates the birth of a religious figure", "Marks gratitude for harvest and blessings", "Celebrates the end of a fasting period", "Remembers a miracle involving oil", "Focuses on a new beginning and family reunions"]}
           correctAnswers={{ 0: "Commemorates the birth of a religious figure", 1: "Remembers a miracle involving oil", 2: "Celebrates the end of a fasting period", 3: "Focuses on a new beginning and family reunions", 4: "Celebrates military victory over foreign forces", 5: "Marks gratitude for harvest and blessings" }}
         />
       </div>
