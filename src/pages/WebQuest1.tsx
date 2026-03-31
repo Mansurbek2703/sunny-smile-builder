@@ -340,7 +340,7 @@ function NavruzStep() {
         </ReadingSection>
       </div>
 
-      <ReadingSection title="H — Conclusion">
+      <ReadingSection title="H">
         Navruz is not just a celebration; it embodies the values of renewal, generosity, and gratitude. Whether through sharing meals, reconnecting with loved ones, or honouring traditions passed down for generations, Navruz remains a powerful reminder of the importance of community and cultural heritage.
         {"\n\n"}As Uzbekistan embraces the new season, the warmth of Navruz brings people together, reaffirming the belief that every new beginning holds the promise of joy, growth, and unity.
       </ReadingSection>
