@@ -229,9 +229,9 @@ function MatchHolidaysStep() {
           { left: "4. Carnival of Venice", right: "" },
           { left: "5. Eid al-Fitr", right: "" },
           { left: "6. Heritage Day", right: "" },
-          { left: "7. Thanksgiving (Extra!)", right: "" },
+          { left: "7. Thanksgiving", right: "" },
         ]}
-        options={["Japan", "Germany", "France", "Italy", "Saudi Arabia", "South Africa", "Extra — no match"]}
+        options={["South Africa", "France", "Extra — no match", "Italy", "Japan", "Saudi Arabia", "Germany"]}
         correctAnswers={{ 0: "Japan", 1: "Germany", 2: "France", 3: "Italy", 4: "Saudi Arabia", 5: "South Africa", 6: "Extra — no match" }}
       />
       <div className="mt-4">
@@ -291,7 +291,7 @@ function VideoStep() {
             { left: "3. Eid al-Fitr", right: "" }, { left: "4. Chinese New Year", right: "" },
             { left: "5. Cinco de Mayo", right: "" }, { left: "6. Thanksgiving", right: "" },
           ]}
-          options={["Commemorates the birth of a religious figure", "Remembers a miracle involving oil", "Celebrates the end of a fasting period", "Focuses on a new beginning and family reunions", "Celebrates military victory over foreign forces", "Marks gratitude for harvest and blessings"]}
+          options={["Celebrates military victory over foreign forces", "Commemorates the birth of a religious figure", "Marks gratitude for harvest and blessings", "Celebrates the end of a fasting period", "Remembers a miracle involving oil", "Focuses on a new beginning and family reunions"]}
           correctAnswers={{ 0: "Commemorates the birth of a religious figure", 1: "Remembers a miracle involving oil", 2: "Celebrates the end of a fasting period", 3: "Focuses on a new beginning and family reunions", 4: "Celebrates military victory over foreign forces", 5: "Marks gratitude for harvest and blessings" }}
         />
       </div>
@@ -402,7 +402,7 @@ function ReadingStep() {
             { left: "3. Dress for the Occasion", right: "" }, { left: "4. Be Thoughtful with Gifts", right: "" },
             { left: "5. Clarify Food Preferences", right: "" }, { left: "6. Keep an Open Mind", right: "" },
           ]}
-          options={["Builds trust and community connections", "Helps avoid misunderstandings", "Shows respect for religious and cultural norms", "Prevents cultural offense", "Ensures inclusivity and comfort", "Encourages cultural adaptation"]}
+          options={["Ensures inclusivity and comfort", "Shows respect for religious and cultural norms", "Encourages cultural adaptation", "Builds trust and community connections", "Prevents cultural offense", "Helps avoid misunderstandings"]}
           correctAnswers={{ 0: "Builds trust and community connections", 1: "Helps avoid misunderstandings", 2: "Shows respect for religious and cultural norms", 3: "Prevents cultural offense", 4: "Ensures inclusivity and comfort", 5: "Encourages cultural adaptation" }}
         />
       </div>
@@ -439,7 +439,7 @@ function ReadingStep() {
             { left: "You want to bring a present", right: "" },
             { left: "You are unsure what to wear", right: "" },
           ]}
-          options={["Clarify food restrictions", "Find a local guide", "Keep an open mind", "Be thoughtful with gifts", "Dress for the occasion"]}
+          options={["Keep an open mind", "Dress for the occasion", "Clarify food restrictions", "Be thoughtful with gifts", "Find a local guide"]}
           correctAnswers={{ 0: "Clarify food restrictions", 1: "Find a local guide", 2: "Keep an open mind", 3: "Be thoughtful with gifts", 4: "Dress for the occasion" }}
         />
       </div>
