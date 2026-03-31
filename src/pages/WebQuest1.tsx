@@ -302,7 +302,7 @@ function NavruzStep() {
         {"\n\n"}Even within Uzbekistan, different regions have their own customs. In the Fergana Valley, Navruz often features intricate atlas silk costumes and lively folk performances, while in Samarkand and Bukhara, the holiday embraces Persian influences, with poetry readings and classical music.
       </ReadingSection>
 
-      <ReadingSection title="D — Legends and Stories of Navruz">
+      <ReadingSection title="D">
         Navruz is steeped in folklore. One of the most famous legends tells of the tyrant Zahhak, whose rule was overthrown by the hero Kaveh, bringing light and justice back to the land — an allegory for the arrival of spring. Another story tells of a wise ruler who declared Navruz a day for forgiveness and new beginnings, ensuring that every citizen, regardless of status, started the year afresh.
       </ReadingSection>
 
