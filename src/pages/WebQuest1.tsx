@@ -351,16 +351,16 @@ function NavruzStep() {
         <div className="md:columns-2 md:gap-2">
           <MatchingTask
             pairs={[
-              { left: "1. How Navruz is celebrated", right: "Paragraph ___" },
-              { left: "2. The origins of Navruz", right: "Paragraph ___" },
-              { left: "3. Regional and international variations", right: "Paragraph ___" },
-              { left: "4. Legends and stories of Navruz", right: "Paragraph ___" },
-              { left: "5. Traditional Navruz food and drink", right: "Paragraph ___" },
-              { left: "6. Navruz greetings", right: "Paragraph ___" },
-              { left: "7. Modern adaptations", right: "Paragraph ___" },
-              { left: "8. Conclusion", right: "Paragraph ___" },
+              { left: "1. Traditional Navruz food and drink", right: "Paragraph ___" },
+              { left: "2. Conclusion", right: "Paragraph ___" },
+              { left: "3. How Navruz is celebrated", right: "Paragraph ___" },
+              { left: "4. Modern adaptations", right: "Paragraph ___" },
+              { left: "5. The origins of Navruz", right: "Paragraph ___" },
+              { left: "6. Legends and stories of Navruz", right: "Paragraph ___" },
+              { left: "7. Navruz greetings", right: "Paragraph ___" },
+              { left: "8. Regional and international variations", right: "Paragraph ___" },
             ]}
-            correctAnswers={{ 0: "A", 1: "B", 2: "C", 3: "D", 4: "E", 5: "F", 6: "G", 7: "H" }}
+            correctAnswers={{ 0: "E", 1: "H", 2: "A", 3: "G", 4: "B", 5: "D", 6: "F", 7: "C" }}
           />
         </div>
         <div className="mt-4">
