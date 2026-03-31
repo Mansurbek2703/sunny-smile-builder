@@ -297,7 +297,7 @@ function NavruzStep() {
         Navruz (also known as Nowruz, Nawruz, Norooz or Nevruz) dates back over 3,000 years to the Zoroastrian era, celebrated by ancient Persians and Central Asian civilisations as the first day of the new year. It is closely tied to nature, symbolising rebirth, hope, and harmony. The festival is based on the solar calendar, aligning with the vernal equinox — a time when day and night are equal in length, signifying balance and new beginnings.
       </ReadingSection>
 
-      <ReadingSection title="C — Regional and International Variations">
+      <ReadingSection title="C">
         While Uzbekistan's Navruz celebrations are distinct, the festival is observed across many countries, each adding their own cultural flair. In neighbouring Tajikistan and Iran, for example, Navruz involves setting up a Haft-Seen table, featuring seven symbolic items starting with the Persian letter 'S'. Meanwhile, in Kazakhstan and Kyrgyzstan, traditional equestrian games and wrestling competitions play a central role.
         {"\n\n"}Even within Uzbekistan, different regions have their own customs. In the Fergana Valley, Navruz often features intricate atlas silk costumes and lively folk performances, while in Samarkand and Bukhara, the holiday embraces Persian influences, with poetry readings and classical music.
       </ReadingSection>
