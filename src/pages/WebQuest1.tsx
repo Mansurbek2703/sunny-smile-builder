@@ -314,7 +314,7 @@ function NavruzStep() {
         If you want to greet someone during Navruz, a simple "Navruz muborak!" (Happy Navruz!) is a warm and appreciated way to share in the joy of the season. You might also hear "Navruz bayramingiz muborak bo'lsin!" which expresses wishes for a blessed and happy Navruz.
       </ReadingSection>
 
-      <ReadingSection title="G — Modern Adaptations">
+      <ReadingSection title="G">
         While traditional customs remain at the heart of Navruz, modern adaptations have emerged, particularly in urban areas. Large-scale concerts and cultural events are organised in city centres, featuring contemporary music and dance alongside traditional performances. Eco-friendly initiatives, such as tree planting and community clean-ups, have become a growing trend, aligning with Navruz's themes of renewal and harmony with nature.
       </ReadingSection>
 
