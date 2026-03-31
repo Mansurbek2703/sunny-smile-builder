@@ -163,13 +163,13 @@ function IdiomsStep() {
   return (<>
     <h4 className="font-display text-xl font-semibold mb-2">Task III: Match cultural idioms with meanings</h4>
     <SelectMatchingTask pairs={[{ left: "When in Rome, do as the Romans do", right: "" }, { left: "Speak the same language", right: "" }, { left: "Break the ice", right: "" }, { left: "Bridge the gap", right: "" }, { left: "Lost in translation", right: "" }]}
-      options={["Overcome obstacles in understanding between cultures", "Start a conversation to reduce tension", "Interactions between cultures from different parts of the world", "Overcome differences between people from diverse backgrounds", "Meanings not accurately conveyed between languages/cultures"]}
+      options={["Meanings not accurately conveyed between languages/cultures", "Overcome obstacles in understanding between cultures", "Interactions between cultures from different parts of the world", "Start a conversation to reduce tension", "Overcome differences between people from diverse backgrounds"]}
       correctAnswers={{ 0: "Overcome obstacles in understanding between cultures", 1: "Overcome differences between people from diverse backgrounds", 2: "Start a conversation to reduce tension", 3: "Overcome obstacles in understanding between cultures", 4: "Meanings not accurately conveyed between languages/cultures" }} />
     <div className="mt-4">
       <h4 className="font-display text-xl font-semibold mb-2">Task IV: Idioms and Stereotypes</h4>
-      <SelectMatchingTask pairs={[{ left: "Tar everyone with the same brush", right: "" }, { left: "Pigeonhole someone", right: "" }, { left: "Cut from the same cloth", right: "" }, { left: "Like peas in a pod", right: "" }, { left: "Never judge a book by its cover", right: "" }, { left: "Break the mold", right: "" }, { left: "When in Rome, do as the Romans do", right: "" }]}
-        options={["Treat all people in a group as identical", "Place someone into a fixed category", "Be extremely similar in character", "Be very alike because of shared background", "Don't form opinions based only on appearances", "Be different from what is typical or expected", "Adapt to customs of the place you visit"]}
-        correctAnswers={{ 0: "Treat all people in a group as identical", 1: "Place someone into a fixed category", 2: "Be extremely similar in character", 3: "Be very alike because of shared background", 4: "Don't form opinions based only on appearances", 5: "Be different from what is typical or expected", 6: "Adapt to customs of the place you visit" }} />
+      <SelectMatchingTask pairs={[{ left: "Never judge a book by its cover", right: "" }, { left: "Cut from the same cloth", right: "" }, { left: "When in Rome, do as the Romans do", right: "" }, { left: "Tar everyone with the same brush", right: "" }, { left: "Like peas in a pod", right: "" }, { left: "Pigeonhole someone", right: "" }, { left: "Break the mold", right: "" }]}
+        options={["Be different from what is typical or expected", "Treat all people in a group as identical", "Don't form opinions based only on appearances", "Adapt to customs of the place you visit", "Be extremely similar in character", "Be very alike because of shared background", "Place someone into a fixed category"]}
+        correctAnswers={{ 0: "Don't form opinions based only on appearances", 1: "Be extremely similar in character", 2: "Adapt to customs of the place you visit", 3: "Treat all people in a group as identical", 4: "Be very alike because of shared background", 5: "Place someone into a fixed category", 6: "Be different from what is typical or expected" }} />
     </div>
   </>);
 }
@@ -238,7 +238,7 @@ function ObservationsStep() {
     </div>
     <h4 className="font-display text-xl font-semibold mb-2">Task II: Match situation with cultural meaning</h4>
     <SelectMatchingTask pairs={[{ left: "Bread is never thrown away", right: "" }, { left: "Guests are treated as 'sent by God'", right: "" }, { left: "Older people are not openly corrected", right: "" }, { left: "Home is a private space", right: "" }, { left: "Direct eye contact is avoided", right: "" }]}
-      options={["Sacred everyday objects", "Moral obligation of hospitality", "Age-based respect", "Clear personal boundaries", "Respect and modesty"]}
+      options={["Age-based respect", "Clear personal boundaries", "Sacred everyday objects", "Respect and modesty", "Moral obligation of hospitality"]}
       correctAnswers={{ 0: "Sacred everyday objects", 1: "Moral obligation of hospitality", 2: "Age-based respect", 3: "Clear personal boundaries", 4: "Respect and modesty" }} />
     <div className="mt-4">
       <h4 className="font-display text-xl font-semibold mb-2">Task III: True, False, or Depends?</h4>
