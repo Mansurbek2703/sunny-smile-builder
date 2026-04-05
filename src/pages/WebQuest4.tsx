@@ -119,8 +119,8 @@ function LandmarksStep() {
       {landmarks.map((l) => (<div key={l.num} className="relative rounded-xl overflow-hidden shadow-md border-2 border-border"><img src={l.img} alt={`Landmark ${l.num}`} className="w-full h-24 sm:h-32 object-cover" /><div className="absolute top-1 left-1 bg-primary text-primary-foreground rounded-full w-6 h-6 flex items-center justify-center text-lg font-bold">{l.num}</div></div>))}
     </div>
     <SelectMatchingTask pairs={[{ left: "Picture 1", right: "" }, { left: "Picture 2", right: "" }, { left: "Picture 3", right: "" }, { left: "Picture 4", right: "" }, { left: "Picture 5", right: "" }, { left: "Picture 6", right: "" }, { left: "Picture 7", right: "" }, { left: "Picture 8", right: "" }, { left: "Picture 9", right: "" }, { left: "Picture 10", right: "" }]}
-      options={["Ark Fortress (Uzbekistan)", "Sagrada Familia (Spain)", "Hagia Sophia (Turkey)", "Burj Khalifa (UAE)", "Big Ben (UK)", "Great Wall (China)", "Chichén Itzá (Mexico)", "Sydney Opera House (Australia)", "Neuschwanstein Castle (Germany)", "Gyeongbokgung Palace (South Korea)"]}
-      correctAnswers={{ 0: "Ark Fortress (Uzbekistan)", 1: "Sagrada Familia (Spain)", 2: "Hagia Sophia (Turkey)", 3: "Burj Khalifa (UAE)", 4: "Big Ben (UK)", 5: "Great Wall (China)", 6: "Chichén Itzá (Mexico)", 7: "Sydney Opera House (Australia)", 8: "Neuschwanstein Castle (Germany)", 9: "Gyeongbokgung Palace (South Korea)" }} />
+      options={["Gyeongbokgung Palace (South Korea)", "Burj Khalifa (UAE)", "Sydney Opera House (Australia)", "Sagrada Familia (Spain)", "Chichén Itzá (Mexico)", "Big Ben (UK)", "Neuschwanstein Castle (Germany)", "Ark Fortress (Uzbekistan)", "Great Wall (China)", "Hagia Sophia (Turkey)"]}
+      correctAnswers={{ 0: "Sagrada Familia (Spain)", 1: "Hagia Sophia (Turkey)", 2: "Burj Khalifa (UAE)", 3: "Ark Fortress (Uzbekistan)", 4: "Great Wall (China)", 5: "Sydney Opera House (Australia)", 6: "Chichén Itzá (Mexico)", 7: "Big Ben (UK)", 8: "Gyeongbokgung Palace (South Korea)", 9: "Neuschwanstein Castle (Germany)" }} />
   </>);
 }
 
@@ -128,7 +128,7 @@ function IdiomsStep() {
   return (<>
     <h4 className="font-display text-xl font-semibold mb-2">Task II — Match Travel Idioms with Meanings</h4>
     <SelectMatchingTask pairs={[{ left: "living out of a suitcase", right: "" }, { left: "at the crack of dawn", right: "" }, { left: "travel on a shoestring", right: "" }, { left: "make a pit stop", right: "" }, { left: "travel in style", right: "" }, { left: "travel light", right: "" }]}
-      options={["Constantly travelling or moving from one place to another", "Very early in the morning", "Travel with a very limited budget", "Briefly stop during a journey for a break", "Travel with comfort and luxury", "Pack minimally and carry only essentials"]}
+      options={["Travel with comfort and luxury", "Briefly stop during a journey for a break", "Constantly travelling or moving from one place to another", "Pack minimally and carry only essentials", "Very early in the morning", "Travel with a very limited budget"]}
       correctAnswers={{ 0: "Constantly travelling or moving from one place to another", 1: "Very early in the morning", 2: "Travel with a very limited budget", 3: "Briefly stop during a journey for a break", 4: "Travel with comfort and luxury", 5: "Pack minimally and carry only essentials" }} />
   </>);
 }
