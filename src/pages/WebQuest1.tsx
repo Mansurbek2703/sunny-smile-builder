@@ -16,6 +16,8 @@ import VideoTask from "@/components/quest/VideoTask";
 import OpenQuestionTask from "@/components/quest/OpenQuestionTask";
 import VennDiagram from "@/components/quest/VennDiagram";
 
+
+
 /* ── step definitions ── */
 const steps = [
   { id: "intro", label: "Introduction", icon: BookOpen },
