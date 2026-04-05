@@ -109,7 +109,7 @@ function VideoStep() {
     <div className="mt-4">
       <h4 className="font-display text-xl font-semibold mb-2">Task A: Match country with dining rule</h4>
       <SelectMatchingTask pairs={[{ left: "Thailand", right: "" }, { left: "China", right: "" }, { left: "Ethiopia", right: "" }, { left: "Italy", right: "" }, { left: "Portugal", right: "" }, { left: "Japan", right: "" }, { left: "Middle East / India", right: "" }, { left: "Kazakhstan", right: "" }]}
-        options={["Use a spoon, not a fork, to eat", "Do not finish all food on your plate", "Eat from one shared plate", "Do not ask for extra cheese", "Do not ask for salt or pepper", "Do not refill your own wine", "Do not use the left hand", "Tea has strict drinking rules"]}
+        options={["Do not ask for salt or pepper", "Tea has strict drinking rules", "Use a spoon, not a fork, to eat", "Do not use the left hand", "Eat from one shared plate", "Do not refill your own wine", "Do not finish all food on your plate", "Do not ask for extra cheese"]}
         correctAnswers={{ 0: "Use a spoon, not a fork, to eat", 1: "Do not finish all food on your plate", 2: "Eat from one shared plate", 3: "Do not ask for extra cheese", 4: "Do not ask for salt or pepper", 5: "Do not refill your own wine", 6: "Do not use the left hand", 7: "Tea has strict drinking rules" }} />
     </div>
     <div className="mt-4">
@@ -154,7 +154,7 @@ function Reading1Step() {
     </ReadingSection>
     <div className="mt-4">
       <h4 className="font-display text-xl font-semibold mb-2">Choose the right answer</h4>
-      <MultipleChoiceTask questions={[{ question: "What does food culture primarily represent?", options: ["Only a source of nutrition", "A community's identity and traditions", "A type of entertainment", "A form of art only"], correctIndex: 1 }, { question: "How does geography influence cuisine?", options: ["It determines only cooking techniques", "It affects ingredient availability and types of crops", "It has no effect", "It only influences desserts"], correctIndex: 1 }, { question: "Which historical event introduced potatoes and tomatoes to Europe?", options: ["The Silk Road", "The Columbian Exchange", "The Industrial Revolution", "The Transatlantic Trade"], correctIndex: 1 }]} />
+      <MultipleChoiceTask questions={[{ question: "What does food culture primarily represent?", options: ["A form of art only", "A community's identity and traditions", "Only a source of nutrition", "A type of entertainment"], correctIndex: 1 }, { question: "How does geography influence cuisine?", options: ["It has no effect", "It only influences desserts", "It affects ingredient availability and types of crops", "It determines only cooking techniques"], correctIndex: 2 }, { question: "Which historical event introduced potatoes and tomatoes to Europe?", options: ["The Industrial Revolution", "The Transatlantic Trade", "The Silk Road", "The Columbian Exchange"], correctIndex: 3 }]} />
     </div>
     <div className="mt-4">
       <h4 className="font-display text-xl font-semibold mb-2">True or False</h4>
