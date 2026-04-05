@@ -200,12 +200,12 @@ function ProcessStep() {
         { left: "F. Confucius", right: "" },
       ]}
       options={[
-        "1. A philosopher whose ideas about respect, harmony, and education strongly influenced East Asian culture.",
-        "2. A poet and thinker who made an important contribution to Turkic literature and culture.",
         "3. A political leader who fought against racial discrimination and promoted reconciliation in his country.",
-        "4. A writer whose plays and poems greatly influenced the English language and world literature.",
         "5. An artist and scientist famous for combining creativity with scientific thinking during the Renaissance.",
+        "1. A philosopher whose ideas about respect, harmony, and education strongly influenced East Asian culture.",
         "6. A leader who promoted non-violent resistance and inspired movements for independence.",
+        "2. A poet and thinker who made an important contribution to Turkic literature and culture.",
+        "4. A writer whose plays and poems greatly influenced the English language and world literature.",
       ]}
       correctAnswers={{
         0: "6. A leader who promoted non-violent resistance and inspired movements for independence.",
@@ -312,13 +312,13 @@ function ReadingStep() {
         { left: "Paragraph G", right: "" },
       ]}
       options={[
-        "Young Leader, Big Dreams",
-        "Standing Up For What's Right – No Matter What",
-        "Extraordinary Resilience, 27 Years Behind Bars with a Spirit Unbroken",
         "Choosing Forgiveness Always",
-        "The Rugby Moment That United a Country",
-        "Continued Support For Others",
         "A Hero Remembered By The World",
+        "The Rugby Moment That United a Country",
+        "Young Leader, Big Dreams",
+        "Continued Support For Others",
+        "Extraordinary Resilience, 27 Years Behind Bars with a Spirit Unbroken",
+        "Standing Up For What's Right – No Matter What",
       ]}
       correctAnswers={{
         0: "Young Leader, Big Dreams",
