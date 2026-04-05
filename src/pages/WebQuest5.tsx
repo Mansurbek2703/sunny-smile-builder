@@ -114,7 +114,7 @@ function IdiomsStep() {
   return (<>
     <p className="font-body text-foreground text-xl mb-3">Match the idioms and phrases with their correct meanings.</p>
     <SelectMatchingTask pairs={[{ left: "Lost at sea / adrift", right: "" }, { left: "Keep an open mind", right: "" }, { left: "To get the hang of something", right: "" }, { left: "A fish out of water", right: "" }, { left: "To learn the ropes", right: "" }, { left: "Overwhelmed", right: "" }, { left: "Shaken up / taken aback", right: "" }, { left: "Like a deer in headlights", right: "" }, { left: "All at sea", right: "" }]}
-      options={["Feeling confused and without direction in a new environment", "Be willing to consider new ideas", "To finally understand or learn how to do something", "Feeling awkward or uncomfortable in an unfamiliar situation", "To learn basic rules or procedures in a new place", "Feeling buried under too much stress or new information", "Feeling very surprised, shocked, or unsettled", "Feeling frozen and unable to react because of shock", "Feeling extremely confused or bewildered"]}
+      options={["To learn basic rules or procedures in a new place", "Feeling frozen and unable to react because of shock", "Feeling buried under too much stress or new information", "Be willing to consider new ideas", "Feeling extremely confused or bewildered", "To finally understand or learn how to do something", "Feeling very surprised, shocked, or unsettled", "Feeling confused and without direction in a new environment", "Feeling awkward or uncomfortable in an unfamiliar situation"]}
       correctAnswers={{ 0: "Feeling confused and without direction in a new environment", 1: "Be willing to consider new ideas", 2: "To finally understand or learn how to do something", 3: "Feeling awkward or uncomfortable in an unfamiliar situation", 4: "To learn basic rules or procedures in a new place", 5: "Feeling buried under too much stress or new information", 6: "Feeling very surprised, shocked, or unsettled", 7: "Feeling frozen and unable to react because of shock", 8: "Feeling extremely confused or bewildered" }} />
   </>);
 }
@@ -203,14 +203,14 @@ function ReadingStep() {
     <div className="mt-4">
       <h4 className="font-display text-xl font-semibold mb-2">Match headings to paragraphs</h4>
       <SelectMatchingTask pairs={[{ left: "Paragraph A", right: "" }, { left: "Paragraph B", right: "" }, { left: "Paragraph C", right: "" }, { left: "Paragraph D", right: "" }, { left: "Paragraph E", right: "" }]}
-        options={["What Is Culture Shock?", "Insight into the Culture Shock Experience", "Recognizing the Symptoms of Culture Shock", "Navigating the Four Stages of Culture Shock", "Strategies to Overcome Culture Shock"]}
+        options={["Strategies to Overcome Culture Shock", "Recognizing the Symptoms of Culture Shock", "What Is Culture Shock?", "Navigating the Four Stages of Culture Shock", "Insight into the Culture Shock Experience"]}
         correctAnswers={{ 0: "What Is Culture Shock?", 1: "Insight into the Culture Shock Experience", 2: "Recognizing the Symptoms of Culture Shock", 3: "Navigating the Four Stages of Culture Shock", 4: "Strategies to Overcome Culture Shock" }} />
     </div>
     <div className="mt-4"><OpenQuestionTask title="Answer the following questions" questions={["What is the main definition of culture shock?", "What are the four stages of culture shock?", "What are some common symptoms?", "How can individuals overcome culture shock?", "Why can experiencing culture shock eventually lead to personal growth?"]} /></div>
     <div className="mt-4">
       <h4 className="font-display text-xl font-semibold mb-2">Match terms with descriptions</h4>
       <SelectMatchingTask pairs={[{ left: "Culture Shock", right: "" }, { left: "Honeymoon Stage", right: "" }, { left: "Frustration Stage", right: "" }, { left: "Adaptation Stage", right: "" }, { left: "Acceptance Stage", right: "" }]}
-        options={["A feeling of confusion and anxiety when entering a new cultural environment", "The initial phase filled with excitement and curiosity", "The period when misunderstandings and homesickness cause stress", "The stage where individuals begin to adjust and understand the new culture", "People start to feel comfortable, confident, and accept cultural differences"]}
+        options={["The stage where individuals begin to adjust and understand the new culture", "The period when misunderstandings and homesickness cause stress", "People start to feel comfortable, confident, and accept cultural differences", "A feeling of confusion and anxiety when entering a new cultural environment", "The initial phase filled with excitement and curiosity"]}
         correctAnswers={{ 0: "A feeling of confusion and anxiety when entering a new cultural environment", 1: "The initial phase filled with excitement and curiosity", 2: "The period when misunderstandings and homesickness cause stress", 3: "The stage where individuals begin to adjust and understand the new culture", 4: "People start to feel comfortable, confident, and accept cultural differences" }} />
     </div>
   </>);
@@ -252,18 +252,18 @@ function EtiquetteStep() {
     <div className="mt-4">
       <h4 className="font-display text-xl font-semibold mb-2">Match words with meanings</h4>
       <SelectMatchingTask pairs={[{ left: "Etiquette", right: "" }, { left: "Nuance", right: "" }, { left: "Taboo", right: "" }, { left: "Empathy", right: "" }, { left: "Competence", right: "" }]}
-        options={["Rules of polite behavior", "A small but important difference", "Something socially unacceptable", "Ability to understand others' feelings", "Strong understanding of what is acceptable in a culture"]}
+        options={["Something socially unacceptable", "Strong understanding of what is acceptable in a culture", "Rules of polite behavior", "Ability to understand others' feelings", "A small but important difference"]}
         correctAnswers={{ 0: "Rules of polite behavior", 1: "A small but important difference", 2: "Something socially unacceptable", 3: "Ability to understand others' feelings", 4: "Strong understanding of what is acceptable in a culture" }} />
     </div>
     <div className="mt-4">
       <h4 className="font-display text-xl font-semibold mb-2">Fill in the blanks</h4>
-      <FillBlanksTask wordBank={["respectful", "customs", "punctual", "gestures", "empathy"]}
+      <FillBlanksTask wordBank={["empathy", "punctual", "respectful", "gestures", "customs"]}
         sentences={[{ text: "Being ___ helps you build positive international relationships.", blank: "respectful" }, { text: "Cultural ___ differ from country to country.", blank: "customs" }, { text: "In some cultures, being ___ is extremely important.", blank: "punctual" }, { text: "Hand ___ can have different meanings around the world.", blank: "gestures" }, { text: "Showing ___ allows you to communicate politely across cultures.", blank: "empathy" }]} />
     </div>
     <div className="mt-4">
       <h4 className="font-display text-xl font-semibold mb-2">Match Culture with Etiquette Rule</h4>
       <SelectMatchingTask pairs={[{ left: "Japan", right: "" }, { left: "USA", right: "" }, { left: "Middle East", right: "" }, { left: "Some Asian cultures", right: "" }, { left: "Parts of Africa & Greece", right: "" }]}
-        options={["Direct eye contact is often avoided", "Direct eye contact shows confidence", "Hair covering may be required in certain situations", "Saving face is very important", "Thumbs-up gesture may be offensive"]}
+        options={["Saving face is very important", "Thumbs-up gesture may be offensive", "Direct eye contact shows confidence", "Hair covering may be required in certain situations", "Direct eye contact is often avoided"]}
         correctAnswers={{ 0: "Direct eye contact is often avoided", 1: "Direct eye contact shows confidence", 2: "Hair covering may be required in certain situations", 3: "Saving face is very important", 4: "Thumbs-up gesture may be offensive" }} />
     </div>
   </>);
