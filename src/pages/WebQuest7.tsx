@@ -268,31 +268,31 @@ function ReadingStep() {
       {"\n\n"}Madiba achieved many things before, during, and after his presidency. He brought a nation together in the following ways:
     </ReadingSection>
 
-    <ReadingSection title="A — Young Leader, Big Dreams">
+    <ReadingSection title="A">
       Getting the youth vote is a common practice nowadays, but as far back as 1944, Mandela helped establish the ANC Youth League. By 1950, at just 32, he became its national president, transforming the ANC into a more radical force. He was also a leading opponent of the 1948 apartheid legislation, organising resistance campaigns like the 1952 Defiance Campaign. That same year, he and Oliver Tambo co-founded South Africa's first black legal partnership, providing affordable legal services to black clients routinely denied justice under apartheid.
     </ReadingSection>
 
-    <ReadingSection title="B — Standing Up For What's Right">
+    <ReadingSection title="B">
       Nelson Mandela's integrity shone through his willingness to admit his actions while standing firm in his convictions. His most powerful moment came during the 1964 Rivonia Trial, when facing the death penalty, he delivered his famous speech concluding with "I am prepared to die for an ideal." As he wrote in his autobiography: "The apartheid regime had put law and order in disrepute… out of my own convictions, I exploited every opportunity to promote respect for law and order and for the judiciary." This moral compass guided him as he played the leading role in ending apartheid through negotiation rather than violence.
     </ReadingSection>
 
-    <ReadingSection title="C — Extraordinary Resilience, 27 Years Behind Bars">
+    <ReadingSection title="C">
       Being handed a life sentence did not weaken Mandela's resolve. His 27 years in prison demonstrated extraordinary sacrifice and unwavering commitment to justice, transforming him into a global symbol of resistance to oppression. His refusal to accept conditional release in exchange for renouncing his beliefs showed remarkable moral courage. Despite these hardships, Mandela's strength, conviction and great dignity made him a noteworthy leader around the world – qualities that were evident when he became South Africa's first black President in 1994.
     </ReadingSection>
 
-    <ReadingSection title="D — Choosing Forgiveness Always">
+    <ReadingSection title="D">
       Peace and forgiveness were Mandela's biggest influences on the new South Africa. He was adamant that the way forward should not be clouded by anger over the past. In 1995, he established the Truth and Reconciliation Commission, which investigated human rights violations and gave an outlet to grievances. His focus on national reconciliation rather than revenge became a model for post-conflict societies worldwide.
     </ReadingSection>
 
-    <ReadingSection title="E — The Rugby Moment That United a Country">
+    <ReadingSection title="E">
       Mandela's iconic moment at the 1995 Rugby World Cup final – presenting the trophy to captain Francois Pienaar while wearing the Springbok jersey – was a masterstroke of reconciliation. This gesture transformed rugby from a symbol of white Afrikaner culture into a unifying force for the entire nation. South Africa has since won the Rugby World Cup a record four times (1995, 2007, 2019, 2023), with rugby becoming a powerful symbol of national unity that transcends racial divides.
     </ReadingSection>
 
-    <ReadingSection title="F — Continued Support For Others">
+    <ReadingSection title="F">
       Through his foundations, Mandela advocated for educational opportunities, social justice worldwide, and HIV/AIDS crisis management through his 46664 campaign. He served as Secretary-General of the Non-Aligned Movement from 1998 to 1999, positioning himself as a leading voice for developing nations and demonstrating South Africa's return to international respectability.
     </ReadingSection>
 
-    <ReadingSection title="G — A Hero Remembered By The World">
+    <ReadingSection title="G">
       Mandela received more than 260 honors during his life, including the 1993 Nobel Peace Prize. This unprecedented recognition reflected his global impact on human rights and peaceful conflict resolution, specifically honoring his work in ending apartheid through negotiation rather than violence. His legacy continues to inspire leaders and movements worldwide.
     </ReadingSection>
 
