@@ -287,7 +287,8 @@ function ListeningStep() {
     <h4 className="font-display text-xl font-semibold mb-2">🎧 Listening Task</h4>
     <p className="font-body text-lg text-foreground mb-3">Listen to the guest from the USA to Uzbekistan and answer whether the statements are true or false according to the speaker.</p>
     <audio controls className="w-full mb-4 rounded-lg">
-      <source src="/audio/culture_shock.mp3" type="audio/mpeg" />
+      <source src="/audio/culture_shock.m4a" type="audio/mp4" />
+      <source src="/audio/culture_shock.m4a" type="audio/x-m4a" />
       Your browser does not support the audio element.
     </audio>
     <TrueFalseTask statements={[
