@@ -1,7 +1,7 @@
 import { useState, useCallback } from "react";
 import { useResponseTracker } from "@/hooks/useResponseTracker";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowLeft, ChevronLeft, ChevronRight, Menu, X, BookOpen, Video, PenTool, Users, Search, MessageSquare, CheckCircle2 } from "lucide-react";
+import { ArrowLeft, ChevronLeft, ChevronRight, Menu, X, BookOpen, Video, PenTool, Users, Search, MessageSquare, CheckCircle2, Headphones } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -23,6 +23,7 @@ const steps = [
   { id: "reading", label: "Reading — Culture Shock", icon: BookOpen },
   { id: "etiquette", label: "Etiquette Reading", icon: BookOpen },
   { id: "video", label: "Video Task", icon: Video },
+  { id: "listening", label: "Listening Task", icon: Headphones },
   { id: "casestudy", label: "Case Study", icon: Users },
   { id: "research", label: "Research", icon: Search },
   { id: "reflection", label: "Reflection", icon: MessageSquare },
@@ -91,6 +92,7 @@ function StepContent({ stepId }: { stepId: string }) {
     case "reading": return <ReadingStep />;
     case "etiquette": return <EtiquetteStep />;
     case "video": return <VideoStep />;
+    case "listening": return <ListeningStep />;
     case "casestudy": return <CaseStudyStep />;
     case "research": return <ResearchStep />;
     case "reflection": return <ReflectionStep />;
@@ -130,7 +132,7 @@ function ReadingStep() {
   return (<>
     <img src="/images/webquest5/culture_shock_reading.webp" alt="Culture Shock concept illustration" loading="eager" decoding="async" className="w-full max-h-[350px] object-contain rounded-xl shadow-md mx-auto mb-3" />
 
-    <ReadingSection title="Definition">
+    <ReadingSection title="A">
       <p className="mb-2">Culture shock is the feeling of confusion and uncertainty when an individual is in a new country or environment.</p>
       <p className="mb-2">Culture shock happens when people experience uncertainty, confusion, or anxiety as they adjust to a new culture when they move abroad or study in another country. It often follows stages: the honeymoon phase of excitement, frustration from differences, gradual adaptation, and acceptance. While it can be challenging, overcoming culture shock can help people grow and develop a deeper appreciation for new cultures.</p>
       <p className="font-semibold mt-3 mb-1">Key Takeaways</p>
@@ -143,13 +145,13 @@ function ReadingStep() {
       </ul>
     </ReadingSection>
 
-    <ReadingSection title="Insight into the Culture Shock Experience (B)">
+    <ReadingSection title="B">
       <p className="mb-2">Culture shock occurs when an individual leaves the comfort of their home and familiar surroundings and moves to an unfamiliar environment. The adjustment period can be fairly intense, particularly if the two locations are completely different, such as going from a small rural area to a large metropolis or moving to another country. People can also experience culture shock when moving from one place to another within the same country.</p>
       <p className="mb-2">Typically, no single event causes culture shock, nor does it occur suddenly or without reason. Instead, it gradually builds from a series of incidents, and culture shock can be difficult to identify while struggling with it.</p>
       <p>The feeling is particularly intense at the beginning and can be tough to overcome. It's important to remember that the cultural adjustment usually dissipates over time as a person becomes more familiar with a place, the people, customs, food, and language. As a result, navigation of surroundings gets easier, friends are made, and everything becomes more comfortable. Over time, adjusting to culture shock can lead to personal growth and appreciation for the new environment.</p>
     </ReadingSection>
 
-    <ReadingSection title="Recognizing the Symptoms (C)">
+    <ReadingSection title="C">
       <p className="mb-2">Culture shock can produce a range of symptoms, which can vary greatly from person to person in terms of scope and intensity. These may include:</p>
       <ul className="list-disc pl-5 space-y-1">
         <li>Being homesick</li>
@@ -164,7 +166,7 @@ function ReadingStep() {
       </ul>
     </ReadingSection>
 
-    <ReadingSection title="Navigating the Four Stages (D)">
+    <ReadingSection title="D">
       <p className="mb-2">People who experience culture shock may go through four phases that are explained below.</p>
       <p className="font-semibold mt-3 mb-1">Embracing the Honeymoon Stage</p>
       <p className="mb-2">The first stage is commonly referred to as the honeymoon phase. That's because people are thrilled to be in their new environment. They often see it as an adventure. If someone is on a short stay, this initial excitement may define the entire experience. However, the honeymoon phase for those on a longer-term move eventually ends, even though people expect it to last.</p>
@@ -179,7 +181,7 @@ function ReadingStep() {
       <p>A specific event doesn't cause culture shock. Instead, it can result from encountering different ways of doing things, being cut off from behavioral cues, having your own values brought into question, and feeling you don't know the rules.</p>
     </ReadingSection>
 
-    <ReadingSection title="Strategies to Overcome Culture Shock (E)">
+    <ReadingSection title="E">
       <p className="mb-2">Time and habit help manage culture shock, but individuals can also reduce its impact:</p>
       <ul className="list-disc pl-5 space-y-1 mb-3">
         <li>Be open-minded and learn about the new country or culture to understand the reasons for cultural differences.</li>
@@ -277,6 +279,29 @@ function VideoStep() {
       <MultipleChoiceTask questions={[{ question: "The main purpose of the video is to:", options: ["Entertain tourists", "Explain cultural taboos and etiquette", "Compare national cuisines"], correctIndex: 1 }, { question: "The video mainly focuses on:", options: ["Food etiquette only", "Hand gestures only", "Social behavior, gestures, food, and photography rules"], correctIndex: 2 }]} />
     </div>
     <div className="mt-4"><OpenQuestionTask title="Complete the table while watching" questions={["Name a country from the video and describe one etiquette rule.", "Name another country and its specific cultural taboo.", "What surprised you the most from the video?"]} /></div>
+  </>);
+}
+
+function ListeningStep() {
+  return (<>
+    <h4 className="font-display text-xl font-semibold mb-2">🎧 Listening Task</h4>
+    <p className="font-body text-lg text-foreground mb-3">Listen to the guest from the USA to Uzbekistan and answer whether the statements are true or false according to the speaker.</p>
+    <audio controls className="w-full mb-4 rounded-lg">
+      <source src="/audio/culture_shock.mp3" type="audio/mpeg" />
+      Your browser does not support the audio element.
+    </audio>
+    <TrueFalseTask statements={[
+      { text: "The speaker has been living in Uzbekistan for more than three years.", answer: false },
+      { text: "The speaker works as an English teacher in Uzbekistan.", answer: true },
+      { text: "The speaker chose Uzbekistan because of an interest in its culture.", answer: true },
+      { text: "Before coming, the speaker had never heard anything about Uzbekistan.", answer: false },
+      { text: "The speaker knew Uzbek people in the United States.", answer: true },
+      { text: "The speaker is currently in the first stage of culture shock.", answer: false },
+      { text: "Foods like plov, samsa, and honim are common in the speaker's hometown in the U.S.", answer: false },
+      { text: "The speaker enjoyed meeting new people and seeing new architecture.", answer: true },
+      { text: "The speaker experienced the distress stage after arriving.", answer: true },
+      { text: "The speaker has never had confusing situations in Uzbekistan.", answer: false },
+    ]} />
   </>);
 }
 
