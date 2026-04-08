@@ -5,7 +5,7 @@ import { CheckCircle2, XCircle, RotateCcw, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 interface SelectMatchingTaskProps {
-  pairs: { left: string; right: string }[];
+  pairs: { left: string; right: string; leftImage?: string }[];
   options: string[];
   correctAnswers: Record<number, string>;
 }
@@ -41,7 +41,10 @@ const SelectMatchingTask = ({ pairs, options, correctAnswers }: SelectMatchingTa
                 : "bg-card border-border hover:border-accent/30"
             }`}
           >
-            <span className="font-body font-semibold text-lg min-w-0 sm:min-w-[200px] flex-shrink-0">{pair.left}</span>
+            <span className="font-body font-semibold text-lg min-w-0 sm:min-w-[200px] flex-shrink-0 flex items-center gap-2">
+              {pair.leftImage && <img src={pair.leftImage} alt="" className={`object-cover rounded inline-block ${pair.leftImage.includes('/dishes/') ? 'w-16 h-12 sm:w-20 sm:h-14 rounded-lg shadow-sm' : 'w-8 h-6 rounded-sm'}`} />}
+              {pair.left}
+            </span>
             
             {hasAnswer && (
               <ArrowRight className={`w-4 h-4 flex-shrink-0 hidden sm:block ${
