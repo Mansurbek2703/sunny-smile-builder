@@ -107,8 +107,14 @@ function VideoStep() {
   return (<>
     <VideoTask title="Dining Etiquette Around the World" instruction="Watch the video about dining etiquette rules and complete the tasks below." videoUrl="https://www.youtube.com/watch?v=BjN7Sp-DwQ4" thumbnail="/images/webquest6/video_thumb.jpg" />
     <div className="mt-4">
-      <h4 className="font-display text-xl font-semibold mb-2">Task A: Match country with dining rule</h4>
-      <SelectMatchingTask pairs={[{ left: "Thailand", right: "" }, { left: "China", right: "" }, { left: "Ethiopia", right: "" }, { left: "Italy", right: "" }, { left: "Portugal", right: "" }, { left: "Japan", right: "" }, { left: "Middle East / India", right: "" }, { left: "Kazakhstan", right: "" }]}
+      <h4 className="font-display text-xl font-semibold mb-2">Task A: Match dish with its country</h4>
+      <SelectMatchingTask pairs={[{ left: "1. Thali", leftImage: "/images/dishes/thali.png", right: "" }, { left: "2. Khinkali", leftImage: "/images/dishes/khinkali.png", right: "" }, { left: "3. Peking Duck", leftImage: "/images/dishes/peking_duck.png", right: "" }, { left: "4. Pelmeni", leftImage: "/images/dishes/pelmeni.png", right: "" }, { left: "5. Pizza", leftImage: "/images/dishes/pizza.png", right: "" }, { left: "6. Croissant", leftImage: "/images/dishes/croissant.png", right: "" }, { left: "7. Plov", leftImage: "/images/dishes/plov.png", right: "" }, { left: "8. Sushi", leftImage: "/images/dishes/sushi.png", right: "" }]}
+        options={["Japan", "Uzbekistan", "India", "Italy", "China", "Georgia", "Russia", "France"]}
+        correctAnswers={{ 0: "India", 1: "Georgia", 2: "China", 3: "Russia", 4: "Italy", 5: "France", 6: "Uzbekistan", 7: "Japan" }} />
+    </div>
+    <div className="mt-4">
+      <h4 className="font-display text-xl font-semibold mb-2">Task B: Match country with dining rule</h4>
+      <SelectMatchingTask pairs={[{ left: "Thailand", leftImage: "/images/flags/thailand.png", right: "" }, { left: "China", leftImage: "/images/flags/china.png", right: "" }, { left: "Ethiopia", leftImage: "/images/flags/ethiopia.png", right: "" }, { left: "Italy", leftImage: "/images/flags/italy.png", right: "" }, { left: "Portugal", leftImage: "/images/flags/portugal.png", right: "" }, { left: "Japan", leftImage: "/images/flags/japan.png", right: "" }, { left: "Middle East / India", leftImage: "/images/flags/india.png", right: "" }, { left: "Kazakhstan", leftImage: "/images/flags/kazakhstan.png", right: "" }]}
         options={["Do not ask for salt or pepper", "Tea has strict drinking rules", "Use a spoon, not a fork, to eat", "Do not use the left hand", "Eat from one shared plate", "Do not refill your own wine", "Do not finish all food on your plate", "Do not ask for extra cheese"]}
         correctAnswers={{ 0: "Use a spoon, not a fork, to eat", 1: "Do not finish all food on your plate", 2: "Eat from one shared plate", 3: "Do not ask for extra cheese", 4: "Do not ask for salt or pepper", 5: "Do not refill your own wine", 6: "Do not use the left hand", 7: "Tea has strict drinking rules" }} />
     </div>
